@@ -1,0 +1,210 @@
+# ******************************************************
+# *
+# * Name:         step02-create-blob-storage.ps1
+# *     
+# * Design Phase:
+# *     Author:   John Miner
+# *     Date:     01-10-2018
+# *     Purpose:  Create two containers and load sample
+# *               stock data.  Create a shared 
+# *               access signature for use later.
+# * 
+# ******************************************************
+
+
+#
+# Azure Subscriptions 
+#
+
+# Prompts you for azure credentials
+#Add-AzureRmAccount
+
+# List my subscriptions
+#Get-AzureRmSubscription
+
+# Pick my internal subscription
+#$SubscriptionId = 'cdfb69bf-3533-4c89-9684-1ba6ba81b226'
+#Set-AzureRmContext -SubscriptionId $SubscriptionId
+
+# Save security credentials
+#Save-AzureRmContext -Path "C:\COMMUNITY WORK\STAGING\ATS\AZURE-CREDS.JSON" -Force
+
+# Clear the screen
+# Clear-Host
+
+# Import security credentials
+Import-AzureRmContext -Path "C:\COMMUNITY WORK\STAGING\ATS\AZURE-CREDS.JSON"
+
+
+
+
+#
+# Create a resource group
+#
+
+# New resource group
+New-AzureRmResourceGroup -Name "rg4stg18a" -Location "East US"
+
+# Clear the screen
+Clear-Host
+
+# List resource groups
+Get-AzureRmResourceGroup -Name "rg4stg18a"
+
+# Delete resource group
+# Remove-AzureRmResourceGroup -Name "rg4stg18a" -Force
+
+
+
+#
+# Create a storage account
+#
+
+# Create new storage account (lowercase)
+New-AzureRmStorageAccount –StorageAccountName 'sa4stg18a' -ResourceGroupName "rg4stg18a" -Location "East US" -Type "Standard_LRS" 
+
+# Clear the screen
+Clear-Host
+
+# Show the account
+$A = Get-AzureRmStorageAccount -ResourceGroupName "rg4stg18a"
+$A.Sku
+$A.Type
+
+# Delete storage account
+#Remove-AzureRmStorageAccount -ResourceGroupName "rg4stg18a" -Name 'sa4stg18a' 
+
+
+
+#
+# Create a storage container(s)
+#
+
+# Grab storage context - work around for RM
+$StorageContext = Get-AzureRmStorageAccount -Name 'sa4stg18a' -ResourceGroupName "rg4stg18a" 
+
+# Create new containers
+$StorageContext | New-AzureStorageContainer -Name "sc4inbox" -Permission Off
+$StorageContext | New-AzureStorageContainer -Name 'sc4archive' -Permission Off
+
+# Clear the screen
+Clear-Host
+
+# Show the container
+$StorageContext | Get-AzureStorageContainer 
+ 
+# Remove the container
+# $StorageContext | Remove-AzureStorageContainer -Name "sc4inbox" -Force
+# $StorageContext | Remove-AzureStorageContainer -Name 'sc4archive' -Force
+
+
+
+#
+# Upload files to azure (stocks)
+#
+
+# Grab storage context - work around for RM
+$StorageContext = Get-AzureRmStorageAccount -Name 'sa4stg18a' -ResourceGroupName "rg4stg18a" 
+
+# Set source path
+$srcpath = "C:\COMMUNITY WORK\STAGING\DATA\S&P-2017\"
+
+# Set counter
+$cnt = 0
+
+# Local file path
+$list = Get-ChildItem $srcpath -Filter *.csv 
+
+# For each stock
+foreach ($file in $list)
+{
+    # file names
+    $localname = $srcpath + $file.Name
+    $remotename = "NEW/" + $file.name
+
+    # Upload file to azure
+    $StorageContext | Set-AzureStorageBlobContent -Container "sc4inbox" -File $localname -Blob $remotename -Force
+
+    # Increment count
+    Write-Host $srcfull
+    Write-Host $cnt
+    $cnt = $cnt + 1
+}
+
+
+
+#
+# Upload master stock list
+#
+
+# Grab storage context - work around for RM
+$StorageContext = Get-AzureRmStorageAccount -Name 'sa4stg18a' -ResourceGroupName "rg4stg18a" 
+
+# Set source path
+$srcpath = "C:\COMMUNITY WORK\STAGING\DATA\S&P-2017\"
+$filename = "PACKING-LIST.TXT"
+
+# File names
+$localname = $srcpath + $filename
+$remotename = "NEW/" + $filename
+
+# Upload file to azure
+$StorageContext | Set-AzureStorageBlobContent -Container "sc4inbox" -File $localname -Blob $remotename -Force
+
+
+
+#
+# List all blobs in the container
+#
+
+
+# List all blobs in a container.
+$StorageContext | Get-AzureStorageBlob -Container "sc4inbox" 
+
+
+
+#
+# Download file from azure
+#
+
+$StorageContext | Get-AzureStorageBlob -Container "sc4inbox" -Blob "NEW\PACKING-LIST.TXT" | Get-AzureStorageBlobContent -Destination "c:\temp\"
+
+
+
+#
+# Create Shared Access Signature (SAS)
+#
+
+# Grab storage context - work around for RM
+$StorageContext = Get-AzureRmStorageAccount -Name "sa4stg18a" -ResourceGroupName "rg4stg18a" 
+
+# Sets up a Stored Access Policy and a Shared Access Signature for the new container  
+$Policy = $StorageContext | New-AzureStorageContainerStoredAccessPolicy -Container "sc4inbox" -Policy "pol4inbox" `
+  -StartTime $(Get-Date).ToUniversalTime().AddMinutes(-5) -ExpiryTime $(Get-Date).ToUniversalTime().AddYears(10) -Permission rwld
+
+# Gets the Shared Access Signature for the policy  
+$SAS = $StorageContext | New-AzureStorageContainerSASToken -name "sc4inbox" -Policy "pol4inbox" 
+Write-Host 'Shared Access Signature= '$($SAS.Substring(1))''  
+
+<#
+
+sv=2017-04-17&sr=c&si=pol4inbox&sig=zKIFQoVRzIY4irzpL7A%2Fzw%2FibF9%2BsvNAto032nIAR6k%3D 
+
+#>
+
+
+#
+# Grab key (0 | 1)
+#
+
+$StorageKey1 = `
+    (Get-AzureRmStorageAccountKey `
+    -ResourceGroupName "rg4stg18a"  `
+    -Name 'sa4stg18a').Value[0]
+$StorageKey1
+
+<#
+
+gGFVr373r9Mj3IrYPf1nF+QNX7jA3kmWJMq3QQrTulDMjNj/zrlo4P+M2wvQNaQ/i4d4eBtLigZf3vPq3dJ/SQ==
+
+#>

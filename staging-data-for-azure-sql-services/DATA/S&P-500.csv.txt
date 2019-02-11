@@ -1,0 +1,506 @@
+"Symbol","Security","Sector","Industry","Address","Date"
+"MMM","3M Company","Industrials","Industrial Conglomerates","St. Paul, Minnesota",
+"ABT","Abbott Laboratories","Health Care","Health Care Equipment","North Chicago, Illinois","3/31/1964 12:00:00 AM"
+"ABBV","AbbVie Inc.","Health Care","Pharmaceuticals","North Chicago, Illinois","12/31/2012 12:00:00 AM"
+"ACN","Accenture plc","Information Technology","IT Consulting & Other Services","Dublin, Ireland","7/6/2011 12:00:00 AM"
+"ATVI","Activision Blizzard","Information Technology","Home Entertainment Software","Santa Monica, California","8/31/2015 12:00:00 AM"
+"AYI","Acuity Brands Inc","Industrials","Electrical Components & Equipment","Atlanta, Georgia","5/3/2016 12:00:00 AM"
+"ADBE","Adobe Systems Inc","Information Technology","Application Software","San Jose, California","5/5/1997 12:00:00 AM"
+"AMD","Advanced Micro Devices Inc","Information Technology","Semiconductors","Sunnyvale, California","3/20/2017 12:00:00 AM"
+"AAP","Advance Auto Parts","Consumer Discretionary","Automotive Retail","Roanoke, Virginia","7/9/2015 12:00:00 AM"
+"AES","AES Corp","Utilities","Independent Power Producers & Energy Traders","Arlington, Virginia",
+"AET","Aetna Inc","Health Care","Managed Health Care","Hartford, Connecticut","6/30/1976 12:00:00 AM"
+"AMG","Affiliated Managers Group Inc","Financials","Asset Management & Custody Banks","Beverly, Massachusetts","7/1/2014 12:00:00 AM"
+"AFL","AFLAC Inc","Financials","Life & Health Insurance","Columbus, Georgia",
+"A","Agilent Technologies Inc","Health Care","Health Care Equipment","Santa Clara, California","6/5/2000 12:00:00 AM"
+"APD","Air Products & Chemicals Inc","Materials","Industrial Gases","Allentown, Pennsylvania","4/30/1985 12:00:00 AM"
+"AKAM","Akamai Technologies Inc","Information Technology","Internet Software & Services","Cambridge, Massachusetts","7/12/2007 12:00:00 AM"
+"ALK","Alaska Air Group Inc","Industrials","Airlines","Seattle, Washington","5/13/2016 12:00:00 AM"
+"ALB","Albemarle Corp","Materials","Specialty Chemicals","Baton Rouge, Louisiana","7/1/2016 12:00:00 AM"
+"ARE","Alexandria Real Estate Equities Inc","Real Estate","Office REITs","Pasadena, California","3/20/2017 12:00:00 AM"
+"ALXN","Alexion Pharmaceuticals","Health Care","Biotechnology","Cheshire, Connecticut","5/25/2012 12:00:00 AM"
+"ALGN","Align Technology","Health Care","Health Care Supplies","San Jose, California","6/19/2017 12:00:00 AM"
+"ALLE","Allegion","Industrials","Building Products","Dublin, Ireland","12/2/2013 12:00:00 AM"
+"AGN","Allergan, Plc","Health Care","Pharmaceuticals","Dublin, Ireland",
+"ADS","Alliance Data Systems","Information Technology","Data Processing & Outsourced Services","Plano, Texas","12/23/2013 12:00:00 AM"
+"LNT","Alliant Energy Corp","Utilities","Electric Utilities","Madison, Wisconsin","7/1/2016 12:00:00 AM"
+"ALL","Allstate Corp","Financials","Property & Casualty Insurance","Northfield Township, Illinois",
+"GOOGL","Alphabet Inc Class A","Information Technology","Internet Software & Services","Mountain View, California","4/3/2014 12:00:00 AM"
+"GOOG","Alphabet Inc Class C","Information Technology","Internet Software & Services","Mountain View, California",
+"MO","Altria Group Inc","Consumer Staples","Tobacco","Richmond, Virginia",
+"AMZN","Amazon.com Inc","Consumer Discretionary","Internet & Direct Marketing Retail","Seattle, Washington","11/18/2005 12:00:00 AM"
+"AEE","Ameren Corp","Utilities","Multi-Utilities","St. Louis, Missouri","9/19/1991 12:00:00 AM"
+"AAL","American Airlines Group","Industrials","Airlines","Fort Worth, Texas","3/23/2015 12:00:00 AM"
+"AEP","American Electric Power","Utilities","Electric Utilities","Columbus, Ohio",
+"AXP","American Express Co","Financials","Consumer Finance","New York, New York","6/30/1976 12:00:00 AM"
+"AIG","American International Group, Inc.","Financials","Property & Casualty Insurance","New York, New York","3/31/1980 12:00:00 AM"
+"AMT","American Tower Corp A","Real Estate","Specialized REITs","Boston, Massachusetts","11/19/2007 12:00:00 AM"
+"AWK","American Water Works Company Inc","Utilities","Water Utilities","Voorhees, New Jersey","3/4/2016 12:00:00 AM"
+"AMP","Ameriprise Financial","Financials","Asset Management & Custody Banks","Minneapolis, Minnesota","10/3/2005 12:00:00 AM"
+"ABC","AmerisourceBergen Corp","Health Care","Health Care Distributors","Chesterbrook, Pennsylvania","8/30/2001 12:00:00 AM"
+"AME","AMETEK Inc","Industrials","Electrical Components & Equipment","Berwyn, Pennsylvania","9/23/2013 12:00:00 AM"
+"AMGN","Amgen Inc","Health Care","Biotechnology","Thousand Oaks, California","1/2/1992 12:00:00 AM"
+"APH","Amphenol Corp","Information Technology","Electronic Components","Wallingford, Connecticut","9/30/2008 12:00:00 AM"
+"APC","Anadarko Petroleum Corp","Energy","Oil & Gas Exploration & Production","The Woodlands, Texas",
+"ADI","Analog Devices, Inc.","Information Technology","Semiconductors","Norwood, Massachusetts",
+"ANDV","Andeavor","Energy","Oil & Gas Refining & Marketing","San Antonio, Texas","9/27/2007 12:00:00 AM"
+"ANSS","ANSYS","Information Technology","Application Software","Canonsburg, Pennsylvania","6/19/2017 12:00:00 AM"
+"ANTM","Anthem Inc.","Health Care","Managed Health Care","Indianapolis, Indiana",
+"AON","Aon plc","Financials","Insurance Brokers","London, United Kingdom",
+"AOS","A.O. Smith Corp","Industrials","Building Products","Milwaukee, Wisconsin","7/26/2017 12:00:00 AM"
+"APA","Apache Corporation","Energy","Oil & Gas Exploration & Production","Houston, Texas",
+"AIV","Apartment Investment & Management","Real Estate","Residential REITs","Denver, Colorado",
+"AAPL","Apple Inc.","Information Technology","Technology Hardware, Storage & Peripherals","Cupertino, California","11/30/1982 12:00:00 AM"
+"AMAT","Applied Materials Inc","Information Technology","Semiconductor Equipment","Santa Clara, California",
+"APTV","Aptiv Plc","Consumer Discretionary","Auto Parts & Equipment","Gillingham, Kent, United Kingdom","12/24/2012 12:00:00 AM"
+"ADM","Archer-Daniels-Midland Co","Consumer Staples","Agricultural Products","Decatur, Illinois","7/29/1981 12:00:00 AM"
+"ARNC","Arconic Inc","Industrials","Aerospace & Defense","New York, New York","3/31/1964 12:00:00 AM"
+"AJG","Arthur J. Gallagher & Co.","Financials","Insurance Brokers","Itasca, Illinois","5/31/2016 12:00:00 AM"
+"AIZ","Assurant Inc","Financials","Multi-line Insurance","New York, New York","4/10/2007 12:00:00 AM"
+"T","AT&T Inc","Telecommunication Services","Integrated Telecommunication Services","Dallas, Texas","11/30/1983 12:00:00 AM"
+"ADSK","Autodesk Inc","Information Technology","Application Software","San Rafael, California","12/1/1989 12:00:00 AM"
+"ADP","Automatic Data Processing","Information Technology","Internet Software & Services","Roseland, New Jersey","3/31/1981 12:00:00 AM"
+"AZO","AutoZone Inc","Consumer Discretionary","Specialty Stores","Memphis, Tennessee",
+"AVB","AvalonBay Communities, Inc.","Real Estate","Residential REITs","Arlington, Virginia[3]","1/10/2007 12:00:00 AM"
+"AVY","Avery Dennison Corp","Materials","Paper Packaging","Glendale, California","12/31/1987 12:00:00 AM"
+"BHGE","Baker Hughes, a GE Company","Energy","Oil & Gas Equipment & Services","Houston, Texas",
+"BLL","Ball Corp","Materials","Metal & Glass Containers","Broomfield, Colorado","10/31/1984 12:00:00 AM"
+"BAC","Bank of America Corp","Financials","Diversified Banks","Charlotte, North Carolina","6/30/1976 12:00:00 AM"
+"BK","The Bank of New York Mellon Corp.","Financials","Asset Management & Custody Banks","New York, New York",
+"BAX","Baxter International Inc.","Health Care","Health Care Equipment","Deerfield, Illinois","9/30/1972 12:00:00 AM"
+"BBT","BB&T Corporation","Financials","Regional Banks","Winston-Salem, North Carolina",
+"BDX","Becton Dickinson","Health Care","Health Care Equipment","Franklin Lakes, New Jersey","9/30/1972 12:00:00 AM"
+"BRK-B","Berkshire Hathaway","Financials","Multi-Sector Holdings","Omaha, Nebraska","2/16/2010 12:00:00 AM"
+"BBY","Best Buy Co. Inc.","Consumer Discretionary","Computer & Electronics Retail","Richfield, Minnesota","6/29/1999 12:00:00 AM"
+"BIIB","Biogen Inc.","Health Care","Biotechnology","Weston, Massachusetts",
+"BLK","BlackRock","Financials","Asset Management & Custody Banks","New York, New York","4/4/2011 12:00:00 AM"
+"HRB","Block H&R","Financials","Consumer Finance","Kansas City, Missouri","11/30/1986 12:00:00 AM"
+"BA","Boeing Company","Industrials","Aerospace & Defense","Chicago, Illinois",
+"BWA","BorgWarner","Consumer Discretionary","Auto Parts & Equipment","Auburn Hills, Michigan","12/19/2011 12:00:00 AM"
+"BXP","Boston Properties","Real Estate","Office REITs","Boston, Massachusetts","4/3/2006 12:00:00 AM"
+"BSX","Boston Scientific","Health Care","Health Care Equipment","Marlborough, Massachusetts[4]","2/24/1995 12:00:00 AM"
+"BHF","Brighthouse Financial Inc","Financials","Life & Health Insurance","Charlotte, North Carolina","8/8/2017 12:00:00 AM"
+"BMY","Bristol-Myers Squibb","Health Care","Health Care Distributors","New York, New York",
+"AVGO","Broadcom","Information Technology","Semiconductors","San Jose, California","5/8/2014 12:00:00 AM"
+"BF-B","Brown-Forman Corp.","Consumer Staples","Distillers & Vintners","Louisville, Kentucky","10/31/1982 12:00:00 AM"
+"CHRW","C. H. Robinson Worldwide","Industrials","Air Freight & Logistics","Eden Prairie, Minnesota","3/2/2007 12:00:00 AM"
+"CA","CA, Inc.","Information Technology","Systems Software","Islandia, New York","7/31/1987 12:00:00 AM"
+"COG","Cabot Oil & Gas","Energy","Oil & Gas Exploration & Production","Houston, Texas","6/23/2008 12:00:00 AM"
+"CDNS","Cadence Design Systems","Information Technology","Application Software","San Jose, California","9/18/2017 12:00:00 AM"
+"CPB","Campbell Soup","Consumer Staples","Packaged Foods & Meats","Camden, New Jersey",
+"COF","Capital One Financial","Financials","Consumer Finance","Tysons Corner, Virginia",
+"CAH","Cardinal Health Inc.","Health Care","Health Care Distributors","Dublin, Ohio",
+"CBOE","CBOE Holdings","Financials","Financial Exchanges & Data","Chicago, Illinois","3/1/2017 12:00:00 AM"
+"KMX","Carmax Inc","Consumer Discretionary","Specialty Stores","Richmond, Virginia","6/28/2010 12:00:00 AM"
+"CCL","Carnival Corp.","Consumer Discretionary","Hotels, Resorts & Cruise Lines","Miami, Florida",
+"CAT","Caterpillar Inc.","Industrials","Construction Machinery & Heavy Trucks","Peoria, Illinois",
+"CBG","CBRE Group","Real Estate","Real Estate Services","Los Angeles, California","11/10/2006 12:00:00 AM"
+"CBS","CBS Corp.","Consumer Discretionary","Broadcasting","New York, New York","9/1/1994 12:00:00 AM"
+"CELG","Celgene Corp.","Health Care","Biotechnology","Summit, New Jersey","11/6/2006 12:00:00 AM"
+"CNC","Centene Corporation","Health Care","Managed Health Care","St Louis, Missouri","3/30/2016 12:00:00 AM"
+"CNP","CenterPoint Energy","Utilities","Multi-Utilities","Houston, Texas","7/31/1985 12:00:00 AM"
+"CTL","CenturyLink Inc","Telecommunication Services","Integrated Telecommunication Services","Monroe, Louisiana",
+"CERN","Cerner","Health Care","Health Care Technology","North Kansas City, Missouri","4/30/2010 12:00:00 AM"
+"CF","CF Industries Holdings Inc","Materials","Fertilizers & Agricultural Chemicals","Deerfield, Illinois","8/27/2008 12:00:00 AM"
+"SCHW","Charles Schwab Corporation","Financials","Investment Banking & Brokerage","San Francisco, California",
+"CHTR","Charter Communications","Consumer Discretionary","Cable & Satellite","Stamford, Connecticut","9/8/2016 12:00:00 AM"
+"CHK","Chesapeake Energy","Energy","Oil & Gas Exploration & Production","Oklahoma City, Oklahoma",
+"CVX","Chevron Corp.","Energy","Integrated Oil & Gas","San Ramon, California",
+"CMG","Chipotle Mexican Grill","Consumer Discretionary","Restaurants","Denver, Colorado","4/28/2011 12:00:00 AM"
+"CB","Chubb Limited","Financials","Property & Casualty Insurance","Zurich, Switzerland","7/15/2010 12:00:00 AM"
+"CHD","Church & Dwight","Consumer Staples","Household Products","Ewing, New Jersey","12/29/2015 12:00:00 AM"
+"CI","CIGNA Corp.","Health Care","Managed Health Care","Philadelphia, Pennsylvania","6/30/1976 12:00:00 AM"
+"XEC","Cimarex Energy","Energy","Oil & Gas Exploration & Production","Denver, Colorado","6/21/2014 12:00:00 AM"
+"CINF","Cincinnati Financial","Financials","Property & Casualty Insurance","Fairfield, Ohio",
+"CTAS","Cintas Corporation","Industrials","Diversified Support Services","Mason, Ohio","3/1/2001 12:00:00 AM"
+"CSCO","Cisco Systems","Information Technology","Communications Equipment","San Jose, California","12/1/1993 12:00:00 AM"
+"C","Citigroup Inc.","Financials","Diversified Banks","New York, New York","5/31/1988 12:00:00 AM"
+"CFG","Citizens Financial Group","Financials","Regional Banks","Providence, Rhode Island","1/29/2016 12:00:00 AM"
+"CTXS","Citrix Systems","Information Technology","Internet Software & Services","Fort Lauderdale, Florida",
+"CLX","The Clorox Company","Consumer Staples","Household Products","Oakland, California","3/31/1969 12:00:00 AM"
+"CME","CME Group Inc.","Financials","Financial Exchanges & Data","Chicago, Illinois",
+"CMS","CMS Energy","Utilities","Multi-Utilities","Jackson, Michigan",
+"KO","Coca-Cola Company (The)","Consumer Staples","Soft Drinks","Atlanta, Georgia",
+"CTSH","Cognizant Technology Solutions","Information Technology","IT Consulting & Other Services","Teaneck, New Jersey","11/17/2006 12:00:00 AM"
+"CL","Colgate-Palmolive","Consumer Staples","Household Products","New York, New York",
+"CMCSA","Comcast Corp.","Consumer Discretionary","Cable & Satellite","Philadelphia, Pennsylvania","9/18/2015 12:00:00 AM"
+"CMA","Comerica Inc.","Financials","Diversified Banks","Dallas, Texas",
+"CAG","Conagra Brands","Consumer Staples","Packaged Foods & Meats","Chicago, Illinois","8/31/1983 12:00:00 AM"
+"CXO","Concho Resources","Energy","Oil & Gas Exploration & Production","Midland, Texas","2/22/2016 12:00:00 AM"
+"COP","ConocoPhillips","Energy","Oil & Gas Exploration & Production","Houston, Texas",
+"ED","Consolidated Edison","Utilities","Electric Utilities","New York, New York",
+"STZ","Constellation Brands","Consumer Staples","Distillers & Vintners","Victor, New York","7/5/2005 12:00:00 AM"
+"COO","The Cooper Companies","Health Care","Health Care Supplies","Pleasanton, California","9/23/2016 12:00:00 AM"
+"GLW","Corning Inc.","Information Technology","Electronic Components","Corning, New York",
+"COST","Costco Wholesale Corp.","Consumer Staples","Hypermarkets & Super Centers","Issaquah, Washington","10/1/1993 12:00:00 AM"
+"COTY","Coty, Inc","Consumer Staples","Personal Products","New York, NY","10/3/2016 12:00:00 AM"
+"CCI","Crown Castle International Corp.","Real Estate","Specialized REITs","Houston, Texas","3/14/2012 12:00:00 AM"
+"CSRA","CSRA Inc.","Information Technology","IT Consulting & Other Services","Falls Church, Virginia","12/1/2015 12:00:00 AM"
+"CSX","CSX Corp.","Industrials","Railroads","Jacksonville, Florida","9/30/1967 12:00:00 AM"
+"CMI","Cummins Inc.","Industrials","Industrial Machinery","Columbus, Indiana","3/31/1965 12:00:00 AM"
+"CVS","CVS Health","Consumer Staples","Drug Retail","Woonsocket, Rhode Island",
+"DHI","D. R. Horton","Consumer Discretionary","Homebuilding","Fort Worth, Texas",
+"DHR","Danaher Corp.","Health Care","Health Care Equipment","Washington, D.C.",
+"DRI","Darden Restaurants","Consumer Discretionary","Restaurants","Orlando, Florida",
+"DVA","DaVita Inc.","Health Care","Health Care Facilities","Denver, Colorado","7/31/2008 12:00:00 AM"
+"DE","Deere & Co.","Industrials","Agricultural & Farm Machinery","Moline, Illinois",
+"DAL","Delta Air Lines Inc.","Industrials","Airlines","Atlanta, Georgia","9/11/2013 12:00:00 AM"
+"XRAY","Dentsply Sirona","Health Care","Health Care Supplies","York, Pennsylvania","11/14/2008 12:00:00 AM"
+"DVN","Devon Energy Corp.","Energy","Oil & Gas Exploration & Production","Oklahoma City, Oklahoma","8/30/2000 12:00:00 AM"
+"DLR","Digital Realty Trust Inc","Real Estate","Specialized REITs","San Francisco, California","5/18/2016 12:00:00 AM"
+"DFS","Discover Financial Services","Financials","Consumer Finance","Riverwoods, Illinois","7/2/2007 12:00:00 AM"
+"DISCA","Discovery Communications-A","Consumer Discretionary","Cable & Satellite","Silver Spring, Maryland","3/1/2010 12:00:00 AM"
+"DISCK","Discovery Communications-C","Consumer Discretionary","Cable & Satellite","Silver Spring, Maryland","8/7/2014 12:00:00 AM"
+"DISH","Dish Network","Consumer Discretionary","Cable & Satellite","Meridian, Colorado","3/13/2017 12:00:00 AM"
+"DG","Dollar General","Consumer Discretionary","General Merchandise Stores","Goodlettsville, Tennessee","12/3/2012 12:00:00 AM"
+"DLTR","Dollar Tree","Consumer Discretionary","General Merchandise Stores","Chesapeake, Virginia","12/19/2011 12:00:00 AM"
+"D","Dominion Energy","Utilities","Electric Utilities","Richmond, Virginia",
+"DOV","Dover Corp.","Industrials","Industrial Machinery","Downers Grove, Illinois","10/31/1985 12:00:00 AM"
+"DWDP","DowDuPont","Materials","Diversified Chemicals","Midland, Michigan",
+"DPS","Dr Pepper Snapple Group","Consumer Staples","Soft Drinks","Plano, Texas","10/7/2008 12:00:00 AM"
+"DTE","DTE Energy Co.","Utilities","Multi-Utilities","Detroit, Michigan",
+"DRE","Duke Realty Corp","Real Estate","Industrial REITs","Indianapolis, Indiana","7/26/2017 12:00:00 AM"
+"DUK","Duke Energy","Utilities","Electric Utilities","Charlotte, North Carolina","6/30/1976 12:00:00 AM"
+"DXC","DXC Technology","Information Technology","IT Consulting & Other Services","Tysons Corner, Virginia","4/4/2017 12:00:00 AM"
+"ETFC","E*Trade","Financials","Investment Banking & Brokerage","New York, New York","3/31/2004 12:00:00 AM"
+"EMN","Eastman Chemical","Materials","Diversified Chemicals","Kingsport, Tennessee","1/1/1994 12:00:00 AM"
+"ETN","Eaton Corporation","Industrials","Electrical Components & Equipment","Dublin, Ireland",
+"EBAY","eBay Inc.","Information Technology","Internet Software & Services","San Jose, California",
+"ECL","Ecolab Inc.","Materials","Specialty Chemicals","St. Paul, Minnesota","1/31/1989 12:00:00 AM"
+"EIX","Edison Int'l","Utilities","Electric Utilities","Rosemead, California",
+"EW","Edwards Lifesciences","Health Care","Health Care Equipment","Irvine, California","4/1/2011 12:00:00 AM"
+"EA","Electronic Arts","Information Technology","Home Entertainment Software","Redwood City, California","7/22/2002 12:00:00 AM"
+"EMR","Emerson Electric Company","Industrials","Electrical Components & Equipment","Ferguson, Missouri","3/31/1965 12:00:00 AM"
+"ETR","Entergy Corp.","Utilities","Electric Utilities","New Orleans, Louisiana",
+"EVHC","Envision Healthcare","Health Care","Health Care Services","Nashville, Tennessee","12/2/2016 12:00:00 AM"
+"EOG","EOG Resources","Energy","Oil & Gas Exploration & Production","Houston, Texas","11/2/2000 12:00:00 AM"
+"EQT","EQT Corporation","Energy","Oil & Gas Exploration & Production","Pittsburgh, Pennsylvania","12/19/2008 12:00:00 AM"
+"EFX","Equifax Inc.","Industrials","Research & Consulting Services","Atlanta, Georgia","6/19/1997 12:00:00 AM"
+"EQIX","Equinix","Real Estate","Specialized REITs","Redwood City, California","3/20/2015 12:00:00 AM"
+"EQR","Equity Residential","Real Estate","Residential REITs","Chicago, Illinois","12/3/2001 12:00:00 AM"
+"ESS","Essex Property Trust, Inc.","Real Estate","Residential REITs","Palo Alto, California","4/2/2014 12:00:00 AM"
+"EL","Estee Lauder Cos.","Consumer Staples","Personal Products","New York, New York","1/5/2006 12:00:00 AM"
+"ES","Eversource Energy","Utilities","Multi-Utilities","Springfield, Massachusetts",
+"RE","Everest Re Group Ltd.","Financials","Reinsurance","Hamilton, Bermuda","6/19/2017 12:00:00 AM"
+"EXC","Exelon Corp.","Utilities","Multi-Utilities","Chicago, Illinois",
+"EXPE","Expedia Inc.","Consumer Discretionary","Internet & Direct Marketing Retail","Bellevue, Washington","10/2/2007 12:00:00 AM"
+"EXPD","Expeditors International","Industrials","Air Freight & Logistics","Seattle, Washington","10/10/2007 12:00:00 AM"
+"ESRX","Express Scripts","Health Care","Health Care Distributors","Cool Valley, Missouri","9/25/2003 12:00:00 AM"
+"EXR","Extra Space Storage","Real Estate","Specialized REITs","Salt Lake City, Utah","1/19/2016 12:00:00 AM"
+"XOM","Exxon Mobil Corp.","Energy","Integrated Oil & Gas","Irving, Texas",
+"FFIV","F5 Networks","Information Technology","Communications Equipment","Seattle, Washington","12/20/2010 12:00:00 AM"
+"FB","Facebook, Inc.","Information Technology","Internet Software & Services","Menlo Park, California","12/23/2013 12:00:00 AM"
+"FAST","Fastenal Co","Industrials","Building Products","Winona, Minnesota","9/15/2009 12:00:00 AM"
+"FRT","Federal Realty Investment Trust","Real Estate","Retail REITs","Rockville, Maryland","2/1/2016 12:00:00 AM"
+"FDX","FedEx Corporation","Industrials","Air Freight & Logistics","Memphis, Tennessee","12/31/1980 12:00:00 AM"
+"FIS","Fidelity National Information Services","Information Technology","Internet Software & Services","Jacksonville, Florida","11/10/2006 12:00:00 AM"
+"FITB","Fifth Third Bancorp","Financials","Regional Banks","Cincinnati, Ohio",
+"FE","FirstEnergy Corp","Utilities","Electric Utilities","Akron, Ohio",
+"FISV","Fiserv Inc","Information Technology","Internet Software & Services","Brookfield, Wisconsin","4/2/2001 12:00:00 AM"
+"FLIR","FLIR Systems","Information Technology","Electronic Equipment & Instruments","Wilsonville, Oregon","1/2/2009 12:00:00 AM"
+"FLS","Flowserve Corporation","Industrials","Industrial Machinery","Irving, Texas","10/2/2008 12:00:00 AM"
+"FLR","Fluor Corp.","Industrials","Construction & Engineering","Irving, Texas","3/31/1980 12:00:00 AM"
+"FMC","FMC Corporation","Materials","Fertilizers & Agricultural Chemicals","Philadelphia, Pennsylvania","8/19/2009 12:00:00 AM"
+"FL","Foot Locker Inc","Consumer Discretionary","Apparel Retail","New York, New York","4/4/2016 12:00:00 AM"
+"F","Ford Motor","Consumer Discretionary","Automobile Manufacturers","Dearborn, Michigan",
+"FTV","Fortive Corp","Industrials","Industrial Machinery","Everett, Washington","7/1/2016 12:00:00 AM"
+"FBHS","Fortune Brands Home & Security","Industrials","Building Products","Deerfield, Illinois","6/22/2016 12:00:00 AM"
+"BEN","Franklin Resources","Financials","Asset Management & Custody Banks","San Mateo, California",
+"FCX","Freeport-McMoRan Inc.","Materials","Copper","Phoenix, Arizona",
+"GPS","Gap Inc.","Consumer Discretionary","Apparel Retail","San Francisco, California","8/31/1986 12:00:00 AM"
+"GRMN","Garmin Ltd.","Consumer Discretionary","Consumer Electronics","Schaffhausen, Switzerland","12/12/2012 12:00:00 AM"
+"IT","Gartner Inc","Information Technology","IT Consulting & Other Services","Stamford, Connecticut","4/5/2017 12:00:00 AM"
+"GD","General Dynamics","Industrials","Aerospace & Defense","Falls Church, Virginia",
+"GE","General Electric","Industrials","Industrial Conglomerates","Boston, Massachusetts",
+"GGP","General Growth Properties Inc.","Real Estate","Retail REITs","Chicago, Illinois","12/10/2013 12:00:00 AM"
+"GIS","General Mills","Consumer Staples","Packaged Foods & Meats","Golden Valley, Minnesota","3/31/1969 12:00:00 AM"
+"GM","General Motors","Consumer Discretionary","Automobile Manufacturers","Detroit, Michigan","6/6/2013 12:00:00 AM"
+"GPC","Genuine Parts","Consumer Discretionary","Specialty Stores","Atlanta, Georgia","12/31/1973 12:00:00 AM"
+"GILD","Gilead Sciences","Health Care","Biotechnology","Foster City, California","7/1/2004 12:00:00 AM"
+"GPN","Global Payments Inc","Information Technology","Data Processing & Outsourced Services","Atlanta, Georgia","4/25/2016 12:00:00 AM"
+"GS","Goldman Sachs Group","Financials","Investment Banking & Brokerage","New York, New York","7/22/2002 12:00:00 AM"
+"GT","Goodyear Tire & Rubber","Consumer Discretionary","Tires & Rubber","Akron, Ohio",
+"GWW","Grainger (W.W.) Inc.","Industrials","Industrial Machinery","Lake Forest, Illinois","6/30/1981 12:00:00 AM"
+"HAL","Halliburton Co.","Energy","Oil & Gas Equipment & Services","Houston, Texas",
+"HBI","Hanesbrands Inc","Consumer Discretionary","Apparel, Accessories & Luxury Goods","Winston-Salem, North Carolina","3/20/2015 12:00:00 AM"
+"HOG","Harley-Davidson","Consumer Discretionary","Motorcycle Manufacturers","Milwaukee, Wisconsin",
+"HRS","Harris Corporation","Information Technology","Communications Equipment","Melbourne, Florida","9/22/2008 12:00:00 AM"
+"HIG","Hartford Financial Svc.Gp.","Financials","Property & Casualty Insurance","Hartford, Connecticut",
+"HAS","Hasbro Inc.","Consumer Discretionary","Leisure Products","Pawtucket, Rhode Island","9/30/1984 12:00:00 AM"
+"HCA","HCA Holdings","Health Care","Health Care Facilities","Nashville, Tennessee","1/27/2015 12:00:00 AM"
+"HCP","HCP Inc.","Real Estate","Health Care REITs","Long Beach, California","3/31/2008 12:00:00 AM"
+"HP","Helmerich & Payne","Energy","Oil & Gas Drilling","Tulsa, Oklahoma[5]","3/1/2010 12:00:00 AM"
+"HSIC","Henry Schein","Health Care","Health Care Distributors","Melville, New York","3/17/2015 12:00:00 AM"
+"HSY","The Hershey Company","Consumer Staples","Packaged Foods & Meats","Hershey, Pennsylvania",
+"HES","Hess Corporation","Energy","Integrated Oil & Gas","New York, New York","5/31/1984 12:00:00 AM"
+"HPE","Hewlett Packard Enterprise","Information Technology","Technology Hardware, Storage & Peripherals","Palo Alto, California","11/2/2015 12:00:00 AM"
+"HLT","Hilton Worldwide Holdings Inc","Consumer Discretionary","Hotels, Resorts & Cruise Lines","Tysons Corner, Virginia","6/19/2017 12:00:00 AM"
+"HOLX","Hologic","Health Care","Health Care Equipment","Marlborough, Massachusetts","3/30/2016 12:00:00 AM"
+"HD","Home Depot","Consumer Discretionary","Home Improvement Retail","Atlanta, Georgia","3/31/1988 12:00:00 AM"
+"HON","Honeywell Int'l Inc.","Industrials","Industrial Conglomerates","Morristown, New Jersey","3/31/1964 12:00:00 AM"
+"HRL","Hormel Foods Corp.","Consumer Staples","Packaged Foods & Meats","Austin, Minnesota","3/4/2009 12:00:00 AM"
+"HST","Host Hotels & Resorts","Real Estate","Hotel & Resort REITs","Bethesda, Maryland","3/20/2007 12:00:00 AM"
+"HPQ","HP Inc.","Information Technology","Technology Hardware, Storage & Peripherals","Palo Alto, California","12/31/1974 12:00:00 AM"
+"HUM","Humana Inc.","Health Care","Managed Health Care","Louisville, Kentucky",
+"HBAN","Huntington Bancshares","Financials","Regional Banks","Columbus, Ohio",
+"HII","Huntington Ingalls Industries","Industrials","Aerospace & Defense","Newport News, Virginia","1/3/2018 12:00:00 AM"
+"IDXX","IDEXX Laboratories","Health Care","Health Care Equipment","Westbrook, Maine","1/5/2017 12:00:00 AM"
+"INFO","IHS Markit Ltd.","Industrials","Research & Consulting Services","London, United Kingdom","6/2/2017 12:00:00 AM"
+"ITW","Illinois Tool Works","Industrials","Industrial Machinery","Glenview, Illinois","2/28/1986 12:00:00 AM"
+"ILMN","Illumina Inc","Health Care","Life Sciences Tools & Services","San Diego, California","11/19/2015 12:00:00 AM"
+"IR","Ingersoll-Rand PLC","Industrials","Industrial Machinery","Dublin, Ireland","11/17/2010 12:00:00 AM"
+"INTC","Intel Corp.","Information Technology","Semiconductors","Santa Clara, California","12/31/1976 12:00:00 AM"
+"ICE","Intercontinental Exchange","Financials","Financial Exchanges & Data","Atlanta, Georgia","9/26/2007 12:00:00 AM"
+"IBM","International Business Machines","Information Technology","IT Consulting & Other Services","Armonk, New York",
+"INCY","Incyte","Health Care","Biotechnology","Wilmington, Delaware","2/28/2017 12:00:00 AM"
+"IP","International Paper","Materials","Paper Packaging","Memphis, Tennessee",
+"IPG","Interpublic Group","Consumer Discretionary","Advertising","New York, New York","10/1/1992 12:00:00 AM"
+"IFF","Intl Flavors & Fragrances","Materials","Specialty Chemicals","New York, New York","3/31/1976 12:00:00 AM"
+"INTU","Intuit Inc.","Information Technology","Internet Software & Services","Mountain View, California","12/5/2000 12:00:00 AM"
+"ISRG","Intuitive Surgical Inc.","Health Care","Health Care Equipment","Sunnyvale, California","6/2/2008 12:00:00 AM"
+"IVZ","Invesco Ltd.","Financials","Asset Management & Custody Banks","Atlanta, Georgia","8/21/2008 12:00:00 AM"
+"IQV","IQVIA Holdings Inc.","Health Care","Life Sciences Tools & Service","Durham, North Carolina","8/29/2017 12:00:00 AM"
+"IRM","Iron Mountain Incorporated","Real Estate","Specialized REITs","Boston, Massachusetts","1/6/2009 12:00:00 AM"
+"JEC","Jacobs Engineering Group","Industrials","Construction & Engineering","Pasadena, California","10/26/2007 12:00:00 AM"
+"JBHT","J. B. Hunt Transport Services","Industrials","Trucking","Lowell, Arkansas","7/1/2015 12:00:00 AM"
+"SJM","JM Smucker","Consumer Staples","Packaged Foods & Meats","Orrville, Ohio","11/6/2008 12:00:00 AM"
+"JNJ","Johnson & Johnson","Health Care","Health Care Equipment","New Brunswick, New Jersey","6/30/1973 12:00:00 AM"
+"JCI","Johnson Controls International","Industrials","Building Products","Cork, Ireland","8/27/2010 12:00:00 AM"
+"JPM","JPMorgan Chase & Co.","Financials","Diversified Banks","New York, New York","6/30/1975 12:00:00 AM"
+"JNPR","Juniper Networks","Information Technology","Communications Equipment","Sunnyvale, California",
+"KSU","Kansas City Southern","Industrials","Railroads","Kansas City, Missouri","5/24/2013 12:00:00 AM"
+"K","Kellogg Co.","Consumer Staples","Packaged Foods & Meats","Battle Creek, Michigan",
+"KEY","KeyCorp","Financials","Regional Banks","Cleveland, Ohio","3/1/1994 12:00:00 AM"
+"KMB","Kimberly-Clark","Consumer Staples","Household Products","Irving, Texas",
+"KIM","Kimco Realty","Real Estate","Retail REITs","New Hyde Park, New York","4/4/2006 12:00:00 AM"
+"KMI","Kinder Morgan","Energy","Oil & Gas Storage & Transportation","Houston, Texas","5/25/2012 12:00:00 AM"
+"KLAC","KLA-Tencor Corp.","Information Technology","Semiconductor Equipment","Milpitas, California",
+"KSS","Kohl's Corp.","Consumer Discretionary","General Merchandise Stores","Menomonee Falls, Wisconsin",
+"KHC","Kraft Heinz Co","Consumer Staples","Packaged Foods & Meats","Pittsburgh, Pennsylvania","7/6/2015 12:00:00 AM"
+"KR","Kroger Co.","Consumer Staples","Food Retail","Cincinnati, Ohio",
+"LB","L Brands Inc.","Consumer Discretionary","Apparel Retail","Columbus, Ohio","9/30/1983 12:00:00 AM"
+"LLL","L-3 Communications Holdings","Industrials","Aerospace & Defense","New York, New York",
+"LH","Laboratory Corp. of America Holding","Health Care","Health Care Services","Burlington, North Carolina","11/1/2004 12:00:00 AM"
+"LRCX","Lam Research","Information Technology","Semiconductor Equipment","Fremont, California","6/29/2012 12:00:00 AM"
+"LEG","Leggett & Platt","Consumer Discretionary","Home Furnishings","Carthage, Missouri",
+"LEN","Lennar Corp.","Consumer Discretionary","Homebuilding","Miami, Florida","10/4/2005 12:00:00 AM"
+"LUK","Leucadia National Corp.","Financials","Multi-Sector Holdings","New York, New York","8/27/2007 12:00:00 AM"
+"LLY","Lilly (Eli) & Co.","Health Care","Pharmaceuticals","Indianapolis, Indiana","12/31/1970 12:00:00 AM"
+"LNC","Lincoln National","Financials","Multi-line Insurance","Radnor, Pennsylvania","6/30/1976 12:00:00 AM"
+"LKQ","LKQ Corporation","Consumer Discretionary","Distributors","Chicago, Illinois","5/23/2016 12:00:00 AM"
+"LMT","Lockheed Martin Corp.","Industrials","Aerospace & Defense","Bethesda, Maryland","7/31/1984 12:00:00 AM"
+"L","Loews Corp.","Financials","Multi-line Insurance","New York, New York",
+"LOW","Lowe's Cos.","Consumer Discretionary","Home Improvement Retail","Mooresville, North Carolina","2/29/1984 12:00:00 AM"
+"LYB","LyondellBasell","Materials","Specialty Chemicals","Rotterdam, Netherlands","9/5/2012 12:00:00 AM"
+"MTB","M&T Bank Corp.","Financials","Regional Banks","Buffalo, New York",
+"MAC","Macerich","Real Estate","Retail REITs","Santa Monica, California","5/9/2013 12:00:00 AM"
+"M","Macy's Inc.","Consumer Discretionary","Department Stores","Cincinnati, Ohio",
+"MRO","Marathon Oil Corp.","Energy","Oil & Gas Exploration & Production","Houston, Texas","5/1/1991 12:00:00 AM"
+"MPC","Marathon Petroleum","Energy","Oil & Gas Refining & Marketing","Findlay, Ohio","7/1/2011 12:00:00 AM"
+"MAR","Marriott Int'l.","Consumer Discretionary","Hotels, Resorts & Cruise Lines","Bethesda, Maryland",
+"MMC","Marsh & McLennan","Financials","Insurance Brokers","New York, New York","8/31/1987 12:00:00 AM"
+"MLM","Martin Marietta Materials","Materials","Construction Materials","Raleigh, North Carolina","7/2/2014 12:00:00 AM"
+"MAS","Masco Corp.","Industrials","Building Products","Taylor, Michigan","6/30/1981 12:00:00 AM"
+"MA","Mastercard Inc.","Information Technology","Internet Software & Services","Harrison, New York","7/18/2008 12:00:00 AM"
+"MAT","Mattel Inc.","Consumer Discretionary","Leisure Products","El Segundo, California","3/31/1982 12:00:00 AM"
+"MKC","McCormick & Co.","Consumer Staples","Packaged Foods & Meats","Sparks, Maryland",
+"MCD","McDonald's Corp.","Consumer Discretionary","Restaurants","Oak Brook, Illinois","6/30/1970 12:00:00 AM"
+"MCK","McKesson Corp.","Health Care","Health Care Distributors","San Francisco, California",
+"MDT","Medtronic plc","Health Care","Health Care Equipment","Dublin, Ireland","10/31/1986 12:00:00 AM"
+"MRK","Merck & Co.","Health Care","Pharmaceuticals","Whitehouse Station, New Jersey",
+"MET","MetLife Inc.","Financials","Life & Health Insurance","New York, New York",
+"MTD","Mettler Toledo","Health Care","Life Sciences Tools & Services","Columbus, Ohio","9/6/2016 12:00:00 AM"
+"MGM","MGM Resorts International","Consumer Discretionary","Casinos & Gaming","Paradise, Nevada","7/26/2017 12:00:00 AM"
+"KORS","Michael Kors Holdings","Consumer Discretionary","Apparel, Accessories & Luxury Goods","New York, New York","11/13/2013 12:00:00 AM"
+"MCHP","Microchip Technology","Information Technology","Semiconductors","Chandler, Arizona","9/7/2007 12:00:00 AM"
+"MU","Micron Technology","Information Technology","Semiconductors","Boise, Idaho","9/27/1994 12:00:00 AM"
+"MSFT","Microsoft Corp.","Information Technology","Systems Software","Redmond, Washington","6/1/1994 12:00:00 AM"
+"MAA","Mid-America Apartments","Real Estate","Residential REITs","Memphis, Tennessee","12/2/2016 12:00:00 AM"
+"MHK","Mohawk Industries","Consumer Discretionary","Home Furnishings","Amsterdam, New York","12/23/2013 12:00:00 AM"
+"TAP","Molson Coors Brewing Company","Consumer Staples","Brewers","Denver, Colorado","6/30/1976 12:00:00 AM"
+"MDLZ","Mondelez International","Consumer Staples","Packaged Foods & Meats","Northfield, Illinois","10/2/2012 12:00:00 AM"
+"MON","Monsanto Co.","Materials","Fertilizers & Agricultural Chemicals","Creve Coeur, Missouri","8/7/2002 12:00:00 AM"
+"MNST","Monster Beverage","Consumer Staples","Soft Drinks","Corona, California","6/28/2012 12:00:00 AM"
+"MCO","Moody's Corp","Financials","Financial Exchanges & Data","New York, New York",
+"MS","Morgan Stanley","Financials","Investment Banking & Brokerage","New York, New York",
+"MOS","The Mosaic Company","Materials","Fertilizers & Agricultural Chemicals","Plymouth, Minnesota","9/26/2011 12:00:00 AM"
+"MSI","Motorola Solutions Inc.","Information Technology","Communications Equipment","Schaumburg, Illinois",
+"MYL","Mylan N.V.","Health Care","Pharmaceuticals","Amsterdam, Netherlands","4/23/2004 12:00:00 AM"
+"NDAQ","Nasdaq, Inc.","Financials","Financial Exchanges & Data","New York, New York","10/22/2008 12:00:00 AM"
+"NOV","National Oilwell Varco Inc.","Energy","Oil & Gas Equipment & Services","Houston, Texas","3/14/2005 12:00:00 AM"
+"NAVI","Navient","Financials","Consumer Finance","Wilmington, Delaware","5/1/2014 12:00:00 AM"
+"NTAP","NetApp","Information Technology","Internet Software & Services","Sunnyvale, California","6/25/1999 12:00:00 AM"
+"NFLX","Netflix Inc.","Information Technology","Internet Software & Services","Los Gatos, California","12/20/2010 12:00:00 AM"
+"NWL","Newell Brands","Consumer Discretionary","Housewares & Specialties","Sandy Springs, Georgia","4/30/1989 12:00:00 AM"
+"NFX","Newfield Exploration Co","Energy","Oil & Gas Exploration & Production","Houston, Texas","12/20/2010 12:00:00 AM"
+"NEM","Newmont Mining Corporation","Materials","Gold","Denver, Colorado","6/30/1969 12:00:00 AM"
+"NWSA","News Corp. Class A","Consumer Discretionary","Publishing","New York, New York","8/1/2013 12:00:00 AM"
+"NWS","News Corp. Class B","Consumer Discretionary","Publishing","New York, New York","9/18/2015 12:00:00 AM"
+"NEE","NextEra Energy","Utilities","Multi-Utilities","Juno Beach, Florida","6/30/1976 12:00:00 AM"
+"NLSN","Nielsen Holdings","Industrials","Research & Consulting Services","New York, New York","7/9/2013 12:00:00 AM"
+"NKE","Nike","Consumer Discretionary","Apparel, Accessories & Luxury Goods","Washington County, Oregon","11/30/1988 12:00:00 AM"
+"NI","NiSource Inc.","Utilities","Multi-Utilities","Merrillville, Indiana",
+"NBL","Noble Energy Inc","Energy","Oil & Gas Exploration & Production","Houston, Texas","10/8/2007 12:00:00 AM"
+"JWN","Nordstrom","Consumer Discretionary","Department Stores","Seattle, Washington","8/31/1986 12:00:00 AM"
+"NSC","Norfolk Southern Corp.","Industrials","Railroads","Norfolk, Virginia",
+"NTRS","Northern Trust Corp.","Financials","Asset Management & Custody Banks","Chicago, Illinois",
+"NOC","Northrop Grumman Corp.","Industrials","Aerospace & Defense","West Falls Church, Virginia","6/30/1985 12:00:00 AM"
+"NCLH","Norwegian Cruise Line","Consumer Discretionary","Hotels, Resorts & Cruise Lines","Miami, Florida","10/13/2017 12:00:00 AM"
+"NRG","NRG Energy","Utilities","Independent Power Producers & Energy Traders","Princeton, New Jersey","1/29/2010 12:00:00 AM"
+"NUE","Nucor Corp.","Materials","Steel","Charlotte, North Carolina","4/30/1985 12:00:00 AM"
+"NVDA","Nvidia Corporation","Information Technology","Semiconductors","Santa Clara, California","11/30/2001 12:00:00 AM"
+"ORLY","O'Reilly Automotive","Consumer Discretionary","Specialty Stores","Springfield, Missouri","3/27/2009 12:00:00 AM"
+"OXY","Occidental Petroleum","Energy","Oil & Gas Exploration & Production","Los Angeles, California","12/31/1982 12:00:00 AM"
+"OMC","Omnicom Group","Consumer Discretionary","Advertising","New York, New York",
+"OKE","ONEOK","Energy","Oil & Gas Storage & Transportation","Tulsa, Oklahoma","3/15/2010 12:00:00 AM"
+"ORCL","Oracle Corp.","Information Technology","Application Software","Redwood Shores, California","8/31/1989 12:00:00 AM"
+"PCAR","PACCAR Inc.","Industrials","Construction Machinery & Heavy Trucks","Bellevue, Washington","12/31/1980 12:00:00 AM"
+"PKG","Packaging Corporation of America","Materials","Paper Packaging","Lake Forest, Illinois","7/26/2017 12:00:00 AM"
+"PH","Parker-Hannifin","Industrials","Industrial Machinery","Cleveland, Ohio","11/30/1985 12:00:00 AM"
+"PDCO","Patterson Companies","Health Care","Health Care Supplies","St. Paul, Minnesota","10/11/2005 12:00:00 AM"
+"PAYX","Paychex Inc.","Information Technology","Internet Software & Services","Penfield, New York",
+"PYPL","PayPal","Information Technology","Data Processing & Outsourced Services","San Jose, California","7/20/2015 12:00:00 AM"
+"PNR","Pentair Ltd.","Industrials","Industrial Machinery","Worsley, UK","10/1/2012 12:00:00 AM"
+"PBCT","People's United Financial","Financials","Thrifts & Mortgage Finance","Bridgeport, Connecticut","11/13/2008 12:00:00 AM"
+"PEP","PepsiCo Inc.","Consumer Staples","Soft Drinks","Purchase, New York",
+"PKI","PerkinElmer","Health Care","Health Care Equipment","Waltham, Massachusetts","5/31/1985 12:00:00 AM"
+"PRGO","Perrigo","Health Care","Pharmaceuticals","Dublin, Ireland","12/19/2011 12:00:00 AM"
+"PFE","Pfizer Inc.","Health Care","Pharmaceuticals","New York, New York",
+"PCG","PG&E Corp.","Utilities","Multi-Utilities","San Francisco, California",
+"PM","Philip Morris International","Consumer Staples","Tobacco","New York, New York","3/31/2008 12:00:00 AM"
+"PSX","Phillips 66","Energy","Oil & Gas Refining & Marketing","Houston, Texas","5/1/2012 12:00:00 AM"
+"PNW","Pinnacle West Capital","Utilities","Multi-Utilities","Phoenix, Arizona",
+"PXD","Pioneer Natural Resources","Energy","Oil & Gas Exploration & Production","Irving, Texas","9/24/2008 12:00:00 AM"
+"PNC","PNC Financial Services","Financials","Regional Banks","Pittsburgh, Pennsylvania","4/30/1988 12:00:00 AM"
+"RL","Polo Ralph Lauren Corp.","Consumer Discretionary","Apparel, Accessories & Luxury Goods","New York, New York","2/2/2007 12:00:00 AM"
+"PPG","PPG Industries","Materials","Specialty Chemicals","Pittsburgh, Pennsylvania",
+"PPL","PPL Corp.","Utilities","Electric Utilities","Allentown, Pennsylvania",
+"PX","Praxair Inc.","Materials","Industrial Gases","Danbury, Connecticut","7/1/1992 12:00:00 AM"
+"PCLN","Priceline.com Inc","Consumer Discretionary","Internet & Direct Marketing Retail","Norwalk, Connecticut","11/6/2009 12:00:00 AM"
+"PFG","Principal Financial Group","Financials","Life & Health Insurance","Des Moines, Iowa","7/22/2002 12:00:00 AM"
+"PG","Procter & Gamble","Consumer Staples","Personal Products","Cincinnati, Ohio",
+"PGR","Progressive Corp.","Financials","Property & Casualty Insurance","Mayfield Village, Ohio","8/4/1997 12:00:00 AM"
+"PLD","Prologis","Real Estate","Industrial REITs","San Francisco, California","7/17/2003 12:00:00 AM"
+"PRU","Prudential Financial","Financials","Life & Health Insurance","Newark, New Jersey","7/22/2002 12:00:00 AM"
+"PEG","Public Serv. Enterprise Inc.","Utilities","Electric Utilities","Newark, New Jersey",
+"PSA","Public Storage","Real Estate","Specialized REITs","Glendale, California","8/19/2005 12:00:00 AM"
+"PHM","Pulte Homes Inc.","Consumer Discretionary","Homebuilding","Atlanta, Georgia","4/30/1984 12:00:00 AM"
+"PVH","PVH Corp.","Consumer Discretionary","Apparel, Accessories & Luxury Goods","New York, New York","2/15/2013 12:00:00 AM"
+"QRVO","Qorvo","Information Technology","Semiconductors","Greensboro, North Carolina","6/11/2015 12:00:00 AM"
+"PWR","Quanta Services Inc.","Industrials","Construction & Engineering","Houston, Texas","7/1/2009 12:00:00 AM"
+"QCOM","QUALCOMM Inc.","Information Technology","Semiconductors","San Diego, California",
+"DGX","Quest Diagnostics","Health Care","Health Care Services","Madison, New Jersey","12/12/2002 12:00:00 AM"
+"RRC","Range Resources Corp.","Energy","Oil & Gas Exploration & Production","Fort Worth, Texas","12/21/2007 12:00:00 AM"
+"RJF","Raymond James Financial Inc.","Financials","Investment Banking & Brokerage","St. Petersburg, Florida","3/20/2017 12:00:00 AM"
+"RTN","Raytheon Co.","Industrials","Aerospace & Defense","Waltham, Massachusetts",
+"O","Realty Income Corporation","Real Estate","Retail REITs","San Diego, California","4/7/2015 12:00:00 AM"
+"RHT","Red Hat Inc.","Information Technology","Systems Software","Raleigh, North Carolina","7/27/2009 12:00:00 AM"
+"REG","Regency Centers Corporation","Real Estate","Retail REITs","Jacksonville, Florida","3/2/2017 12:00:00 AM"
+"REGN","Regeneron","Health Care","Biotechnology","Tarrytown, New York","5/1/2013 12:00:00 AM"
+"RF","Regions Financial Corp.","Financials","Regional Banks","Birmingham, Alabama","8/28/1998 12:00:00 AM"
+"RSG","Republic Services Inc","Industrials","Environmental & Facilities Services","Phoenix, Arizona","12/5/2008 12:00:00 AM"
+"RMD","ResMed","Health Care","Health Care Equipment","San Diego, California","7/26/2017 12:00:00 AM"
+"RHI","Robert Half International","Industrials","Human Resource & Employment Services","Menlo Park, California","12/5/2000 12:00:00 AM"
+"ROK","Rockwell Automation Inc.","Industrials","Electrical Components & Equipment","Milwaukee, Wisconsin",
+"COL","Rockwell Collins","Industrials","Aerospace & Defense","Cedar Rapids, Iowa","7/2/2001 12:00:00 AM"
+"ROP","Roper Technologies","Industrials","Industrial Conglomerates","Sarasota, Florida","12/23/2009 12:00:00 AM"
+"ROST","Ross Stores","Consumer Discretionary","Apparel Retail","Pleasanton, California","12/21/2009 12:00:00 AM"
+"RCL","Royal Caribbean Cruises Ltd","Consumer Discretionary","Hotels, Resorts & Cruise Lines","Miami, Florida","12/5/2014 12:00:00 AM"
+"CRM","Salesforce.com","Information Technology","Internet Software & Services","San Francisco, California","9/15/2008 12:00:00 AM"
+"SBAC","SBA Communications","Real Estate","Specialized REITs","Boca Raton, Florida","9/1/2017 12:00:00 AM"
+"SCG","SCANA Corp","Utilities","Multi-Utilities","Cayce, South Carolina","1/2/2009 12:00:00 AM"
+"SLB","Schlumberger Ltd.","Energy","Oil & Gas Equipment & Services","Cura?ao, Kingdom of the Netherlands","3/31/1965 12:00:00 AM"
+"SNI","Scripps Networks Interactive Inc.","Consumer Discretionary","Cable & Satellite","Cincinnati, Ohio","7/1/2008 12:00:00 AM"
+"STX","Seagate Technology","Information Technology","Technology Hardware, Storage & Peripherals","Dublin, Ireland","7/2/2012 12:00:00 AM"
+"SEE","Sealed Air","Materials","Paper Packaging","Elmwood Park, New Jersey",
+"SRE","Sempra Energy","Utilities","Multi-Utilities","San Diego, California",
+"SHW","Sherwin-Williams","Materials","Specialty Chemicals","Cleveland, Ohio","6/30/1964 12:00:00 AM"
+"SIG","Signet Jewelers","Consumer Discretionary","Specialty Stores","Hamilton, Bermuda","7/29/2015 12:00:00 AM"
+"SPG","Simon Property Group Inc","Real Estate","Retail REITs","Indianapolis, Indiana","6/26/2002 12:00:00 AM"
+"SWKS","Skyworks Solutions","Information Technology","Semiconductors","Woburn, Massachusetts","3/12/2015 12:00:00 AM"
+"SLG","SL Green Realty","Real Estate","Office REITs","New York, New York","3/20/2015 12:00:00 AM"
+"SNA","Snap-On Inc.","Consumer Discretionary","Household Appliances","Kenosha, Wisconsin","9/30/1982 12:00:00 AM"
+"SO","Southern Co.","Utilities","Electric Utilities","Atlanta, Georgia",
+"LUV","Southwest Airlines","Industrials","Airlines","Dallas, Texas","7/1/1994 12:00:00 AM"
+"SPGI","S&P Global, Inc.","Financials","Financial Exchanges & Data","New York, New York",
+"SWK","Stanley Black & Decker","Consumer Discretionary","Household Appliances","New Britain, Connecticut","9/30/1982 12:00:00 AM"
+"SBUX","Starbucks Corp.","Consumer Discretionary","Restaurants","Seattle, Washington",
+"STT","State Street Corp.","Financials","Asset Management & Custody Banks","Boston, Massachusetts",
+"SRCL","Stericycle Inc","Industrials","Environmental & Facilities Services","Lake Forest, Illinois","11/19/2008 12:00:00 AM"
+"SYK","Stryker Corp.","Health Care","Health Care Equipment","Kalamazoo, Michigan","12/12/2000 12:00:00 AM"
+"STI","SunTrust Banks","Financials","Regional Banks","Atlanta, Georgia","5/31/1988 12:00:00 AM"
+"SYMC","Symantec Corp.","Information Technology","Application Software","Mountain View, California","3/25/2003 12:00:00 AM"
+"SYF","Synchrony Financial","Financials","Consumer Finance","Stamford, Connecticut","11/18/2015 12:00:00 AM"
+"SNPS","Synopsys Inc.","Information Technology","Application Software","Mountain View, California","3/16/2017 12:00:00 AM"
+"SYY","Sysco Corp.","Consumer Staples","Food Distributors","Houston, Texas","12/31/1986 12:00:00 AM"
+"TROW","T. Rowe Price Group","Financials","Asset Management & Custody Banks","Baltimore, Maryland",
+"TPR","Tapestry, Inc.","Consumer Discretionary","Apparel, Accessories & Luxury Goods","New York, New York",
+"TGT","Target Corp.","Consumer Discretionary","General Merchandise Stores","Minneapolis, Minnesota","12/31/1976 12:00:00 AM"
+"TEL","TE Connectivity Ltd.","Information Technology","Electronic Manufacturing Services","Schaffhausen, Switzerland","10/17/2011 12:00:00 AM"
+"FTI","TechnipFMC","Energy","Oil & Gas Equipment & Services","London, United Kingdom","6/5/2009 12:00:00 AM"
+"TXN","Texas Instruments","Information Technology","Semiconductors","Dallas, Texas",
+"TXT","Textron Inc.","Industrials","Aerospace & Defense","Providence, Rhode Island","12/31/1978 12:00:00 AM"
+"TMO","Thermo Fisher Scientific","Health Care","Health Care Equipment","Waltham, Massachusetts",
+"TIF","Tiffany & Co.","Consumer Discretionary","Apparel, Accessories & Luxury Goods","New York, New York","6/21/2000 12:00:00 AM"
+"TWX","Time Warner Inc.","Consumer Discretionary","Cable & Satellite","New York, New York",
+"TJX","TJX Companies Inc.","Consumer Discretionary","Apparel Retail","Framingham, Massachusetts","9/30/1985 12:00:00 AM"
+"TMK","Torchmark Corp.","Financials","Life & Health Insurance","McKinney, Texas","4/30/1989 12:00:00 AM"
+"TSS","Total System Services","Information Technology","Internet Software & Services","Columbus, Georgia","1/2/2008 12:00:00 AM"
+"TSCO","Tractor Supply Company","Consumer Discretionary","Specialty Stores","Brentwood, Tennessee","1/24/2014 12:00:00 AM"
+"TDG","TransDigm Group","Industrials","Aerospace & Defense","Cleveland, Ohio","6/3/2016 12:00:00 AM"
+"TRV","The Travelers Companies Inc.","Financials","Property & Casualty Insurance","New York, New York","8/21/2002 12:00:00 AM"
+"TRIP","TripAdvisor","Consumer Discretionary","Internet & Direct Marketing Retail","Newton, Massachusetts","12/21/2011 12:00:00 AM"
+"FOXA","Twenty-First Century Fox Class A","Consumer Discretionary","Publishing","New York, New York","7/1/2013 12:00:00 AM"
+"FOX","Twenty-First Century Fox Class B","Consumer Discretionary","Publishing","New York, New York","9/18/2015 12:00:00 AM"
+"TSN","Tyson Foods","Consumer Staples","Packaged Foods & Meats","Springdale, Arkansas",
+"UDR","UDR Inc","Real Estate","Residential REITs","Highlands Ranch, Colorado","3/7/2016 12:00:00 AM"
+"ULTA","Ulta Salon Cosmetics & Fragrance Inc","Consumer Discretionary","Specialty Stores","Bolingbrook, Illinois","4/18/2016 12:00:00 AM"
+"USB","U.S. Bancorp","Financials","Diversified Banks","Minneapolis, Minnesota",
+"UA","Under Armour Class C","Consumer Discretionary","Apparel, Accessories & Luxury Goods","Baltimore, Maryland","5/1/2014 12:00:00 AM"
+"UAA","Under Armour Class A","Consumer Discretionary","Apparel, Accessories & Luxury Goods","Baltimore, Maryland","3/25/2016 12:00:00 AM"
+"UNP","Union Pacific","Industrials","Railroads","Omaha, Nebraska",
+"UAL","United Continental Holdings","Industrials","Airlines","Chicago, Illinois","9/3/2015 12:00:00 AM"
+"UNH","United Health Group Inc.","Health Care","Managed Health Care","Minnetonka, Minnesota","7/1/1994 12:00:00 AM"
+"UPS","United Parcel Service","Industrials","Air Freight & Logistics","Atlanta, Georgia","7/22/2002 12:00:00 AM"
+"URI","United Rentals, Inc.","Industrials","Trading Companies & Distributors","Stamford, Connecticut","9/20/2014 12:00:00 AM"
+"UTX","United Technologies","Industrials","Aerospace & Defense","Hartford, Connecticut",
+"UHS","Universal Health Services, Inc.","Health Care","Health Care Facilities","King of Prussia, Pennsylvania","9/20/2014 12:00:00 AM"
+"UNM","Unum Group","Financials","Life & Health Insurance","Chattanooga, Tennessee","3/1/1994 12:00:00 AM"
+"VFC","V.F. Corp.","Consumer Discretionary","Apparel, Accessories & Luxury Goods","Greensboro, North Carolina","6/30/1979 12:00:00 AM"
+"VLO","Valero Energy","Energy","Oil & Gas Refining & Marketing","San Antonio, Texas",
+"VAR","Varian Medical Systems","Health Care","Health Care Equipment","Palo Alto, California","2/12/2007 12:00:00 AM"
+"VTR","Ventas Inc","Real Estate","Health Care REITs","Chicago, Illinois","3/4/2009 12:00:00 AM"
+"VRSN","Verisign Inc.","Information Technology","Internet Software & Services","Dulles, Virginia","2/1/2006 12:00:00 AM"
+"VRSK","Verisk Analytics","Industrials","Research & Consulting Services","Jersey City, New Jersey","10/8/2015 12:00:00 AM"
+"VZ","Verizon Communications","Telecommunication Services","Integrated Telecommunication Services","New York, New York","11/30/1983 12:00:00 AM"
+"VRTX","Vertex Pharmaceuticals Inc","Health Care","Biotechnology","Cambridge, Massachusetts","9/23/2013 12:00:00 AM"
+"VIAB","Viacom Inc.","Consumer Discretionary","Cable & Satellite","New York, New York",
+"V","Visa Inc.","Information Technology","Internet Software & Services","San Francisco, California","12/21/2009 12:00:00 AM"
+"VNO","Vornado Realty Trust","Real Estate","Office REITs","New York, New York",
+"VMC","Vulcan Materials","Materials","Construction Materials","Birmingham, Alabama","6/30/1999 12:00:00 AM"
+"WMT","Wal-Mart Stores","Consumer Staples","Hypermarkets & Super Centers","Bentonville, Arkansas","8/31/1982 12:00:00 AM"
+"WBA","Walgreens Boots Alliance","Consumer Staples","Drug Retail","Deerfield, Illinois","12/31/1979 12:00:00 AM"
+"DIS","The Walt Disney Company","Consumer Discretionary","Cable & Satellite","Burbank, California","6/30/1976 12:00:00 AM"
+"WM","Waste Management Inc.","Industrials","Environmental & Facilities Services","Houston, Texas",
+"WAT","Waters Corporation","Health Care","Health Care Distributors","Milford, Massachusetts",
+"WEC","Wec Energy Group Inc","Utilities","Electric Utilities","Milwaukee, Wisconsin","10/31/2008 12:00:00 AM"
+"WFC","Wells Fargo","Financials","Diversified Banks","San Francisco, California","6/30/1976 12:00:00 AM"
+"HCN","Welltower Inc.","Real Estate","Health Care REITs","Toledo, Ohio","1/30/2009 12:00:00 AM"
+"WDC","Western Digital","Information Technology","Technology Hardware, Storage & Peripherals","Irvine, California","7/1/2009 12:00:00 AM"
+"WU","Western Union Co","Information Technology","Internet Software & Services","Englewood, Colorado",
+"WRK","WestRock Company","Materials","Paper Packaging","Richmond, Virginia",
+"WY","Weyerhaeuser Corp.","Real Estate","Specialized REITs","Federal Way, Washington",
+"WHR","Whirlpool Corp.","Consumer Discretionary","Household Appliances","Benton Harbor, Michigan",
+"WMB","Williams Cos.","Energy","Oil & Gas Storage & Transportation","Tulsa, Oklahoma","3/31/1975 12:00:00 AM"
+"WLTW","Willis Towers Watson","Financials","Insurance Brokers","London, United Kingdom","1/5/2016 12:00:00 AM"
+"WYN","Wyndham Worldwide","Consumer Discretionary","Hotels, Resorts & Cruise Lines","Parsippany, New Jersey",
+"WYNN","Wynn Resorts Ltd","Consumer Discretionary","Casinos & Gaming","Paradise, Nevada","11/14/2008 12:00:00 AM"
+"XEL","Xcel Energy Inc","Utilities","Multi-Utilities","Minneapolis, Minnesota",
+"XRX","Xerox Corp.","Information Technology","Technology Hardware, Storage & Peripherals","Norwalk, Connecticut",
+"XLNX","Xilinx Inc","Information Technology","Semiconductors","San Jose, California","11/8/1999 12:00:00 AM"
+"XL","XL Capital","Financials","Property & Casualty Insurance","Hamilton, Bermuda",
+"XYL","Xylem Inc.","Industrials","Industrial Machinery","White Plains, New York","11/1/2011 12:00:00 AM"
+"YUM","Yum! Brands Inc","Consumer Discretionary","Restaurants","Louisville, Kentucky","10/6/1997 12:00:00 AM"
+"ZBH","Zimmer Biomet Holdings","Health Care","Health Care Equipment","Warsaw, Indiana","8/7/2001 12:00:00 AM"
+"ZION","Zions Bancorp","Financials","Regional Banks","Salt Lake City, Utah",
+"ZTS","Zoetis","Health Care","Pharmaceuticals","Florham Park, New Jersey","6/21/2013 12:00:00 AM"
