@@ -1,0 +1,35 @@
+-- Enterprise feature only
+https://docs.microsoft.com/en-us/sql/sql-server/editions-and-components-of-sql-server-2016
+
+-- How to use the resource governor (limits)
+https://msdn.microsoft.com/en-us/library/bb933944(v=sql.120).aspx
+
+-- Resource Governor documentation
+https://docs.microsoft.com/en-us/sql/relational-databases/resource-governor/resource-governor
+
+-- DMVs for the resource governor
+https://www.mssqltips.com/sqlservertip/2368/using-dmvs-to-adjust-sql-server-resource-governor-settings/
+
+-- Example of using resource governor
+https://www.mssqltips.com/sqlservertip/1720/handling-workloads-on-sql-server-2008-with-resource-governor/
+
+
+
+-- LOGINPROPERTY (Transact-SQL)
+https://docs.microsoft.com/en-us/sql/t-sql/functions/loginproperty-transact-sql
+
+-- CONNECTIONPROPERTY (Transact-SQL)
+https://docs.microsoft.com/en-us/sql/t-sql/functions/connectionproperty-transact-sql
+
+-- SESSIONPROPERTY (Transact-SQL)
+https://docs.microsoft.com/en-us/sql/t-sql/functions/sessionproperty-transact-sql
+
+
+-- ORIGINAL_DB_NAME (Transact-SQL)
+https://docs.microsoft.com/en-us/sql/t-sql/functions/original-db-name-transact-sql
+
+The name in the connection string.  Can not use DB_NAME() since we did not connect to the database.
+
+-- Excellent classification function
+https://www.sqlservercentral.com/Forums/Topic769677-391-1.aspx
+
