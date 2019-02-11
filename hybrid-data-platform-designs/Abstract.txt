@@ -1,0 +1,114 @@
+Topic:
+
+Hybird Data Platform Designs with Microsoft Azure
+
+Abstract:
+
+The modern database professional has to deal with the continous growth of data.  The total amount of digital data will exceed 40 zettabytes by 2020 according 
+to a Digital Universe study released in 2012.  To put it in perspective, 40 zettabytes is 57 times the amount of all the grains of sand on 
+all the beaches on earth.  To hit that figure, all data is expected to double every two years through 2020.
+
+As a professional, are you faced with some of the questions below:
+
+Does you company have an infinity data retention policy?  
+Are you running out of space in you current data center?
+Would you like to off load reporting from the production server?
+Would you like to archive old data to less expensive hardware?
+Does your company have a shut down the company DR policy?
+
+
+If you answered yes to any of the questions above, you should consider a hybird approach to your systems.  This means some of the data will reside
+on premise and some of the data will live in the cloud.
+
+The presentation will cover the following topics below.
+
+
+Coverage:
+
+Reporting work loads
+
+1 - Using a virtual machine for point in time reporting.
+2 – Consider a standby server for near real time reporting.
+3 - Leveraging a Azure SQL database for point in time reporting.
+4 - Utilizing ETL & Azure SQL database for near real time reporting.
+
+
+Data archiving work loads
+
+1 - Database sharding by time stamp (Azure VM vs Azure SQL DB).
+2 - Duplicate table schema with time selected data (Azure VM vs Azure SQL DB).
+3 - Placing data files on Azure Storage (SQL 2014)
+4 - Using the stretch database to extend to the cloud (SQL 2016)
+
+
+Diaster Recovery
+
+1 - Using log shipping with Azure VM
+2 - Using mirroring with Azure VM
+3 - Using always on avaiablity groups
+
+
+
+References
+
+A - Provision a Azure VM for SQL Server
+
+https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-sql-server-provision-resource-manager/
+
+B - Power Shell - Azure VM
+
+https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell/
+
+C - Find recent doc on Azure SQL Server deployment
+
+
+D - Warm standby server
+
+https://technet.microsoft.com/en-us/library/ms178034(v=sql.105).aspx
+
+
+E - Export data tier - This action creates a bacpac file.
+
+http://blogs.msdn.com/b/brunoterkaly/archive/2013/09/26/how-to-export-an-on-premises-sql-server-database-to-windows-azure-storage.aspx
+
+
+F - Import a Bacpac
+
+https://msdn.microsoft.com/en-us/library/hh710052.aspx
+
+
+G - Automated backup (VM with SS 2012 or 2014)
+
+https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-sql-server-automated-backup/
+
+
+H - Automated Patching (VM with SS 2012 or 2014)
+
+https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-sql-server-automated-patching/
+
+
+I - Shrinking the log file
+
+http://craftydba.com/?p=3033
+
+
+J - Connect on premise to azure database
+
+https://www.mssqltips.com/sqlservertip/3630/connect-an-azure-sql-database-to-an-on-premise-sql-server/
+
+
+
+http://www.slideshare.net/albertspijkers/sql-server-2014-platform-for-hybrid-cloud-level-300-deck 
+
+
+
+
+RI SSUG - PROVIDENCE RI - FEB 2016
+
+RISSUG-2014
+HSS-2014
+
+JMINER
+RI2016ssug#1
+
+HSS-2014.cloudapp.net,1433

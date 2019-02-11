@@ -1,0 +1,33 @@
+CREATE DATA SHARDING - TEST SCENERIO
+
+Step 1 - Backup orginal database.  Restore databases by year.  Purge off unwanted data.
+
+Step 2 - Large deletions from the database will cause the log file to grow.  
+         Use backup log, dbcc log info, and shrinkdb to remove unwanted space.
+
+Step 3 - Result of resizing the 2014 shard.
+
+Step 4 - If log point is stuck at end of data file, create and fill temporary table.
+         This will add log entries and push the pointer to the start of the file.
+
+Step 5 - Result of resizing the 2015 shard.
+
+
+CREATE TABLE SHARDING - TEST SCENERIO
+
+Step 10 - Three file groups (primary, data2014, and data2015).
+
+Step 11 - Move data into active schema for transaction table.
+
+Step 12 - Move data into history schema for transaction table.
+
+Step 13 - Account and customer table on primary fg.
+
+Step 14 - Add computed persistant column for date dimension.
+
+Step 15 - Create the partioned via in [ALL] schema.
+          Notice, optimizer only uses one table.
+
+
+
+

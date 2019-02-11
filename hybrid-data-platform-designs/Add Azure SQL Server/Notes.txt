@@ -1,0 +1,55 @@
+CREATE AZURE LOGICAL SQL SERVER
+
+Step A - List current servers.  Hit add button.
+
+Step B - Fill out information such as server name, admin user and password.
+
+Step C - Azure SQL databases are protected by IP filtering.  Add the user machine to the white list.
+
+
+REPORTING - POINT IN TIME - LETS TRY THE DEPLOYMENT WIZARD
+
+Step 01 - Start the deployment wizard.
+
+Step 02 - Specify the target Azure SQL database.
+
+Step 03 - Confirm settings.
+
+Step 04 - Run the deployment.  Very lengthy process.
+
+Step 05 - Validate record counts in the cloud.
+
+Step 06 - Compare record counts to on premise.
+
+
+REPORTING - NEAR TIME - USE ETL PROCESS TO MOVE DATA
+
+Step 10 - Notice database does not have DEC 2015 data. 
+
+Step 11 - Create logging table.
+
+Step 12 - Create audit triggers.
+
+Step 13 - Create linked server to Azure SQL DB
+
+Step 14 - Create data for DEC 2015 on premise.
+
+Step 15 - Log table contains XML records
+
+Step 16 - Use .nodes() and .value() functions to parse XML.
+
+Step 17 - Use resulting query to move data to Azure SQL DB.
+          Performance via wifi in the basement was bad.
+
+
+
+
+
+
+
+
+
+
+
+
+

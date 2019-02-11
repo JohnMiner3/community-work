@@ -1,0 +1,106 @@
+CREATE & CONFIGURE AZURE VIRTUAL MACHINE
+
+Step A - Filter by SQL Server for images.
+
+Step B - Select SQL Server 2014 Enterprise using resource manager deployment model.
+
+Step C - Pick server name, admin user name, password, resource group and location.
+
+Step D - Select machine size (service level).  Big the machine, more the cost.
+
+Step E - Choose the defaults unless you are setting up a virtual network.
+
+Step F - Allow internet access, allow sql authentication, pick sql account and password,
+         pick port #, enable automatic patching, and enable automatic backups.
+
+Step G - Confirm choices and hit create.
+
+Step H - The classic VM wizard works fine but is depreciated.
+
+Step I - Download RDP connection information.
+
+Step J - Do not use the temporary drive.  This is for the page file and gets nuked on reboot.
+
+Step K - Use local admin account to log in.
+
+Step L - Tempdb is not configured.  This setting has the most impact along with fast file initialization,
+         min/max memory setting, optimize for ad-hoc work loads, and maxdop.
+
+Step M - Engine & Agent running under service accounts.  These can not be added to local policy settings.
+
+Step N - Create local account.  Give rights to directories.
+
+Step O - User SQL Server configuration manager to change the accounts.
+
+Step P - Enable fast file initialization.  Enable lock pages in memory.
+
+Step Q - Size the tempdb for 4 x 1 GB files.
+
+Step R - Set min/max memory.  Min should be obtainable.  We never want to give this up.
+         Max is our limit.
+
+Step S - Calculate the max dop setting.
+
+Step T - Enable optimize for add hoc work load.  Set the max dop setting.
+
+Step U - Set end point so that port 1433 is open in our cloud service.
+
+Step V - Add firewall rule for port 1433.
+
+Step W - It is very good that Microsoft is suggesting auto patches & auto backups.
+
+
+REPORTING - POINT IN TIME - LETS TRY THE DEPLOYMENT WIZARD
+
+Step 01 - Start the deployment wizard.
+
+Step 02 - Specify the on premise source server and database.
+
+Step 03 - Specify the Azure Credential.  This can be obtained from logging into Azure.
+
+Step 04 - Specify Azure Virtual Machine.  Specify SQL Server credentials for database.
+
+    Failure due to fact that new size (service level) is not supported.
+
+Step 05 - Our local, on premise system has SP1 applied.
+
+
+REPORTING - POINT IN TIME - LETS USE OLD FASHION BACKUP AND RESTORE
+
+Step 10 - Take a copy only backup.
+
+Step 11 - Modify local resource option on RDP connection.
+
+Step 12 - Copy over file from local C: to remote C:
+
+Step 13 - Start the restore process.
+
+Step 14 - Modify the target location if different that the SQL Server default data & log file directories.
+
+Step 15 - Validate the accounts.
+
+
+
+REPORTING - NEAR REAL TIME - USE WARM STANDBY
+
+Step 20 - Drop old database.  List & verify backup.  Restore backup with standby file holding
+          undo actions for transactions in flight.
+
+Step 21 - Validate there is no DEC 2015 data.
+
+Step 22 - Add data for DEC 2015.
+
+Step 23 - Perform transaction log backup.
+
+Step 24 - Copy over transaction log backup.
+
+Step 25 - Restore transaction log backup.
+
+Step 26 - Validate that DEC 2015 data has arrived on reporting server.
+
+
+
+
+
+
+
