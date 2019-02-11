@@ -1,0 +1,13 @@
+1 - Download adventure works 2014.
+
+https://msftdbprodsamples.codeplex.com/releases/view/125550
+
+
+2 - Restore the database.
+
+https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms
+
+
+3 - Make big adventure tables.
+
+http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx
