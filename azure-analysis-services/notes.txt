@@ -1,0 +1,23 @@
+Azure Analysis Services
+https://www.youtube.com/watch?v=44I48ufKhOs
+
+Online Documentation
+https://docs.microsoft.com/en-us/azure/analysis-services/
+
+Install SSDT
+https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017
+
+Samples on Git Hub
+https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks
+
+Tutorial
+https://docs.microsoft.com/en-us/azure/analysis-services/tutorials/aas-adventure-works-tutorial
+
+Azure DevOps - Deployment
+https://azure.microsoft.com/en-us/resources/videos/azure-analysis-services-automation/
+
+Russo book
+
+DAX Studio
+
+BISM Analyzer

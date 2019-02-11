@@ -1,0 +1,215 @@
+->
+-> Import Data - SQL Server
+-> 
+
+
+List of table to import.
+
+DimCustomer 
+DimDate
+DimGeography
+DimProduct
+DimProductCategory
+DimProductSubcategory
+FactInternetSales
+
+
+Use filtering to remove following fields by table.
+
+-- DimCustomer
+  SpanishEducation
+  FrenchEducation
+  SpanishOccupation
+  FrenchOccupation
+
+
+-- DimDate
+  DateKey
+  SpanishDayNameOfWeek
+  FrenchDayNameOfWeek
+  SpanishMonthName
+  FrenchMonthName
+
+
+-- DimGeography
+  SpanishCountryRegionName
+  FrenchCountryRegionName
+  IpAddressLocator
+
+
+-- DimProduct
+  SpanishProductName
+  FrenchProductName
+  FrenchDescription
+  ChineseDescription
+  ArabicDescription
+  HebrewDescription
+  ThaiDescription
+  GermanDescription
+  JapaneseDescription
+  TurkishDescription
+
+
+-- DimProductCategory
+  SpanishProductCategoryName
+  FrenchProductCategoryName
+
+
+-- DimProductSubcategory
+  SpanishProductSubcategoryName
+  FrenchProductSubcategoryName
+
+-- FactInternetSales
+  No columns removed.
+
+
+->
+-> Add calculated columns (3 tables, 5 calcs)
+-> 
+
+--  DimDate - Before Calendar Quarter
+
+  =RIGHT(" " & FORMAT([MonthNumberOfYear],"#0"), 2) & " - " & [EnglishMonthName] 
+  MonthCalendar
+
+
+  =RIGHT(" " & FORMAT([DayNumberOfWeek],"#0"), 2) & " - " & [EnglishDayNameOfWeek]  
+  DayOfWeek
+
+
+-- DimProduct - After ProductSubcategoryKey
+  
+  =RELATED('DimProductSubcategory'[EnglishProductSubcategoryName]) 
+  ProductSubcategoryName
+
+  =RELATED('DimProductSubcategory'[EnglishProductSubcategoryName]) 
+  ProductCategoryName
+
+
+-- FactInternetSales
+
+  =[SalesAmount]-[TotalProductCost]
+  Margin
+
+
+ 
+->
+-> Add measures
+-> 
+
+
+-- Dim Date
+
+  DaysCurrentQuarterToDate:=COUNTROWS( DATESQTD( 'DimDate'[Date]))
+
+  DaysInCurrentQuarter:=COUNTROWS( DATESBETWEEN( 'DimDate'[Date], STARTOFQUARTER( LASTDATE('DimDate'[Date])), ENDOFQUARTER('DimDate'[Date])))
+
+
+-- Fact Internet Sales
+
+  InternetOrderLinesCount:=COUNTA([SalesOrderLineNumber])
+  InternetTotalUnits:=SUM([OrderQuantity])
+  InternetTotalDiscountAmount:=SUM([DiscountAmount])
+  InternetTotalProductCost:=SUM([TotalProductCost])
+  InternetTotalSales:=SUM([SalesAmount])
+  InternetTotalMargin:=SUM([Margin])
+  InternetTotalTaxAmt:=SUM([TaxAmt])
+  InternetTotalFreight:=SUM([Freight])
+
+
+  InternetPreviousQuarterMargin:=CALCULATE([InternetTotalMargin],PREVIOUSQUARTER('DimDate'[Date]))
+  InternetCurrentQuarterMargin:=TOTALQTD([InternetTotalMargin],'DimDate'[Date])
+  InternetPreviousQuarterMarginProportionToQTD:=[InternetPreviousQuarterMargin]*([DaysCurrentQuarterToDate]/[DaysInCurrentQuarter])
+  InternetPreviousQuarterSales:=CALCULATE([InternetTotalSales],PREVIOUSQUARTER('DimDate'[Date]))
+  InternetCurrentQuarterSales:=TOTALQTD([InternetTotalSales],'DimDate'[Date])
+  InternetPreviousQuarterSalesProportionToQTD:=[InternetPreviousQuarterSales]*([DaysCurrentQuarterToDate]/[DaysInCurrentQuarter])
+
+
+->
+-> Add KPIs
+-> 
+
+
+-- Fact Internet Sales
+
+  InternetCurrentQuarterSalesPerformance :=DIVIDE([InternetCurrentQuarterSales]/[InternetPreviousQuarterSalesProportionToQTD],BLANK())
+  1.1 = value
+
+  InternetCurrentQuarterMarginPerformance :=IF([InternetPreviousQuarterMarginProportionToQTD]<>0,([InternetCurrentQuarterMargin]-[InternetPreviousQuarterMarginProportionToQTD])/[InternetPreviousQuarterMarginProportionToQTD],BLANK())
+  1.25 = value
+
+
+->
+-> Perspectives
+-> 
+
+  Model
+  Perspectives
+  =Internet Sales
+  All tables except customer
+
+
+
+->
+-> Hierarchy
+-> 
+
+  Model Designer
+
+  DimProduct - Category Hierarchy
+    - Category
+    - Subcategory
+    - Model
+    - Product
+
+
+  DimDate - Calendar
+
+    - CalendarYear
+    - CalendarSemester
+    - CalendarQuarter
+    - MonthCalendar
+    - DayNumberOfMonth
+
+  DimDate - Fiscal 
+
+    - FiscalYear
+    - FiscalSemester
+    - FiscalQuarter
+    - MonthCalendar
+    - DayNumberOfMonth
+
+  DimDate - Production
+
+    - CalendarYear
+    - WeekNumberOfYear
+    - DayNumberOfWeek
+
+
+->
+-> Partitions
+->
+
+  Select FactInternetSales
+  Table menu
+  Partition submenu
+
+
+  SELECT [dbo].[FactInternetSales].* FROM [dbo].[FactInternetSales]  WHERE (([OrderDate] >= N'2010-01-01 00:00:00') AND ([OrderDate] < N'2011-01-01 00:00:00'))
+
+
+->
+-> Roles
+->
+
+
+  Sales Manager – Read permission to all model objects and data.
+
+
+  Sales Analyst US – sales in the United States. DAX formula to define a Row Filter
+
+  =DimGeography[CountryRegionCode] = "US" 
+
+
+  Administrator – unlimited access and permissions to perform administrative tasks on the model database.
+
