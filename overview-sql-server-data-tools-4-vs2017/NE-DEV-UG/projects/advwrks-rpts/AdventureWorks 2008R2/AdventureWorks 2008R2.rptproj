@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>AdventureWorks2008R2.rds</Name>
+      <FullPath>AdventureWorks2008R2.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets>
+    <ProjectItem>
+      <Name>EmployeeSalesDetail2008R2.rsd</Name>
+      <FullPath>EmployeeSalesDetail2008R2.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmployeeSalesYearOverYear2008R2.rsd</Name>
+      <FullPath>EmployeeSalesYearOverYear2008R2.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EmpSalesMonth2008R2.rsd</Name>
+      <FullPath>EmpSalesMonth2008R2.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SalesEmployees2008R2.rsd</Name>
+      <FullPath>SalesEmployees2008R2.rsd</FullPath>
+    </ProjectItem>
+  </DataSets>
+  <Reports>
+    <ProjectItem>
+      <Name>AdventureWorks2008R2_Base.rdl</Name>
+      <FullPath>AdventureWorks2008R2_Base.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Customers_Near_Stores_2008R2.rdl</Name>
+      <FullPath>Customers_Near_Stores_2008R2.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Employee_Sales_Summary_2008R2.rdl</Name>
+      <FullPath>Employee_Sales_Summary_2008R2.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Employee_Sales_Summary_2008R2_EndLesson1.rdl</Name>
+      <FullPath>Employee_Sales_Summary_2008R2_EndLesson1.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Employee_Sales_Summary_2008R2_EndLesson2.rdl</Name>
+      <FullPath>Employee_Sales_Summary_2008R2_EndLesson2.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Employee_Sales_Summary_2008R2_EndLesson3.rdl</Name>
+      <FullPath>Employee_Sales_Summary_2008R2_EndLesson3.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales_by_Region_2008R2.rdl</Name>
+      <FullPath>Sales_by_Region_2008R2.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales_Order_Detail_2008R2.rdl</Name>
+      <FullPath>Sales_Order_Detail_2008R2.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Store_Contacts_2008R2.rdl</Name>
+      <FullPath>Store_Contacts_2008R2.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+        <TargetFolder>AdventureWorks 2008R2</TargetFolder>
+        <TargetDataSourceFolder>AdventureWorks 2008R2/Data Sources</TargetDataSourceFolder>
+        <TargetDatasetFolder>AdventureWorks 2008R2/Datasets</TargetDatasetFolder>
+        <TargetReportPartFolder>AdventureWorks 2008R2/Report Parts</TargetReportPartFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetFolder>AdventureWorks 2008R2</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+        <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+        <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Release</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Release</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetFolder>AdventureWorks 2008R2</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+        <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+        <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

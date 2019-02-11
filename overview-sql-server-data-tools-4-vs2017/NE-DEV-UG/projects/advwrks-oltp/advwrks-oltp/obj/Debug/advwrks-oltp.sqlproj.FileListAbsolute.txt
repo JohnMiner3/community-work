@@ -1,0 +1,9 @@
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\bin\Debug\advwrks-oltp.dacpac
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\bin\Debug\advwrks_oltp.dll
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\bin\Debug\advwrks_oltp.pdb
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\obj\Debug\advwrks_oltp.dll
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\obj\Debug\advwrks_oltp.pdb
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\obj\Debug\Model.xml
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\obj\Debug\refactor.xml
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\obj\Debug\postdeploy.sql
+C:\NE-DEV-UG\projects\advwrks-oltp\advwrks-oltp\obj\Debug\predeploy.sql

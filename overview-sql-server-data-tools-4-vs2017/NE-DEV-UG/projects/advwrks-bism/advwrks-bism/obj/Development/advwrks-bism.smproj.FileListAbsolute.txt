@@ -1,0 +1,6 @@
+C:\NE-DEV-UG\projects\advwrks-bism\advwrks-bism\bin\Model.asdatabase
+C:\NE-DEV-UG\projects\advwrks-bism\advwrks-bism\bin\Model.deploymenttargets
+C:\NE-DEV-UG\projects\advwrks-bism\advwrks-bism\bin\Model.deploymentoptions
+C:\NE-DEV-UG\projects\advwrks-bism\advwrks-bism\obj\Development\Model.asdatabase
+C:\NE-DEV-UG\projects\advwrks-bism\advwrks-bism\obj\Development\Model.deploymentoptions
+C:\NE-DEV-UG\projects\advwrks-bism\advwrks-bism\obj\Development\Model.deploymenttargets
