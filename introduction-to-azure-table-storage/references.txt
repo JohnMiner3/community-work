@@ -1,0 +1,17 @@
+powershell module
+https://blogs.technet.microsoft.com/paulomarques/2017/01/17/working-with-azure-storage-tables-from-powershell/
+
+storage explorer
+https://azure.microsoft.com/en-us/features/storage-explorer/
+
+table storage
+https://docs.microsoft.com/en-us/azure/cosmos-db/table-storage-how-to-use-powershell
+
+data model
+https://docs.microsoft.com/en-us/rest/api/storageservices/Understanding-the-Table-Service-Data-Model
+
+naggle
+https://blogs.msdn.microsoft.com/windowsazurestorage/2010/06/25/nagles-algorithm-is-not-friendly-towards-small-requests/
+
+X-box uses table storage
+https://customers.microsoft.com/en-us/story/xbox-improves-services-and-delivery-speed-by-playing-g

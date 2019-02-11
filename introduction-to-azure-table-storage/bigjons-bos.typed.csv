@@ -1,0 +1,5 @@
+PartitionKey,RowKey,Timestamp,Street,Street@type,LastName,LastName@type,City,City@type,State,State@type,FirstName,FirstName@type,ZipCode,ZipCode@type,Date,Date@type,Stock,Stock@type,CustomerId,CustomerId@type,Price,Price@type,Quantity,Quantity@type
+BigJons-BOS,C-002,2018-04-07T00:03:00.650Z,233 Needham Street,Edm.String,Wahlberg,Edm.String,Newton Upper Falls,Edm.String,MA,Edm.String,Mark,Edm.String,2464,Edm.String,,,,,,,,,,
+BigJons-BOS,P-004,2018-04-07T00:03:00.741Z,,,,,,,,,,,,,2/5/2018,Edm.String,MSFT,Edm.String,C-002,Edm.String,89.25,Edm.Double,250,Edm.Int32
+BigJons-BOS,P-005,2018-04-07T00:03:00.770Z,,,,,,,,,,,,,2/5/2018,Edm.String,AMZN,Edm.String,C-002,Edm.String,1385,Edm.Int32,100,Edm.Int32
+BigJons-BOS,P-006,2018-04-07T00:03:00.798Z,,,,,,,,,,,,,2/5/2018,Edm.String,PRNYX,Edm.String,C-002,Edm.String,11.48,Edm.Double,3400,Edm.Int32
