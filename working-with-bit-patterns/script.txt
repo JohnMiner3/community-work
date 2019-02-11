@@ -1,0 +1,137 @@
+/******************************************************
+ *
+ * Name:         working-with-bit-patterns.sql
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     08-10-2011
+ *     Purpose:  Show members how to store memory buffers
+ *               using the varbinary datatype.
+ * 
+ ******************************************************/
+
+--
+-- Create the database
+--
+ 
+-- Use the master database
+USE [master]
+GO
+
+-- Drop database if it exists
+IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'SNESSUG')
+DROP DATABASE SNESSUG
+GO
+
+-- Create very simple database
+CREATE DATABASE SNESSUG;
+GO
+
+-- 
+-- Create the table w/ data
+--
+
+-- Use the new database
+USE [SNESSUG]
+GO
+
+-- Create a new table
+CREATE TABLE [dbo].[tbl_Microprocessor](
+	[SerialNo] [int] NOT NULL,
+	[TestTime] [datetime] NOT NULL,
+	[Version] [float] NULL,
+	[Register] [varbinary](16) NULL,
+	[ModifiedBy] [varchar](40) NOT NULL,
+	[ModifiedDate] DATETIME NOT NULL,
+ CONSTRAINT [pkMicroprocessor] PRIMARY KEY NONCLUSTERED 
+(
+	[SerialNo] ASC,
+	[TestTime] ASC
+)
+) ON [PRIMARY]
+
+-- ADD ROW W/O BINARY DATA
+INSERT INTO [dbo].[tbl_Microprocessor] VALUES
+(1968, '2011-08-10', 1.007, 0x0, 'CPP PROGRAM', GETDATE())
+GO
+
+-- UPDATE WITH BINARY DATA
+UPDATE [dbo].[tbl_Microprocessor]
+SET REGISTER = 0x03A0202F41100819
+WHERE SerialNo = 1968
+GO
+
+-- SHOW THE ROW
+SELECT * FROM [dbo].[tbl_Microprocessor]
+G0
+
+--
+-- TEST SQL
+--
+
+-- BREAK INTO 4 BYTE INTEGERS (WORDS / REGISTERS)
+SELECT
+    SUBSTRING([REGISTER], (0 * 4) + 1, 4) AS X1000,
+    SUBSTRING([REGISTER], (1 * 4) + 1, 4) AS X1004
+FROM [dbo].[tbl_Microprocessor]
+
+--03 A0 20 2F 41 10 08 19
+
+
+-- BREAK INTO FIELDS
+SELECT
+    -- X1000
+    CAST(SUBSTRING([REGISTER], (0 * 4) + 4, 1) AS SMALLINT) AS XPOS,
+    CAST(SUBSTRING([REGISTER], (0 * 4) + 3, 1) AS SMALLINT) AS YPOS,
+    CAST(SUBSTRING([REGISTER], (0 * 4) + 2, 1) AS SMALLINT) & CAST(0x1F AS SMALLINT) AS W,
+    (CAST(SUBSTRING([REGISTER], (0 * 4) + 2, 1) AS SMALLINT) & CAST(0xE0 AS SMALLINT) ) / 32 +
+    (CAST(SUBSTRING([REGISTER], (0 * 4) + 1, 1) AS SMALLINT) & CAST(0x1F AS SMALLINT) ) * 8 AS SEQ,
+
+    -- X1004
+    CAST(SUBSTRING([REGISTER], (1 * 4) + 4, 1) AS SMALLINT) +
+   (CAST(SUBSTRING([REGISTER], (1 * 4) + 3, 1) AS SMALLINT) ) * 256 +
+   (CAST(SUBSTRING([REGISTER], (0 * 4) + 1, 1) AS SMALLINT) & CAST(0x88 AS SMALLINT) ) * 512 AS LOT
+    
+FROM [dbo].[tbl_Microprocessor]
+        
+
+-- 
+-- Create the final view
+--
+    
+CREATE VIEW [dbo].[vw_Microprocessor] AS
+SELECT
+	[SerialNo],
+	[TestTime],
+	[Version],
+	
+     -- BREAK INTO REGISTERS
+    SUBSTRING([REGISTER], (0 * 4) + 1, 4) AS X1000,
+    SUBSTRING([REGISTER], (1 * 4) + 1, 4) AS X1004,
+
+    -- X1000
+    CAST(SUBSTRING([REGISTER], (0 * 4) + 4, 1) AS SMALLINT) AS XPOS,
+    CAST(SUBSTRING([REGISTER], (0 * 4) + 3, 1) AS SMALLINT) AS YPOS,
+    CAST(SUBSTRING([REGISTER], (0 * 4) + 2, 1) AS SMALLINT) & CAST(0x1F AS SMALLINT) AS W,
+    (CAST(SUBSTRING([REGISTER], (0 * 4) + 2, 1) AS SMALLINT) & CAST(0xE0 AS SMALLINT) ) / 32 +
+    (CAST(SUBSTRING([REGISTER], (0 * 4) + 1, 1) AS SMALLINT) & CAST(0x1F AS SMALLINT) ) * 8 AS SEQ,
+
+    -- X1004
+    CAST(SUBSTRING([REGISTER], (1 * 4) + 4, 1) AS SMALLINT) +
+   (CAST(SUBSTRING([REGISTER], (1 * 4) + 3, 1) AS SMALLINT) ) * 256 +
+   (CAST(SUBSTRING([REGISTER], (0 * 4) + 1, 1) AS SMALLINT) & CAST(0x88 AS SMALLINT) ) * 512 AS LOT,
+   
+    CASE 
+      WHEN [Version] = 1.007 THEN 'BOND' 
+      ELSE 'JUST SOME JOE'
+    END AS Svc_Magic,
+
+	[ModifiedBy],
+	[ModifiedDate]
+    
+FROM [dbo].[tbl_Microprocessor];
+GO
+
+-- The results of our hard work
+SELECT * FROM dbo.vw_Microprocessor 
+GO
