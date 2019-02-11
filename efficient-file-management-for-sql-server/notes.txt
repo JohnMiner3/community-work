@@ -1,0 +1,9 @@
+https://www.simple-talk.com/sql/database-administration/optimizing-tempdb-configuration-with-sql-server-2012-extended-events/
+
+https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization/
+
+https://www.sqlskills.com/blogs/kimberly/8-steps-to-better-transaction-log-throughput/
+
+https://technet.microsoft.com/en-us/library/ms187087(v=sql.105).aspx
+
+https://www.sqlskills.com/blogs/paul/benchmarking-do-multiple-data-files-make-a-difference/

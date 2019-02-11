@@ -1,0 +1,63 @@
+/******************************************************
+ *
+ * Name:         instant-file-initialization.txt
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     06-07-2017
+ *     Purpose:  Show how this speeds up file operations.  
+ * 
+ ******************************************************/
+
+ --
+ -- Task 1
+ -- 
+
+-- Turn on trace flags
+DBCC TRACEON(3004,3605,-1) 
+GO 
+
+-- Create database
+CREATE DATABASE TestFileZero 
+GO 
+
+-- Read log file
+EXEC sp_readerrorlog 
+GO 
+
+
+--
+-- Task 2
+-- 
+
+-- Get time & io
+SET STATISTICS IO ON
+SET STATISTICS TIME ON
+
+-- Alter cause zeroing
+ALTER DATABASE TestFileZero   
+MODIFY FILE  
+(NAME = TestFileZero,  
+SIZE = 1GB);  
+GO
+
+-- Get time & io
+SET STATISTICS IO OFF
+SET STATISTICS TIME OFF
+
+-- Read log file
+EXEC sp_readerrorlog 
+GO 
+
+
+--
+-- Task 3
+-- 
+
+-- Drop database
+DROP DATABASE TestFileZero 
+GO 
+
+-- Turn off trace flags
+DBCC TRACEOFF(3004,3605,-1) 
+GO

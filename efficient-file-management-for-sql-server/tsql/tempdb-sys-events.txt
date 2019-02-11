@@ -1,0 +1,18 @@
+CREATE EVENT SESSION SQLskills_MonitorTempdbContention 
+ON SERVER 
+ADD EVENT sqlserver.latch_suspend_end 
+ADD TARGET package0.histogram(
+   SET filtering_event_name=N'sqlserver.latch_suspend_end',
+       source=N'page_id',
+       source_type=0),
+ADD TARGET package0.event_file(
+SET filename='C:\Temp\SQLskills_MonitorTempdbContention.xel',
+    max_file_size=100,
+    max_rollover_files=10,
+    increment=5) 
+WITH (STARTUP_STATE=ON); 
+
+
+
+
+

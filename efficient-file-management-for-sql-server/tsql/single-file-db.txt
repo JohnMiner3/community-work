@@ -1,0 +1,37 @@
+-- Start with master
+USE MASTER
+GO
+
+-- Create database with one data file
+CREATE DATABASE SingleFile
+ON PRIMARY 
+  ( NAME = N'SINGLE_PRI_DAT', FILENAME = N'F:\DATA\SINGLE.MDF' , SIZE = 64MB, FILEGROWTH = 64MB) 
+ LOG ON 
+  ( NAME = N'SINGLE_ALL_LOG', FILENAME = N'F:\LOG\SINGLE.LDF' , SIZE = 32MB, FILEGROWTH = 32MB)
+GO
+
+-- Just one file
+USE [SingleFile]
+GO
+
+-- Get time & io
+SET STATISTICS IO ON
+SET STATISTICS TIME ON
+
+-- Create a table
+CREATE TABLE BigRows (c1 INT IDENTITY, c2 CHAR (8000) DEFAULT 'a');
+GO
+
+-- Insert 10K rows
+INSERT INTO BigRows DEFAULT VALUES;
+GO 10000
+
+
+-- Get time & io
+SET STATISTICS IO OFF
+SET STATISTICS TIME OFF
+
+-- Drop the database
+/*
+DROP DATABASE SingleFile
+*/

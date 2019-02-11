@@ -1,0 +1,49 @@
+USE AdventureWorks2012;
+GO
+SET NOCOUNT ON;
+GO
+ 
+WHILE 1=1
+BEGIN
+ 
+IF OBJECT_ID('tempdb..#temp') IS NOT NULL
+BEGIN
+   DROP TABLE #temp;
+END
+ 
+CREATE TABLE #temp
+(  
+   ProductID INT PRIMARY KEY,
+   OrderQty INT, 
+   TotalDiscount MONEY,
+   LineTotal MONEY,
+   Filler NCHAR(500) DEFAULT('') NOT NULL
+);
+ 
+INSERT INTO #temp 
+   (ProductID, OrderQty, TotalDiscount, LineTotal)
+SELECT 
+   sod.ProductID,  
+   SUM(sod.OrderQty),
+   SUM(sod.LineTotal),
+   SUM(sod.OrderQty + sod.UnitPriceDiscount)
+FROM Sales.SalesOrderDetail AS sod
+GROUP BY ProductID;
+ 
+DECLARE 
+   @ProductNumber NVARCHAR(25), 
+   @Name NVARCHAR(50), 
+   @TotalQty INT,
+   @SalesTotal MONEY,
+   @TotalDiscount MONEY;
+ 
+SELECT 
+   @ProductNumber = p.ProductNumber, 
+   @Name = p.Name, 
+   @TotalQty = t1.OrderQty,
+   @SalesTotal = t1.LineTotal,
+   @TotalDiscount = t1.TotalDiscount
+FROM Production.Product AS p
+JOIN #temp AS t1 ON p.ProductID = t1.ProductID;
+ 
+END 

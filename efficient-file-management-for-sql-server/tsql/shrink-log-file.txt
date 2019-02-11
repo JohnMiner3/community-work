@@ -1,0 +1,30 @@
+-- Try to shrink the log
+DBCC SHRINKFILE(MATH_ALL_LOG, 32);
+GO
+
+-- Make sure there are not open transactions
+DBCC OPENTRAN;
+GO
+
+-- Size of virtual log files
+DBCC LOGINFO;
+GO
+
+-- Create temp table and move pointer
+DECLARE @VAR_CNT INT;
+SELECT @VAR_CNT = 1;
+ 
+CREATE TABLE [dbo].[TMP_LOGPTR] (MYVAL INT);
+INSERT INTO [dbo].[TMP_LOGPTR] VALUES (@VAR_CNT);
+ 
+WHILE (@VAR_CNT  &lt; 5000)
+BEGIN
+    UPDATE [dbo].[TMP_LOGPTR] SET MYVAL = MYVAL + 1;
+    SET @VAR_CNT = @VAR_CNT + 1
+END
+ 
+DROP TABLE [dbo].[TMP_LOGPTR]
+GO
+
+-- Backup the log file
+BACKUP LOG [MATH] TO DISK = 'C:\MSSQL\BACKUP\MATH.BAK';
