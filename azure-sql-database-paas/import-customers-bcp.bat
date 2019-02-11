@@ -1,0 +1,1 @@
+BCP DAILY.CUSTOMERS IN "C:\ASD\CUSTOMERS.TXT" -S "o6s7przin7.database.windows.net,1433" -U jminer -P rOcqcQJcLY3RvCoq -d JDBANK -f "C:\ASD\CUSTOMERS.FMT" -e "C:\ASD\CUSTOMERS.ERR"

@@ -1,0 +1,13 @@
+9.0
+9
+1       SQLCHAR       0       7        "\t"     1     cus_id        ""
+2       SQLCHAR       0       40       "\t"     2     cus_lname     ""
+3       SQLCHAR       0       40       "\t"     3     cus_fname     ""
+4       SQLCHAR       0       12       "\t"     4     cus_address   ""
+5       SQLCHAR       0       40       "\t"     5     cus_city      ""
+6       SQLCHAR       0       20       "\t"     6     cus_state     ""
+7       SQLCHAR       0       5        "\t"     7     cus_zip       ""
+8       SQLCHAR       0       10       "\t"     8     cus_phone     ""
+9       SQLCHAR       0       12       "\r\n"   9     cus_date_str  ""
+
+
