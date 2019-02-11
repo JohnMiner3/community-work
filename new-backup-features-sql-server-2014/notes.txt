@@ -1,0 +1,55 @@
+1 - Must have a Azure account to run the BACKUP TO URL.
+
+2 - Must have the following directory structure.
+
+C:\MSQL
+C:\MSSQL\DATA
+C:\MSSQL\LOG
+C:\MSSQL\BACKUP
+C:\MSSQL\KEYS
+
+You must have AdventureWorks2012 installed in those directories.
+
+3 - Here is a listing of the files that are part of the project.
+
+Azure-Backups-N-Encryption.sql
+    - TSQL demonstration of BACKUP TO URL / RESTORE FROM URL
+    - TSQL demonstration of BACKUP WITH ENCRYPTION
+
+Break-Blob-Lease.ps1
+    - Modified codeplex PowerShell script to free a leased blob.
+    - Failed backups result in these type of blobs (can not delete)
+
+MaintenanceSolution.ps1
+    - Ola Hallegren scripts that have these new features.
+
+Make-Azure-Storage.ps1
+    - PowerShell script to create storage account and container for backups.
+
+Power-BI-Desktop-Designer.pptx
+    - The actual presentation.
+
+
+4 - Here are the download links and/or BOL references for what was covered.
+
+
+- Article on Azure Module
+
+https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/
+
+- Azure Storage explorer
+
+http://azurestorageexplorer.codeplex.com/
+
+- CloudBerry Explorer for Azure
+
+http://www.cloudberrylab.com/azure-tools.aspx?utm_source=bing&utm_medium=cpc&utm_campaign=6.%20CloudBerry%20Branded%20%5BReg%201,%20NA%2BUK%2BBra%5D&utm_term=%2Bcloudberry%20%2Bazure
+
+- MSDN - BACKUP TO URL
+
+https://msdn.microsoft.com/en-us/library/dn435916.aspx
+
+- MSDN - BACKUP WITH ENCRYPTION
+
+https://msdn.microsoft.com/en-us/library/dn449489.aspx
+
