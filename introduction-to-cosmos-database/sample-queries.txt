@@ -1,0 +1,73 @@
+--
+--  Stock examples
+--
+
+
+-- Microsoft Stock - Jan, Feb, Mar - 2013
+SELECT * FROM c where c.symbol = "MSFT" and c.date >= "2013-01-01" and c.date <= "2013-04-01"
+
+-- Simple aggregates - does not work
+SELECT 
+    c.symbol,
+    MIN(c.open) as min_open,
+    MAX(c.close) as max_close,
+    AVG((c.open+c.close)/2) as avg_price
+FROM c 
+WHERE c.symbol = "MSFT" and c.date >= "2013-01-01" and c.date <= "2013-04-01"
+
+-- Simple aggregates - works
+SELECT 
+    "2013 - Quarter 1" as stat_desc,
+    MIN(c.symbol) as msft_symbol,
+    MIN(c.open) as min_open,
+    MAX(c.close) as max_close,
+    AVG((c.open+c.close)/2) as avg_price
+FROM c 
+WHERE c.partkey = "MSFT-STOCKS" and c.date >= "2013-01-01" and c.date <= "2013-04-01"
+
+-- Microsoft Stock - 2017
+SELECT COUNT(1) FROM c where c.partkey = "MSFT-STOCKS" and c.date >= "2017-01-01" and c.date <= "2018-01-01"
+
+
+-- Joins between documents not supported
+SELECT 
+    "2013 - Quarter 1" as stat_desc,
+    MIN(c.symbol) as msft_symbol,
+    MIN(c.open) as min_open,
+    MAX(c.close) as max_close,
+    AVG((c.open+c.close)/2) as avg_price
+FROM c 
+WHERE c.partkey = "MSFT-STOCKS" and c.date >= "2013-01-01" and c.date <= "2013-04-01"
+
+UNION
+
+SELECT 
+    "2013 - Quarter 2" as stat_desc,
+    MIN(c.symbol) as msft_symbol,
+    MIN(c.open) as min_open,
+    MAX(c.close) as max_close,
+    AVG((c.open+c.close)/2) as avg_price
+FROM c 
+WHERE c.partkey = "MSFT-STOCKS" and c.date >= "2013-04-01" and c.date <= "2013-06-01"
+
+
+--
+--  Resturante sample
+--
+
+-- Add 2 types of docs
+
+-- Show just retaurants
+SELECT * FROM c WHERE c.doctype = "RESTAURANTS"
+
+-- Inner Joins are supported
+SELECT r.docid, r.name, g.date, g.score FROM restaurants r join g in r.grades WHERE r.doctype = "RESTAURANTS"
+
+
+--
+-- Power BI Sample
+--
+
+SELECT *
+FROM c 
+WHERE c.partkey = "MSFT-STOCKS" and c.date >= "2017-01-01" and c.date <= "2018-01-01"

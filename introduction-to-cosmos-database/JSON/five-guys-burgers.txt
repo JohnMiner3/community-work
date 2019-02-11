@@ -1,0 +1,30 @@
+{
+  "moddate":  "2018-04-01",
+  "moduser":  "system",
+  "docid":  "R-002",
+  "doctype":  "RESTAURANTS",
+
+  "address": {
+     "building": "Bldg #7",
+     "street": "300 Quaker Ln",
+     "city": "Warwick",
+     "state": "RI",
+     "zipcode": "02886"
+  },
+
+  "Location": {
+  "type": "Point",
+  "coordinates": [41.6868,-71.4999]
+  },
+
+  "name": "Five Guys Burgers",
+  "cuisine": "Steaks",
+  "grades": [
+     { "date": "2018-04-01", "grade": "B", "score": 7 },
+     { "date": "2018-04-02", "grade": "A", "score": 10 },
+     { "date": "2018-04-03", "grade": "C", "score": 5 },
+     { "date": "2018-04-04", "grade": "B", "score": 7 },
+     { "date": "2018-04-05", "grade": "A", "score": 10 }
+  ]
+
+}

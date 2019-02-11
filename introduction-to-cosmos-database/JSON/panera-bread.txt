@@ -1,0 +1,30 @@
+{
+  "moddate":  "2018-04-01",
+  "moduser":  "system",
+  "docid":  "R-003",
+  "doctype":  "RESTAURANTS",
+
+  "address": {
+     "building": "Bldg #7",
+     "street": "1000 Division St",
+     "city": "East Greenwich",
+     "state": "RI",
+     "zipcode": "02818"
+  },
+
+  "Location": {
+  "type": "Point",
+  "coordinates": [41.6619,-71.4950]
+  },
+
+  "name": "Panerea Bread",
+  "cuisine": "Bread, Sanwiches, Salads, Soups, Pastry",
+  "grades": [
+     { "date": "2018-04-01", "grade": "B", "score": 7 },
+     { "date": "2018-04-02", "grade": "A", "score": 10 },
+     { "date": "2018-04-03", "grade": "A", "score": 10 },
+     { "date": "2018-04-04", "grade": "B", "score": 7 },
+     { "date": "2018-04-05", "grade": "A", "score": 10 }
+  ]
+
+}

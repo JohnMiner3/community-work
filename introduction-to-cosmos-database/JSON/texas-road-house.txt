@@ -1,0 +1,31 @@
+{
+  "moddate":  "2018-04-01",
+  "moduser":  "system",
+  "docid":  "R-001",
+  "doctype":  "RESTAURANTS",
+
+  "address": {
+     "building": "Bldg. 1",
+     "street": "1200 Quaker Ln",
+     "city": "East Greenwich",
+     "state": "RI",
+     "zipcode": "02818"
+  },
+
+  "Location": {
+  "type": "Point",
+  "coordinates": [41.6639,-71.4958]
+  },
+
+
+  "name": "Texas Road House",
+  "cuisine": "Steaks",
+  "grades": [
+     { "date": "2018-04-01", "grade": "F", "score": 1 },
+     { "date": "2018-04-02", "grade": "D", "score": 3 },
+     { "date": "2018-04-03", "grade": "C", "score": 5 },
+     { "date": "2018-04-04", "grade": "B", "score": 7 },
+     { "date": "2018-04-05", "grade": "A", "score": 10 }
+  ]
+
+}
