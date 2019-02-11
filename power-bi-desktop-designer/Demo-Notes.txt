@@ -1,0 +1,184 @@
+All the demos have many steps.
+
+To stream line the process, I broke all the steps into backups of the *.pbix file at a point in time.
+
+The final project is in the root directory with this file.
+
+
+
+-- Example 1 --
+
+Load the following tables from MS Access.
+
+Customers
+Employees
+Products
+Orders
+Order Details
+Order Status
+Order Details Status
+
+
+
+-- Example 2 --
+
+Remove all relationships.
+
+Manage the relationships to point to the correct columns.
+
+
+
+-- Example 3 - 
+
+Remove the following fields from the data model.
+
+[Customers]
+	Email Address
+	Business Phone
+	Home Phone
+	Mobile Phone
+	Fax Number
+	Zip Code
+	Web Page
+	Notes
+
+[Order Details]
+	Date Allocated
+	Purchase Order Id
+	Iventory Id
+
+[Orders]
+	Shipper Id
+	Ship Zip
+	Taxes 
+	Notes
+	Tax Rate
+	Tax Status
+
+[Employees]
+	Email
+	Business Phone
+	Home Phone
+	Mobile Phone
+	Fax Number
+	Zip
+	Web Page
+	Notes
+
+[Products]
+	Reorder level
+	Target Level
+	Min Reorder Qty
+
+
+
+-- Example 4 --
+
+[WEB] 
+
+Add US state population & growth data
+
+https://en.wikipedia.org/wiki/List_of_U.S._states_by_population_growth_rate
+
+Table 0
+
+
+[WEB]
+Add state name to abreviation data
+
+https://en.wikipedia.org/wiki/List_of_U.S._state_abbreviations
+
+Edit query
+
+
+Keep Regioin Name, Codes ISO, Codes ANSI
+
+Remove top 3 rows
+
+Remove bottom 26 rows
+
+Rename as State Abbreviations
+
+
+[TXT]
+
+Add dates table from CSV down load.  www.powerpivotfaq.com
+
+
+
+-- Example 5 --
+
+Remove State table(s) from report view.
+
+
+[Customers Table]
+
+StatePopulation = RELATED('State Population'[2014 estimate])
+
+StateGrowth = RELATED('State Population'[Change])
+
+
+[Products Table]
+
+Rounding issue with DAX?  Both are saved as currency.
+
+DaxProfit = ROUND(Products[List Price], 2) - ROUND(Products[Standard Cost], 2)
+
+MProfit = [List Price] - [Standard Cost]
+
+
+[Order Details Table]
+
+TotalSales = 'Order Details'[Quantity] * 'Order Details'[Unit Price]
+
+Unit Profit = RELATED(Products[MProfit])
+
+TotalProfit = 'Order Details'[Quantity] * 'Order Details'[Unit Profit]
+
+Cummlative Quantity = CALCULATE (
+    SUM ( 'Order Details'[Quantity] ),
+    FILTER (
+        ALL (Dates[FullDate]),
+        Dates[FullDate] <= MAX(Orders[Order Date])
+    )
+)
+
+
+
+-- Example 6
+
+[Dashboard Page 1]
+
+Add Date.[Month Short Name] as Slicer
+
+Create histogram for totals sales & total profit by month
+
+Create tree map for totals sales by category
+
+Create bar chart of sales by employee last name
+
+Create total sales by State/Province
+
+Create two cards (total sales & total profit)
+
+Show how to order first graph by month number
+
+
+[Dashboard Page 2]
+
+Create second dashboard page
+
+Month short name slicer
+
+Quantity versus Cummlative Quantity
+
+
+Add Total sales by State as horizontal bar graph
+
+Add Total Population by state as a horizontal bar graph
+
+
+
+
+
+
