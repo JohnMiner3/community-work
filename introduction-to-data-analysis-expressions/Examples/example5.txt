@@ -1,0 +1,11 @@
+Pulled data from website
+
+   https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions
+
+Calculated Columns
+
+  Test - Pats In Bowl - Simple OR statement
+
+  Test - Wins In 2010s - Simple AND statement
+
+  Test - North East States - Two IN statements joined by an OR

@@ -1,0 +1,14 @@
+1 - Calculated column - takes up space.  This is called the row context.
+
+NetSale = Sales[Quantity] * Sales[Unit Price]
+
+
+2 - Measure - sum up the column data.  Based on calculated column.
+
+Total Sales Column = SUM(Sales[NetSale])
+
+
+3 - Iterator - for each row, calculate expression, then sum.  This is called the fitler
+context.  Based on how the application is filtering the data.
+
+Total Sales Iterator = SUMX ( Sales, Sales[Quantity] * Sales[Unit Price] )

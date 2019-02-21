@@ -1,0 +1,18 @@
+Test string function in DAX expressions for calculated columns.
+
+Data Columns
+
+  column no - an auto increment number
+
+  column humor - 250 quotes from a random site on the internet.
+
+
+Calculated Columns
+
+  TestTxtLength - what is the length of the quote?
+
+  TestTxtUpper - convert the quote to upper case.
+
+  TestTxFind - find a word occurence in a quote.
+
+  TestTxt2ndWord - find the second word of a quote using a combination of function calls.

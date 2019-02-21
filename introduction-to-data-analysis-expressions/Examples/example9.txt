@@ -1,0 +1,5 @@
+This example was taken from the files associated with "the definitive guide to DAX"
+by Marco Russo and Alberto Ferrari.
+
+The main point to cover is the CALCULATE function that can be used to create
+a different filter context.

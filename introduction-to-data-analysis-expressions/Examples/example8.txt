@@ -1,0 +1,27 @@
+Measures - Counts
+
+	Distinct Products
+	Distinct Brands
+	Distinct Sizes
+
+Filter By
+	
+	Brand (drop down)
+
+
+Raw Data - Sales
+	
+	Year
+	Max Unit Price
+	Max Unit Cost
+	Max Unit Discount
+
+
+Measures - Averages
+	Average Profit
+
+Bar Chart
+	Calendar Year vs Unit Profit
+
+Filter
+	Brand

@@ -1,0 +1,13 @@
+Use custom function.
+
+https://blog.gbrueckl.at/2018/01/storing-images-powerbi-analysis-services-data-models/
+
+Converts image to base 64 binary data.
+
+There is one issue with this solution.  
+
+We know that both the losing team and winning team have a logo.
+
+How can we get the losing teams logo?
+
+

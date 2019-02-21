@@ -1,0 +1,16 @@
+Pulled data from website
+
+   https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions
+
+Alot of cleanup using M-Language
+
+Want to work with the Date field.
+
+Calculated Columns
+
+  TestDateDecade - what decade did the game happen in?
+
+  TestDateWkNo - what week in the year?
+
+  TestDateDayOfYear - what day in the year?
+

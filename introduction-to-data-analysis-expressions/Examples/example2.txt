@@ -1,0 +1,38 @@
+Test math functions in DAX expressions for calculated columns.
+
+Data Columns
+
+  Integers
+	column a = 1 to 5
+	column b = a * a
+	column c = a * a * a
+
+  Float
+	column d = 1.1 to 5.5
+	column e = d * 2
+	column f = d * 3
+
+  Currency
+	column g = us currency (1 .. 20)
+	column h = g + 0.50
+	column i = h * 5
+
+
+Calculated Columns
+
+  Test Integer Expressions
+	TestIntAdd
+	TestIntSub
+	TestIntPrd
+	TestIntDiv
+
+
+  Test Float Expressions
+	TestFloatCeil
+	TestFloatFloor
+	TestFloat2Int
+	TestFloatArea
+
+  Test Currency Expressions
+	TestCurPctChg
+        TestCurDiff	
