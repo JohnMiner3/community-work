@@ -1,0 +1,41 @@
+Announcement of support in desktop / service
+
+https://powerbi.microsoft.com/en-us/blog/tag/python/
+
+
+How to use python scripts in Power BI Desktop
+
+https://docs.microsoft.com/en-us/power-bi/desktop-python-scripts
+
+
+Install anaconda
+
+https://www.anaconda.com/
+
+Install Power BI
+
+https://powerbi.microsoft.com/en-us/desktop/
+
+
+
+Reference 1
+
+https://python-graph-gallery.com/
+
+Reference 2
+
+https://www.machinelearningplus.com/plots/top-50-matplotlib-visualizations-the-master-plots-python/
+
+Reference 3
+
+https://www.data-to-viz.com/
+
+Iris Dataset
+
+https://github.com/mwaskom/seaborn-data/blob/master/iris.csv
+
+
+Tip Dataset
+
+https://github.com/mwaskom/seaborn-data/blob/master/tips.csv
+
