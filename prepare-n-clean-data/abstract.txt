@@ -1,0 +1,10 @@
+Over eight percent of a data scientist job is spent on preparing and cleaning data for a machine learning model. 
+
+Like any process, there are a series of steps that take place. 
+
+These steps include loading raw data, removing outliers, replacing or deleting missing values, 
+encoding categorical features, scaling numeric features, and saving the dataset for future use. 
+
+One might even engineer a new feature to get a better estimate on the label (y) given the features (x). 
+
+At the end of the class, you will have a variety of code snippets that you can use right away.

@@ -1,0 +1,15 @@
+Company,Employee,FiscalYear,Headquarters,MarketCap,RankByRevenue,Revenue,Country
+Alphabet,80110,2017,Mountain View~ CA~ US,796,5,111,US
+Amazon,541900,2017,Seattle~ WA~ US,903.23,3,177,US
+Apple,123000,2017,Cupertino~ CA~ US,913.22,1,229.2,US
+Cisco,73711,2016,San Jose~ CA~ US,170,14,48.1,US
+Dell,145000,2018,Round Rock~ TX~ US,0,10,79,US
+Foxconn,1300000,2017,New Taipei City~ Taiwan,66,4,158.2,TW
+Hitachi,303887,2016,Tokyo~ Japan,32,8,84.5,JP
+Huawei,180000,2017,Shenzhen~ China,0,6,92.5,CN
+IBM,386558,2016,Armonk~ NY~ US,145,9,79.9,US
+Intel,106000,2016,Santa Clara~ CA~ US,163,13,59.3,US
+Microsoft,124000,2017,Redmond~ WA~ US,700,7,89.9,US
+Panasonic,257533,2016,Osaka~ Japan,33,12,67.7,JP
+Samsung,308745,2017,Suwon~ South Korea,342,2,223.5,KR
+Sony,128400,2017,Tokyo~ Japan,51,11,77,JP
