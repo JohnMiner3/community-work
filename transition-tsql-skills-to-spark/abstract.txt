@@ -1,0 +1,9 @@
+Transitioning your T-SQL skills to Spark SQL
+
+This presentation is a crash course covering the basics of Spark SQL for the Microsoft T-SQL Server developer.
+
+Azure Databricks is a managed service which provides the latest versions of Apache Spark based upon open source libraries. Spin up clusters and build quickly in a fully managed environment with the global scale and availability of Microsoft Azure.
+
+The Adventure Works database is provided as raw delimited files to transform. We will go over read and writing files to popular file formats using PySpark, a Python-based wrapper for the Scala API. The real power of PySpark is the ability to read a file into a data frame and abstract the contents of the file as a temporary view during processing. Optionally, the raw data files can be presented as tables in the hive catalog. Once this abstraction is complete, all the SQL skills that you have obtained over the years can be used to transform the views/tables in the hive catalog into refined data in the data lake.
+
+Two third of the presentation will be focused on the mechanics to transform raw data files into hive objects. The rest of the presentation will be spent on exploring Spark SQL constructs and functions. At the end of the presentation, the SQL Server developer will be able to join the Big Data Engineering Team as a functional asset.
