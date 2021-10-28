@@ -1,0 +1,8 @@
+Url:
+  https://adb-5199347790438756.16.azuredatabricks.net/
+
+User:
+  dilbert@craftydba.com
+
+Password:
+  for your environment
