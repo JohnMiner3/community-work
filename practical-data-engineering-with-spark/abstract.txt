@@ -1,0 +1,11 @@
+Practical Data Engineering with Spark
+
+This presentation is an introductory course for the SQL developer who wants to get up to speed with Spark. 
+
+Azure Databricks is a managed service which provides the latest versions of Apache Spark based upon open source libraries. Spin up clusters and build quickly in a fully managed environment with the global scale and availability of Microsoft Azure.
+
+The course will go over how to read and write popular file formats using PySpark, a Python-based wrapper for the Scala API. The real power of PySpark is the ability to read a file into a data frame and abstract the contents of the file as a temporary view for processing.  Once this abstraction is complete, all the SQL skills that you have obtained over the years can be used to transform raw data into refined data in the data lake.
+
+One half of the presentation will be focused on the techniques to read and write files effectively. The rest of the presentation will be spent on transforming data using Spark SQL statememts and functions. 
+
+At the end of the presentation, the SQL developer will be able to join the Big Data Engineering Team as a functional asset.

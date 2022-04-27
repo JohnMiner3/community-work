@@ -1,0 +1,25 @@
+1 - Local versus remote storage
+
+2 - Managing folders and files
+
+3 - Reading and writing data
+
+4 - Using schemas for faster reading
+
+5 - Exploring different file types
+
+6 - Exposing files as temporary views
+
+7 - Using Spark SQL to join and/or transform files
+
+8 - Exploring advance Spark SQL statements
+    (cte, windowing, regex, explode, collect)
+
+9 - Defining basic data load patterns
+    (full vs incremental)
+
+10 - Providing ACID properties with delta files 
+
+11 - Scheduling jobs for repeatable actions
+
+12 - Exposing the delta files using hive tables
