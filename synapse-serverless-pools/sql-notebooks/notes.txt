@@ -1,0 +1,5 @@
+Sample code 1 + 2 requires linked service setup using the Synapase Managed Identity.
+
+Additionaly, your AAD user might need RBAC and ACL security.
+
+The last samples use a SAS key which you need to change for your environment.
