@@ -1,17 +1,20 @@
 --
--- Name:         nb-create-security-layer
+-- Name:         nb-create-sqldb-security-layer
 --
 
 --
 -- Design Phase:
 --     Author:   John Miner
 --     Date:     09-15-2022
---     Purpose:  First try at serverless SQL pools
+--     Purpose:  Give rights to sql database and single named credential to dilbert.  
+--               The sqladminacct already has rights.
 --
 
--- Notes:  Must use database scoped credential with external data source.
---         The SAS key must have both read and list privledges.
-
+--
+-- SQL Database Notes:  
+--         Must use database scoped credential with external data source.
+--         The SAS key (defined at container level) must have both read and list privledges.
+--         
 
 --
 -- 1 - create a login
@@ -22,7 +25,7 @@ USE master;
 GO
 
 -- Drop login
--- DROP LOGIN [Dogbert]
+DROP LOGIN [Dogbert]
 
 -- Create login
 CREATE LOGIN [Dogbert] WITH PASSWORD = 'sQer9wEBVGZjQWjd', DEFAULT_DATABASE = mssqltips;
@@ -41,11 +44,12 @@ GO
 USE mssqltips;
 GO
 
+-- What are the principles
 SELECT * FROM sys.database_principals where (type='S' or type = 'U')
-
+GO
 
 -- Drop user
---DROP USER [Dogbert];
+DROP USER [Dogbert];
 GO
 
 -- Create user
@@ -60,6 +64,7 @@ GO
 -- Give rights to credential
 GRANT CONTROL ON DATABASE SCOPED CREDENTIAL :: [LakeCredential] TO [Dogbert];
 GO
+
 
 --
 -- 3 - show user permissions
@@ -76,8 +81,5 @@ GO
 -- Show permissions
 SELECT * FROM fn_my_permissions(null, 'database'); 
 GO
-
-
-
 
 
