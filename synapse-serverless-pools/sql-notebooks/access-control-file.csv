@@ -1,0 +1,12 @@
+table_name,file_name
+saleslt.dim_currency,DimCurrency
+saleslt.dim_customer,DimCustomer
+saleslt.dim_date,DimDate
+saleslt.dim_geography,DimGeography
+saleslt.dim_product,DimProduct
+saleslt.dim_product_category,DimProductCategory
+saleslt.dim_product_subcategory,DimProductSubcategory
+saleslt.dim_sales_reason,DimSalesReason
+saleslt.dim_sales_territory,DimSalesTerritory
+saleslt.fact_internet_sales,FactInternetSales
+saleslt.fact_internet_sales_reason,FactInternetSalesReason
