@@ -1,0 +1,308 @@
+/******************************************************
+ *
+ * Name:         04 - Create From Parquet Files
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     01-01-2023
+ *     Purpose:  Create the tables for the 
+ *               adventure works (saleslt) files.
+ * 
+ ******************************************************/
+
+
+-- Drop the database and all objects
+DROP SCHEMA IF EXISTS ADVWRKS1 CASCADE;
+
+-- Create the database
+CREATE SCHEMA IF NOT EXISTS ADVWRKS1 COMMENT 'This is the recreation of the adventure works database.';
+  
+-- Describe the schema
+DESCRIBE SCHEMA ADVWRKS1;
+
+-- Extended properties
+ALTER SCHEMA ADVWRKS1 SET DBPROPERTIES ('Create-By' = 'John Miner', 'Create-Date' = '01/01/2023');
+
+-- Show extended properties
+DESCRIBE SCHEMA EXTENDED ADVWRKS1;
+ 
+ 
+-- Use correct schema
+USE ADVWRKS1;
+
+
+-- 
+-- 1 - Currency - Dataset
+-- 
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_CURRENCY;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_CURRENCY
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimCurrency.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_CURRENCY
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimCurrency/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_CURRENCY;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_CURRENCY;
+
+
+-- 
+-- 2 - Customer - Dataset
+-- 
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_CUSTOMER;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_CUSTOMER
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimCustomer.delta';
+
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_CUSTOMER
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimCustomer/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_CUSTOMER;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_CUSTOMER;
+
+
+-- 
+-- 3 - Date - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_DATE;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_DATE
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimDate.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_DATE
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimDate/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_DATE;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_DATE;
+
+
+
+-- 
+-- 4 - Geography - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_GEOGRAPHY;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_GEOGRAPHY
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimGeography.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_GEOGRAPHY
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimGeography/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_GEOGRAPHY;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_GEOGRAPHY;
+
+
+-- 
+-- 5 - Product - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_PRODUCT;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_PRODUCT
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimProduct.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_PRODUCT
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimProduct/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_PRODUCT;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_PRODUCT;
+
+
+-- 
+-- 6 - Product Category - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_PRODUCT_CATEGORY;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_PRODUCT_CATEGORY
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimProductCategory.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_PRODUCT_CATEGORY
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimProductCategory/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_PRODUCT_CATEGORY;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_PRODUCT_CATEGORY;
+
+
+-- 
+-- 7 - Product SubCategory - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_PRODUCT_SUBCATEGORY;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_PRODUCT_SUBCATEGORY
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimProductSubcategory.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_PRODUCT_SUBCATEGORY
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimProductSubcategory/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_PRODUCT_SUBCATEGORY;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_PRODUCT_SUBCATEGORY;
+
+
+-- 
+-- 8 - Sales Reason - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_SALES_REASON;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_SALES_REASON
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimProductSalesReason.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_SALES_REASON
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimSalesReason/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_SALES_REASON;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_SALES_REASON;
+
+
+-- 
+-- 9 - Sales Territory - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.DIM_SALES_TERRITORY;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.DIM_SALES_TERRITORY
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/DimProductSalesTerritory.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.DIM_SALES_TERRITORY
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/DimSalesTerritory/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.DIM_SALES_TERRITORY;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.DIM_SALES_TERRITORY;
+
+
+-- 
+-- 10 - Internet Sales - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.FACT_INTERNET_SALES;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.FACT_INTERNET_SALES
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/FactInternetSales.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.FACT_INTERNET_SALES
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/FactInternetSales/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.FACT_INTERNET_SALES;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.FACT_INTERNET_SALES;
+
+
+-- 
+-- 11 - Internet Sales Reason - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS1.FACT_INTERNET_SALES_REASON;
+
+-- create table (no schema)
+CREATE TABLE IF NOT EXISTS ADVWRKS1.FACT_INTERNET_SALES_REASON
+USING DELTA
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/silver/saleslt/FactInternetSalesReason.delta';
+
+-- copy into (merge schema)
+COPY INTO ADVWRKS1.FACT_INTERNET_SALES_REASON
+FROM 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/parquet-files/FactInternetSalesReason/'
+FILEFORMAT = PARQUET
+COPY_OPTIONS ('mergeSchema' = 'true');
+
+-- show - Dataset
+SELECT * FROM ADVWRKS1.FACT_INTERNET_SALES_REASON;
+
+-- show table
+DESCRIBE TABLE ADVWRKS1.FACT_INTERNET_SALES_REASON;

@@ -1,0 +1,453 @@
+/******************************************************
+ *
+ * Name:         03 - Create From CSV files
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     01-01-2023
+ *     Purpose:  Create the tables for the 
+ *               adventure works (saleslt) csv files.
+ * 
+ ******************************************************/
+
+
+-- Drop the database and all objects
+DROP SCHEMA IF EXISTS ADVWRKS2 CASCADE;
+
+-- Create the database
+CREATE SCHEMA IF NOT EXISTS ADVWRKS2 COMMENT 'This is the recreation of the adventure works database.';
+  
+-- Extended properties
+ALTER SCHEMA ADVWRKS2 SET DBPROPERTIES ('Create-By' = 'John Miner', 'Create-Date' = '01/01/2023');
+
+-- Use correct schema
+USE ADVWRKS2;
+
+
+-- 
+-- 1 - Currency - Dataset
+-- 
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_CURRENCY;
+
+-- create external table
+CREATE TABLE ADVWRKS2.DIM_CURRENCY
+(
+  CurrencyKey INT,
+	CurrencyAlternateKey STRING,
+	CurrencyName STRING
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimCurrency.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.DIM_CURRENCY;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_CURRENCY;
+
+
+
+-- 
+-- 2 - Customer - Dataset
+-- 
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_CUSTOMER;
+
+-- create external table
+CREATE TABLE ADVWRKS2.DIM_CUSTOMER
+(
+    CustomerKey INT, 
+    GeographyKey INT, 
+    CustomerAlternateKey STRING, 
+    Title STRING, 
+    FirstName STRING, 
+    MiddleName STRING, 
+    LastName STRING, 
+    NameStyle INT, 
+    BirthDate DATE, 
+    MaritalStatus STRING, 
+    Suffix STRING, 
+    Gender STRING, 
+    EmailAddress STRING, 
+    YearlyIncome DECIMAL, 
+    TotalChildren INT, 
+    NumberChildrenAtHome INT, 
+    EnglishEducation STRING, 
+    SpanishEducation STRING, 
+    FrenchEducation STRING, 
+    EnglishOccupation STRING, 
+    SpanishOccupation STRING, 
+    FrenchOccupation STRING, 
+    HouseOwnerFlag STRING, 
+    NumberCarsOwned INT, 
+    AddressLine1 STRING, 
+    AddressLine2 STRING, 
+    Phone STRING, 
+    DateFirstPurchase DATE, 
+    CommuteDistance STRING
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimCustomer.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.DIM_CUSTOMER;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_CUSTOMER;
+
+
+
+-- 
+-- 3 - Date - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_DATE;
+
+-- create external table
+CREATE TABLE ADVWRKS2.DIM_DATE
+(
+    DateKey INT, 
+    FullDateAlternateKey TIMESTAMP,
+    DayNumberOfWeek SHORT,
+    EnglishDayNameOfWeek STRING,
+    SpanishDayNameOfWeek STRING,
+    FrenchDayNameOfWeek STRING,
+    DayNumberOfMonth SHORT,
+    DayNumberOfYear SHORT,
+    WeekNumberOfYear SHORT,
+    EnglishMonthName STRING,
+    SpanishMonthName STRING,
+    FrenchMonthName STRING,
+    MonthNumberOfYear SHORT,
+    CalendarQuarter SHORT,
+    CalendarYear SHORT,
+    CalendarSemester SHORT,
+    FiscalQuarter SHORT,
+    FiscalYear SHORT,
+    FiscalSemester SHORT
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimDate.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.DIM_DATE;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_DATE;
+
+
+
+-- 
+-- 4 - Geography - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_GEOGRAPHY;
+
+-- create external table
+CREATE TABLE ADVWRKS2.DIM_GEOGRAPHY
+(
+    GeographyKey INT,
+    City STRING,
+    StateProvinceCode STRING,
+    StateProvinceName STRING,
+    CountryRegionCode STRING,
+    EnglishCountryRegionName STRING,
+    SpanishCountryRegionName STRING,
+    FrenchCountryRegionName STRING,
+    PostalCode STRING,
+    SalesTerritoryKey INT,
+    IpAddressLocator STRING
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimGeography.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.DIM_GEOGRAPHY;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_GEOGRAPHY;
+
+
+
+-- 
+-- 5 - Product - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_PRODUCT;
+
+-- create external table
+CREATE TABLE ADVWRKS2.DIM_PRODUCT
+(
+  ProductKey INTEGER,
+	ProductAlternateKey STRING,
+	ProductSubcategoryKey INTEGER,
+	WeightUnitMeasureCode STRING,
+	SizeUnitMeasureCode STRING,
+	EnglishProductName STRING,
+	SpanishProductName STRING,
+	FrenchProductName STRING,
+	StandardCost decimal(19,4),
+	FinishedGoodsFlag BOOLEAN,
+	Color STRING,
+	SafetyStockLevel SHORT,
+	ReorderPoint SHORT,
+	ListPrice decimal(19,4),
+	`Size` STRING,
+	SizeRange STRING,
+	Weight decimal(19,4),
+	DaysToManufacture INTEGER,
+	ProductLine STRING,
+	DealerPrice decimal(19,4),
+	Class STRING,
+	Style STRING,
+	ModelName STRING,
+	StartDate TIMESTAMP,
+	EndDate TIMESTAMP,
+	Status STRING
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimProduct.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.DIM_PRODUCT;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_PRODUCT;
+
+
+
+-- 
+-- 6 - Product Category - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_PRODUCT_CATEGORY;
+
+-- create external table
+CREATE TABLE ADVWRKS2.DIM_PRODUCT_CATEGORY
+(
+    ProductCategoryKey INT,
+    ProductCategoryAlternateKey INT,
+    EnglishProductCategoryName STRING,
+    SpanishProductCategoryName STRING,
+    FrenchProductCategoryName STRING
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimProductCategory.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.DIM_PRODUCT_CATEGORY;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_PRODUCT_CATEGORY;
+
+
+-- 
+-- 7 - Product SubCategory - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_PRODUCT_SUBCATEGORY;
+
+-- create external table
+CREATE TABLE dim_product_subcategory
+(
+    ProductSubcategoryKey INT,
+    ProductSubcategoryAlternateKey INT,
+    EnglishProductSubcategoryName STRING,
+    SpanishProductSubcategoryName STRING,
+    FrenchProductSubcategoryName STRING,
+    ProductCategoryKey INT
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimProductSubcategory.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.DIM_PRODUCT_SUBCATEGORY;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_PRODUCT_SUBCATEGORY;
+
+
+-- 
+-- 8 - Sales Reason - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_SALES_REASON;
+
+-- create external table
+CREATE TABLE ADVWRKS2.DIM_SALES_REASON
+(
+    SalesReasonKey INT,
+    SalesReasonAlternateKey INT,
+    SalesReasonName STRING,
+    SalesReasonReasonType STRING
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimSalesReason.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.DIM_SALES_REASON;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_SALES_REASON;
+
+
+-- 
+-- 9 - Sales Territory - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.DIM_SALES_TERRITORY;
+
+-- create external table
+CREATE TABLE dim_sales_territory
+(
+    SalesTerritoryKey INT,
+    SalesTerritoryAlternateKey INT,
+    SalesTerritoryRegion STRING,
+    SalesTerritoryCountry STRING,
+    SalesTerritoryGroup STRING
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/DimSalesTerritory.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show - Dataset
+SELECT * FROM ADVWRKS2.DIM_SALES_TERRITORY;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.DIM_SALES_TERRITORY;
+
+
+
+-- 
+-- 10 - Internet Sales - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.FACT_INTERNET_SALES;
+
+-- create external table
+CREATE TABLE IF NOT EXISTS fact_internet_sales
+(
+    ProductKey int,
+    OrderDateKey int,
+    DueDateKey int,
+    ShipDateKey int,
+    CustomerKey int,
+    PromotionKey int,
+    CurrencyKey int,
+    SalesTerritoryKey int,
+    SalesOrderNumber string,
+    SalesOrderLineNumber short,
+    RevisionNumber short,
+    OrderQuantity short,
+    UnitPrice decimal,
+    ExtendedAmount decimal,
+    UnitPriceDiscountPct decimal,
+    DiscountAmount decimal,
+    ProductStandardCost decimal,
+    TotalProductCost decimal,
+    SalesAmount decimal,
+    TaxAmt decimal,
+    Freight decimal,
+    CarrierTrackingNumber string,
+    CustomerPONumber string,
+    OrderDate timestamp ,
+    DueDate timestamp ,
+    ShipDate timestamp
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/FactInternetSales.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.FACT_INTERNET_SALES;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.FACT_INTERNET_SALES;
+
+
+-- 
+-- 11 - Internet Sales Reason - Dataset
+--
+
+-- remove table
+DROP TABLE IF EXISTS ADVWRKS2.FACT_INTERNET_SALES_REASON;
+
+-- create external table
+CREATE TABLE ADVWRKS2.FACT_INTERNET_SALES_REASON
+(
+    SalesOrderNumber STRING,
+	  SalesOrderLineNumber SHORT,
+	  SalesReasonKey INT
+)
+USING CSV
+LOCATION 'abfss://sc4rissug2020@sa4rissug2020.dfs.core.windows.net/bronze/saleslt/csv-files/FactInternetSalesReason.csv'
+OPTIONS 
+(
+    header = "false", 
+    delimiter = "|"
+);
+
+-- show dataset
+SELECT * FROM ADVWRKS2.FACT_INTERNET_SALES_REASON;
+
+-- show table
+DESCRIBE TABLE EXTENDED ADVWRKS2.FACT_INTERNET_SALES_REASON;

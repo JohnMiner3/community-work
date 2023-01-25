@@ -1,0 +1,16 @@
+/******************************************************
+ *
+ * Name:         09 - Alert Query
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     01-01-2023
+ *     Purpose:  Notify via email.
+ * 
+ ******************************************************/
+ 
+-- notify when max id is divisable by 5
+SELECT 
+    CASE WHEN MOD(MAX(MILEAGE_ID), 5) = 0 THEN 1 ELSE 0 END AS FLAG 
+FROM 
+    ADBSQL.CAR_MILEAGE;

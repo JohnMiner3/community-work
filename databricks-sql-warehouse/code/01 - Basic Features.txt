@@ -1,0 +1,294 @@
+/******************************************************
+ *
+ * Name:         01 - Basic Features
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     01-01-2023
+ *     Purpose:  Create the schema for the autos database.
+ *
+ *               Talk about what is and is not supported
+ *               in databricks SQL.
+ * 
+ ******************************************************/
+ 
+
+-- https://docs.databricks.com/sql/language-manual/index.html
+
+--
+-- 1 - create schema (database)
+--
+-- Drop the database and all objects
+DROP SCHEMA IF EXISTS ADBSQL CASCADE;
+
+
+-- Create the database
+CREATE SCHEMA IF NOT EXISTS ADBSQL COMMENT  'This is a sample of databricks SQL statements.';
+  
+-- Describe the schema
+DESCRIBE SCHEMA ADBSQL;
+
+-- Extended properties
+ALTER SCHEMA ADBSQL SET DBPROPERTIES ('Create-By' = 'John Miner', 'Create-Date' = '01/01/2023');
+
+-- Show extended properties
+DESCRIBE SCHEMA EXTENDED ADBSQL;
+
+
+
+--
+-- 2 - create table - continent
+--
+
+-- make table
+CREATE TABLE ADBSQL.CONTINENT
+(
+  CONTINENT_ID STRING NOT NULL,
+  CONTINENT_NAME STRING
+);
+
+-- show details
+DESCRIBE TABLE EXTENDED ADBSQL.CONTINENT;
+
+
+
+-- 
+-- 3 - load table - continent
+--
+
+-- add data
+INSERT INTO ADBSQL.CONTINENT VALUES 
+    ('A', 'Africa'),
+    ('B', 'Asia'),
+    ('C', 'Europe'),
+    ('D', 'North America'),
+    ('E', 'South America'),
+    ('F', 'Oceania'),
+    ('G', 'Antarctica');
+
+-- show data
+SELECT * FROM ADBSQL.CONTINENT;
+
+
+
+--
+-- 4 - create table - cars by country
+--
+
+-- make table
+CREATE TABLE ADBSQL.CARS_BY_COUNTRY
+(
+  COUNTRY_ID SMALLINT NOT NULL,
+  COUNTRY_NAME STRING,
+  PERSONAL_VEHICLES INT,
+  COMMERCIAL_VEHICLES INT,
+  TOTAL_VEHICLES INT,
+  CHANGE_PCT FLOAT,
+  CONTINENT_ID STRING NOT NULL
+);
+
+-- show details
+DESCRIBE TABLE EXTENDED ADBSQL.CARS_BY_COUNTRY;
+
+
+-- 
+-- 4 - load table - cars by country
+--
+
+-- add data
+INSERT INTO  ADBSQL.CARS_BY_COUNTRY VALUES 
+  (1,'Argentina',263120,168981,432101,35.1,'E'),
+  (2,'Australia',270000,60900,330900,-16.2,'F'),
+  (3,'Austria',248059,26873,274932,8.6,'C'),
+  (4,'Belgium',881929,36127,918056,-1.2,'C'),
+  (5,'Brazil',2092029,519005,2611034,3.3,'E'),
+  (6,'Canada',1389536,1182756,2572292,-4.3,'D'),
+  (7,'China',5233132,1955576,7188708,25.9,'B'),
+  (8,'Czech Rep.',848922,5985,854907,41.3,'C'),
+  (9,'Egypt',59462,32111,91573,32.2,'A'),
+  (10,'Finland',32417,353,32770,51.4,'C'),
+  (11,'France',2723196,446023,3169219,-10.7,'C'),
+  (12,'Germany',5398508,421106,5819614,1.1,'C'),
+  (13,'Hungary',187633,3190,190823,25.5,'C'),
+  (14,'India',1473000,546808,2019808,24.2,'B'),
+  (15,'Indonesia',206321,89687,296008,-40.1,'B'),
+  (16,'Iran',800000,104500,904500,10.7,'B'),
+  (17,'Italy',892502,319092,1211594,16.7,'C'),
+  (18,'Japan',9756515,1727718,11484233,6.3,'B'),
+  (19,'Malaysia',377952,125021,502973,-10.8,'B'),
+  (20,'Mexico',1097619,947899,2045518,22.4,'D'),
+  (21,'Netherlands',87332,72122,159454,-11.8,'C'),
+  (22,'Poland',632300,82300,714600,14.2,'C'),
+  (23,'Portugal',143478,83847,227325,3.7,'C'),
+  (24,'Romania',201663,11934,213597,9.6,'C'),
+  (25,'Russia',1177918,330440,1508358,11.6,'B'),
+  (26,'Serbia',9832,1350,11182,-21.1,'B'),
+  (27,'Slovakia',295391,0,295391,35.3,'B'),
+  (28,'Slovenia',115000,35320,150320,-15.5,'B'),
+  (29,'South Africa',334482,253237,587719,11.9,'A'),
+  (30,'South Korea',3489136,350966,3840102,3.8,'B'),
+  (31,'Spain',2078639,698796,2777435,0.9,'C'),
+  (32,'Sweden',288583,44585,333168,-1.6,'C'),
+  (33,'Taiwan',211306,91915,303221,-32.1,'B'),
+  (34,'Thailand',298819,895607,1296060,15.2,'B'),
+  (35,'Turkey',545682,442098,987780,12.4,'C'),
+  (36,'Ukraine',274860,20400,295260,36.8,'C'),
+  (37,'United Kingdom',1442085,206303,1648388,-8.6,'C'),
+  (38,'United States',4366220,6897766,11263986,-6.0,'D'),
+  (39,'Uzbekistan',100000,10000,110000,14.8,'B');
+
+-- show data
+SELECT * FROM ADBSQL.CARS_BY_COUNTRY;
+
+
+
+--
+-- 5 - Join tables in query
+--
+
+SELECT 
+    A.*, B.CONTINENT_NAME
+FROM 
+    ADBSQL.CARS_BY_COUNTRY AS A
+LEFT JOIN 
+    ADBSQL.CONTINENT AS B
+ON 
+    A.CONTINENT_ID = B.CONTINENT_ID;
+    
+
+
+--
+-- 6 - Create view for previous query
+--
+
+-- make view    
+CREATE VIEW ADBSQL.CAR_DATA 
+AS   
+SELECT 
+    A.*, B.CONTINENT_NAME
+FROM 
+    ADBSQL.CARS_BY_COUNTRY AS A
+LEFT JOIN 
+    ADBSQL.CONTINENT AS B
+ON 
+    A.CONTINENT_ID = B.CONTINENT_ID;
+
+-- show data
+SELECT * FROM ADBSQL.CAR_DATA;
+
+
+
+--
+-- 7 - Use extended properties + comments to add extra info to schema
+--
+
+-- properties
+ALTER TABLE ADBSQL.CARS_BY_COUNTRY SET TBLPROPERTIES ('created.by' = 'John Miner', 'created.date' = '01-01-2023')
+
+-- comment @ table 
+COMMENT ON TABLE ADBSQL.CARS_BY_COUNTRY IS 'Number of cars per country';
+
+-- comment @ column
+ALTER TABLE ADBSQL.CARS_BY_COUNTRY ALTER COLUMN COUNTRY_ID COMMENT 'primary key for table';
+
+
+-- list tables + views
+SHOW TABLES IN ADBSQL;
+
+-- show limited details
+DESCRIBE TABLE ADBSQL.CARS_BY_COUNTRY;
+
+-- show extended details
+SHOW TABLE EXTENDED IN adbsql LIKE 'cars_by_country';
+
+-- show extended details
+DESCRIBE TABLE EXTENDED ADBSQL.CARS_BY_COUNTRY;
+
+
+--
+-- 8 - add integrity to model 
+--
+
+/*
+    must have unity catalog enabled
+    does not enforce PK + FK constraints
+*/
+
+-- primary key 1
+ALTER TABLE ADBSQL.CARS_BY_COUNTRY ADD CONSTRAINT PK_CARS_BY_COUNTRY PRIMARY KEY(COUNTRY_ID);
+
+-- primary key 2
+ALTER TABLE ADBSQL.CONTINENT ADD CONSTRAINT PK_CONTINENT PRIMARY KEY(CONTINENT_ID);
+
+-- foreign key 1
+ALTER TABLE ADBSQL.CARS_BY_COUNTRY ADD CONSTRAINT FK_CARS_BY_COUNTRY FOREIGN KEY(CONTINENT_ID) REFERENCES ADBSQL.CONTINENT;
+
+-- check 1
+/*
+ALTER TABLE ADBSQL.CARS_BY_COUNTRY DROP CONSTRAINT CHK_CARS_BY_COUNTRY
+*/
+
+ALTER TABLE ADBSQL.CARS_BY_COUNTRY ADD CONSTRAINT CHK_CARS_BY_COUNTRY CHECK (CHANGE_PCT >= -100 AND CHANGE_PCT <= 100);
+
+
+
+--
+-- 9 - play with CRUD statements
+--
+
+-- no data for greenland
+SELECT * FROM ADBSQL.CARS_BY_COUNTRY WHERE COUNTRY_NAME LIKE 'Gr%';
+
+-- add a record
+INSERT INTO ADBSQL.CARS_BY_COUNTRY VALUES
+  (39,'Greenland',100000,10000,110000,0,'U');
+
+-- update the record
+UPDATE ADBSQL.CARS_BY_COUNTRY 
+SET CHANGE_PCT = 10.0
+WHERE COUNTRY_NAME = 'Greenland';
+
+-- drop the record
+DELETE FROM ADBSQL.CARS_BY_COUNTRY 
+WHERE COUNTRY_NAME = 'Greenland';
+
+
+
+--
+-- 10 - caution use of identity column
+--
+
+-- make table
+--CREATE OR REPLACE TABLE ADBSQL.EMISSIONS_BY_COUNTRY
+CREATE TABLE ADBSQL.EMISSIONS_BY_COUNTRY
+(
+  EMISSIONS_ID BIGINT GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1),
+  COUNTRY_ID SMALLINT NOT NULL,
+  EMISSIONS_YEAR INT,
+  EMISSIONS_AMT BIGINT
+);
+
+-- fake data
+INSERT INTO ADBSQL.EMISSIONS_BY_COUNTRY (COUNTRY_ID, EMISSIONS_YEAR, EMISSIONS_AMT)
+  VALUES (1, 2022, 100);
+
+-- fake data 1 
+INSERT INTO ADBSQL.EMISSIONS_BY_COUNTRY (COUNTRY_ID, EMISSIONS_YEAR, EMISSIONS_AMT)
+  VALUES (2, 2022, 200);  
+
+-- show data 2
+SELECT * FROM ADBSQL.EMISSIONS_BY_COUNTRY;
+
+-- delete data
+DELETE FROM ADBSQL.EMISSIONS_BY_COUNTRY;
+
+-- redo inserts (1+2)
+SELECT * FROM ADBSQL.EMISSIONS_BY_COUNTRY;
+
+-- truncate table
+TRUNCATE TABLE ADBSQL.EMISSIONS_BY_COUNTRY;
+
+-- redo inserts (1+2)
+SELECT * FROM ADBSQL.EMISSIONS_BY_COUNTRY;
+
+

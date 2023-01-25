@@ -1,0 +1,128 @@
+/******************************************************
+ *
+ * Name:         05 - Query Table Data
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     01-01-2023
+ *     Purpose:  Get counts from hive tables.
+ *               Create view for reporting.
+ * 
+ ******************************************************/
+
+
+--
+-- 1 - count records in tables
+--
+
+USE ADVWRKS1;
+
+SELECT 'dim_currency' as Label, COUNT(*) as Total FROM dim_currency
+UNION
+SELECT 'dim_customer' as Label, COUNT(*) as Total FROM dim_customer 
+UNION
+SELECT 'dim_date' as Label, COUNT(*) as Total FROM dim_date 
+UNION
+SELECT 'dim_geography' as Label, COUNT(*) as Total FROM dim_geography
+UNION
+SELECT 'dim_product' as Label, COUNT(*) as Total FROM dim_product
+UNION
+SELECT 'dim_product_category' as Label, COUNT(*) as Total FROM dim_product_category
+UNION
+SELECT 'dim_product_subcategory' as Label, COUNT(*) as Total FROM dim_product_subcategory
+UNION
+SELECT 'dim_sales_reason' as Label, COUNT(*) as Total FROM dim_sales_reason
+UNION
+SELECT 'dim_sales_territory' as Label, COUNT(*) as Total FROM dim_sales_territory
+UNION
+SELECT 'fact_internet_sales' as Label, COUNT(*) as Total FROM fact_internet_sales 
+UNION
+SELECT 'fact_internet_sales_reason' as Label, COUNT(*) as Total FROM fact_internet_sales_reason 
+
+ORDER BY Label
+
+
+--
+-- 2 - Create a view 
+-- 
+
+CREATE OR REPLACE VIEW ADVWRKS1.RPT_PREPARED_DATA
+AS
+SELECT
+   pc.EnglishProductCategoryName
+  ,Coalesce(p.ModelName, p.EnglishProductName) AS Model
+  ,c.CustomerKey
+  ,s.SalesTerritoryGroup AS Region
+  ,c.BirthDate
+  ,months_between(current_date(), c.BirthDate) / 12 AS Age
+  ,CASE
+      WHEN c.YearlyIncome < 40000 THEN 'Low'
+      WHEN c.YearlyIncome > 60000 THEN 'High'
+      ELSE 'Moderate'
+  END AS IncomeGroup
+  ,d.CalendarYear
+  ,d.FiscalYear
+  ,d.MonthNumberOfYear AS Month
+  ,f.SalesOrderNumber AS OrderNumber
+  ,f.SalesOrderLineNumber AS LineNumber
+  ,f.OrderQuantity AS Quantity
+  ,f.ExtendedAmount AS Amount   
+FROM
+  ADVWRKS1.fact_internet_sales as f
+INNER JOIN 
+  ADVWRKS1.dim_date as d
+ON 
+  f.OrderDateKey = d.DateKey
+
+INNER JOIN 
+  ADVWRKS1.dim_product as p
+ON 
+  f.ProductKey = p.ProductKey
+  
+INNER JOIN 
+  ADVWRKS1.dim_product_subcategory as psc
+ON 
+  p.ProductSubcategoryKey = psc.ProductSubcategoryKey
+
+INNER JOIN 
+  ADVWRKS1.dim_product_category as pc
+ON 
+  psc.ProductCategoryKey = pc.ProductCategoryKey
+  
+INNER JOIN 
+  ADVWRKS1.dim_customer as c
+ON 
+  f.CustomerKey = c.CustomerKey
+
+INNER JOIN 
+  ADVWRKS1.dim_geography as g
+ON 
+  c.GeographyKey = g.GeographyKey
+
+INNER JOIN 
+  ADVWRKS1.dim_sales_territory as s
+ON 
+  g.SalesTerritoryKey = s.SalesTerritoryKey;
+
+
+-- Show the data
+SELECT * FROM ADVWRKS1.RPT_PREPARED_DATA;
+  
+
+--
+-- 3 - Use view in aggregation
+-- 
+
+SELECT 
+  CalendarYear as RptYear,
+  Region as RptRegion,
+  SUM(Quantity) as TotalQty,
+  SUM(Amount) as TotalAmt
+FROM 
+  ADVWRKS1.RPT_PREPARED_DATA
+GROUP BY
+  CalendarYear,
+  Region
+ORDER BY
+  CalendarYear,
+  Region;

@@ -1,0 +1,27 @@
+/******************************************************
+ *
+ * Name:         06 - Visualizations
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     01-01-2023
+ *     Purpose:  Get counts from hive tables.
+ *               Create view for reporting.
+ * 
+ ******************************************************/
+
+SELECT 
+  CalendarYear as RptYear,
+  Region as RptRegion,
+  SUM(Quantity) as TotalQty,
+  SUM(Amount) as TotalAmt
+FROM 
+  ADVWRKS1.RPT_PREPARED_DATA
+WHERE
+  CalendarYear = {{ Pick Year }}
+GROUP BY
+  CalendarYear,
+  Region
+ORDER BY
+  CalendarYear,
+  Region;

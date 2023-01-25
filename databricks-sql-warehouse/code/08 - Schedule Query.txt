@@ -1,0 +1,43 @@
+/******************************************************
+ *
+ * Name:         08 - Schedule Query
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     01-01-2023
+ *     Purpose:  Insert random data every x minutes.
+ * 
+ ******************************************************/
+
+--
+-- 1 - create table (one time) 
+--
+
+/*
+  CREATE OR REPLACE TABLE ADBSQL.CAR_MILEAGE
+*/
+
+-- make table 
+CREATE TABLE IF NOT EXISTS ADBSQL.CAR_MILEAGE
+(
+  MILEAGE_ID BIGINT GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1),  
+  MILEAGE_AMT BIGINT,
+  MILEAGE_DT TIMESTAMP,
+  COUNTRY_ID SMALLINT NOT NULL
+);
+
+
+--
+-- 2 - add rows of data
+--
+
+INSERT INTO ADBSQL.CAR_MILEAGE
+(
+  MILEAGE_AMT,
+  MILEAGE_DT,
+  COUNTRY_ID
+)
+SELECT CAST(RAND() * 5000000 AS INT) AS MILEAGE_AMT, CURRENT_TIMESTAMP() AS MILEAGE_DT, 1 AS COUNTRY_ID;
+
+-- show data
+SELECT * FROM ADBSQL.CAR_MILEAGE;

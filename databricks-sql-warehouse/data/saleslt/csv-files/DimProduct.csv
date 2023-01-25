@@ -1,0 +1,606 @@
+1|AR-5381||||Adjustable Race|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+2|BA-8327||||Bearing Ball|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+3|BE-2349||||BB Ball Bearing|||||NA|800|600|||NA||1||||||2003-07-01||Current
+4|BE-2908||||Headset Ball Bearings|||||NA|800|600|||NA||0||||||2003-07-01||Current
+5|BL-2036||||Blade|||||NA|800|600|||NA||1||||||2003-07-01||Current
+6|CA-5965||||LL Crankarm|||||Black|500|375|||NA||0|||L|||2003-07-01||Current
+7|CA-6738||||ML Crankarm|||||Black|500|375|||NA||0|||M|||2003-07-01||Current
+8|CA-7457||||HL Crankarm|||||Black|500|375|||NA||0||||||2003-07-01||Current
+9|CB-2903||||Chainring Bolts|||||Silver|1000|750|||NA||0||||||2003-07-01||Current
+10|CN-6137||||Chainring Nut|||||Silver|1000|750|||NA||0||||||2003-07-01||Current
+11|CR-7833||||Chainring|||||Black|1000|750|||NA||0||||||2003-07-01||Current
+12|CR-9981||||Crown Race|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+13|CS-2812||||Chain Stays|||||NA|1000|750|||NA||1||||||2003-07-01||Current
+14|DC-8732||||Decal 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+15|DC-9824||||Decal 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+16|DT-2377||||Down Tube|||||NA|800|600|||NA||1||||||2003-07-01||Current
+17|EC-M092||||Mountain End Caps|||||NA|1000|750|||NA||1||||||2003-07-01||Current
+18|EC-R098||||Road End Caps|||||NA|1000|750|||NA||1||||||2003-07-01||Current
+19|EC-T209||||Touring End Caps|||||NA|1000|750|||NA||1||||||2003-07-01||Current
+20|FE-3760||||Fork End|||||NA|800|600|||NA||1||||||2003-07-01||Current
+21|FH-2981||||Freewheel|||||Silver|500|375|||NA||0||||||2003-07-01||Current
+22|FW-1000||||Flat Washer 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+23|FW-1200||||Flat Washer 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+24|FW-1400||||Flat Washer 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+25|FW-3400||||Flat Washer 9|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+26|FW-3800||||Flat Washer 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+27|FW-5160||||Flat Washer 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+28|FW-5800||||Flat Washer 8|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+29|FW-7160||||Flat Washer 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+30|FW-9160||||Flat Washer 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+31|FC-3654||||Fork Crown|||||NA|800|600|||NA||1||||||2003-07-01||Current
+32|FC-3982||||Front Derailleur Cage|||||Silver|800|600|||NA||0||||||2003-07-01||Current
+33|FL-2301||||Front Derailleur Linkage|||||Silver|800|600|||NA||0||||||2003-07-01||Current
+34|GP-0982||||Guide Pulley|||||NA|800|600|||NA||0||||||2003-07-01||Current
+35|GT-0820||||LL Grip Tape|||||NA|800|600|||NA||0|||L|||2003-07-01||Current
+36|GT-1209||||ML Grip Tape|||||NA|800|600|||NA||0|||M|||2003-07-01||Current
+37|GT-2908||||HL Grip Tape|||||NA|800|600|||NA||0||||||2003-07-01||Current
+38|HJ-1213||||Thin-Jam Hex Nut 9|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+39|HJ-1220||||Thin-Jam Hex Nut 10|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+40|HJ-1420||||Thin-Jam Hex Nut 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+41|HJ-1428||||Thin-Jam Hex Nut 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+42|HJ-3410||||Thin-Jam Hex Nut 15|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+43|HJ-3416||||Thin-Jam Hex Nut 16|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+44|HJ-3816||||Thin-Jam Hex Nut 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+45|HJ-3824||||Thin-Jam Hex Nut 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+46|HJ-5161||||Thin-Jam Hex Nut 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+47|HJ-5162||||Thin-Jam Hex Nut 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+48|HJ-5811||||Thin-Jam Hex Nut 13|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+49|HJ-5818||||Thin-Jam Hex Nut 14|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+50|HJ-7161||||Thin-Jam Hex Nut 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+51|HJ-7162||||Thin-Jam Hex Nut 8|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+52|HJ-9080||||Thin-Jam Hex Nut 12|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+53|HJ-9161||||Thin-Jam Hex Nut 11|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+54|HN-1024||||Hex Nut 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+55|HN-1032||||Hex Nut 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+56|HN-1213||||Hex Nut 16|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+57|HN-1220||||Hex Nut 17|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+58|HN-1224||||Hex Nut 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+59|HN-1420||||Hex Nut 8|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+60|HN-1428||||Hex Nut 9|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+61|HN-3410||||Hex Nut 22|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+62|HN-3416||||Hex Nut 23|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+63|HN-3816||||Hex Nut 12|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+64|HN-3824||||Hex Nut 13|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+65|HN-4402||||Hex Nut 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+66|HN-5161||||Hex Nut 10|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+67|HN-5162||||Hex Nut 11|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+68|HN-5400||||Hex Nut 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+69|HN-5811||||Hex Nut 20|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+70|HN-5818||||Hex Nut 21|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+71|HN-6320||||Hex Nut 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+72|HN-7161||||Hex Nut 14|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+73|HN-7162||||Hex Nut 15|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+74|HN-8320||||Hex Nut 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+75|HN-9161||||Hex Nut 18|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+76|HN-9168||||Hex Nut 19|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+77|HT-2981||||Handlebar Tube|||||NA|800|600|||NA||1||||||2003-07-01||Current
+78|HT-8019||||Head Tube|||||NA|800|600|||NA||1||||||2003-07-01||Current
+79|HU-6280||||LL Hub|||||NA|500|375|||NA||1|||L|||2003-07-01||Current
+80|HU-8998||||HL Hub|||||NA|500|375|||NA||1||||||2003-07-01||Current
+81|KW-4091||||Keyed Washer|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+82|LE-1000||||External Lock Washer 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+83|LE-1200||||External Lock Washer 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+84|LE-1201||||External Lock Washer 9|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+85|LE-1400||||External Lock Washer 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+86|LE-3800||||External Lock Washer 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+87|LE-5160||||External Lock Washer 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+88|LE-6000||||External Lock Washer 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+89|LE-7160||||External Lock Washer 8|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+90|LE-8000||||External Lock Washer 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+91|LI-1000||||Internal Lock Washer 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+92|LI-1200||||Internal Lock Washer 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+93|LI-1201||||Internal Lock Washer 9|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+94|LI-1400||||Internal Lock Washer 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+95|LI-3800||||Internal Lock Washer 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+96|LI-5160||||Internal Lock Washer 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+97|LI-5800||||Internal Lock Washer 10|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+98|LI-6000||||Internal Lock Washer 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+99|LI-7160||||Internal Lock Washer 8|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+100|LI-8000||||Internal Lock Washer 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+101|LJ-1213||||Thin-Jam Lock Nut 9|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+102|LJ-1220||||Thin-Jam Lock Nut 10|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+103|LJ-1420||||Thin-Jam Lock Nut 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+104|LJ-1428||||Thin-Jam Lock Nut 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+105|LJ-3410||||Thin-Jam Lock Nut 15|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+106|LJ-3416||||Thin-Jam Lock Nut 16|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+107|LJ-3816||||Thin-Jam Lock Nut 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+108|LJ-3824||||Thin-Jam Lock Nut 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+109|LJ-5161||||Thin-Jam Lock Nut 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+110|LJ-5162||||Thin-Jam Lock Nut 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+111|LJ-5811||||Thin-Jam Lock Nut 13|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+112|LJ-5818||||Thin-Jam Lock Nut 14|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+113|LJ-7161||||Thin-Jam Lock Nut 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+114|LJ-7162||||Thin-Jam Lock Nut 8|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+115|LJ-9080||||Thin-Jam Lock Nut 12|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+116|LJ-9161||||Thin-Jam Lock Nut 11|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+117|LN-1024||||Lock Nut 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+118|LN-1032||||Lock Nut 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+119|LN-1213||||Lock Nut 16|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+120|LN-1220||||Lock Nut 17|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+121|LN-1224||||Lock Nut 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+122|LN-1420||||Lock Nut 8|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+123|LN-1428||||Lock Nut 9|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+124|LN-3410||||Lock Nut 22|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+125|LN-3416||||Lock Nut 23|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+126|LN-3816||||Lock Nut 12|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+127|LN-3824||||Lock Nut 13|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+128|LN-4400||||Lock Nut 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+129|LN-5161||||Lock Nut 10|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+130|LN-5162||||Lock Nut 11|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+131|LN-5400||||Lock Nut 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+132|LN-5811||||Lock Nut 20|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+133|LN-5818||||Lock Nut 21|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+134|LN-6320||||Lock Nut 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+135|LN-7161||||Lock Nut 14|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+136|LN-7162||||Lock Nut 15|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+137|LN-8320||||Lock Nut 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+138|LN-9080||||Lock Nut 19|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+139|LN-9161||||Lock Nut 18|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+140|LR-2398||||Lock Ring|||||Silver|1000|750|||NA||0||||||2003-07-01||Current
+141|LR-8520||||Lower Head Race|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+142|LW-1000||||Lock Washer 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+143|LW-1200||||Lock Washer 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+144|LW-1201||||Lock Washer 10|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+145|LW-1400||||Lock Washer 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+146|LW-3400||||Lock Washer 13|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+147|LW-3800||||Lock Washer 8|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+148|LW-4000||||Lock Washer 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+149|LW-5160||||Lock Washer 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+150|LW-5800||||Lock Washer 12|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+151|LW-6000||||Lock Washer 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+152|LW-7160||||Lock Washer 9|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+153|LW-8000||||Lock Washer 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+154|LW-9160||||Lock Washer 11|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+155|MA-7075||||Metal Angle|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+156|MB-2024||||Metal Bar 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+157|MB-6061||||Metal Bar 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+158|MP-2066||||Metal Plate 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+159|MP-2503||||Metal Plate 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+160|MP-4960||||Metal Plate 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+161|MS-0253||||Metal Sheet 2|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+162|MS-1256||||Metal Sheet 3|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+163|MS-1981||||Metal Sheet 7|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+164|MS-2259||||Metal Sheet 4|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+165|MS-2341||||Metal Sheet 5|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+166|MS-2348||||Metal Sheet 6|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+167|MS-6061||||Metal Sheet 1|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+168|MT-1000||||Metal Tread Plate|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+169|NI-4127||||LL Nipple|||||NA|1000|750|||NA||0|||L|||2003-07-01||Current
+170|NI-9522||||HL Nipple|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+171|PA-187B||||Paint - Black|||||NA|60|45|||NA||0||||||2003-07-01||Current
+172|PA-361R||||Paint - Red|||||NA|60|45|||NA||0||||||2003-07-01||Current
+173|PA-529S||||Paint - Silver|||||NA|60|45|||NA||0||||||2003-07-01||Current
+174|PA-632U||||Paint - Blue|||||NA|60|45|||NA||0||||||2003-07-01||Current
+175|PA-823Y||||Paint - Yellow|||||NA|60|45|||NA||0||||||2003-07-01||Current
+176|PB-6109||||Pinch Bolt|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+177|RA-2345||||Cup-Shaped Race|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+178|RA-7490||||Cone-Shaped Race|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+179|RF-9198||||Reflector|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+180|RM-M464||G||LL Mountain Rim|||||NA|800|600|||NA|435.0000|0|||L|||2003-07-01||Current
+181|RM-M692||G||ML Mountain Rim|||||NA|800|600|||NA|450.0000|0|||M|||2003-07-01||Current
+182|RM-M823||G||HL Mountain Rim|||||NA|800|600|||NA|400.0000|0||||||2003-07-01||Current
+183|RM-R436||G||LL Road Rim|||||NA|800|600|||NA|445.0000|0|||L|||2003-07-01||Current
+184|RM-R600||G||ML Road Rim|||||NA|800|600|||NA|450.0000|0|||M|||2003-07-01||Current
+185|RM-R800||G||HL Road Rim|||||NA|800|600|||NA|400.0000|0||||||2003-07-01||Current
+186|RM-T801||G||Touring Rim|||||NA|800|600|||NA|460.0000|0||||||2003-07-01||Current
+187|SA-M198||||LL Mountain Seat Assembly|||||NA|500|375|||NA||1|||L|||2003-07-01||Current
+188|SA-M237||||ML Mountain Seat Assembly|||||NA|500|375|||NA||1|||M|||2003-07-01||Current
+189|SA-M687||||HL Mountain Seat Assembly|||||NA|500|375|||NA||1||||||2003-07-01||Current
+190|SA-R127||||LL Road Seat Assembly|||||NA|500|375|||NA||1|||L|||2003-07-01||Current
+191|SA-R430||||ML Road Seat Assembly|||||NA|500|375|||NA||1|||M|||2003-07-01||Current
+192|SA-R522||||HL Road Seat Assembly|||||NA|500|375|||NA||1||||||2003-07-01||Current
+193|SA-T467||||LL Touring Seat Assembly|||||NA|500|375|||NA||1|||L|||2003-07-01||Current
+194|SA-T612||||ML Touring Seat Assembly|||||NA|500|375|||NA||1|||M|||2003-07-01||Current
+195|SA-T872||||HL Touring Seat Assembly|||||NA|500|375|||NA||1||||||2003-07-01||Current
+196|SD-2342||||LL Spindle/Axle|||||NA|500|375|||NA||0|||L|||2003-07-01||Current
+197|SD-9872||||HL Spindle/Axle|||||NA|500|375|||NA||0||||||2003-07-01||Current
+198|SH-4562||||LL Shell|||||NA|800|600|||NA||0|||L|||2003-07-01||Current
+199|SH-9312||||HL Shell|||||NA|800|600|||NA||0||||||2003-07-01||Current
+200|SK-9283||||Spokes|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+201|SL-0931||||Seat Lug|||||NA|1000|750|||NA||0||||||2003-07-01||Current
+202|SM-9087||||Stem|||||NA|500|375|||NA||1||||||2003-07-01||Current
+203|SP-2981||||Seat Post|||||NA|500|375|||NA||0||||||2003-07-01||Current
+204|SR-2098||||Steerer|||||NA|500|375|||NA||1||||||2003-07-01||Current
+205|SS-2985||||Seat Stays|||||NA|800|600|||NA||1||||||2003-07-01||Current
+206|ST-9828||||Seat Tube|||||NA|500|375|||NA||1||||||2003-07-01||Current
+207|TO-2301||||Top Tube|||||NA|500|375|||NA||1||||||2003-07-01||Current
+208|TP-0923||||Tension Pulley|||||NA|800|600|||NA||0||||||2003-07-01||Current
+209|RC-0291||||Rear Derailleur Cage|||||Silver|500|375|||NA||0||||||2003-07-01||Current
+210|FR-R92B-58|14|LB|CM|HL Road Frame - Black, 58|||||Black|500|375||58|54-58 CM|2.2400|1|R||H|U|HL Road Frame|2003-07-01||Current
+211|FR-R92R-58|14|LB|CM|HL Road Frame - Red, 58|||||Red|500|375||58|54-58 CM|2.2400|1|R||H|U|HL Road Frame|2003-07-01||Current
+212|HL-U509-R|31|||Sport-100 Helmet, Red|Casco deportivo: 100, rojo|Casque sport 100, rouge|12.0278||Red|4|3|33.6442||NA||0|S|20.1865|||Sport-100|2011-07-01|2007-12-28|
+213|HL-U509-R|31|||Sport-100 Helmet, Red|Casco deportivo: 100, rojo|Casque sport 100, rouge|13.8782||Red|4|3|33.6442||NA||0|S|20.1865|||Sport-100|2012-07-01|2008-12-27|
+214|HL-U509-R|31|||Sport-100 Helmet, Red|Casco deportivo: 100, rojo|Casque sport 100, rouge|13.0863||Red|4|3|34.9900||NA||0|S|20.9940|||Sport-100|2013-07-01||Current
+215|HL-U509|31|||Sport-100 Helmet, Black|Casco deportivo: 100, negro|Casque sport 100, noir|12.0278||Black|4|3|33.6442||NA||0|S|20.1865|||Sport-100|2011-07-01|2007-12-28|
+216|HL-U509|31|||Sport-100 Helmet, Black|Casco deportivo: 100, negro|Casque sport 100, noir|13.8782||Black|4|3|33.6442||NA||0|S|20.1865|||Sport-100|2012-07-01|2008-12-27|
+217|HL-U509|31|||Sport-100 Helmet, Black|Casco deportivo: 100, negro|Casque sport 100, noir|13.0863||Black|4|3|34.9900||NA||0|S|20.9940|||Sport-100|2013-07-01||Current
+218|SO-B909-M|23|||Mountain Bike Socks, M|Calcetines para bicicleta de monta?a, M|Chaussettes de VTT, taille M|3.3963||White|4|3|9.5000|M|M||0|M|5.7000||U|Mountain Bike Socks|2011-07-01|2007-12-28|
+219|SO-B909-L|23|||Mountain Bike Socks, L|Calcetines para bicicleta de monta?a, G|Chaussettes de VTT, taille L|3.3963||White|4|3|9.5000|L|L||0|M|5.7000||U|Mountain Bike Socks|2011-07-01|2007-12-28|
+220|HL-U509-B|31|||Sport-100 Helmet, Blue|Casco deportivo: 100, azul|Casque sport 100, bleu|12.0278||Blue|4|3|33.6442||NA||0|S|20.1865|||Sport-100|2011-07-01|2007-12-28|
+221|HL-U509-B|31|||Sport-100 Helmet, Blue|Casco deportivo: 100, azul|Casque sport 100, bleu|13.8782||Blue|4|3|33.6442||NA||0|S|20.1865|||Sport-100|2012-07-01|2008-12-27|
+222|HL-U509-B|31|||Sport-100 Helmet, Blue|Casco deportivo: 100, azul|Casque sport 100, bleu|13.0863||Blue|4|3|34.9900||NA||0|S|20.9940|||Sport-100|2013-07-01||Current
+223|CA-1098|19|||AWC Logo Cap|||5.7052||Multi|4|3|8.6442||NA||0|S|5.1865||U|Cycling Cap|2011-07-01|2007-12-28|
+224|CA-1098|19|||AWC Logo Cap|||5.2297||Multi|4|3|8.6442||NA||0|S|5.1865||U|Cycling Cap|2012-07-01|2008-12-27|
+225|CA-1098|19|||AWC Logo Cap|||6.9223||Multi|4|3|8.9900||NA||0|S|5.3940||U|Cycling Cap|2013-07-01||Current
+226|LJ-0192-S|21|||Long-Sleeve Logo Jersey, S|Jersey con logotipo de manga larga, P|Maillot manches longues avec logo, taille S|31.7244||Multi|4|3|48.0673|S|S||0|S|28.8404||U|Long-Sleeve Logo Jersey|2011-07-01|2007-12-28|
+227|LJ-0192-S|21|||Long-Sleeve Logo Jersey, S|Jersey con logotipo de manga larga, P|Maillot manches longues avec logo, taille S|29.0807||Multi|4|3|48.0673|S|S||0|S|28.8404||U|Long-Sleeve Logo Jersey|2012-07-01|2008-12-27|
+228|LJ-0192-S|21|||Long-Sleeve Logo Jersey, S|Jersey con logotipo de manga larga, P|Maillot manches longues avec logo, taille S|38.4923||Multi|4|3|49.9900|S|S||0|S|29.9940||U|Long-Sleeve Logo Jersey|2013-07-01||Current
+229|LJ-0192-M|21|||Long-Sleeve Logo Jersey, M|Jersey con logotipo de manga larga, M|Maillot manches longues avec logo, taille M|31.7244||Multi|4|3|48.0673|M|M||0|S|28.8404||U|Long-Sleeve Logo Jersey|2011-07-01|2007-12-28|
+230|LJ-0192-M|21|||Long-Sleeve Logo Jersey, M|Jersey con logotipo de manga larga, M|Maillot manches longues avec logo, taille M|29.0807||Multi|4|3|48.0673|M|M||0|S|28.8404||U|Long-Sleeve Logo Jersey|2012-07-01|2008-12-27|
+231|LJ-0192-M|21|||Long-Sleeve Logo Jersey, M|Jersey con logotipo de manga larga, M|Maillot manches longues avec logo, taille M|38.4923||Multi|4|3|49.9900|M|M||0|S|29.9940||U|Long-Sleeve Logo Jersey|2013-07-01||Current
+232|LJ-0192-L|21|||Long-Sleeve Logo Jersey, L|Jersey con logotipo de manga larga, G|Maillot manches longues avec logo, taille L|31.7244||Multi|4|3|48.0673|L|L||0|S|28.8404||U|Long-Sleeve Logo Jersey|2011-07-01|2007-12-28|
+233|LJ-0192-L|21|||Long-Sleeve Logo Jersey, L|Jersey con logotipo de manga larga, G|Maillot manches longues avec logo, taille L|29.0807||Multi|4|3|48.0673|L|L||0|S|28.8404||U|Long-Sleeve Logo Jersey|2012-07-01|2008-12-27|
+234|LJ-0192-L|21|||Long-Sleeve Logo Jersey, L|Jersey con logotipo de manga larga, G|Maillot manches longues avec logo, taille L|38.4923||Multi|4|3|49.9900|L|L||0|S|29.9940||U|Long-Sleeve Logo Jersey|2013-07-01||Current
+235|LJ-0192-X|21|||Long-Sleeve Logo Jersey, XL|Jersey con logotipo de manga larga, SG|Maillot manches longues avec logo, taille XL|31.7244||Multi|4|3|48.0673|XL|XL||0|S|28.8404||U|Long-Sleeve Logo Jersey|2011-07-01|2007-12-28|
+236|LJ-0192-X|21|||Long-Sleeve Logo Jersey, XL|Jersey con logotipo de manga larga, SG|Maillot manches longues avec logo, taille XL|29.0807||Multi|4|3|48.0673|XL|XL||0|S|28.8404||U|Long-Sleeve Logo Jersey|2012-07-01|2008-12-27|
+237|LJ-0192-X|21|||Long-Sleeve Logo Jersey, XL|Jersey con logotipo de manga larga, SG|Maillot manches longues avec logo, taille XL|38.4923||Multi|4|3|49.9900|XL|XL||0|S|29.9940||U|Long-Sleeve Logo Jersey|2013-07-01||Current
+238|FR-R92R-62|14|LB|CM|HL Road Frame - Red, 62|Cuadro de carretera GA: rojo, 62|Cadre de v?lo de route HL - rouge, 62|747.9682||Red|500|375|1263.4598|62|60-62 CM|2.3000|1|R|758.0759|H|U|HL Road Frame|2011-07-01|2007-12-28|
+239|FR-R92R-62|14|LB|CM|HL Road Frame - Red, 62|Cuadro de carretera GA: rojo, 62|Cadre de v?lo de route HL - rouge, 62|722.2568||Red|500|375|1301.3636|62|60-62 CM|2.3000|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+240|FR-R92R-62|14|LB|CM|HL Road Frame - Red, 62|Cuadro de carretera GA: rojo, 62|Cadre de v?lo de route HL - rouge, 62|868.6342||Red|500|375|1431.5000|62|60-62 CM|2.3000|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+241|FR-R92R-44|14|LB|CM|HL Road Frame - Red, 44|Cuadro de carretera GA: rojo, 44|Cadre de v?lo de route HL - rouge, 44|747.9682||Red|500|375|1263.4598|44|42-46 CM|2.1200|1|R|758.0759|H|U|HL Road Frame|2011-07-01|2007-12-28|
+242|FR-R92R-44|14|LB|CM|HL Road Frame - Red, 44|Cuadro de carretera GA: rojo, 44|Cadre de v?lo de route HL - rouge, 44|722.2568||Red|500|375|1301.3636|44|42-46 CM|2.1200|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+243|FR-R92R-44|14|LB|CM|HL Road Frame - Red, 44|Cuadro de carretera GA: rojo, 44|Cadre de v?lo de route HL - rouge, 44|868.6342||Red|500|375|1431.5000|44|42-46 CM|2.1200|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+244|FR-R92R-48|14|LB|CM|HL Road Frame - Red, 48|Cuadro de carretera GA: rojo, 48|Cadre de v?lo de route HL - rouge, 48|747.9682||Red|500|375|1263.4598|48|48-52 CM|2.1600|1|R|758.0759|H|U|HL Road Frame|2011-07-01|2007-12-28|
+245|FR-R92R-48|14|LB|CM|HL Road Frame - Red, 48|Cuadro de carretera GA: rojo, 48|Cadre de v?lo de route HL - rouge, 48|722.2568||Red|500|375|1301.3636|48|48-52 CM|2.1600|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+246|FR-R92R-48|14|LB|CM|HL Road Frame - Red, 48|Cuadro de carretera GA: rojo, 48|Cadre de v?lo de route HL - rouge, 48|868.6342||Red|500|375|1431.5000|48|48-52 CM|2.1600|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+247|FR-R92R-52|14|LB|CM|HL Road Frame - Red, 52|Cuadro de carretera GA: rojo, 52|Cadre de v?lo de route HL - rouge, 52|747.9682||Red|500|375|1263.4598|52|48-52 CM|2.2000|1|R|758.0759|H|U|HL Road Frame|2011-07-01|2007-12-28|
+248|FR-R92R-52|14|LB|CM|HL Road Frame - Red, 52|Cuadro de carretera GA: rojo, 52|Cadre de v?lo de route HL - rouge, 52|722.2568||Red|500|375|1301.3636|52|48-52 CM|2.2000|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+249|FR-R92R-52|14|LB|CM|HL Road Frame - Red, 52|Cuadro de carretera GA: rojo, 52|Cadre de v?lo de route HL - rouge, 52|868.6342||Red|500|375|1431.5000|52|48-52 CM|2.2000|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+250|FR-R92R-56|14|LB|CM|HL Road Frame - Red, 56|Cuadro de carretera GA: rojo, 56|Cadre de v?lo de route HL - rouge, 56|747.9682||Red|500|375|1263.4598|56|54-58 CM|2.2400|1|R|758.0759|H|U|HL Road Frame|2011-07-01|2007-12-28|
+251|FR-R92R-56|14|LB|CM|HL Road Frame - Red, 56|Cuadro de carretera GA: rojo, 56|Cadre de v?lo de route HL - rouge, 56|722.2568||Red|500|375|1301.3636|56|54-58 CM|2.2400|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+252|FR-R92R-56|14|LB|CM|HL Road Frame - Red, 56|Cuadro de carretera GA: rojo, 56|Cadre de v?lo de route HL - rouge, 56|868.6342||Red|500|375|1431.5000|56|54-58 CM|2.2400|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+253|FR-R38B-58|14|LB|CM|LL Road Frame - Black, 58|Cuadro de carretera GB: negro, 58|Cadre de v?lo de route LL - noir, 58|176.1997||Black|500|375|297.6346|58|54-58 CM|2.4600|1|R|178.5808|L|U|LL Road Frame|2011-07-01|2007-12-28|
+254|FR-R38B-58|14|LB|CM|LL Road Frame - Black, 58|Cuadro de carretera GB: negro, 58|Cadre de v?lo de route LL - noir, 58|170.1428||Black|500|375|306.5636|58|54-58 CM|2.4600|1|R|183.9382|L|U|LL Road Frame|2012-07-01|2008-12-27|
+255|FR-R38B-58|14|LB|CM|LL Road Frame - Black, 58|Cuadro de carretera GB: negro, 58|Cadre de v?lo de route LL - noir, 58|204.6251||Black|500|375|337.2200|58|54-58 CM|2.4600|1|R|202.3320|L|U|LL Road Frame|2013-07-01||Current
+256|FR-R38B-60|14|LB|CM|LL Road Frame - Black, 60|Cuadro de carretera GB: negro, 60|Cadre de v?lo de route LL - noir, 60|176.1997||Black|500|375|297.6346|60|60-62 CM|2.4800|1|R|178.5808|L|U|LL Road Frame|2011-07-01|2007-12-28|
+257|FR-R38B-60|14|LB|CM|LL Road Frame - Black, 60|Cuadro de carretera GB: negro, 60|Cadre de v?lo de route LL - noir, 60|170.1428||Black|500|375|306.5636|60|60-62 CM|2.4800|1|R|183.9382|L|U|LL Road Frame|2012-07-01|2008-12-27|
+258|FR-R38B-60|14|LB|CM|LL Road Frame - Black, 60|Cuadro de carretera GB: negro, 60|Cadre de v?lo de route LL - noir, 60|204.6251||Black|500|375|337.2200|60|60-62 CM|2.4800|1|R|202.3320|L|U|LL Road Frame|2013-07-01||Current
+259|FR-R38B-62|14|LB|CM|LL Road Frame - Black, 62|Cuadro de carretera GB: negro, 62|Cadre de v?lo de route LL - noir, 62|176.1997||Black|500|375|297.6346|62|60-62 CM|2.5000|1|R|178.5808|L|U|LL Road Frame|2011-07-01|2007-12-28|
+260|FR-R38B-62|14|LB|CM|LL Road Frame - Black, 62|Cuadro de carretera GB: negro, 62|Cadre de v?lo de route LL - noir, 62|170.1428||Black|500|375|306.5636|62|60-62 CM|2.5000|1|R|183.9382|L|U|LL Road Frame|2012-07-01|2008-12-27|
+261|FR-R38B-62|14|LB|CM|LL Road Frame - Black, 62|Cuadro de carretera GB: negro, 62|Cadre de v?lo de route LL - noir, 62|204.6251||Black|500|375|337.2200|62|60-62 CM|2.5000|1|R|202.3320|L|U|LL Road Frame|2013-07-01||Current
+262|FR-R38R-44|14|LB|CM|LL Road Frame - Red, 44|Cuadro de carretera GB: rojo, 44|Cadre de v?lo de route LL - rouge, 44|181.4857||Red|500|375|306.5636|44|42-46 CM|2.3200|1|R|183.9382|L|U|LL Road Frame|2011-07-01|2007-12-28|
+263|FR-R38R-44|14|LB|CM|LL Road Frame - Red, 44|Cuadro de carretera GB: rojo, 44|Cadre de v?lo de route LL - rouge, 44|187.1571||Red|500|375|337.2200|44|42-46 CM|2.3200|1|R|202.3320|L|U|LL Road Frame|2012-07-01|2008-12-27|
+264|FR-R38R-48|14|LB|CM|LL Road Frame - Red, 48|Cuadro de carretera GB: rojo, 48|Cadre de v?lo de route LL - rouge, 48|181.4857||Red|500|375|306.5636|48|48-52 CM|2.3600|1|R|183.9382|L|U|LL Road Frame|2011-07-01|2007-12-28|
+265|FR-R38R-48|14|LB|CM|LL Road Frame - Red, 48|Cuadro de carretera GB: rojo, 48|Cadre de v?lo de route LL - rouge, 48|187.1571||Red|500|375|337.2200|48|48-52 CM|2.3600|1|R|202.3320|L|U|LL Road Frame|2012-07-01|2008-12-27|
+266|FR-R38R-52|14|LB|CM|LL Road Frame - Red, 52|Cuadro de carretera GB: rojo, 52|Cadre de v?lo de route LL - rouge, 52|181.4857||Red|500|375|306.5636|52|48-52 CM|2.4000|1|R|183.9382|L|U|LL Road Frame|2011-07-01|2007-12-28|
+267|FR-R38R-52|14|LB|CM|LL Road Frame - Red, 52|Cuadro de carretera GB: rojo, 52|Cadre de v?lo de route LL - rouge, 52|187.1571||Red|500|375|337.2200|52|48-52 CM|2.4000|1|R|202.3320|L|U|LL Road Frame|2012-07-01|2008-12-27|
+268|FR-R38R-58|14|LB|CM|LL Road Frame - Red, 58|Cuadro de carretera GB: rojo, 58|Cadre de v?lo de route LL - rouge, 58|181.4857||Red|500|375|306.5636|58|54-58 CM|2.4600|1|R|183.9382|L|U|LL Road Frame|2011-07-01|2007-12-28|
+269|FR-R38R-58|14|LB|CM|LL Road Frame - Red, 58|Cuadro de carretera GB: rojo, 58|Cadre de v?lo de route LL - rouge, 58|187.1571||Red|500|375|337.2200|58|54-58 CM|2.4600|1|R|202.3320|L|U|LL Road Frame|2012-07-01|2008-12-27|
+270|FR-R38R-60|14|LB|CM|LL Road Frame - Red, 60|Cuadro de carretera GB: rojo, 60|Cadre de v?lo de route LL - rouge, 60|181.4857||Red|500|375|306.5636|60|60-62 CM|2.4800|1|R|183.9382|L|U|LL Road Frame|2011-07-01|2007-12-28|
+271|FR-R38R-60|14|LB|CM|LL Road Frame - Red, 60|Cuadro de carretera GB: rojo, 60|Cadre de v?lo de route LL - rouge, 60|187.1571||Red|500|375|337.2200|60|60-62 CM|2.4800|1|R|202.3320|L|U|LL Road Frame|2012-07-01|2008-12-27|
+272|FR-R38R-62|14|LB|CM|LL Road Frame - Red, 62|Cuadro de carretera GB: rojo, 62|Cadre de v?lo de route LL - rouge, 62|181.4857||Red|500|375|306.5636|62|60-62 CM|2.5000|1|R|183.9382|L|U|LL Road Frame|2011-07-01|2007-12-28|
+273|FR-R38R-62|14|LB|CM|LL Road Frame - Red, 62|Cuadro de carretera GB: rojo, 62|Cadre de v?lo de route LL - rouge, 62|187.1571||Red|500|375|337.2200|62|60-62 CM|2.5000|1|R|202.3320|L|U|LL Road Frame|2012-07-01|2008-12-27|
+274|FR-R72R-44|14|LB|CM|ML Road Frame - Red, 44|Cuadro de carretera GM: rojo, 44|Cadre de v?lo de route ML - rouge, 44|352.1394||Red|500|375|594.8300|44|42-46 CM|2.2200|1|R|356.8980|M|U|ML Road Frame|2011-07-01|2007-12-28|
+275|FR-R72R-48|14|LB|CM|ML Road Frame - Red, 48|Cuadro de carretera GM: rojo, 48|Cadre de v?lo de route ML - rouge, 48|352.1394||Red|500|375|594.8300|48|48-52 CM|2.2600|1|R|356.8980|M|U|ML Road Frame|2011-07-01|2007-12-28|
+276|FR-R72R-52|14|LB|CM|ML Road Frame - Red, 52|Cuadro de carretera GM: rojo, 52|Cadre de v?lo de route ML - rouge, 52|352.1394||Red|500|375|594.8300|52|48-52 CM|2.3000|1|R|356.8980|M|U|ML Road Frame|2011-07-01|2007-12-28|
+277|FR-R72R-58|14|LB|CM|ML Road Frame - Red, 58|Cuadro de carretera GM: rojo, 58|Cadre de v?lo de route ML - rouge, 58|352.1394||Red|500|375|594.8300|58|54-58 CM|2.3600|1|R|356.8980|M|U|ML Road Frame|2011-07-01|2007-12-28|
+278|FR-R72R-60|14|LB|CM|ML Road Frame - Red, 60|Cuadro de carretera GM: rojo, 60|Cadre de v?lo de route ML - rouge, 60|352.1394||Red|500|375|594.8300|60|60-62 CM|2.3800|1|R|356.8980|M|U|ML Road Frame|2011-07-01|2007-12-28|
+279|FR-R38B-44|14|LB|CM|LL Road Frame - Black, 44|Cuadro de carretera GB: negro, 44|Cadre de v?lo de route LL - noir, 44|176.1997||Black|500|375|297.6346|44|42-46 CM|2.3200|1|R|178.5808|L|U|LL Road Frame|2011-07-01|2007-12-28|
+280|FR-R38B-44|14|LB|CM|LL Road Frame - Black, 44|Cuadro de carretera GB: negro, 44|Cadre de v?lo de route LL - noir, 44|170.1428||Black|500|375|306.5636|44|42-46 CM|2.3200|1|R|183.9382|L|U|LL Road Frame|2012-07-01|2008-12-27|
+281|FR-R38B-44|14|LB|CM|LL Road Frame - Black, 44|Cuadro de carretera GB: negro, 44|Cadre de v?lo de route LL - noir, 44|204.6251||Black|500|375|337.2200|44|42-46 CM|2.3200|1|R|202.3320|L|U|LL Road Frame|2013-07-01||Current
+282|FR-R38B-48|14|LB|CM|LL Road Frame - Black, 48|Cuadro de carretera GB: negro, 48|Cadre de v?lo de route LL - noir, 48|176.1997||Black|500|375|297.6346|48|48-52 CM|2.3600|1|R|178.5808|L|U|LL Road Frame|2011-07-01|2007-12-28|
+283|FR-R38B-48|14|LB|CM|LL Road Frame - Black, 48|Cuadro de carretera GB: negro, 48|Cadre de v?lo de route LL - noir, 48|170.1428||Black|500|375|306.5636|48|48-52 CM|2.3600|1|R|183.9382|L|U|LL Road Frame|2012-07-01|2008-12-27|
+284|FR-R38B-48|14|LB|CM|LL Road Frame - Black, 48|Cuadro de carretera GB: negro, 48|Cadre de v?lo de route LL - noir, 48|204.6251||Black|500|375|337.2200|48|48-52 CM|2.3600|1|R|202.3320|L|U|LL Road Frame|2013-07-01||Current
+285|FR-R38B-52|14|LB|CM|LL Road Frame - Black, 52|Cuadro de carretera GB: negro, 52|Cadre de v?lo de route LL - noir, 52|176.1997||Black|500|375|297.6346|52|48-52 CM|2.4000|1|R|178.5808|L|U|LL Road Frame|2011-07-01|2007-12-28|
+286|FR-R38B-52|14|LB|CM|LL Road Frame - Black, 52|Cuadro de carretera GB: negro, 52|Cadre de v?lo de route LL - noir, 52|170.1428||Black|500|375|306.5636|52|48-52 CM|2.4000|1|R|183.9382|L|U|LL Road Frame|2012-07-01|2008-12-27|
+287|FR-R38B-52|14|LB|CM|LL Road Frame - Black, 52|Cuadro de carretera GB: negro, 52|Cadre de v?lo de route LL - noir, 52|204.6251||Black|500|375|337.2200|52|48-52 CM|2.4000|1|R|202.3320|L|U|LL Road Frame|2013-07-01||Current
+288|FR-M94S-42|12|LB|CM|HL Mountain Frame - Silver, 42|||623.8403||Silver|500|375|1204.3248|42|42-46 CM|2.7200|1|M|722.5949|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+289|FR-M94S-42|12|LB|CM|HL Mountain Frame - Silver, 42|||660.9142||Silver|500|375|1240.4545|42|42-46 CM|2.7200|1|M|744.2727|H|U|HL Mountain Frame|2012-07-01|2008-12-27|
+290|FR-M94S-42|12|LB|CM|HL Mountain Frame - Silver, 42|||747.2002||Silver|500|375|1364.5000|42|42-46 CM|2.7200|1|M|818.7000|H|U|HL Mountain Frame|2013-07-01||Current
+291|FR-M94S-44|12|LB|CM|HL Mountain Frame - Silver, 44|||706.8110||Silver|500|375|1364.5000|44|42-46 CM|2.7600|1|M|818.7000|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+292|FR-M94S-52|12|LB|CM|HL Mountain Frame - Silver, 48|||706.8110||Silver|500|375|1364.5000|48|48-52 CM|2.8000|1|M|818.7000|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+293|FR-M94S-46|12|LB|CM|HL Mountain Frame - Silver, 46|||623.8403||Silver|500|375|1204.3248|46|42-46 CM|2.8400|1|M|722.5949|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+294|FR-M94S-46|12|LB|CM|HL Mountain Frame - Silver, 46|||660.9142||Silver|500|375|1240.4545|46|42-46 CM|2.8400|1|M|744.2727|H|U|HL Mountain Frame|2012-07-01|2008-12-27|
+295|FR-M94S-46|12|LB|CM|HL Mountain Frame - Silver, 46|||747.2002||Silver|500|375|1364.5000|46|42-46 CM|2.8400|1|M|818.7000|H|U|HL Mountain Frame|2013-07-01||Current
+296|FR-M94B-42|12|LB|CM|HL Mountain Frame - Black, 42|||617.0281||Black|500|375|1191.1739|42|42-46 CM|2.7200|1|M|714.7043|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+297|FR-M94B-42|12|LB|CM|HL Mountain Frame - Black, 42|||653.6971||Black|500|375|1226.9091|42|42-46 CM|2.7200|1|M|736.1455|H|U|HL Mountain Frame|2012-07-01|2008-12-27|
+298|FR-M94B-42|12|LB|CM|HL Mountain Frame - Black, 42|||739.0410||Black|500|375|1349.6000|42|42-46 CM|2.7200|1|M|809.7600|H|U|HL Mountain Frame|2013-07-01||Current
+299|FR-M94B-44|12|LB|CM|HL Mountain Frame - Black, 44|||699.0928||Black|500|375|1349.6000|44|42-46 CM|2.7600|1|M|809.7600|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+300|FR-M94B-48|12|LB|CM|HL Mountain Frame - Black, 48|||699.0928||Black|500|375|1349.6000|48|48-52 CM|2.8000|1|M|809.7600|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+301|FR-M94B-46|12|LB|CM|HL Mountain Frame - Black, 46|||617.0281||Black|500|375|1191.1739|46|42-46 CM|2.8400|1|M|714.7043|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+302|FR-M94B-46|12|LB|CM|HL Mountain Frame - Black, 46|||653.6971||Black|500|375|1226.9091|46|42-46 CM|2.8400|1|M|736.1455|H|U|HL Mountain Frame|2012-07-01|2008-12-27|
+303|FR-M94B-46|12|LB|CM|HL Mountain Frame - Black, 46|||739.0410||Black|500|375|1349.6000|46|42-46 CM|2.8400|1|M|809.7600|H|U|HL Mountain Frame|2013-07-01||Current
+304|FR-M94B-38|12|LB|CM|HL Mountain Frame - Black, 38|||617.0281||Black|500|375|1191.1739|38|38-40 CM|2.6800|2|M|714.7043|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+305|FR-M94B-38|12|LB|CM|HL Mountain Frame - Black, 38|||653.6971||Black|500|375|1226.9091|38|38-40 CM|2.6800|2|M|736.1455|H|U|HL Mountain Frame|2012-07-01|2008-12-27|
+306|FR-M94B-38|12|LB|CM|HL Mountain Frame - Black, 38|||739.0410||Black|500|375|1349.6000|38|38-40 CM|2.6800|2|M|809.7600|H|U|HL Mountain Frame|2013-07-01||Current
+307|FR-M94S-38|12|LB|CM|HL Mountain Frame - Silver, 38|||623.8403||Silver|500|375|1204.3248|38|38-40 CM|2.6800|2|M|722.5949|H|U|HL Mountain Frame|2011-07-01|2007-12-28|
+308|FR-M94S-38|12|LB|CM|HL Mountain Frame - Silver, 38|||660.9142||Silver|500|375|1240.4545|38|38-40 CM|2.6800|2|M|744.2727|H|U|HL Mountain Frame|2012-07-01|2008-12-27|
+309|FR-M94S-38|12|LB|CM|HL Mountain Frame - Silver, 38|||747.2002||Silver|500|375|1364.5000|38|38-40 CM|2.6800|2|M|818.7000|H|U|HL Mountain Frame|2013-07-01||Current
+310|BK-R93R-62|2|LB|CM|Road-150 Red, 62|Carretera: 150, roja, 62|V?lo de route 150 rouge, 62|2171.2942||Red|100|75|3578.2700|62|60-62 CM|15.0000|4|R|2146.9620|H|U|Road-150|2011-07-01|2007-12-28|
+311|BK-R93R-44|2|LB|CM|Road-150 Red, 44|Carretera: 150, roja, 44|V?lo de route 150 rouge, 44|2171.2942||Red|100|75|3578.2700|44|42-46 CM|13.7700|4|R|2146.9620|H|U|Road-150|2011-07-01|2007-12-28|
+312|BK-R93R-48|2|LB|CM|Road-150 Red, 48|Carretera: 150, roja, 48|V?lo de route 150 rouge, 48|2171.2942||Red|100|75|3578.2700|48|48-52 CM|14.1300|4|R|2146.9620|H|U|Road-150|2011-07-01|2007-12-28|
+313|BK-R93R-52|2|LB|CM|Road-150 Red, 52|Carretera: 150, roja, 52|V?lo de route 150 rouge, 52|2171.2942||Red|100|75|3578.2700|52|48-52 CM|14.4200|4|R|2146.9620|H|U|Road-150|2011-07-01|2007-12-28|
+314|BK-R93R-56|2|LB|CM|Road-150 Red, 56|Carretera: 150, roja, 56|V?lo de route 150 rouge, 56|2171.2942||Red|100|75|3578.2700|56|54-58 CM|14.6800|4|R|2146.9620|H|U|Road-150|2011-07-01|2007-12-28|
+315|BK-R68R-58|2|LB|CM|Road-450 Red, 58|Carretera: 450, roja, 58|V?lo de route 450 rouge, 58|884.7083||Red|100|75|1457.9900|58|54-58 CM|17.7900|4|R|874.7940|M|U|Road-450|2011-07-01|2007-12-28|
+316|BK-R68R-60|2|LB|CM|Road-450 Red, 60|Carretera: 450, roja, 60|V?lo de route 450 rouge, 60|884.7083||Red|100|75|1457.9900|60|60-62 CM|17.9000|4|R|874.7940|M|U|Road-450|2011-07-01|2007-12-28|
+317|BK-R68R-44|2|LB|CM|Road-450 Red, 44|Carretera: 450, roja, 44|V?lo de route 450 rouge, 44|884.7083||Red|100|75|1457.9900|44|42-46 CM|16.7700|4|R|874.7940|M|U|Road-450|2011-07-01|2007-12-28|
+318|BK-R68R-48|2|LB|CM|Road-450 Red, 48|Carretera: 450, roja, 48|V?lo de route 450 rouge, 48|884.7083||Red|100|75|1457.9900|48|48-52 CM|17.1300|4|R|874.7940|M|U|Road-450|2011-07-01|2007-12-28|
+319|BK-R68R-52|2|LB|CM|Road-450 Red, 52|Carretera: 450, roja, 52|V?lo de route 450 rouge, 52|884.7083||Red|100|75|1457.9900|52|48-52 CM|17.4200|4|R|874.7940|M|U|Road-450|2011-07-01|2007-12-28|
+320|BK-R50R-58|2|LB|CM|Road-650 Red, 58|Carretera: 650, roja, 58|V?lo de route 650 rouge, 58|413.1463||Red|100|75|699.0982|58|54-58 CM|19.7900|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+321|BK-R50R-58|2|LB|CM|Road-650 Red, 58|Carretera: 650, roja, 58|V?lo de route 650 rouge, 58|486.7066||Red|100|75|782.9900|58|54-58 CM|19.7900|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+322|BK-R50R-60|2|LB|CM|Road-650 Red, 60|Carretera: 650, roja, 60|V?lo de route 650 rouge, 60|413.1463||Red|100|75|699.0982|60|60-62 CM|19.9000|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+323|BK-R50R-60|2|LB|CM|Road-650 Red, 60|Carretera: 650, roja, 60|V?lo de route 650 rouge, 60|486.7066||Red|100|75|782.9900|60|60-62 CM|19.9000|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+324|BK-R50R-62|2|LB|CM|Road-650 Red, 62|Carretera: 650, roja, 62|V?lo de route 650 rouge, 62|413.1463||Red|100|75|699.0982|62|60-62 CM|20.0000|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+325|BK-R50R-62|2|LB|CM|Road-650 Red, 62|Carretera: 650, roja, 62|V?lo de route 650 rouge, 62|486.7066||Red|100|75|782.9900|62|60-62 CM|20.0000|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+326|BK-R50R-44|2|LB|CM|Road-650 Red, 44|Carretera: 650, roja, 44|V?lo de route 650 rouge, 44|413.1463||Red|100|75|699.0982|44|42-46 CM|18.7700|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+327|BK-R50R-44|2|LB|CM|Road-650 Red, 44|Carretera: 650, roja, 44|V?lo de route 650 rouge, 44|486.7066||Red|100|75|782.9900|44|42-46 CM|18.7700|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+328|BK-R50R-48|2|LB|CM|Road-650 Red, 48|Carretera: 650, roja, 48|V?lo de route 650 rouge, 48|413.1463||Red|100|75|699.0982|48|48-52 CM|19.1300|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+329|BK-R50R-48|2|LB|CM|Road-650 Red, 48|Carretera: 650, roja, 48|V?lo de route 650 rouge, 48|486.7066||Red|100|75|782.9900|48|48-52 CM|19.1300|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+330|BK-R50R-52|2|LB|CM|Road-650 Red, 52|Carretera: 650, roja, 52|V?lo de route 650 rouge, 52|413.1463||Red|100|75|699.0982|52|48-52 CM|19.4200|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+331|BK-R50R-52|2|LB|CM|Road-650 Red, 52|Carretera: 650, roja, 52|V?lo de route 650 rouge, 52|486.7066||Red|100|75|782.9900|52|48-52 CM|19.4200|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+332|BK-R50B-58|2|LB|CM|Road-650 Black, 58|Carretera: 650, negra, 58|V?lo de route 650 noir, 58|413.1463||Black|100|75|699.0982|58|54-58 CM|19.7900|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+333|BK-R50B-58|2|LB|CM|Road-650 Black, 58|Carretera: 650, negra, 58|V?lo de route 650 noir, 58|486.7066||Black|100|75|782.9900|58|54-58 CM|19.7900|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+334|BK-R50B-60|2|LB|CM|Road-650 Black, 60|Carretera: 650, negra, 60|V?lo de route 650 noir, 60|413.1463||Black|100|75|699.0982|60|60-62 CM|19.9000|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+335|BK-R50B-60|2|LB|CM|Road-650 Black, 60|Carretera: 650, negra, 60|V?lo de route 650 noir, 60|486.7066||Black|100|75|782.9900|60|60-62 CM|19.9000|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+336|BK-R50B-62|2|LB|CM|Road-650 Black, 62|Carretera: 650, negra, 62|V?lo de route 650 noir, 62|413.1463||Black|100|75|699.0982|62|60-62 CM|20.0000|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+337|BK-R50B-62|2|LB|CM|Road-650 Black, 62|Carretera: 650, negra, 62|V?lo de route 650 noir, 62|486.7066||Black|100|75|782.9900|62|60-62 CM|20.0000|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+338|BK-R50B-44|2|LB|CM|Road-650 Black, 44|Carretera: 650, negra, 44|V?lo de route 650 noir, 44|413.1463||Black|100|75|699.0982|44|42-46 CM|18.7700|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+339|BK-R50B-44|2|LB|CM|Road-650 Black, 44|Carretera: 650, negra, 44|V?lo de route 650 noir, 44|486.7066||Black|100|75|782.9900|44|42-46 CM|18.7700|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+340|BK-R50B-48|2|LB|CM|Road-650 Black, 48|Carretera: 650, negra, 48|V?lo de route 650 noir, 48|413.1463||Black|100|75|699.0982|48|48-52 CM|19.1300|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+341|BK-R50B-48|2|LB|CM|Road-650 Black, 48|Carretera: 650, negra, 48|V?lo de route 650 noir, 48|486.7066||Black|100|75|782.9900|48|48-52 CM|19.1300|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+342|BK-R50B-52|2|LB|CM|Road-650 Black, 52|Carretera: 650, negra, 52|V?lo de route 650 noir, 52|413.1463||Black|100|75|699.0982|52|48-52 CM|19.4200|4|R|419.4589|L|U|Road-650|2011-07-01|2007-12-28|
+343|BK-R50B-52|2|LB|CM|Road-650 Black, 52|Carretera: 650, negra, 52|V?lo de route 650 noir, 52|486.7066||Black|100|75|782.9900|52|48-52 CM|19.4200|4|R|469.7940|L|U|Road-650|2012-07-01|2008-12-27|
+344|BK-M82S-38|1|LB|CM|Mountain-100 Silver, 38|Monta?a: 100, plateada, 38|VTT 100 argent, 38|1912.1544||Silver|100|75|3399.9900|38|38-40 CM|20.3500|4|M|2039.9940|H|U|Mountain-100|2011-07-01|2007-12-28|
+345|BK-M82S-42|1|LB|CM|Mountain-100 Silver, 42|Monta?a: 100, plateada, 42|VTT 100 argent, 42|1912.1544||Silver|100|75|3399.9900|42|42-46 CM|20.7700|4|M|2039.9940|H|U|Mountain-100|2011-07-01|2007-12-28|
+346|BK-M82S-44|1|LB|CM|Mountain-100 Silver, 44|Monta?a: 100, plateada, 44|VTT 100 argent, 44|1912.1544||Silver|100|75|3399.9900|44|42-46 CM|21.1300|4|M|2039.9940|H|U|Mountain-100|2011-07-01|2007-12-28|
+347|BK-M82S-48|1|LB|CM|Mountain-100 Silver, 48|Monta?a: 100, plateada, 48|VTT 100 argent, 48|1912.1544||Silver|100|75|3399.9900|48|48-52 CM|21.4200|4|M|2039.9940|H|U|Mountain-100|2011-07-01|2007-12-28|
+348|BK-M82B-38|1|LB|CM|Mountain-100 Black, 38|Monta?a: 100, negra, 38|VTT 100 noir, 38|1898.0944||Black|100|75|3374.9900|38|38-40 CM|20.3500|4|M|2024.9940|H|U|Mountain-100|2011-07-01|2007-12-28|
+349|BK-M82B-42|1|LB|CM|Mountain-100 Black, 42|Monta?a: 100, negra, 42|VTT 100 noir, 42|1898.0944||Black|100|75|3374.9900|42|42-46 CM|20.7700|4|M|2024.9940|H|U|Mountain-100|2011-07-01|2007-12-28|
+350|BK-M82B-44|1|LB|CM|Mountain-100 Black, 44|Monta?a: 100, negra, 44|VTT 100 noir, 44|1898.0944||Black|100|75|3374.9900|44|42-46 CM|21.1300|4|M|2024.9940|H|U|Mountain-100|2011-07-01|2007-12-28|
+351|BK-M82B-48|1|LB|CM|Mountain-100 Black, 48|Monta?a: 100, negra, 48|VTT 100 noir, 48|1898.0944||Black|100|75|3374.9900|48|48-52 CM|21.4200|4|M|2024.9940|H|U|Mountain-100|2011-07-01|2007-12-28|
+352|BK-M68S-38|1|LB|CM|Mountain-200 Silver, 38|Monta?a: 200, plateada, 38|VTT 200 argent, 38|1117.8559||Silver|100|75|2071.4196|38|38-40 CM|23.3500|4|M|1242.8518|H|U|Mountain-200|2012-07-01|2008-12-27|
+353|BK-M68S-38|1|LB|CM|Mountain-200 Silver, 38|Monta?a: 200, plateada, 38|VTT 200 argent, 38|1265.6195||Silver|100|75|2319.9900|38|38-40 CM|23.3500|4|M|1391.9940|H|U|Mountain-200|2013-07-01||Current
+354|BK-M68S-42|1|LB|CM|Mountain-200 Silver, 42|Monta?a: 200, plateada, 42|VTT 200 argent, 42|1117.8559||Silver|100|75|2071.4196|42|42-46 CM|23.7700|4|M|1242.8518|H|U|Mountain-200|2012-07-01|2008-12-27|
+355|BK-M68S-42|1|LB|CM|Mountain-200 Silver, 42|Monta?a: 200, plateada, 42|VTT 200 argent, 42|1265.6195||Silver|100|75|2319.9900|42|42-46 CM|23.7700|4|M|1391.9940|H|U|Mountain-200|2013-07-01||Current
+356|BK-M68S-46|1|LB|CM|Mountain-200 Silver, 46|Monta?a: 200, plateada, 46|VTT 200 argent, 46|1117.8559||Silver|100|75|2071.4196|46|42-46 CM|24.1300|4|M|1242.8518|H|U|Mountain-200|2012-07-01|2008-12-27|
+357|BK-M68S-46|1|LB|CM|Mountain-200 Silver, 46|Monta?a: 200, plateada, 46|VTT 200 argent, 46|1265.6195||Silver|100|75|2319.9900|46|42-46 CM|24.1300|4|M|1391.9940|H|U|Mountain-200|2013-07-01||Current
+358|BK-M68B-38|1|LB|CM|Mountain-200 Black, 38|Monta?a: 200, negra, 38|VTT 200 noir, 38|1105.8100||Black|100|75|2049.0982|38|38-40 CM|23.3500|4|M|1229.4589|H|U|Mountain-200|2012-07-01|2008-12-27|
+359|BK-M68B-38|1|LB|CM|Mountain-200 Black, 38|Monta?a: 200, negra, 38|VTT 200 noir, 38|1251.9813||Black|100|75|2294.9900|38|38-40 CM|23.3500|4|M|1376.9940|H|U|Mountain-200|2013-07-01||Current
+360|BK-M68B-42|1|LB|CM|Mountain-200 Black, 42|Monta?a: 200, negra, 42|VTT 200 noir, 42|1105.8100||Black|100|75|2049.0982|42|42-46 CM|23.7700|4|M|1229.4589|H|U|Mountain-200|2012-07-01|2008-12-27|
+361|BK-M68B-42|1|LB|CM|Mountain-200 Black, 42|Monta?a: 200, negra, 42|VTT 200 noir, 42|1251.9813||Black|100|75|2294.9900|42|42-46 CM|23.7700|4|M|1376.9940|H|U|Mountain-200|2013-07-01||Current
+362|BK-M68B-46|1|LB|CM|Mountain-200 Black, 46|Monta?a: 200, negra, 46|VTT 200 noir, 46|1105.8100||Black|100|75|2049.0982|46|42-46 CM|24.1300|4|M|1229.4589|H|U|Mountain-200|2012-07-01|2008-12-27|
+363|BK-M68B-46|1|LB|CM|Mountain-200 Black, 46|Monta?a: 200, negra, 46|VTT 200 noir, 46|1251.9813||Black|100|75|2294.9900|46|42-46 CM|24.1300|4|M|1376.9940|H|U|Mountain-200|2013-07-01||Current
+364|BK-M47B-38|1|LB|CM|Mountain-300 Black, 38|Monta?a: 300, negra, 38|VTT 300 noir, 38|598.4354||Black|100|75|1079.9900|38|38-40 CM|25.3500|4|M|647.9940|M|U|Mountain-300|2012-07-01|2008-12-27|
+365|BK-M47B-40|1|LB|CM|Mountain-300 Black, 40|Monta?a: 300, negra, 40|VTT 300 noir, 40|598.4354||Black|100|75|1079.9900|40|38-40 CM|25.7700|4|M|647.9940|M|U|Mountain-300|2012-07-01|2008-12-27|
+366|BK-M47B-44|1|LB|CM|Mountain-300 Black, 44|Monta?a: 300, negra, 44|VTT 300 noir, 44|598.4354||Black|100|75|1079.9900|44|42-46 CM|26.1300|4|M|647.9940|M|U|Mountain-300|2012-07-01|2008-12-27|
+367|BK-M47B-48|1|LB|CM|Mountain-300 Black, 48|Monta?a: 300, negra, 48|VTT 300 noir, 48|598.4354||Black|100|75|1079.9900|48|48-52 CM|26.4200|4|M|647.9940|M|U|Mountain-300|2012-07-01|2008-12-27|
+368|BK-R89R-44|2|LB|CM|Road-250 Red, 44|Carretera: 250, roja, 44|V?lo de route 250 rouge, 44|1518.7864||Red|100|75|2443.3500|44|42-46 CM|14.7700|4|R|1466.0100|H|U|Road-250|2012-07-01|2008-12-27|
+369|BK-R89R-48|2|LB|CM|Road-250 Red, 48|Carretera: 250, roja, 48|V?lo de route 250 rouge, 48|1518.7864||Red|100|75|2443.3500|48|48-52 CM|15.1300|4|R|1466.0100|H|U|Road-250|2012-07-01|2008-12-27|
+370|BK-R89R-52|2|LB|CM|Road-250 Red, 52|Carretera: 250, roja, 52|V?lo de route 250 rouge, 52|1518.7864||Red|100|75|2443.3500|52|48-52 CM|15.4200|4|R|1466.0100|H|U|Road-250|2012-07-01|2008-12-27|
+371|BK-R89R-58|2|LB|CM|Road-250 Red, 58|Carretera: 250, roja, 58|V?lo de route 250 rouge, 58|1320.6838||Red|100|75|2181.5625|58|54-58 CM|15.7900|4|R|1308.9375|H|U|Road-250|2012-07-01|2008-12-27|
+372|BK-R89R-58|2|LB|CM|Road-250 Red, 58|Carretera: 250, roja, 58|V?lo de route 250 rouge, 58|1554.9479||Red|100|75|2443.3500|58|54-58 CM|15.7900|4|R|1466.0100|H|U|Road-250|2013-07-01||Current
+373|BK-R89B-44|2|LB|CM|Road-250 Black, 44|Carretera: 250, negra, 44|V?lo de route 250 noir, 44|1320.6838||Black|100|75|2181.5625|44|42-46 CM|14.7700|4|R|1308.9375|H|U|Road-250|2012-07-01|2008-12-27|
+374|BK-R89B-44|2|LB|CM|Road-250 Black, 44|Carretera: 250, negra, 44|V?lo de route 250 noir, 44|1554.9479||Black|100|75|2443.3500|44|42-46 CM|14.7700|4|R|1466.0100|H|U|Road-250|2013-07-01||Current
+375|BK-R89B-48|2|LB|CM|Road-250 Black, 48|Carretera: 250, negra, 48|V?lo de route 250 noir, 48|1320.6838||Black|100|75|2181.5625|48|48-52 CM|15.1300|4|R|1308.9375|H|U|Road-250|2012-07-01|2008-12-27|
+376|BK-R89B-48|2|LB|CM|Road-250 Black, 48|Carretera: 250, negra, 48|V?lo de route 250 noir, 48|1554.9479||Black|100|75|2443.3500|48|48-52 CM|15.1300|4|R|1466.0100|H|U|Road-250|2013-07-01||Current
+377|BK-R89B-52|2|LB|CM|Road-250 Black, 52|Carretera: 250, negra, 52|V?lo de route 250 noir, 52|1320.6838||Black|100|75|2181.5625|52|48-52 CM|15.4200|4|R|1308.9375|H|U|Road-250|2012-07-01|2008-12-27|
+378|BK-R89B-52|2|LB|CM|Road-250 Black, 52|Carretera: 250, negra, 52|V?lo de route 250 noir, 52|1554.9479||Black|100|75|2443.3500|52|48-52 CM|15.4200|4|R|1466.0100|H|U|Road-250|2013-07-01||Current
+379|BK-R89B-58|2|LB|CM|Road-250 Black, 58|Carretera: 250, negra, 58|V?lo de route 250 noir, 58|1320.6838||Black|100|75|2181.5625|58|54-58 CM|15.6800|4|R|1308.9375|H|U|Road-250|2012-07-01|2008-12-27|
+380|BK-R89B-58|2|LB|CM|Road-250 Black, 58|Carretera: 250, negra, 58|V?lo de route 250 noir, 58|1554.9479||Black|100|75|2443.3500|58|54-58 CM|15.6800|4|R|1466.0100|H|U|Road-250|2013-07-01||Current
+381|BK-R64Y-38|2|LB|CM|Road-550-W Yellow, 38|Carretera: 550 para mujer, amarilla, 38|V?lo de route 550 -W - jaune, 38|605.6492||Yellow|100|75|1000.4375|38|38-40 CM|17.3500|4|R|600.2625|M|W|Road-550-W|2012-07-01|2008-12-27|
+382|BK-R64Y-38|2|LB|CM|Road-550-W Yellow, 38|Carretera: 550 para mujer, amarilla, 38|V?lo de route 550 -W - jaune, 38|713.0798||Yellow|100|75|1120.4900|38|38-40 CM|17.3500|4|R|672.2940|M|W|Road-550-W|2013-07-01||Current
+383|BK-R64Y-40|2|LB|CM|Road-550-W Yellow, 40|Carretera: 550 para mujer, amarilla, 40|V?lo de route 550 -W - jaune, 40|605.6492||Yellow|100|75|1000.4375|40|38-40 CM|17.7700|4|R|600.2625|M|W|Road-550-W|2012-07-01|2008-12-27|
+384|BK-R64Y-40|2|LB|CM|Road-550-W Yellow, 40|Carretera: 550 para mujer, amarilla, 40|V?lo de route 550 -W - jaune, 40|713.0798||Yellow|100|75|1120.4900|40|38-40 CM|17.7700|4|R|672.2940|M|W|Road-550-W|2013-07-01||Current
+385|BK-R64Y-42|2|LB|CM|Road-550-W Yellow, 42|Carretera: 550 para mujer, amarilla, 42|V?lo de route 550 -W - jaune, 42|605.6492||Yellow|100|75|1000.4375|42|42-46 CM|18.1300|4|R|600.2625|M|W|Road-550-W|2012-07-01|2008-12-27|
+386|BK-R64Y-42|2|LB|CM|Road-550-W Yellow, 42|Carretera: 550 para mujer, amarilla, 42|V?lo de route 550 -W - jaune, 42|713.0798||Yellow|100|75|1120.4900|42|42-46 CM|18.1300|4|R|672.2940|M|W|Road-550-W|2013-07-01||Current
+387|BK-R64Y-44|2|LB|CM|Road-550-W Yellow, 44|Carretera: 550 para mujer, amarilla, 44|V?lo de route 550 -W - jaune, 44|605.6492||Yellow|100|75|1000.4375|44|42-46 CM|18.4200|4|R|600.2625|M|W|Road-550-W|2012-07-01|2008-12-27|
+388|BK-R64Y-44|2|LB|CM|Road-550-W Yellow, 44|Carretera: 550 para mujer, amarilla, 44|V?lo de route 550 -W - jaune, 44|713.0798||Yellow|100|75|1120.4900|44|42-46 CM|18.4200|4|R|672.2940|M|W|Road-550-W|2013-07-01||Current
+389|BK-R64Y-48|2|LB|CM|Road-550-W Yellow, 48|Carretera: 550 para mujer, amarilla, 48|V?lo de route 550 -W - jaune, 48|605.6492||Yellow|100|75|1000.4375|48|48-52 CM|18.6800|4|R|600.2625|M|W|Road-550-W|2012-07-01|2008-12-27|
+390|BK-R64Y-48|2|LB|CM|Road-550-W Yellow, 48|Carretera: 550 para mujer, amarilla, 48|V?lo de route 550 -W - jaune, 48|713.0798||Yellow|100|75|1120.4900|48|48-52 CM|18.6800|4|R|672.2940|M|W|Road-550-W|2013-07-01||Current
+391|FK-1639|10|||LL Fork|Horquilla GB|Fourche LL|65.8097||NA|500|375|148.2200||NA||1||88.9320|L||LL Fork|2012-07-01|2008-12-27|
+392|FK-5136|10|||ML Fork|Horquilla GM|Fourche ML|77.9176||NA|500|375|175.4900||NA||1||105.2940|M||ML Fork|2012-07-01|2008-12-27|
+393|FK-9939|10|||HL Fork|Horquilla GA|Fourche HL|101.8936||NA|500|375|229.4900||NA||1||137.6940|H||HL Fork|2012-07-01|2008-12-27|
+394|HS-0296|11|||LL Headset|Direcci?n GB|Jeu de direction LL|15.1848||NA|500|375|34.2000||NA||1||20.5200|L||LL Headset|2012-07-01|2008-12-27|
+395|HS-2451|11|||ML Headset|Direcci?n GM|Jeu de direction ML|45.4168||NA|500|375|102.2900||NA||1||61.3740|M||ML Headset|2012-07-01|2008-12-27|
+396|HS-3479|11|||HL Headset|Direcci?n GA|Jeu de direction HL|55.3801||NA|500|375|124.7300||NA||1||74.8380|H||HL Headset|2012-07-01|2008-12-27|
+397|HB-M243|4|||LL Mountain Handlebars|||17.9780||NA|500|375|40.4909||NA||1|M|24.2945|L||LL Mountain Handlebars|2012-07-01|2008-12-27|
+398|HB-M243|4|||LL Mountain Handlebars|||19.7758||NA|500|375|44.5400||NA||1|M|26.7240|L||LL Mountain Handlebars|2013-07-01||Current
+399|HB-M763|4|||ML Mountain Handlebars|||24.9932||NA|500|375|56.2909||NA||1|M|33.7745|M||ML Mountain Handlebars|2012-07-01|2008-12-27|
+400|HB-M763|4|||ML Mountain Handlebars|||27.4925||NA|500|375|61.9200||NA||1|M|37.1520|M||ML Mountain Handlebars|2013-07-01||Current
+401|HB-M918|4|||HL Mountain Handlebars|||48.5453||NA|500|375|109.3364||NA||1|M|65.6018|H||HL Mountain Handlebars|2012-07-01|2008-12-27|
+402|HB-M918|4|||HL Mountain Handlebars|||53.3999||NA|500|375|120.2700||NA||1|M|72.1620|H||HL Mountain Handlebars|2013-07-01||Current
+403|HB-R504|4|||LL Road Handlebars|Manillar de carretera GB|Poign?es de v?lo de route LL|17.9780||NA|500|375|40.4909||NA||1|R|24.2945|L||LL Road Handlebars|2012-07-01|2008-12-27|
+404|HB-R504|4|||LL Road Handlebars|Manillar de carretera GB|Poign?es de v?lo de route LL|19.7758||NA|500|375|44.5400||NA||1|R|26.7240|L||LL Road Handlebars|2013-07-01||Current
+405|HB-R720|4|||ML Road Handlebars|Manillar de carretera GM|Poign?es de v?lo de route ML|24.9932||NA|500|375|56.2909||NA||1|R|33.7745|M||ML Road Handlebars|2012-07-01|2008-12-27|
+406|HB-R720|4|||ML Road Handlebars|Manillar de carretera GM|Poign?es de v?lo de route ML|27.4925||NA|500|375|61.9200||NA||1|R|37.1520|M||ML Road Handlebars|2013-07-01||Current
+407|HB-R956|4|||HL Road Handlebars|Manillar de carretera GA|Poign?es de v?lo de route HL|48.5453||NA|500|375|109.3364||NA||1|R|65.6018|H||HL Road Handlebars|2012-07-01|2008-12-27|
+408|HB-R956|4|||HL Road Handlebars|Manillar de carretera GA|Poign?es de v?lo de route HL|53.3999||NA|500|375|120.2700||NA||1|R|72.1620|H||HL Road Handlebars|2013-07-01||Current
+409|FR-M63B-38|12|LB|CM|ML Mountain Frame - Black, 38|||185.8193||Black|500|375|348.7600|38|38-40 CM|2.7300|2|M|209.2560|M|U|ML Mountain Frame-W|2012-07-01|2008-12-27|
+410|FW-M423|17|||LL Mountain Front Wheel|||26.9708||Black|500|375|60.7450||NA||1|M|36.4470|L||LL Mountain Front Wheel|2012-07-01|2008-12-27|
+411|FW-M762|17|||ML Mountain Front Wheel|||92.8071||Black|500|375|209.0250||NA||1|M|125.4150|M||ML Mountain Front Wheel|2012-07-01|2008-12-27|
+412|FW-M928|17|||HL Mountain Front Wheel|||133.2955||Black|500|375|300.2150||NA||1|M|180.1290|H||HL Mountain Front Wheel|2012-07-01|2008-12-27|
+413|FW-R623|17|G||LL Road Front Wheel|Rueda de carretera delantera GB|Roue avant de v?lo de route LL|37.9909||Black|500|375|85.5650||NA|900.0000|1|R|51.3390|L||LL Road Front Wheel|2012-07-01|2008-12-27|
+414|FW-R762|17|G||ML Road Front Wheel|Rueda de carretera delantera GM|Roue avant de v?lo de route ML|110.2829||Black|500|375|248.3850||NA|850.0000|1|R|149.0310|M||ML Road Front Wheel|2012-07-01|2008-12-27|
+415|FW-R820|17|G||HL Road Front Wheel|Rueda de carretera delantera GA|Roue avant de v?lo de route HL|146.5466||Black|500|375|330.0600||NA|650.0000|1|R|198.0360|H||HL Road Front Wheel|2012-07-01|2008-12-27|
+416|FW-T905|17|||Touring Front Wheel|Rueda de paseo delantera|Roue avant de v?lo de randonn?e|96.7964||Black|500|375|218.0100||NA||1|T|130.8060|||Touring Front Wheel|2012-07-01|2008-12-27|
+417|FR-R72Y-38|14|LB|CM|ML Road Frame-W - Yellow, 38|Cuadro de carretera para mujer GM: amarillo, 38|Cadre de route ML -W - jaune, 38|300.1188||Yellow|500|375|540.7545|38|38-40 CM|2.1800|2|R|324.4527|M|W|ML Road Frame-W|2012-07-01|2008-12-27|
+418|FR-R72Y-38|14|LB|CM|ML Road Frame-W - Yellow, 38|Cuadro de carretera para mujer GM: amarillo, 38|Cadre de route ML -W - jaune, 38|360.9428||Yellow|500|375|594.8300|38|38-40 CM|2.1800|2|R|356.8980|M|W|ML Road Frame-W|2013-07-01||Current
+419|RW-M423|17|||LL Mountain Rear Wheel|||38.9588||Black|500|375|87.7450||NA||1|M|52.6470|L||LL Mountain Rear Wheel|2012-07-01|2008-12-27|
+420|RW-M762|17|||ML Mountain Rear Wheel|||104.7951||Black|500|375|236.0250||NA||1|M|141.6150|M||ML Mountain Rear Wheel|2012-07-01|2008-12-27|
+421|RW-M928|17|||HL Mountain Rear Wheel|||145.2835||Black|500|375|327.2150||NA||1|M|196.3290|H||HL Mountain Rear Wheel|2012-07-01|2008-12-27|
+422|RW-R623|17|G||LL Road Rear Wheel|Rueda de carretera trasera GB|Roue arri?re de v?lo de route LL|49.9789||Black|500|375|112.5650||NA|1050.0000|1|R|67.5390|L||LL Road Rear Wheel|2012-07-01|2008-12-27|
+423|RW-R762|17|G||ML Road Rear Wheel|Rueda de carretera trasera GM|Roue arri?re de v?lo de route ML|122.2709||Black|500|375|275.3850||NA|1000.0000|1|R|165.2310|M||ML Road Rear Wheel|2012-07-01|2008-12-27|
+424|RW-R820|17|G||HL Road Rear Wheel|Rueda de carretera trasera GA|Roue arri?re de v?lo de route HL|158.5346||Black|500|375|357.0600||NA|890.0000|1|R|214.2360|H||HL Road Rear Wheel|2012-07-01|2008-12-27|
+425|RW-T905|17|||Touring Rear Wheel|Rueda de paseo trasera|Roue arri?re de v?lo de randonn?e|108.7844||Black|500|375|245.0100||NA||1|T|147.0060|||Touring Rear Wheel|2012-07-01|2008-12-27|
+426|FR-M63B-40|12|LB|CM|ML Mountain Frame - Black, 40|||185.8193||Black|500|375|348.7600|40|38-40 CM|2.7700|1|M|209.2560|M|U|ML Mountain Frame|2012-07-01|2008-12-27|
+427|FR-M63B-44|12|LB|CM|ML Mountain Frame - Black, 44|||185.8193||Black|500|375|348.7600|44|42-46 CM|2.8100|1|M|209.2560|M|U|ML Mountain Frame|2012-07-01|2008-12-27|
+428|FR-M63B-48|12|LB|CM|ML Mountain Frame - Black, 48|||185.8193||Black|500|375|348.7600|48|48-52 CM|2.8500|1|M|209.2560|M|U|ML Mountain Frame|2012-07-01|2008-12-27|
+429|FR-R72Y-40|14|LB|CM|ML Road Frame-W - Yellow, 40|Cuadro de carretera para mujer GM: amarillo, 40|Cadre de route ML -W - jaune, 40|300.1188||Yellow|500|375|540.7545|40|38-40 CM|2.2200|1|R|324.4527|M|W|ML Road Frame-W|2012-07-01|2008-12-27|
+430|FR-R72Y-40|14|LB|CM|ML Road Frame-W - Yellow, 40|Cuadro de carretera para mujer GM: amarillo, 40|Cadre de route ML -W - jaune, 40|360.9428||Yellow|500|375|594.8300|40|38-40 CM|2.2200|1|R|356.8980|M|W|ML Road Frame-W|2013-07-01||Current
+431|FR-R72Y-42|14|LB|CM|ML Road Frame-W - Yellow, 42|Cuadro de carretera para mujer GM: amarillo, 42|Cadre de route ML -W - jaune, 42|300.1188||Yellow|500|375|540.7545|42|42-46 CM|2.2600|1|R|324.4527|M|W|ML Road Frame-W|2012-07-01|2008-12-27|
+432|FR-R72Y-42|14|LB|CM|ML Road Frame-W - Yellow, 42|Cuadro de carretera para mujer GM: amarillo, 42|Cadre de route ML -W - jaune, 42|360.9428||Yellow|500|375|594.8300|42|42-46 CM|2.2600|1|R|356.8980|M|W|ML Road Frame-W|2013-07-01||Current
+433|FR-R72Y-44|14|LB|CM|ML Road Frame-W - Yellow, 44|Cuadro de carretera para mujer GM: amarillo, 44|Cadre de route ML -W - jaune, 44|300.1188||Yellow|500|375|540.7545|44|42-46 CM|2.3000|1|R|324.4527|M|W|ML Road Frame-W|2012-07-01|2008-12-27|
+434|FR-R72Y-44|14|LB|CM|ML Road Frame-W - Yellow, 44|Cuadro de carretera para mujer GM: amarillo, 44|Cadre de route ML -W - jaune, 44|360.9428||Yellow|500|375|594.8300|44|42-46 CM|2.3000|1|R|356.8980|M|W|ML Road Frame-W|2013-07-01||Current
+435|FR-R72Y-48|14|LB|CM|ML Road Frame-W - Yellow, 48|Cuadro de carretera para mujer GM: amarillo, 48|Cadre de route ML -W - jaune, 48|300.1188||Yellow|500|375|540.7545|48|48-52 CM|2.3400|1|R|324.4527|M|W|ML Road Frame-W|2012-07-01|2008-12-27|
+436|FR-R72Y-48|14|LB|CM|ML Road Frame-W - Yellow, 48|Cuadro de carretera para mujer GM: amarillo, 48|Cadre de route ML -W - jaune, 48|360.9428||Yellow|500|375|594.8300|48|48-52 CM|2.3400|1|R|356.8980|M|W|ML Road Frame-W|2013-07-01||Current
+437|FR-R92B-62|14|LB|CM|HL Road Frame - Black, 62|Cuadro de carretera GA: negro, 62|Cadre de v?lo de route HL - noir, 62|722.2568||Black|500|375|1301.3636|62|60-62 CM|2.3000|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+438|FR-R92B-62|14|LB|CM|HL Road Frame - Black, 62|Cuadro de carretera GA: negro, 62|Cadre de v?lo de route HL - noir, 62|868.6342||Black|500|375|1431.5000|62|60-62 CM|2.3000|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+439|FR-R92B-44|14|LB|CM|HL Road Frame - Black, 44|Cuadro de carretera GA: negro, 44|Cadre de v?lo de route HL - noir, 44|722.2568||Black|500|375|1301.3636|44|42-46 CM|2.1200|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+440|FR-R92B-44|14|LB|CM|HL Road Frame - Black, 44|Cuadro de carretera GA: negro, 44|Cadre de v?lo de route HL - noir, 44|868.6342||Black|500|375|1431.5000|44|42-46 CM|2.1200|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+441|FR-R92B-48|14|LB|CM|HL Road Frame - Black, 48|Cuadro de carretera GA: negro, 48|Cadre de v?lo de route HL - noir, 48|722.2568||Black|500|375|1301.3636|48|48-52 CM|2.1600|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+442|FR-R92B-48|14|LB|CM|HL Road Frame - Black, 48|Cuadro de carretera GA: negro, 48|Cadre de v?lo de route HL - noir, 48|868.6342||Black|500|375|1431.5000|48|48-52 CM|2.1600|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+443|FR-R92B-52|14|LB|CM|HL Road Frame - Black, 52|Cuadro de carretera GA: negro, 52|Cadre de v?lo de route HL - noir, 52|722.2568||Black|500|375|1301.3636|52|48-52 CM|2.2000|1|R|780.8182|H|U|HL Road Frame|2012-07-01|2008-12-27|
+444|FR-R92B-52|14|LB|CM|HL Road Frame - Black, 52|Cuadro de carretera GA: negro, 52|Cadre de v?lo de route HL - noir, 52|868.6342||Black|500|375|1431.5000|52|48-52 CM|2.2000|1|R|858.9000|H|U|HL Road Frame|2013-07-01||Current
+445|SH-M897-S|22|||Men's Sports Shorts, S|Pantalones cortos de deporte para hombre, P|Cuissards de route pour hommes, taille S|24.7459||Black|4|3|59.9900|S|S||0|S|35.9940||M|Men's Sports Shorts|2012-07-01|2008-12-27|
+446|PA-T100|35|||Touring-Panniers, Large|Cesta de paseo, grande|Sacoches de v?lo de randonn?e, grande capacit?|51.5625||Grey|4|3|125.0000||NA||0|T|75.0000|||Touring-Panniers|2012-07-01|2008-12-27|
+447|LO-C100|34|||Cable Lock|Cable antirrobo|Antivol c?ble|10.3125||NA|4|3|25.0000||NA||0|S|15.0000|||Cable Lock|2012-07-01|2008-12-27|
+448|PU-0452|36|||Minipump|||8.2459||NA|4|3|19.9900||NA||0|S|11.9940|||Minipump|2012-07-01|2008-12-27|
+449|PU-M044|36|||Mountain Pump|Bomba de monta?a|Pompe de VTT|10.3084||NA|4|3|24.9900||NA||0|M|14.9940|||Mountain Pump|2012-07-01|2008-12-27|
+450|LT-T990|33|||Taillights - Battery-Powered|||5.7709||NA|4|3|13.9900||NA||0|R|8.3940|||Taillight|2012-07-01|2008-12-27|
+451|LT-H902|33|||Headlights - Dual-Beam|Luces: doble haz|Feu avant - double faisceau|14.4334||NA|4|3|34.9900||NA||0|R|20.9940|||Headlights - Dual-Beam|2012-07-01|2008-12-27|
+452|LT-H903|33|||Headlights - Weatherproof|Luces: resistentes al agua|Feu avant ?tanche|18.5584||NA|4|3|44.9900||NA||0|R|26.9940|||Headlights - Weatherproof|2012-07-01|2008-12-27|
+453|SH-M897-M|22|||Men's Sports Shorts, M|Pantalones cortos de deporte para hombre, M|Cuissards de route pour hommes, taille M|24.7459||Black|4|3|59.9900|M|M||0|S|35.9940||M|Men's Sports Shorts|2012-07-01|2008-12-27|
+454|SH-M897-L|22|||Men's Sports Shorts, L|Pantalones cortos de deporte para hombre, G|Cuissards de route pour hommes, taille L|24.7459||Black|4|3|59.9900|L|L||0|S|35.9940||M|Men's Sports Shorts|2012-07-01|2008-12-27|
+455|SH-M897-X|22|||Men's Sports Shorts, XL|Pantalones cortos de deporte para hombre, SG|Cuissards de route pour hommes, taille XL|24.7459||Black|4|3|59.9900|XL|XL||0|S|35.9940||M|Men's Sports Shorts|2012-07-01|2008-12-27|
+456|TG-W091-S|24|||Women's Tights, S|Mallas para mujer, P|Collants pour femmes, taille S|30.9334||Black|4|3|74.9900|S|S||0|S|44.9940||W|Women's Tights|2012-07-01|2008-12-27|
+457|TG-W091-M|24|||Women's Tights, M|Mallas para mujer, M|Collants pour femmes, taille M|30.9334||Black|4|3|74.9900|M|M||0|S|44.9940||W|Women's Tights|2012-07-01|2008-12-27|
+458|TG-W091-L|24|||Women's Tights, L|Mallas para mujer, G|Collants pour femmes, taille L|30.9334||Black|4|3|74.9900|L|L||0|S|44.9940||W|Women's Tights|2012-07-01|2008-12-27|
+459|SB-M891-S|18|||Men's Bib-Shorts, S|||37.1209||Multi|4|3|89.9900|S|S||0|S|53.9940||M|Men's Bib-Shorts|2012-07-01|2008-12-27|
+460|SB-M891-M|18|||Men's Bib-Shorts, M|||37.1209||Multi|4|3|89.9900|M|M||0|S|53.9940||M|Men's Bib-Shorts|2012-07-01|2008-12-27|
+461|SB-M891-L|18|||Men's Bib-Shorts, L|||37.1209||Multi|4|3|89.9900|L|L||0|S|53.9940||M|Men's Bib-Shorts|2012-07-01|2008-12-27|
+462|GL-H102-S|20|||Half-Finger Gloves, S|||9.7136||Black|4|3|23.5481|S|S||0|S|14.1289||U|Half-Finger Gloves|2012-07-01|2008-12-27|
+463|GL-H102-S|20|||Half-Finger Gloves, S|||9.1593||Black|4|3|24.4900|S|S||0|S|14.6940||U|Half-Finger Gloves|2013-07-01||Current
+464|GL-H102-M|20|||Half-Finger Gloves, M|||9.7136||Black|4|3|23.5481|M|M||0|S|14.1289||U|Half-Finger Gloves|2012-07-01|2008-12-27|
+465|GL-H102-M|20|||Half-Finger Gloves, M|||9.1593||Black|4|3|24.4900|M|M||0|S|14.6940||U|Half-Finger Gloves|2013-07-01||Current
+466|GL-H102-L|20|||Half-Finger Gloves, L|||9.7136||Black|4|3|23.5481|L|L||0|S|14.1289||U|Half-Finger Gloves|2012-07-01|2008-12-27|
+467|GL-H102-L|20|||Half-Finger Gloves, L|||9.1593||Black|4|3|24.4900|L|L||0|S|14.6940||U|Half-Finger Gloves|2013-07-01||Current
+468|GL-F110-S|20|||Full-Finger Gloves, S|Guantes completos, P|Gants longs, taille S|15.6709||Black|4|3|37.9900|S|S||0|M|22.7940||U|Full-Finger Gloves|2012-07-01|2008-12-27|
+469|GL-F110-M|20|||Full-Finger Gloves, M|Guantes completos, M|Gants longs, taille M|15.6709||Black|4|3|37.9900|M|M||0|M|22.7940||U|Full-Finger Gloves|2012-07-01|2008-12-27|
+470|GL-F110-L|20|||Full-Finger Gloves, L|Guantes completos, G|Gants longs, taille L|15.6709||Black|4|3|37.9900|L|L||0|M|22.7940||U|Full-Finger Gloves|2012-07-01|2008-12-27|
+471|VE-C304-S|25|||Classic Vest, S|Camiseta cl?sica, P|Veste classique, taille S|23.7490||Blue|4|3|63.5000|S|S||0|S|38.1000||U|Classic Vest|2013-07-01||Current
+472|VE-C304-M|25|||Classic Vest, M|Camiseta cl?sica, M|Veste classique, taille M|23.7490||Blue|4|3|63.5000|M|M||0|S|38.1000||U|Classic Vest|2013-07-01||Current
+473|VE-C304-L|25|||Classic Vest, L|Camiseta cl?sica, G|Veste classique, taille L|23.7490||Blue|4|3|63.5000|L|L||0|S|38.1000||U|Classic Vest|2013-07-01||Current
+474|SH-W890-S|22|||Women's Mountain Shorts, S|||26.1763||Black|4|3|69.9900|S|S||0|M|41.9940||W|Women's Mountain Shorts|2013-07-01||Current
+475|SH-W890-M|22|||Women's Mountain Shorts, M|||26.1763||Black|4|3|69.9900|M|M||0|M|41.9940||W|Women's Mountain Shorts|2013-07-01||Current
+476|SH-W890-L|22|||Women's Mountain Shorts, L|||26.1763||Black|4|3|69.9900|L|L||0|M|41.9940||W|Women's Mountain Shorts|2013-07-01||Current
+477|WB-H098|28|||Water Bottle - 30 oz.|||1.8663||NA|4|3|4.9900||NA||0|S|2.9940|||Water Bottle|2013-07-01||Current
+478|BC-M005|28|||Mountain Bottle Cage|Portabotellas de monta?a|Porte-bidon de VTT|3.7363||NA|4|3|9.9900||NA||0|M|5.9940|||Mountain Bottle Cage|2013-07-01||Current
+479|BC-R205|28|||Road Bottle Cage|Portabotellas de carretera|Porte-bidon de v?lo de route|3.3623||NA|4|3|8.9900||NA||0|R|5.3940|||Road Bottle Cage|2013-07-01||Current
+480|PK-7098|37|||Patch Kit/8 Patches|||0.8565||NA|4|3|2.2900||NA||0|S|1.3740|||Patch kit|2013-07-01||Current
+481|SO-R809-M|23|||Racing Socks, M|Calcetines para carreras, M|Chaussettes de course, taille M|3.3623||White|4|3|8.9900|M|M||0|R|5.3940||U|Racing Socks|2013-07-01||Current
+482|SO-R809-L|23|||Racing Socks, L|Calcetines para carreras, G|Chaussettes de course, taille L|3.3623||White|4|3|8.9900|L|L||0|R|5.3940||U|Racing Socks|2013-07-01||Current
+483|RA-H123|26|||Hitch Rack - 4-Bike|||44.8800||NA|4|3|120.0000||NA||0|S|72.0000|||Hitch Rack - 4-Bike|2013-07-01||Current
+484|CL-9009|29|||Bike Wash - Dissolver|Lavado de bicicletas: disolvente|Entretien du v?lo - dissolvant|2.9733||NA|4|3|7.9500||NA||0|S|4.7700|||Bike Wash|2013-07-01||Current
+485|FE-6654|30|||Fender Set - Mountain|Conjunto de guardabarros: monta?a|Jeu de garde-boue - VTT|8.2205||NA|4|3|21.9800||NA||0|M|13.1880|||Fender Set - Mountain|2013-07-01||Current
+486|ST-1401|27|||All-Purpose Bike Stand|Soporte multiusos para bicicletas|Range-v?lo pour tous mod?les|59.4660||NA|4|3|159.0000||NA||0|M|95.4000|||All-Purpose Bike Stand|2013-07-01||Current
+487|HY-1023-70|32|||Hydration Pack - 70 oz.|||20.5663||Silver|4|3|54.9900|70|70||0|S|32.9940|||Hydration Pack|2013-07-01||Current
+488|SJ-0194-S|21|||Short-Sleeve Classic Jersey, S|Jersey cl?sico de manga corta, P|Maillot manches courtes classique, taille S|41.5723||Yellow|4|3|53.9900|S|S||0|S|32.3940||U|Short-Sleeve Classic Jersey|2013-07-01||Current
+489|SJ-0194-M|21|||Short-Sleeve Classic Jersey, M|Jersey cl?sico de manga corta, M|Maillot manches courtes classique, taille M|41.5723||Yellow|4|3|53.9900|M|M||0|S|32.3940||U|Short-Sleeve Classic Jersey|2013-07-01||Current
+490|SJ-0194-L|21|||Short-Sleeve Classic Jersey, L|Jersey cl?sico de manga corta, G|Maillot manches courtes classique, taille L|41.5723||Yellow|4|3|53.9900|L|L||0|S|32.3940||U|Short-Sleeve Classic Jersey|2013-07-01||Current
+491|SJ-0194-X|21|||Short-Sleeve Classic Jersey, XL|Jersey cl?sico de manga corta, SG|Maillot manches courtes classique, taille XL|41.5723||Yellow|4|3|53.9900|XL|XL||0|S|32.3940||U|Short-Sleeve Classic Jersey|2013-07-01||Current
+492|FR-T98Y-60|16|LB|CM|HL Touring Frame - Yellow, 60|Cuadro de paseo GA: amarillo, 60|Cadre de v?lo de randonn?e HL - jaune, 60|601.7437||Yellow|500|375|1003.9100|60|60-62 CM|3.0800|1|T|602.3460|H|U|HL Touring Frame|2013-07-01||Current
+493|FR-T67Y-62|16|LB|CM|LL Touring Frame - Yellow, 62|Cuadro de paseo GB: amarillo, 62|Cadre de v?lo de randonn?e LL - jaune, 62|199.8519||Yellow|500|375|333.4200|62|60-62 CM|3.2000|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+494|FR-T98Y-46|16|LB|CM|HL Touring Frame - Yellow, 46|Cuadro de paseo GA: amarillo, 46|Cadre de v?lo de randonn?e HL - jaune, 46|601.7437||Yellow|500|375|1003.9100|46|42-46 CM|2.9600|1|T|602.3460|H|U|HL Touring Frame|2013-07-01||Current
+495|FR-T98Y-50|16|LB|CM|HL Touring Frame - Yellow, 50|Cuadro de paseo GA: amarillo, 50|Cadre de v?lo de randonn?e HL - jaune, 50|601.7437||Yellow|500|375|1003.9100|50|48-52 CM|3.0000|1|T|602.3460|H|U|HL Touring Frame|2013-07-01||Current
+496|FR-T98Y-54|16|LB|CM|HL Touring Frame - Yellow, 54|Cuadro de paseo GA: amarillo, 54|Cadre de v?lo de randonn?e HL - jaune, 54|601.7437||Yellow|500|375|1003.9100|54|54-58 CM|3.0400|1|T|602.3460|H|U|HL Touring Frame|2013-07-01||Current
+497|FR-T98U-46|16|LB|CM|HL Touring Frame - Blue, 46|Cuadro de paseo GA: azul, 46|Cadre de v?lo de randonn?e HL - bleu, 46|601.7437||Blue|500|375|1003.9100|46|42-46 CM|2.9600|1|T|602.3460|H|U|HL Touring Frame|2013-07-01||Current
+498|FR-T98U-50|16|LB|CM|HL Touring Frame - Blue, 50|Cuadro de paseo GA: azul, 50|Cadre de v?lo de randonn?e HL - bleu, 50|601.7437||Blue|500|375|1003.9100|50|48-52 CM|3.0000|1|T|602.3460|H|U|HL Touring Frame|2013-07-01||Current
+499|FR-T98U-54|16|LB|CM|HL Touring Frame - Blue, 54|Cuadro de paseo GA: azul, 54|Cadre de v?lo de randonn?e HL - bleu, 54|601.7437||Blue|500|375|1003.9100|54|54-58 CM|3.0400|1|T|602.3460|H|U|HL Touring Frame|2013-07-01||Current
+500|FR-T98U-60|16|LB|CM|HL Touring Frame - Blue, 60|Cuadro de paseo GA: azul, 60|Cadre de v?lo de randonn?e HL - bleu, 60|601.7437||Blue|500|375|1003.9100|60|60-62 CM|3.0800|1|T|602.3460|H|U|HL Touring Frame|2013-07-01||Current
+501|RD-2308|9|G||Rear Derailleur|Desviador trasero|D?railleur arri?re|53.9282||Silver|500|375|121.4600||NA|215.0000|1||72.8760|||Rear Derailleur|2013-07-01||Current
+502|FR-T67U-50|16|LB|CM|LL Touring Frame - Blue, 50|Cuadro de paseo GB: azul, 50|Cadre de v?lo de randonn?e LL - bleu, 50|199.8519||Blue|500|375|333.4200|50|48-52 CM|3.1000|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+503|FR-T67U-54|16|LB|CM|LL Touring Frame - Blue, 54|Cuadro de paseo GB: azul, 54|Cadre de v?lo de randonn?e LL - bleu, 54|199.8519||Blue|500|375|333.4200|54|54-58 CM|3.1400|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+504|FR-T67U-58|16|LB|CM|LL Touring Frame - Blue, 58|Cuadro de paseo GB: azul, 58|Cadre de v?lo de randonn?e LL - bleu, 58|199.8519||Blue|500|375|333.4200|58|54-58 CM|3.1600|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+505|FR-T67U-62|16|LB|CM|LL Touring Frame - Blue, 62|Cuadro de paseo GB: azul, 62|Cadre de v?lo de randonn?e LL - bleu, 62|199.8519||Blue|500|375|333.4200|62|60-62 CM|3.2000|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+506|FR-T67Y-44|16|LB|CM|LL Touring Frame - Yellow, 44|Cuadro de paseo GB: amarillo, 44|Cadre de v?lo de randonn?e LL - jaune, 44|199.8519||Yellow|500|375|333.4200|44|42-46 CM|3.0200|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+507|FR-T67Y-50|16|LB|CM|LL Touring Frame - Yellow, 50|Cuadro de paseo GB: amarillo, 50|Cadre de v?lo de randonn?e LL - jaune, 50|199.8519||Yellow|500|375|333.4200|50|48-52 CM|3.1000|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+508|FR-T67Y-54|16|LB|CM|LL Touring Frame - Yellow, 54|Cuadro de paseo GB: amarillo, 54|Cadre de v?lo de randonn?e LL - jaune, 54|199.8519||Yellow|500|375|333.4200|54|54-58 CM|3.1400|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+509|FR-T67Y-58|16|LB|CM|LL Touring Frame - Yellow, 58|Cuadro de paseo GB: amarillo, 58|Cadre de v?lo de randonn?e LL - jaune, 58|199.8519||Yellow|500|375|333.4200|58|54-58 CM|3.1600|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+510|FR-T67U-44|16|LB|CM|LL Touring Frame - Blue, 44|Cuadro de paseo GB: azul, 44|Cadre de v?lo de randonn?e LL - bleu, 44|199.8519||Blue|500|375|333.4200|44|42-46 CM|3.0200|1|T|200.0520|L|U|LL Touring Frame|2013-07-01||Current
+511|FR-M63S-40|12|LB|CM|ML Mountain Frame-W - Silver, 40|||199.3757||Silver|500|375|364.0900|40|38-40 CM|2.7700|1|M|218.4540|M|W|ML Mountain Frame-W|2013-07-01||Current
+512|FR-M63S-42|12|LB|CM|ML Mountain Frame-W - Silver, 42|||199.3757||Silver|500|375|364.0900|42|42-46 CM|2.8100|1|M|218.4540|M|W|ML Mountain Frame-W|2013-07-01||Current
+513|FR-M63S-46|12|LB|CM|ML Mountain Frame-W - Silver, 46|||199.3757||Silver|500|375|364.0900|46|42-46 CM|2.8500|1|M|218.4540|M|W|ML Mountain Frame-W|2013-07-01||Current
+514|RB-9231|6|G||Rear Brakes|Frenos traseros|Freins arri?re|47.2860||Silver|500|375|106.5000||NA|317.0000|1||63.9000|||Rear Brakes|2013-07-01||Current
+515|SE-M236|15|||LL Mountain Seat/Saddle|||12.0413||NA|500|375|27.1200||NA||1|M|16.2720|L||LL Mountain Seat/Saddle 2|2013-07-01||Current
+516|SE-M798|15|||ML Mountain Seat/Saddle|||17.3782||NA|500|375|39.1400||NA||1|M|23.4840|M||ML Mountain Seat/Saddle 2|2013-07-01||Current
+517|SE-M940|15|||HL Mountain Seat/Saddle|||23.3722||NA|500|375|52.6400||NA||1|M|31.5840|H||HL Mountain Seat/Saddle 2|2013-07-01||Current
+518|SE-R581|15|||LL Road Seat/Saddle|Sill?n/asiento de carretera GB|Selle de v?lo de route LL|12.0413||NA|500|375|27.1200||NA||1|R|16.2720|L||LL Road Seat/Saddle 1|2013-07-01||Current
+519|SE-R908|15|||ML Road Seat/Saddle|Sill?n/asiento de carretera GM|Selle de v?lo de route ML|17.3782||NA|500|375|39.1400||NA||1|T|23.4840|M||ML Road Seat/Saddle 2|2013-07-01||Current
+520|SE-R995|15|||HL Road Seat/Saddle|Sill?n/asiento de carretera GA|Selle de v?lo de route HL|23.3722||NA|500|375|52.6400||NA||1|R|31.5840|H||HL Road Seat/Saddle 2|2013-07-01||Current
+521|SE-T312|15|||LL Touring Seat/Saddle|Sill?n/asiento de paseo GB|Selle de v?lo de randonn?e LL|12.0413||NA|500|375|27.1200||NA||1|T|16.2720|L||LL Touring Seat/Saddle|2013-07-01||Current
+522|SE-T762|15|||ML Touring Seat/Saddle|Sill?n/asiento de paseo GM|Selle de v?lo de randonn?e ML|17.3782||NA|500|375|39.1400||NA||1|T|23.4840|M||ML Touring Seat/Saddle|2013-07-01||Current
+523|SE-T924|15|||HL Touring Seat/Saddle|Sill?n/asiento de paseo GA|Selle de v?lo de randonn?e HL|23.3722||NA|500|375|52.6400||NA||1|T|31.5840|H||HL Touring Seat/Saddle|2013-07-01||Current
+524|FR-M21S-42|12|LB|CM|LL Mountain Frame - Silver, 42|||144.5938||Silver|500|375|264.0500|42|42-46 CM|2.9200|1|M|158.4300|L|U|LL Mountain Frame|2013-07-01||Current
+525|FR-M21S-44|12|LB|CM|LL Mountain Frame - Silver, 44|||144.5938||Silver|500|375|264.0500|44|42-46 CM|2.9600|1|M|158.4300|L|U|LL Mountain Frame|2013-07-01||Current
+526|FR-M21S-48|12|LB|CM|LL Mountain Frame - Silver, 48|||144.5938||Silver|500|375|264.0500|48|48-52 CM|3.0000|1|M|158.4300|L|U|LL Mountain Frame|2013-07-01||Current
+527|FR-M21S-52|12|LB|CM|LL Mountain Frame - Silver, 52|||144.5938||Silver|500|375|264.0500|52|48-52 CM|3.0400|1|M|158.4300|L|U|LL Mountain Frame|2013-07-01||Current
+528|TT-M928|37|||Mountain Tire Tube|Cubierta para c?mara de monta?a|Chambre ? air de VTT|1.8663||NA|500|375|4.9900||NA||0|M|2.9940|||Mountain Tire Tube|2013-07-01||Current
+529|TT-R982|37|||Road Tire Tube|Cubierta para c?mara de carretera|Chambre ? air de v?lo de route|1.4923||NA|500|375|3.9900||NA||0|R|2.3940|||Road Tire Tube|2013-07-01||Current
+530|TT-T092|37|||Touring Tire Tube|Cubierta para c?mara de paseo|Chambre ? air de v?lo de randonn?e|1.8663||NA|500|375|4.9900||NA||0|T|2.9940|||Touring Tire Tube|2013-07-01||Current
+531|FR-M21B-42|12|LB|CM|LL Mountain Frame - Black, 42|||136.7850||Black|500|375|249.7900|42|42-46 CM|2.9200|1|M|149.8740|L|U|LL Mountain Frame|2013-07-01||Current
+532|FR-M21B-44|12|LB|CM|LL Mountain Frame - Black, 44|||136.7850||Black|500|375|249.7900|44|42-46 CM|2.9600|1|M|149.8740|L|U|LL Mountain Frame|2013-07-01||Current
+533|FR-M21B-48|12|LB|CM|LL Mountain Frame - Black, 48|||136.7850||Black|500|375|249.7900|48|48-52 CM|3.0000|1|M|149.8740|L|U|LL Mountain Frame|2013-07-01||Current
+534|FR-M21B-52|12|LB|CM|LL Mountain Frame - Black, 52|||136.7850||Black|500|375|249.7900|52|48-52 CM|3.0400|1|M|149.8740|L|U|LL Mountain Frame|2013-07-01||Current
+535|TI-M267|37|||LL Mountain Tire|Cubierta de monta?a GB|Pneu de VTT LL|9.3463||NA|500|375|24.9900||NA||0|M|14.9940|L||LL Mountain Tire|2013-07-01||Current
+536|TI-M602|37|||ML Mountain Tire|Cubierta de monta?a GM|Pneu de VTT ML|11.2163||NA|500|375|29.9900||NA||0|M|17.9940|M||ML Mountain Tire|2013-07-01||Current
+537|TI-M823|37|||HL Mountain Tire|Cubierta de monta?a GA|Pneu de VTT HL|13.0900||NA|500|375|35.0000||NA||0|M|21.0000|H||HL Mountain Tire|2013-07-01||Current
+538|TI-R092|37|||LL Road Tire|Cubierta de carretera GB|Pneu de v?lo de route LL|8.0373||NA|500|375|21.4900||NA||0|R|12.8940|L||LL Road Tire|2013-07-01||Current
+539|TI-R628|37|||ML Road Tire|Cubierta de carretera GM|Pneu de v?lo de route ML|9.3463||NA|500|375|24.9900||NA||0|R|14.9940|M||ML Road Tire|2013-07-01||Current
+540|TI-R982|37|||HL Road Tire|Cubierta de carretera GA|Pneu de v?lo de route HL|12.1924||NA|500|375|32.6000||NA||0|R|19.5600|H||HL Road Tire|2013-07-01||Current
+541|TI-T723|37|||Touring Tire|Cubierta de paseo|Pneu de v?lo de randonn?e|10.8423||NA|500|375|28.9900||NA||0|T|17.3940|||Touring Tire|2013-07-01||Current
+542|PD-M282|13|G||LL Mountain Pedal|Pedal de monta?a GB|P?dale de VTT LL|17.9776||Silver/Black|500|375|40.4900||NA|218.0000|1|M|24.2940|L||LL Mountain Pedal|2013-07-01||Current
+543|PD-M340|13|G||ML Mountain Pedal|Pedal de monta?a GM|P?dale de VTT ML|27.5680||Silver/Black|500|375|62.0900||NA|215.0000|1|M|37.2540|M||ML Mountain Pedal|2013-07-01||Current
+544|PD-M562|13|G||HL Mountain Pedal|Pedal de monta?a GA|P?dale de VTT HL|35.9596||Silver/Black|500|375|80.9900||NA|185.0000|1|M|48.5940|H||HL Mountain Pedal|2013-07-01||Current
+545|PD-R347|13|G||LL Road Pedal|Pedal de carretera GB|P?dale de v?lo de route LL|17.9776||Silver/Black|500|375|40.4900||NA|189.0000|1|R|24.2940|L||LL Road Pedal|2013-07-01||Current
+546|PD-R563|13|G||ML Road Pedal|Pedal de carretera GM|P?dale de v?lo de route ML|27.5680||Silver/Black|500|375|62.0900||NA|168.0000|1|R|37.2540|M||ML Road Pedal|2013-07-01||Current
+547|PD-R853|13|G||HL Road Pedal|Pedal de carretera GA|P?dale de v?lo de route HL|35.9596||Silver/Black|500|375|80.9900||NA|149.0000|1|R|48.5940|H||HL Road Pedal|2013-07-01||Current
+548|PD-T852|13|||Touring Pedal|Pedal de paseo|P?dale de v?lo de randonn?e|35.9596||Silver/Black|500|375|80.9900||NA||1|T|48.5940|||Touring Pedal|2013-07-01||Current
+549|FR-M63S-38|12|LB|CM|ML Mountain Frame-W - Silver, 38|||199.3757||Silver|500|375|364.0900|38|38-40 CM|2.7300|2|M|218.4540|M|W|ML Mountain Frame-W|2013-07-01||Current
+550|FR-M21B-40|12|LB|CM|LL Mountain Frame - Black, 40|||136.7850||Black|500|375|249.7900|40|38-40 CM|2.8800|2|M|149.8740|L|U|LL Mountain Frame|2013-07-01||Current
+551|FR-M21S-40|12|LB|CM|LL Mountain Frame - Silver, 40|||144.5938||Silver|500|375|264.0500|40|38-40 CM|2.8800|2|M|158.4300|L|U|LL Mountain Frame|2013-07-01||Current
+552|FD-2342|9|G||Front Derailleur|Desviador delantero|D?railleur avant|40.6216||Silver|500|375|91.4900||NA|88.0000|1||54.8940|||Front Derailleur|2013-07-01||Current
+553|HB-T721|4|||LL Touring Handlebars|Manillar de paseo GB|Poign?es de v?lo de randonn?e LL|20.4640||NA|500|375|46.0900||NA||1|T|27.6540|L||LL Touring Handlebars|2013-07-01||Current
+554|HB-T928|4|||HL Touring Handlebars|Manillar de paseo GA|Poign?es de v?lo de randonn?e HL|40.6571||NA|500|375|91.5700||NA||1|T|54.9420|H||HL Touring Handlebars|2013-07-01||Current
+555|FB-9873|6|G||Front Brakes|Frenos delanteros|Freins avant|47.2860||Silver|500|375|106.5000||NA|317.0000|1||63.9000|||Front Brakes|2013-07-01||Current
+556|CS-4759|8|G||LL Crankset|Bielas GB|P?dalier LL|77.9176||Black|500|375|175.4900||NA|600.0000|1||105.2940|L||LL Crankset|2013-07-01||Current
+557|CS-6583|8|G||ML Crankset|Bielas GM|P?dalier ML|113.8816||Black|500|375|256.4900||NA|635.0000|1||153.8940|M||ML Crankset|2013-07-01||Current
+558|CS-9183|8|G||HL Crankset|Bielas GA|P?dalier HL|179.8156||Black|500|375|404.9900||NA|575.0000|1||242.9940|H||HL Crankset|2013-07-01||Current
+559|CH-0234|7|||Chain|Cadena|Cha?ne|8.9866||Silver|500|375|20.2400||NA||1||12.1440|||Chain|2013-07-01||Current
+560|BK-T44U-60|3|LB|CM|Touring-2000 Blue, 60|Paseo: 2000, azul, 60|V?lo de randonn?e 2000 bleu, 60|755.1508||Blue|100|75|1214.8500|60|60-62 CM|27.9000|4|T|728.9100|M|U|Touring-2000|2013-07-01||Current
+561|BK-T79Y-46|3|LB|CM|Touring-1000 Yellow, 46|Paseo: 1000, amarilla, 46|V?lo de randonn?e 1000 jaune, 46|1481.9379||Yellow|100|75|2384.0700|46|42-46 CM|25.1300|4|T|1430.4420|H|U|Touring-1000|2013-07-01||Current
+562|BK-T79Y-50|3|LB|CM|Touring-1000 Yellow, 50|Paseo: 1000, amarilla, 50|V?lo de randonn?e 1000 jaune, 50|1481.9379||Yellow|100|75|2384.0700|50|48-52 CM|25.4200|4|T|1430.4420|H|U|Touring-1000|2013-07-01||Current
+563|BK-T79Y-54|3|LB|CM|Touring-1000 Yellow, 54|Paseo: 1000, amarilla, 54|V?lo de randonn?e 1000 jaune, 54|1481.9379||Yellow|100|75|2384.0700|54|54-58 CM|25.6800|4|T|1430.4420|H|U|Touring-1000|2013-07-01||Current
+564|BK-T79Y-60|3|LB|CM|Touring-1000 Yellow, 60|Paseo: 1000, amarilla, 60|V?lo de randonn?e 1000 jaune, 60|1481.9379||Yellow|100|75|2384.0700|60|60-62 CM|25.9000|4|T|1430.4420|H|U|Touring-1000|2013-07-01||Current
+565|BK-T18U-54|3|LB|CM|Touring-3000 Blue, 54|Paseo: 3000, azul, 54|V?lo de randonn?e 3000 bleu, 54|461.4448||Blue|100|75|742.3500|54|54-58 CM|29.6800|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+566|BK-T18U-58|3|LB|CM|Touring-3000 Blue, 58|Paseo: 3000, azul, 58|V?lo de randonn?e 3000 bleu, 58|461.4448||Blue|100|75|742.3500|58|54-58 CM|29.9000|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+567|BK-T18U-62|3|LB|CM|Touring-3000 Blue, 62|Paseo: 3000, azul, 62|V?lo de randonn?e 3000 bleu, 62|461.4448||Blue|100|75|742.3500|62|60-62 CM|30.0000|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+568|BK-T18Y-44|3|LB|CM|Touring-3000 Yellow, 44|Paseo: 3000, amarilla, 44|V?lo de randonn?e 3000 jaune, 44|461.4448||Yellow|100|75|742.3500|44|42-46 CM|28.7700|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+569|BK-T18Y-50|3|LB|CM|Touring-3000 Yellow, 50|Paseo: 3000, amarilla, 50|V?lo de randonn?e 3000 jaune, 50|461.4448||Yellow|100|75|742.3500|50|48-52 CM|29.1300|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+570|BK-T18Y-54|3|LB|CM|Touring-3000 Yellow, 54|Paseo: 3000, amarilla, 54|V?lo de randonn?e 3000 jaune, 54|461.4448||Yellow|100|75|742.3500|54|54-58 CM|29.4200|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+571|BK-T18Y-58|3|LB|CM|Touring-3000 Yellow, 58|Paseo: 3000, amarilla, 58|V?lo de randonn?e 3000 jaune, 58|461.4448||Yellow|100|75|742.3500|58|54-58 CM|29.7900|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+572|BK-T18Y-62|3|LB|CM|Touring-3000 Yellow, 62|Paseo: 3000, amarilla, 62|V?lo de randonn?e 3000 jaune, 62|461.4448||Yellow|100|75|742.3500|62|60-62 CM|30.0000|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+573|BK-T79U-46|3|LB|CM|Touring-1000 Blue, 46|Paseo: 1000, azul, 46|V?lo de randonn?e 1000 bleu, 46|1481.9379||Blue|100|75|2384.0700|46|42-46 CM|25.1300|4|T|1430.4420|H|U|Touring-1000|2013-07-01||Current
+574|BK-T79U-50|3|LB|CM|Touring-1000 Blue, 50|Paseo: 1000, azul, 50|V?lo de randonn?e 1000 bleu, 50|1481.9379||Blue|100|75|2384.0700|50|48-52 CM|25.4200|4|T|1430.4420|H|U|Touring-1000|2013-07-01||Current
+575|BK-T79U-54|3|LB|CM|Touring-1000 Blue, 54|Paseo: 1000, azul, 54|V?lo de randonn?e 1000 bleu, 54|1481.9379||Blue|100|75|2384.0700|54|54-58 CM|25.6800|4|T|1430.4420|H|U|Touring-1000|2013-07-01||Current
+576|BK-T79U-60|3|LB|CM|Touring-1000 Blue, 60|Paseo: 1000, azul, 60|V?lo de randonn?e 1000 bleu, 60|1481.9379||Blue|100|75|2384.0700|60|60-62 CM|25.9000|4|T|1430.4420|H|U|Touring-1000|2013-07-01||Current
+577|BK-T44U-46|3|LB|CM|Touring-2000 Blue, 46|Paseo: 2000, azul, 46|V?lo de randonn?e 2000 bleu, 46|755.1508||Blue|100|75|1214.8500|46|42-46 CM|27.1300|4|T|728.9100|M|U|Touring-2000|2013-07-01||Current
+578|BK-T44U-50|3|LB|CM|Touring-2000 Blue, 50|Paseo: 2000, azul, 50|V?lo de randonn?e 2000 bleu, 50|755.1508||Blue|100|75|1214.8500|50|48-52 CM|27.4200|4|T|728.9100|M|U|Touring-2000|2013-07-01||Current
+579|BK-T44U-54|3|LB|CM|Touring-2000 Blue, 54|Paseo: 2000, azul, 54|V?lo de randonn?e 2000 bleu, 54|755.1508||Blue|100|75|1214.8500|54|54-58 CM|27.6800|4|T|728.9100|M|U|Touring-2000|2013-07-01||Current
+580|BK-R79Y-40|2|LB|CM|Road-350-W Yellow, 40|Carretera: 350 para mujer, amarilla, 40|V?lo de route 350 -W - jaune, 40|1082.5100||Yellow|100|75|1700.9900|40|38-40 CM|15.3500|4|R|1020.5940|M|W|Road-350-W|2013-07-01||Current
+581|BK-R79Y-42|2|LB|CM|Road-350-W Yellow, 42|Carretera: 350 para mujer, amarilla, 42|V?lo de route 350 -W - jaune, 42|1082.5100||Yellow|100|75|1700.9900|42|42-46 CM|15.7700|4|R|1020.5940|M|W|Road-350-W|2013-07-01||Current
+582|BK-R79Y-44|2|LB|CM|Road-350-W Yellow, 44|Carretera: 350 para mujer, amarilla, 44|V?lo de route 350 -W - jaune, 44|1082.5100||Yellow|100|75|1700.9900|44|42-46 CM|16.1300|4|R|1020.5940|M|W|Road-350-W|2013-07-01||Current
+583|BK-R79Y-48|2|LB|CM|Road-350-W Yellow, 48|Carretera: 350 para mujer, amarilla, 48|V?lo de route 350 -W - jaune, 48|1082.5100||Yellow|100|75|1700.9900|48|48-52 CM|16.4200|4|R|1020.5940|M|W|Road-350-W|2013-07-01||Current
+584|BK-R19B-58|2|LB|CM|Road-750 Black, 58|Carretera: 750, negra, 58|V?lo de route 750 noir, 58|343.6496||Black|100|75|539.9900|58|54-58 CM|20.7900|4|R|323.9940|L|U|Road-750|2013-07-01||Current
+585|BK-T18U-44|3|LB|CM|Touring-3000 Blue, 44|Paseo: 3000, azul, 44|V?lo de randonn?e 3000 bleu, 44|461.4448||Blue|100|75|742.3500|44|42-46 CM|28.7700|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+586|BK-T18U-50|3|LB|CM|Touring-3000 Blue, 50|Paseo: 3000, azul, 50|V?lo de randonn?e 3000 bleu, 50|461.4448||Blue|100|75|742.3500|50|48-52 CM|29.1300|4|T|445.4100|L|U|Touring-3000|2013-07-01||Current
+587|BK-M38S-38|1|LB|CM|Mountain-400-W Silver, 38|Monta?a: 400 para mujer, plateada, 38|VTT 400 -W argent, 38|419.7784||Silver|100|75|769.4900|38|38-40 CM|26.3500|4|M|461.6940|M|W|Mountain-400-W|2013-07-01||Current
+588|BK-M38S-40|1|LB|CM|Mountain-400-W Silver, 40|Monta?a: 400 para mujer, plateada, 40|VTT 400 -W argent, 40|419.7784||Silver|100|75|769.4900|40|38-40 CM|26.7700|4|M|461.6940|M|W|Mountain-400-W|2013-07-01||Current
+589|BK-M38S-42|1|LB|CM|Mountain-400-W Silver, 42|Monta?a: 400 para mujer, plateada, 42|VTT 400 -W argent, 42|419.7784||Silver|100|75|769.4900|42|42-46 CM|27.1300|4|M|461.6940|M|W|Mountain-400-W|2013-07-01||Current
+590|BK-M38S-46|1|LB|CM|Mountain-400-W Silver, 46|Monta?a: 400 para mujer, plateada, 46|VTT 400 -W argent, 46|419.7784||Silver|100|75|769.4900|46|42-46 CM|27.4200|4|M|461.6940|M|W|Mountain-400-W|2013-07-01||Current
+591|BK-M18S-40|1|LB|CM|Mountain-500 Silver, 40|Monta?a: 500, plateada, 40|VTT 500 argent, 40|308.2179||Silver|100|75|564.9900|40|38-40 CM|27.3500|4|M|338.9940|L|U|Mountain-500|2013-07-01||Current
+592|BK-M18S-42|1|LB|CM|Mountain-500 Silver, 42|Monta?a: 500, plateada, 42|VTT 500 argent, 42|308.2179||Silver|100|75|564.9900|42|42-46 CM|27.7700|4|M|338.9940|L|U|Mountain-500|2013-07-01||Current
+593|BK-M18S-44|1|LB|CM|Mountain-500 Silver, 44|Monta?a: 500, plateada, 44|VTT 500 argent, 44|308.2179||Silver|100|75|564.9900|44|42-46 CM|28.1300|4|M|338.9940|L|U|Mountain-500|2013-07-01||Current
+594|BK-M18S-48|1|LB|CM|Mountain-500 Silver, 48|Monta?a: 500, plateada, 48|VTT 500 argent, 48|308.2179||Silver|100|75|564.9900|48|48-52 CM|28.4200|4|M|338.9940|L|U|Mountain-500|2013-07-01||Current
+595|BK-M18S-52|1|LB|CM|Mountain-500 Silver, 52|Monta?a: 500, plateada, 52|VTT 500 argent, 52|308.2179||Silver|100|75|564.9900|52|48-52 CM|28.6800|4|M|338.9940|L|U|Mountain-500|2013-07-01||Current
+596|BK-M18B-40|1|LB|CM|Mountain-500 Black, 40|Monta?a: 500, negra, 40|VTT 500 noir, 40|294.5797||Black|100|75|539.9900|40|38-40 CM|27.3500|4|M|323.9940|L|U|Mountain-500|2013-07-01||Current
+597|BK-M18B-42|1|LB|CM|Mountain-500 Black, 42|Monta?a: 500, negra, 42|VTT 500 noir, 42|294.5797||Black|100|75|539.9900|42|42-46 CM|27.7700|4|M|323.9940|L|U|Mountain-500|2013-07-01||Current
+598|BK-M18B-44|1|LB|CM|Mountain-500 Black, 44|Monta?a: 500, negra, 44|VTT 500 noir, 44|294.5797||Black|100|75|539.9900|44|42-46 CM|28.1300|4|M|323.9940|L|U|Mountain-500|2013-07-01||Current
+599|BK-M18B-48|1|LB|CM|Mountain-500 Black, 48|Monta?a: 500, negra, 48|VTT 500 noir, 48|294.5797||Black|100|75|539.9900|48|48-52 CM|28.4200|4|M|323.9940|L|U|Mountain-500|2013-07-01||Current
+600|BK-M18B-52|1|LB|CM|Mountain-500 Black, 52|Monta?a: 500, negra, 52|VTT 500 noir, 52|294.5797||Black|100|75|539.9900|52|48-52 CM|28.6800|4|M|323.9940|L|U|Mountain-500|2013-07-01||Current
+601|BB-7421|5|G||LL Bottom Bracket|Eje de pedalier GB|Axe de p?dalier LL|23.9716||NA|500|375|53.9900||NA|223.0000|1||32.3940|L||LL Bottom Bracket|2013-07-01||Current
+602|BB-8107|5|G||ML Bottom Bracket|Eje de pedalier GM|Axe de p?dalier ML|44.9506||NA|500|375|101.2400||NA|168.0000|1||60.7440|M||ML Bottom Bracket|2013-07-01||Current
+603|BB-9108|5|G||HL Bottom Bracket|Eje de pedalier GA|Axe de p?dalier HL|53.9416||NA|500|375|121.4900||NA|170.0000|1||72.8940|H||HL Bottom Bracket|2013-07-01||Current
+604|BK-R19B-44|2|LB|CM|Road-750 Black, 44|Carretera: 750, negra, 44|V?lo de route 750 noir, 44|343.6496||Black|100|75|539.9900|44|42-46 CM|19.7700|4|R|323.9940|L|U|Road-750|2013-07-01||Current
+605|BK-R19B-48|2|LB|CM|Road-750 Black, 48|Carretera: 750, negra, 48|V?lo de route 750 noir, 48|343.6496||Black|100|75|539.9900|48|48-52 CM|20.1300|4|R|323.9940|L|U|Road-750|2013-07-01||Current
+606|BK-R19B-52|2|LB|CM|Road-750 Black, 52|Carretera: 750, negra, 52|V?lo de route 750 noir, 52|343.6496||Black|100|75|539.9900|52|48-52 CM|20.4200|4|R|323.9940|L|U|Road-750|2013-07-01||Current

@@ -1,0 +1,12 @@
+/******************************************************
+ *
+ * Name:         02 - Data Lake Files
+ *     
+ * Design Phase:
+ *     Author:   John Miner
+ *     Date:     01-01-2023
+ *     Purpose:  Copy adventure work files to ADLS.
+ *
+ *               Azure Storage Explorer 
+ * 
+ ******************************************************/
