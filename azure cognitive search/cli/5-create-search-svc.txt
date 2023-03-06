@@ -1,0 +1,26 @@
+#
+# 0 - variables
+#
+
+$PrimaryLoc = "East US"
+$ResourceGrp = "rg4mssqltips2"
+$SearchNm = "acs4mssqltips3"
+$Sku = "Standard2"
+
+# drop
+try
+{
+    az search service create --name $SearchNm --resource-group $ResourceGrp --sku $Sku --yes
+    echo "azure search exists"
+}
+catch
+{
+    echo "azure search doesn't exist"
+}
+
+# create
+echo "create azure search ($SearchNm)"
+az search service create --name $SearchNm --resource-group $ResourceGrp --sku $Sku
+
+# look for service
+az search service list --resource-group $ResourceGrp

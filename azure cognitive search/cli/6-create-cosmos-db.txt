@@ -1,0 +1,55 @@
+#
+# 0 - variables
+#
+
+$PrimaryLoc = "East US"
+$SecondaryLoc = "West US"
+$ResourceGrp = "rg4mssqltips2"
+
+$Account = "act4comosdb2"
+$Database = "sql4cosmosdb2"
+$Container = "con4cosmosdb2"
+$PartKey = "/Id"
+
+#
+# 1 - rebuild account
+#
+
+# drop account
+try
+{
+    az cosmosdb delete --name $Account --resource-group $ResourceGrp 
+    echo "azure cosmos db account exists"
+}
+catch
+{
+    echo "azure cosmos db account doesn't exist"
+}
+
+# create account
+echo "Creating Account = $Account"
+az cosmosdb create --name $Account --resource-group $ResourceGrp --default-consistency-level Eventual --locations regionName="$PrimaryLoc" failoverPriority=0 isZoneRedundant=False --locations regionName="$SecondaryLoc" failoverPriority=1 isZoneRedundant=False
+
+
+#
+# 2 - create sql database (document db)
+#
+
+# Create a SQL API database
+echo "Creating Database = $Database"
+az cosmosdb sql database create --account-name $Account --resource-group $ResourceGrp --name $Database 
+
+
+#
+# 3 - create sql container (document db)
+#
+
+# Create a SQL API container
+echo "Creating Container = $Container"
+az cosmosdb sql container create --account-name $Account --resource-group $ResourceGrp --database-name $Database --name $Container --partition-key-path $PartKey --throughput 400 
+
+
+
+
+# List accounts
+# az cosmosdb list --resource-group $ResourceGrp 

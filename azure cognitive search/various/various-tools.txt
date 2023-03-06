@@ -1,0 +1,15 @@
+-- cosmos data migrator
+https://github.com/Azure/azure-documentdb-datamigrationtool/releases/tag/1.8.3
+
+-- storage explorer
+https://azure.microsoft.com/en-us/products/storage/storage-explorer
+
+-- powershell
+https://learn.microsoft.com/en-us/powershell/
+
+-- query creation
+https://learn.microsoft.com/en-us/azure/search/search-query-create
+
+-- azure cli
+https://learn.microsoft.com/en-us/cli/azure/
+

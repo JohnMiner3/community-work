@@ -1,0 +1,33 @@
+#
+# 0 - variables
+#
+
+$PrimaryLoc = "East US"
+$ResourceGrp = "rg4mssqltips2"
+$StorageAct = "sa4mssqltips2"
+$StorageCon = "sc4mssqltips2"
+
+#
+# 1 - drop/create storage container
+#
+
+$Data = "bronze;bronze/json;bronze/csv;bronze/pdf;bronze/tales"
+$Paths = $Data -split ';'
+
+Foreach ($Path in $Paths)
+{
+    # drop
+    try
+    {
+        az storage fs directory delete --account-name $StorageAct --file-system $StorageCon --name $Path --yes
+        echo "file system directory exists"
+    }
+    catch
+    {
+       echo "file system directory doesn't exist"
+    }
+
+    # create
+    echo "create file system directory ($Path)"
+    az storage fs directory create --account-name $StorageAct --file-system $StorageCon --name $Path
+}

@@ -1,0 +1,65 @@
+#
+# 0 - variables
+#
+
+$PrimaryLoc = "East US"
+$SecondaryLoc = "West US"
+$ResourceGrp = "rg4mssqltips2"
+
+$Server = "svr4sqldb2"
+$Database = "dbs4sqldb2"
+$Login = "sqladmin"
+$Pswd = "pass@1234"
+
+
+#
+# 1 - rebuild account
+#
+
+# drop server
+try
+{
+    az sql server delete --name $Server --resource-group $ResourceGrp --yes
+    echo "azure sql server exists"
+}
+catch
+{
+    echo "azure sql server doesn't exist"
+}
+
+# create server
+echo "Creating Server = $Server"
+az sql server create --name $Server --resource-group $ResourceGrp --location $PrimaryLoc --admin-user $Login --admin-password $Pswd
+
+
+#
+# 2 - create firewall rule
+# 
+
+# set the firewall
+$startIp = "0.0.0.0"
+$endIp = "0.0.0.0"
+az sql server firewall-rule create --resource-group $ResourceGrp --server $Server -n AllowYourIp --start-ip-address "$startIp" --end-ip-address "$endIp"
+
+
+#
+# 3 - create sql database 
+#
+
+# Create a SQL database
+echo "Creating Database = $Database"
+az sql db create --resource-group $ResourceGrp --server $Server --name $Database --sample-name AdventureWorksLT --service-objective "S0"
+
+
+# List databases
+az sql db list --resource-group $ResourceGrp --server $Server 
+
+
+
+
+
+
+
+
+
+

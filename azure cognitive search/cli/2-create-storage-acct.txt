@@ -1,0 +1,29 @@
+#
+# 0 - variables
+#
+
+$PrimaryLoc = "East US"
+$ResourceGrp = "rg4mssqltips2"
+$StorageAct = "sa4mssqltips2"
+$SkuNm = "Standard_LRS"
+
+
+#
+# 1 - drop/create storage account
+#
+
+# drop
+try
+{
+   az storage account delete -n $StorageAct -g $ResourceGrp 
+   echo "storage account exists"
+}
+catch
+{
+   echo "storage account doesn't exist"
+}
+
+# create
+echo "create storage account ($StorageAct)"
+az storage account create -n $StorageAct -g $ResourceGrp -l $PrimaryLoc --sku $SkuNm --kind StorageV2 --hns
+

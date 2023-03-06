@@ -1,0 +1,6 @@
+-- first one
+AccountEndpoint=https://act4comosdb.documents.azure.com:443/;AccountKey=KaCWhUWhqGrZXM3rQMa7H615AR27upMGi9EkwNdOqItT9j2n28luvBONnvL0yiZYrewoLycP1wEjACDb6u1QOQ==;Database=sql4cosmosdb;
+
+
+-- second one 
+AccountEndpoint=https://act4comosdb2.documents.azure.com:443/;AccountKey=6uKTjln8YcbrWywPyIGD6RGCQRitHOjGvPtrD2fQwUDfd05yznaBg8ZtDykyMGkQ7HzfVaC5IERXACDbpFKA5A==;Database=sql4cosmosdb2;

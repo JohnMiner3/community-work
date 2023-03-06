@@ -1,0 +1,32 @@
+#
+# 0 - variables
+#
+
+$PrimaryLoc = "East US"
+$ResourceGrp = "rg4mssqltips2"
+$StorageAct = "sa4mssqltips2"
+$StorageCon = "sc4mssqltips2"
+
+#
+# 3 - drop/create storage container
+#
+
+# drop
+try
+{
+   az storage fs delete -n $StorageCon --account-name $StorageAct
+   echo "storage container exists"
+}
+catch
+{
+   echo "storage container doesn't exist"
+}
+
+# create
+echo "create storage container ($StorageCon)"
+az storage fs create -n $StorageCon --account-name $StorageAct 
+
+
+
+# https://learn.microsoft.com/en-us/cli/azure/storage/fs/file?view=azure-cli-latest
+# https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/storage/blobs/data-lake-storage-directory-file-acl-cli.md

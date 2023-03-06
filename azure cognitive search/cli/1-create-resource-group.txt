@@ -1,0 +1,28 @@
+#
+# 0 - variables
+#
+
+$PrimaryLoc ="East US"
+$ResourceGrp ="rg4mssqltips2"
+
+#
+# 1 - remove old rg
+#
+
+try
+{
+   az group delete --name $ResourceGrp
+   echo "resource group exists"
+}
+catch
+{
+   echo "resource group doesn't exist"
+}
+
+#
+# 2 - create new rg
+#
+
+echo "create resource group ($ResourceGrp)"
+az group create --name $ResourceGrp --location "$PrimaryLoc" 
+

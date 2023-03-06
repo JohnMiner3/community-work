@@ -1,0 +1,14 @@
+-- Grim Tales
+&search=wolf
+
+-- Adventure works
+&filter=AccountNumber&search="10-4020-000502"&$count=true
+
+-- Stock Data - 2017
+$top=10&search=MSFT
+
+-- Must cast date to string
+&search="2017-04-01T00:00:00Z"
+
+-- use query instead?
+https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/tostring
