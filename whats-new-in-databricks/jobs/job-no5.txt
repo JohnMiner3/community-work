@@ -1,0 +1,633 @@
+{
+       "name": "job-05-autoload-json-files",
+        "email_notifications": {
+            "no_alert_for_skipped_runs": false
+        },
+        "webhook_notifications": {},
+        "timeout_seconds": 0,
+        "max_concurrent_runs": 1,
+        "tasks": [
+            {
+                "task_key": "tsk-auto-load-json-files-account",
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "account",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-currency",
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "currency",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+			
+			{
+                "task_key": "tsk-auto-load-json-files-customer",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-currency"
+				  },
+				  {
+					"task_key": "tsk-auto-load-json-files-account"
+				  }
+				],					
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "customer",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-date",
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "date",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+			
+						
+			{
+                "task_key": "tsk-auto-load-json-files-department-group",
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "department_group",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-employee",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-date"
+				  },
+				  {
+					"task_key": "tsk-auto-load-json-files-department-group"
+				  }
+				],					
+				
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "employee",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+						
+			{
+                "task_key": "tsk-auto-load-json-files-geography",
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "geography",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-organization",
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "organization",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+			
+									
+			{
+                "task_key": "tsk-auto-load-json-files-product",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-geography"
+				  },
+				  {
+					"task_key": "tsk-auto-load-json-files-organization"
+				  }
+				],				
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "product",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-product-category",
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "product_category",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-product-subcategory",
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "product_subcategory",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-promotion",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-product-category"
+				  },
+				  {
+					"task_key": "tsk-auto-load-json-files-product-subcategory"
+				  }
+				],				
+				
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "promotion",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+			
+			{
+                "task_key": "tsk-auto-load-json-files-reseller",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-customer"
+				  }
+				],				
+				
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "reseller",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-sales-reason",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-employee"
+				  }
+				],				
+				
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "sales_reason",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+			
+			{
+                "task_key": "tsk-auto-load-json-files-sales-territory",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-product"
+				  }
+				],				
+				
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "sales_territory",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-scenario",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-promotion"
+				  }
+				],				
+				
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "scenario",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "dim",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+			
+			
+			{
+                "task_key": "tsk-auto-load-json-files-call-center",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-reseller"
+				  },
+				  {
+					"task_key": "tsk-auto-load-json-files-sales-reason"
+				  },
+				  {
+					"task_key": "tsk-auto-load-json-files-scenario"
+				  },
+				  {
+					"task_key": "tsk-auto-load-json-files-sales-territory"
+				  }
+				],				
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "call_center",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "fact",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            },
+
+			{
+                "task_key": "tsk-auto-load-json-files-internet-sales",
+				"depends_on": [
+				  {
+					"task_key": "tsk-auto-load-json-files-call-center"
+				  }
+				],					
+                "run_if": "ALL_SUCCESS",
+                "notebook_task": {
+                    "notebook_path": "/Shared/whats-new-talk/2 - autoloader example/nb-auto-load-json",
+                    "base_parameters": {
+                        "table_name": "internet_sales",
+                        "partition_count": "2",
+                        "delete_targets": "True",
+                        "schema_name": "fact",
+                        "debug_flag": "True",
+                        "datalake_path": "/mnt/datalake/adventure-works-v3"
+                    },
+                    "source": "WORKSPACE"
+                },
+                "job_cluster_key": "Job_cluster",
+                "timeout_seconds": 0,
+                "email_notifications": {
+                    "on_failure": [
+                        "john@craftydba.com"
+                    ]
+                },
+                "notification_settings": {
+                    "no_alert_for_skipped_runs": false,
+                    "no_alert_for_canceled_runs": false,
+                    "alert_on_last_attempt": false
+                }
+            }
+
+        ],
+        "job_clusters": [
+            {
+                "job_cluster_key": "Job_cluster",
+                "new_cluster": {
+                    "cluster_name": "",
+                    "spark_version": "13.3.x-scala2.12",
+                    "spark_conf": {
+                        "spark.databricks.delta.preview.enabled": "true"
+                    },
+                    "spark_env_vars": {
+                        "PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+                    },
+                    "instance_pool_id": "0817-000601-corms8-pool-1oeko0bj",
+                    "data_security_mode": "NONE",
+                    "runtime_engine": "PHOTON",
+                    "num_workers": 2
+                }
+            }
+        ],
+        "format": "MULTI_TASK"
+    }

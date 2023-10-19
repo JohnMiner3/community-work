@@ -1,0 +1,14 @@
+My Article - Databricks CLI
+
+https://www.mssqltips.com/sqlservertip/7782/managing-azure-databricks-with-command-line-interface/
+
+
+workspace -
+  https://adb-5199347790438756.16.azuredatabricks.net
+
+databricks token - 
+  <create user token - capture info here>
+
+databricks configure --token
+
+databricks jobs create --json-file job-no2.txt

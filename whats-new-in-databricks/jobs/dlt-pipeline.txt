@@ -1,0 +1,45 @@
+{
+    "id": "d4b70b2d-bb1a-445e-8199-fc193980b149",
+    "pipeline_type": "WORKSPACE",
+    "clusters": [
+        {
+            "label": "default",
+            "autoscale": {
+                "min_workers": 1,
+                "max_workers": 4,
+                "mode": "ENHANCED"
+            }
+        }
+    ],
+    "development": true,
+    "continuous": false,
+    "channel": "CURRENT",
+    "photon": false,
+    "libraries": [
+        {
+            "notebook": {
+                "path": "/Shared/whats-new-talk/3 - delta live tables/nb-dlt-bronze-layer"
+            }
+        },
+        {
+            "notebook": {
+                "path": "/Shared/whats-new-talk/3 - delta live tables/nb-dlt-silver-layer"
+            }
+        },
+        {
+            "notebook": {
+                "path": "/Shared/whats-new-talk/3 - delta live tables/nb-dlt-gold-layer-1"
+            }
+        },
+        {
+            "notebook": {
+                "path": "/Shared/whats-new-talk/3 - delta live tables/nb-dlt-gold-layer-2"
+            }
+        }
+    ],
+    "name": "pl_advwrks_delta_lake",
+    "edition": "ADVANCED",
+    "storage": "/mnt/datalake/adventure-works-v4/zones",
+    "target": "advwrks",
+    "data_sampling": false
+}

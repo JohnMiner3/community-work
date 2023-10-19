@@ -1,0 +1,68 @@
+-- Directory Structure --
+
+.\data - contains the csv files for adventure works datamart
+
+.\jobs - contains json for both work flows and dlt pipeline
+
+.\code - is an databricks export library
+
+
+-- Setup --
+
+1 - deploy datalake architecture (service principle, secret scope, mount storage)
+
+2 - repoint code examples to your mounted storage
+
+3 - rebuild jobs with databricks cli
+
+4 - run code and learn
+
+
+-- Help links for setup --
+
+https://www.mssqltips.com/sqlservertip/7782/managing-azure-databricks-with-command-line-interface/
+
+https://www.mssqltips.com/sqlservertip/7806/create-delta-lakehouse-design-pattern-for-azure-databricks/
+
+
+-- Internet Links --
+
+Databricks Company
+
+https://en.wikipedia.org/wiki/Databricks#History
+
+
+Release of Delta Lake
+
+https://www.datanami.com/2022/06/29/why-the-open-sourcing-of-databricks-delta-lake-table-format-is-a-big-deal/
+
+
+Delta Lake 
+
+https://docs.delta.io/latest/delta-faq.html#how-is-delta-lake-related-to-apache-spark
+
+
+Workflows - Old Technique
+
+https://www.databricks.com/blog/2016/08/30/notebook-workflows-the-easiest-way-to-implement-apache-spark-pipelines.html
+
+
+Workflows - New Technique
+
+https://www.databricks.com/product/workflows
+
+
+Autoloader
+
+https://learn.microsoft.com/en-us/azure/databricks/ingestion/auto-loader/
+
+
+Perspective
+
+https://medium.com/@lackshub/caveats-around-delta-live-tables-dlt-c9c4ac51d319
+
+
+Delta Clones
+
+https://docs.databricks.com/en/sql/language-manual/delta-clone.html
+

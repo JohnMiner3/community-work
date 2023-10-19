@@ -1,0 +1,604 @@
+{
+    "name": "job-03-after-workflows",
+    "email_notifications": {
+      "no_alert_for_skipped_runs": false
+    },
+    "webhook_notifications": {},
+    "timeout_seconds": 0,
+    "max_concurrent_runs": 1,
+    "tasks": [
+      {
+        "task_key": "tsk-load-advwrks-account",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "AccountKey INT, ParentAccountKey INT, AccountCodeAlternateKey INT, ParentAccountCodeAlternateKey INT, AccountDescription STRING, AccountType STRING, Operator STRING, CustomMembers STRING, ValueType STRING, CustomMemberOptions STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/account/dim-account-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+      {
+        "task_key": "tsk-load-advwrks-currency",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "CurrencyKey INT, CurrencyAlternateKey STRING, CurrencyName STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/currency/dim-currency-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+      {
+        "task_key": "tsk-load-advwrks-customer",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-currency"
+          },
+          {
+            "task_key": "tsk-load-advwrks-account"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "CustomerKey INT, GeographyKey INT, CustomerAlternateKey STRING, Title STRING, FirstName STRING, MiddleName STRING, LastName STRING, NameStyle INT, BirthDate DATE, MaritalStatus STRING, Suffix STRING, Gender STRING, EmailAddress STRING, YearlyIncome DECIMAL, TotalChildren INT, NumberChildrenAtHome INT, EnglishEducation STRING, SpanishEducation STRING, FrenchEducation STRING, EnglishOccupation STRING, SpanishOccupation STRING, FrenchOccupation STRING, HouseOwnerFlag STRING, NumberCarsOwned INT, AddressLine1 STRING, AddressLine2 STRING, Phone STRING, DateFirstPurchase DATE, CommuteDistance STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/customer/dim-customer-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },	  
+	  {
+        "task_key": "tsk-load-advwrks-date",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "DateKey INT, FullDateAlternateKey TIMESTAMP, DayNumberOfWeek SHORT, EnglishDayNameOfWeek STRING, SpanishDayNameOfWeek STRING, FrenchDayNameOfWeek STRING, DayNumberOfMonth SHORT, DayNumberOfYear SHORT, WeekNumberOfYear SHORT, EnglishMonthName STRING, SpanishMonthName STRING, FrenchMonthName STRING, MonthNumberOfYear SHORT, CalendarQuarter SHORT, CalendarYear SHORT, CalendarSemester SHORT, FiscalQuarter SHORT, FiscalYear SHORT, FiscalSemester SHORT",
+            "debug_flag": "true",
+            "datafile_path": "/dim/date/dim-date-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+      {
+        "task_key": "tsk-load-advwrks-department-group",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "DepartmentGroupKey INT, ParentDepartmentGroupKey INT, DepartmentGroupName STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/department_group/dim-department_group-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+      {
+        "task_key": "tsk-load-advwrks-employee",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-date"
+          },
+          {
+            "task_key": "tsk-load-advwrks-department-group"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "EmployeeKey INT, ParentEmployeeKey INT, EmployeeNationalIDAlternateKey STRING, ParentEmployeeNationalIDAlternateKey STRING, SalesTerritoryKey INT, FirstName STRING, LastName STRING, MiddleName STRING, NameStyle SHORT, Title STRING, HireDate DATE, BirthDate DATE, LoginID STRING, EmailAddress STRING, Phone STRING, MaritalStatus STRING, EmergencyContactName STRING, EmergencyContactPhone STRING, SalariedFlag SHORT, Gender STRING, PayFrequency SHORT, BaseRate DECIMAL, VacationHours SHORT, SickLeaveHours SHORT, CurrentFlag SHORT, SalesPersonFlag SHORT, DepartmentName STRING, StartDate DATE, EndDate DATE",
+            "debug_flag": "true",
+            "datafile_path": "/dim/employee/dim-employee-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+	  
+	  {
+        "task_key": "tsk-load-advwrks-geography",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "GeographyKey INT, City STRING, StateProvinceCode STRING, StateProvinceName STRING, CountryRegionCode STRING, EnglishCountryRegionName STRING, SpanishCountryRegionName STRING, FrenchCountryRegionName STRING, PostalCode STRING, SalesTerritoryKey INT, IpAddressLocator STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/geography/dim-geography-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+      {
+        "task_key": "tsk-load-advwrks-organization",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "OrganizationKey INT, ParentOrganizationKey INT, PercentageOfOwnership STRING, OrganizationName STRING, CurrencyKey INT",
+            "debug_flag": "true",
+            "datafile_path": "/dim/organization/dim-organization-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+      {
+        "task_key": "tsk-load-advwrks-product",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-geography"
+          },
+          {
+            "task_key": "tsk-load-advwrks-organization"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "ProductKey  integer, ProductAlternateKey  string, ProductSubcategoryKey  integer, WeightUnitMeasureCode  string, SizeUnitMeasureCode  string, EnglishProductName  string, StandardCost  decimal(19,4), FinishedGoodsFlag  boolean, Color  string, SafetyStockLevel  integer, ReorderPoint  integer, ListPrice  decimal(19,4), Size  string, SizeRange  string, Weight  double, DaysToManufacture  integer, ProductLine  string, DealerPrice  decimal(19,4), Class  string, Style  string, ModelName  string, EnglishDescription  string, StartDate  timestamp, EndDate  timestamp, Status  string",
+            "debug_flag": "true",
+            "datafile_path": "/dim/product/dim-product-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+	    
+	  {
+        "task_key": "tsk-load-advwrks-product-category",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "ProductCategoryKey INT, ProductCategoryAlternateKey INT, EnglishProductCategoryName STRING, SpanishProductCategoryName STRING, FrenchProductCategoryName STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/product_category/dim-product_category-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+      {
+        "task_key": "tsk-load-advwrks-product-subcategory",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "ProductSubcategoryKey INT, ProductSubcategoryAlternateKey INT, EnglishProductSubcategoryName STRING, SpanishProductSubcategoryName STRING, FrenchProductSubcategoryName STRING, ProductCategoryKey INT",
+            "debug_flag": "true",
+            "datafile_path": "/dim/product_subcategory/dim-product_subcategory-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+      {
+        "task_key": "tsk-load-advwrks-promotion",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-product-category"
+          },
+          {
+            "task_key": "tsk-load-advwrks-product-subcategory"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "PromotionKey INT, PromotionAlternateKey INT, EnglishPromotionName STRING, SpanishPromotionName STRING, FrenchPromotionName STRING, DiscountPct DECIMAL, EnglishPromotionType STRING, SpanishPromotionType STRING, FrenchPromotionType STRING, EnglishPromotionCategory STRING, SpanishPromotionCategory STRING, FrenchPromotionCategory STRING, StartDate TIMESTAMP, EndDate TIMESTAMP, MinQty INT, MaxQty INT",
+            "debug_flag": "true",
+            "datafile_path": "/dim/promotion/dim-promotion-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+
+      {
+        "task_key": "tsk-load-advwrks-reseller",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-customer"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "ResellerKey INT, GeographyKey INT, ResellerAlternateKey STRING, Phone STRING, BusinessType STRING, ResellerName STRING, NumberEmployees INT, OrderFrequency STRING, OrderMonth SHORT, FirstOrderYear INT, LastOrderYear INT, ProductLine STRING, AddressLine1 STRING, AddressLine2 STRING, AnnualSales DECIMAL, BankName STRING, MinPaymentType SHORT, MinPaymentAmount DECIMAL, AnnualRevenue DECIMAL, YearOpened INT",
+            "debug_flag": "true",
+            "datafile_path": "/dim/reseller/dim-reseller-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+	  
+      {
+        "task_key": "tsk-load-advwrks-sales-reason",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-employee"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "SalesReasonKey INT, SalesReasonAlternateKey INT, SalesReasonName STRING, SalesReasonReasonType STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/sales_reason/dim-sales_reason-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+	  
+	   {
+        "task_key": "tsk-load-advwrks-sales-territory",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-product"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "SalesTerritoryKey INT, SalesTerritoryAlternateKey INT, SalesTerritoryRegion STRING, SalesTerritoryCountry STRING, SalesTerritoryGroup STRING, SalesTerritoryImage STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/sales_territory/dim-sales_territory-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+	  
+	   {
+        "task_key": "tsk-load-advwrks-scenario",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-promotion"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "ScenarioKey INT, ScenarioName STRING",
+            "debug_flag": "true",
+            "datafile_path": "/dim/scenario/dim-scenario-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      },
+	  
+
+	  {
+        "task_key": "tsk-load-advwrks-internet-sales",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-reseller"
+          },
+          {
+            "task_key": "tsk-load-advwrks-sales-reason"
+          },
+          {
+            "task_key": "tsk-load-advwrks-scenario"
+          },
+          {
+            "task_key": "tsk-load-advwrks-sales-territory"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "ProductKey int, OrderDateKey int, DueDateKey int, ShipDateKey int, CustomerKey int, PromotionKey int, CurrencyKey int, SalesTerritoryKey int, SalesOrderNumber string, SalesOrderLineNumber short, RevisionNumber short, OrderQuantity short, UnitPrice decimal, ExtendedAmount decimal, UnitPriceDiscountPct decimal, DiscountAmount decimal, ProductStandardCost decimal, TotalProductCost decimal, SalesAmount decimal, TaxAmt decimal, Freight decimal, CarrierTrackingNumber string, CustomerPONumber string, OrderDate timestamp , DueDate timestamp , ShipDate timestamp",
+            "debug_flag": "true",
+            "datafile_path": "/fact/internet_sales/fact-internet_sales-20200915T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      }	,  
+
+
+	   {
+        "task_key": "tsk-load-advwrks-call-center",
+        "depends_on": [
+          {
+            "task_key": "tsk-load-advwrks-internet-sales"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "/Shared/whats-new-talk/1 - workflow example/nb-full-load-delta-table",
+          "base_parameters": {
+            "partition_count": "2",
+            "file_schema": "FactCallCenterID int, DateKey int, WageType string, Shift string, LevelOneOperators int, LevelTwoOperators int, TotalOperators int, Calls int, AutomaticResponses int, Orders int, IssuesRaised int, AverageTimePerIssue int, ServiceGrade float, Date timestamp",
+            "debug_flag": "true",
+            "datafile_path": "/fact/call_center/fact-call_center-20200905T101530.csv",
+            "datalake_path": "/mnt/datalake/adventure-works-v2/bronze/"
+          },
+          "source": "WORKSPACE"
+        },
+        "job_cluster_key": "Shared_job_cluster",
+        "timeout_seconds": 0,
+        "email_notifications": {
+          "on_failure": [
+            "john@craftydba.com"
+          ]
+        },
+        "notification_settings": {
+          "no_alert_for_skipped_runs": false,
+          "no_alert_for_canceled_runs": false,
+          "alert_on_last_attempt": false
+        }
+      }
+    ],	
+       "job_clusters": [
+            {
+                "job_cluster_key": "Shared_job_cluster",
+                "new_cluster": {
+                    "cluster_name": "",
+                    "spark_version": "10.4.x-scala2.12",
+                    "spark_conf": {
+                        "spark.databricks.delta.preview.enabled": "true"
+                    },
+                    "azure_attributes": {
+                        "first_on_demand": 1,
+                        "availability": "ON_DEMAND_AZURE",
+                        "spot_bid_max_price": -1
+                    },
+                    "node_type_id": "Standard_DS3_v2",
+                    "spark_env_vars": {
+                        "PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+                    },
+                    "enable_elastic_disk": true,
+                    "data_security_mode": "LEGACY_SINGLE_USER_STANDARD",
+                    "runtime_engine": "STANDARD",
+                    "num_workers": 2
+                }
+            }
+        ],
+        "format": "MULTI_TASK"
+}
