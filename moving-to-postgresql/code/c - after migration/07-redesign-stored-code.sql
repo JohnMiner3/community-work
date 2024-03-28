@@ -181,12 +181,6 @@ $func04$ language plpgsql;
 */
 
 
-
---
--- stored code - trigger on employee
---
-
-
 --
 -- stored code - trigger on employee
 --
