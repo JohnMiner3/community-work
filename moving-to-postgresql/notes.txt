@@ -1,0 +1,98 @@
+~~
+~~  Url Links - create tiny urls
+~~
+
+
+History of Postgres
+
+https://en.wikipedia.org/wiki/PostgreSQL
+
+
+Dev Ops Tools
+
+https://spacelift.io/blog/devops-tools
+
+
+Perl Script - MS SQL 2 PostgreSQL
+
+https://nuvalence.io/insights/microsoft-sql-server-to-postgresql-migration-using-sqlserver2pgsql/
+
+
+Git Repo
+
+https://github.com/dalibo/sqlserver2pgsql
+
+
+Download Strawberry Perl
+
+https://strawberryperl.com/releases.html
+
+
+Client Tools
+
+https://www.pgadmin.org/
+
+
+ODBC Driver
+
+https://odbc.postgresql.org/
+
+
+JDBC Driver
+
+https://jdbc.postgresql.org/
+
+
+pgSQL - Indexes
+
+https://www.postgresql.org/docs/current/indexes.html
+
+
+psSQL - Language
+
+https://www.postgresql.org/docs/current/plpgsql.html
+
+
+Multi version concurrency control
+
+https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most
+
+
+Statement Statistics
+
+https://www.postgresql.org/docs/current/pgstatstatements.html
+
+
+Query Store
+
+https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-query-store
+
+
+Replication
+
+https://www.postgresql.org/docs/current/runtime-config-replication.html
+
+
+Full text search
+
+https://www.postgresql.org/docs/current/textsearch.html
+
+
+High Availablity
+
+https://www.postgresql.org/docs/current/high-availability.html
+
+
+Geo-Spatial Data
+
+https://postgis.net
+
+
+Liquid Base
+
+https://www.liquibase.com/
+
+
+FlyWay
+
+https://flywaydb.org/

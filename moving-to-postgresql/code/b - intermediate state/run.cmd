@@ -1,0 +1,1 @@
+perl.exe .\sqlserver2pgsql.pl -f .\sqlserver_sql_dump.sql -b .\output_before_script.sql -a .\output_after_script.sql -u .\output_unsure_script.sql
