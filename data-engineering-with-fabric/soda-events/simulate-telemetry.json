@@ -1,0 +1,8 @@
+{
+	"eventhub": {
+		"namespace": "ehns4tips2024",
+		"hubname": "ehub4tips2024",
+        "keyname": "RootManageSharedAccessKey",
+        "keyval": "<your key here>"		
+	}
+}

@@ -1,0 +1,261 @@
+{
+    "name": "pl-delimited-full-load",
+    "objectId": "75c47799-899d-4fe6-8a91-88b9ea3e0a43",
+    "properties": {
+        "description": "Data Factory Pipeline - Call Full Load Notebook.",
+        "activities": [
+            {
+                "name": "lkp-meta-data",
+                "description": "Look up ",
+                "type": "Lookup",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "LakehouseTableSource"
+                    },
+                    "firstRowOnly": false,
+                    "datasetSettings": {
+                        "annotations": [],
+                        "linkedService": {
+                            "name": "lh_adv_wrks",
+                            "properties": {
+                                "annotations": [],
+                                "type": "Lakehouse",
+                                "typeProperties": {
+                                    "workspaceId": "a668a328-9f67-4678-93f2-10d5afdfe3ad",
+                                    "artifactId": "0416e287-2a33-4093-8fa6-5f46d7e660d5",
+                                    "rootFolder": "Tables"
+                                }
+                            }
+                        },
+                        "type": "LakehouseTable",
+                        "schema": [],
+                        "typeProperties": {
+                            "table": "meta_data"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "set-folder-var",
+                "type": "SetVariable",
+                "dependsOn": [
+                    {
+                        "activity": "lkp-meta-data",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "variableName": "subfolder_nm",
+                    "value": {
+                        "value": "@formatDateTime(utcnow(), 'yyyyMMdd')",
+                        "type": "Expression"
+                    }
+                }
+            },
+            {
+                "name": "for-each-row",
+                "type": "ForEach",
+                "dependsOn": [
+                    {
+                        "activity": "set-folder-var",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "typeProperties": {
+                    "items": {
+                        "value": "@activity('lkp-meta-data').output.value",
+                        "type": "Expression"
+                    },
+                    "activities": [
+                        {
+                            "name": "if-correct-id",
+                            "type": "IfCondition",
+                            "dependsOn": [],
+                            "typeProperties": {
+                                "expression": {
+                                    "value": "@equals(item().pipeline_id, pipeline().parameters.pipeline_id)",
+                                    "type": "Expression"
+                                },
+                                "ifFalseActivities": [],
+                                "ifTrueActivities": [
+                                    {
+                                        "name": "cpy-adls-files-2-raw",
+                                        "description": "Copy delimited data from storage container to lake house folder.",
+                                        "type": "Copy",
+                                        "dependsOn": [],
+                                        "policy": {
+                                            "timeout": "0.12:00:00",
+                                            "retry": 0,
+                                            "retryIntervalInSeconds": 30,
+                                            "secureOutput": false,
+                                            "secureInput": false
+                                        },
+                                        "typeProperties": {
+                                            "source": {
+                                                "type": "BinarySource",
+                                                "storeSettings": {
+                                                    "type": "AzureBlobFSReadSettings",
+                                                    "recursive": false
+                                                },
+                                                "formatSettings": {
+                                                    "type": "BinaryReadSettings"
+                                                },
+                                                "datasetSettings": {
+                                                    "annotations": [],
+                                                    "type": "Binary",
+                                                    "typeProperties": {
+                                                        "location": {
+                                                            "type": "AzureBlobFSLocation",
+                                                            "fileName": {
+                                                                "value": "@item().file_nm",
+                                                                "type": "Expression"
+                                                            },
+                                                            "fileSystem": {
+                                                                "value": "@item().container_nm",
+                                                                "type": "Expression"
+                                                            }
+                                                        }
+                                                    },
+                                                    "externalReferences": {
+                                                        "connection": "962ba686-e613-4308-b4ad-473cf4d076c6"
+                                                    }
+                                                }
+                                            },
+                                            "sink": {
+                                                "type": "BinarySink",
+                                                "storeSettings": {
+                                                    "type": "LakehouseWriteSettings"
+                                                },
+                                                "datasetSettings": {
+                                                    "annotations": [],
+                                                    "linkedService": {
+                                                        "name": "lh_adv_wrks",
+                                                        "properties": {
+                                                            "annotations": [],
+                                                            "type": "Lakehouse",
+                                                            "typeProperties": {
+                                                                "workspaceId": "a668a328-9f67-4678-93f2-10d5afdfe3ad",
+                                                                "artifactId": "0416e287-2a33-4093-8fa6-5f46d7e660d5",
+                                                                "rootFolder": "Files"
+                                                            }
+                                                        }
+                                                    },
+                                                    "type": "Binary",
+                                                    "typeProperties": {
+                                                        "location": {
+                                                            "type": "LakehouseLocation",
+                                                            "fileName": {
+                                                                "value": "@item().file_nm",
+                                                                "type": "Expression"
+                                                            },
+                                                            "folderPath": {
+                                                                "value": "@concat(item().container_nm, '/', variables('subfolder_nm'))",
+                                                                "type": "Expression"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "enableStaging": false
+                                        }
+                                    },
+                                    {
+                                        "name": "nb-delimited-full-load",
+                                        "description": "Call spark notebook to rebuild bronze and silver tables.",
+                                        "type": "TridentNotebook",
+                                        "dependsOn": [
+                                            {
+                                                "activity": "cpy-adls-files-2-raw",
+                                                "dependencyConditions": [
+                                                    "Succeeded"
+                                                ]
+                                            }
+                                        ],
+                                        "policy": {
+                                            "timeout": "0.12:00:00",
+                                            "retry": 0,
+                                            "retryIntervalInSeconds": 30,
+                                            "secureOutput": false,
+                                            "secureInput": false
+                                        },
+                                        "typeProperties": {
+                                            "notebookId": "a5711282-e326-456f-a539-99df4cb58e3e",
+                                            "workspaceId": "a668a328-9f67-4678-93f2-10d5afdfe3ad",
+                                            "parameters": {
+                                                "var_path": {
+                                                    "value": {
+                                                        "value": "@item().container_nm",
+                                                        "type": "Expression"
+                                                    },
+                                                    "type": "string"
+                                                },
+                                                "var_table": {
+                                                    "value": {
+                                                        "value": "@item().table_nm",
+                                                        "type": "Expression"
+                                                    },
+                                                    "type": "string"
+                                                },
+                                                "var_delimiter ": {
+                                                    "value": {
+                                                        "value": "@item().delimiter_str",
+                                                        "type": "Expression"
+                                                    },
+                                                    "type": "string"
+                                                },
+                                                "var_header": {
+                                                    "value": {
+                                                        "value": "@item().header_flg",
+                                                        "type": "Expression"
+                                                    },
+                                                    "type": "string"
+                                                },
+                                                "var_schema": {
+                                                    "value": {
+                                                        "value": "@item().schema_str",
+                                                        "type": "Expression"
+                                                    },
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "parameters": {
+            "pipeline_id": {
+                "type": "int",
+                "defaultValue": 11
+            }
+        },
+        "variables": {
+            "subfolder_nm": {
+                "type": "String"
+            }
+        },
+        "annotations": [],
+        "lastModifiedByObjectId": "7559da66-430f-46eb-9c36-f968676fabbf",
+        "lastPublishTime": "2024-02-28T03:04:24Z"
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "name": "pl-refresh-advwrks",
+    "objectId": "b92474cc-bf47-421b-b43e-572956b835a5",
+    "properties": {
+        "activities": [
+            {
+                "name": "until-all-files-are-processed",
+                "description": "until done, process all adventure work files",
+                "type": "Until",
+                "dependsOn": [],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@greater(variables('var_cnt'), variables('var_max'))",
+                        "type": "Expression"
+                    },
+                    "activities": [
+                        {
+                            "name": "call-pl-delimited-full-load",
+                            "description": "Call the child pipeline with an id.",
+                            "type": "ExecutePipeline",
+                            "dependsOn": [],
+                            "policy": {
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "pipeline": {
+                                    "referenceName": "75c47799-899d-4fe6-8a91-88b9ea3e0a43",
+                                    "type": "PipelineReference"
+                                },
+                                "waitOnCompletion": true,
+                                "parameters": {
+                                    "pipeline_id": {
+                                        "value": "@variables('var_cnt')",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "set-var-add-one",
+                            "description": "add one to the variable.",
+                            "type": "SetVariable",
+                            "dependsOn": [
+                                {
+                                    "activity": "call-pl-delimited-full-load",
+                                    "dependencyConditions": [
+                                        "Succeeded"
+                                    ]
+                                }
+                            ],
+                            "policy": {
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "variableName": "var_cur",
+                                "value": {
+                                    "value": "@add(variables('var_cnt'), 1)",
+                                    "type": "Expression"
+                                }
+                            }
+                        },
+                        {
+                            "name": "set-var-cntr-upd",
+                            "description": "update the variable used in the loop",
+                            "type": "SetVariable",
+                            "dependsOn": [
+                                {
+                                    "activity": "set-var-add-one",
+                                    "dependencyConditions": [
+                                        "Succeeded"
+                                    ]
+                                }
+                            ],
+                            "policy": {
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "variableName": "var_cnt",
+                                "value": {
+                                    "value": "@variables('var_cur')",
+                                    "type": "Expression"
+                                }
+                            }
+                        }
+                    ],
+                    "timeout": "0.12:00:00"
+                }
+            }
+        ],
+        "variables": {
+            "var_cur": {
+                "type": "Integer",
+                "defaultValue": 1
+            },
+            "var_max": {
+                "type": "Integer",
+                "defaultValue": 11
+            },
+            "var_cnt": {
+                "type": "Integer",
+                "defaultValue": 1
+            }
+        },
+        "annotations": [],
+        "lastModifiedByObjectId": "7559da66-430f-46eb-9c36-f968676fabbf",
+        "lastPublishTime": "2024-03-15T17:02:06Z"
+    }
+}

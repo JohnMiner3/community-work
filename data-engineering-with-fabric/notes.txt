@@ -1,0 +1,9 @@
+
+// By Machine + Slot
+soda_machines
+| summarize sum(Vend_Count) by Machine_Id, Slot_Id
+
+// By Machine 
+soda_machines
+| summarize sum(Vend_Count) by Machine_Id
+| order by Machine_Id asc
