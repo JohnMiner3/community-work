@@ -1,0 +1,370 @@
+{
+    "name": "pl_06_exec_job_steps",
+    "objectId": "5805b054-9b09-4911-9046-12c2e4bd85cb",
+    "properties": {
+        "description": "run e-recruit verified job by id",
+        "activities": [
+            {
+                "name": "act_gen_scr_log_start",
+                "description": "log start of job",
+                "type": "Script",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', pipeline().parameters.job_id, ', 0, ''', pipeline().PipelineName, ''', ', '''master pipeline for jobs'', ', '''start pipeline'', ', '''none'', ', 'getdate()', ' );')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            },
+            {
+                "name": "act_gen_lkp_meta_data",
+                "description": "return matching metadata rows for job id",
+                "type": "Lookup",
+                "dependsOn": [
+                    {
+                        "activity": "act_itrc_if_set_sql_stmt",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "DataWarehouseSource",
+                        "sqlReaderQuery": {
+                            "value": "@variables('sql_stmt')",
+                            "type": "Expression"
+                        },
+                        "queryTimeout": "02:00:00",
+                        "partitionOption": "None"
+                    },
+                    "firstRowOnly": false,
+                    "datasetSettings": {
+                        "annotations": [],
+                        "linkedService": {
+                            "name": "dw_advwrks_analytics",
+                            "properties": {
+                                "annotations": [],
+                                "type": "DataWarehouse",
+                                "typeProperties": {
+                                    "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                                    "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                                    "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                                }
+                            }
+                        },
+                        "type": "DataWarehouseTable",
+                        "schema": []
+                    }
+                }
+            },
+            {
+                "name": "act_itrc_if_set_sql_stmt",
+                "description": "filter by step for re-run and/or debugging?",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_scr_log_start",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@not(equals(pipeline().parameters.alpha_step_id, '0'))",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [
+                        {
+                            "name": "act_gen_set_var_sql_stmt_no2",
+                            "description": "include job id in sql stmt",
+                            "type": "SetVariable",
+                            "dependsOn": [],
+                            "policy": {
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "variableName": "sql_stmt",
+                                "value": {
+                                    "value": "@concat('select * from meta.Jobs where is_enabled = 1 and job_id = ', pipeline().parameters.job_id, ' order by step_id asc;')",
+                                    "type": "Expression"
+                                }
+                            }
+                        }
+                    ],
+                    "ifTrueActivities": [
+                        {
+                            "name": "act_gen_set_var_sql_stmt_no1",
+                            "description": "include both job id and step id in sql stmt",
+                            "type": "SetVariable",
+                            "dependsOn": [],
+                            "policy": {
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "variableName": "sql_stmt",
+                                "value": {
+                                    "value": "@concat('select * from meta.Jobs where is_enabled = 1 and job_id = ', pipeline().parameters.job_id, ' and step_id >= ',pipeline().parameters.alpha_step_id, ' and step_id <= ',pipeline().parameters.omega_step_id, ' order by step_id asc;')",
+                                    "type": "Expression"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "act_itrc_for_each_step",
+                "description": "for each step, execute child (worker) pipeline",
+                "type": "ForEach",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_lkp_meta_data",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "typeProperties": {
+                    "items": {
+                        "value": "@activity('act_gen_lkp_meta_data').output.value",
+                        "type": "Expression"
+                    },
+                    "isSequential": true,
+                    "activities": [
+                        {
+                            "name": "act_gen_epipe_data_load",
+                            "description": "call the child pipelines (worker) for full or incremental loads",
+                            "type": "ExecutePipeline",
+                            "dependsOn": [],
+                            "policy": {
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "pipeline": {
+                                    "referenceName": "467eb54a-603c-494e-b58f-7a5618bc6580",
+                                    "type": "PipelineReference"
+                                },
+                                "waitOnCompletion": true,
+                                "parameters": {
+                                    "meta_data": {
+                                        "value": "@item()",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "act_gen_set_var_tmp_cntr",
+                            "description": "assignment: [temp counter] = [error counter] + 1",
+                            "type": "SetVariable",
+                            "dependsOn": [
+                                {
+                                    "activity": "act_gen_epipe_data_load",
+                                    "dependencyConditions": [
+                                        "Failed"
+                                    ]
+                                }
+                            ],
+                            "policy": {
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "variableName": "tmp_cntr",
+                                "value": {
+                                    "value": "@add(variables('err_cntr'), 1)",
+                                    "type": "Expression"
+                                }
+                            }
+                        },
+                        {
+                            "name": "act_gen_set_var_err_cntr",
+                            "description": "assignment:  [error counter] = [temp counter] ",
+                            "type": "SetVariable",
+                            "dependsOn": [
+                                {
+                                    "activity": "act_gen_set_var_tmp_cntr",
+                                    "dependencyConditions": [
+                                        "Succeeded"
+                                    ]
+                                }
+                            ],
+                            "policy": {
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "variableName": "err_cntr",
+                                "value": {
+                                    "value": "@variables('tmp_cntr')",
+                                    "type": "Expression"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "act_itrc_if_log_final_state",
+                "description": "The parent loop keeps track of how many failed pipelines",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "act_itrc_for_each_step",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@equals(variables('err_cntr'), 0)",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [
+                        {
+                            "name": "act_gen_scr_log_failure",
+                            "description": "log failure of job steps",
+                            "type": "Script",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "0.0:10:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "linkedService": {
+                                "name": "dw_advwrks_analytics",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "DataWarehouse",
+                                    "typeProperties": {
+                                        "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                                        "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                                        "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                                    }
+                                }
+                            },
+                            "typeProperties": {
+                                "scripts": [
+                                    {
+                                        "type": "Query",
+                                        "text": {
+                                            "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', pipeline().parameters.job_id, ', 0, ''', pipeline().PipelineName, ''', ', '''master pipeline for jobs'', ', '''fail pipeline'', ', '''none'', ', 'getdate()', ' );')",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                ],
+                                "scriptBlockExecutionTimeout": "02:00:00"
+                            }
+                        }
+                    ],
+                    "ifTrueActivities": [
+                        {
+                            "name": "act_gen_scr_log_end",
+                            "description": "log end of job",
+                            "type": "Script",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "0.0:10:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "linkedService": {
+                                "name": "dw_advwrks_analytics",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "DataWarehouse",
+                                    "typeProperties": {
+                                        "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                                        "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                                        "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                                    }
+                                }
+                            },
+                            "typeProperties": {
+                                "scripts": [
+                                    {
+                                        "type": "Query",
+                                        "text": {
+                                            "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', pipeline().parameters.job_id, ', 0, ''', pipeline().PipelineName, ''', ', '''master pipeline for jobs'', ', '''end pipeline'', ', '''none'', ', 'getdate()', ' );')",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                ],
+                                "scriptBlockExecutionTimeout": "02:00:00"
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "parameters": {
+            "job_id": {
+                "type": "string",
+                "defaultValue": "1"
+            },
+            "alpha_step_id": {
+                "type": "string",
+                "defaultValue": "1"
+            },
+            "omega_step_id": {
+                "type": "string",
+                "defaultValue": "2"
+            }
+        },
+        "variables": {
+            "sql_stmt": {
+                "type": "String"
+            },
+            "err_cntr": {
+                "type": "Integer",
+                "defaultValue": 0
+            },
+            "tmp_cntr": {
+                "type": "Integer",
+                "defaultValue": 0
+            }
+        },
+        "lastModifiedByObjectId": "7559da66-430f-46eb-9c36-f968676fabbf",
+        "lastPublishTime": "2025-04-22T21:32:52Z"
+    }
+}

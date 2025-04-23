@@ -1,0 +1,400 @@
+{
+    "name": "pl_05_data_load_step",
+    "objectId": "467eb54a-603c-494e-b58f-7a5618bc6580",
+    "properties": {
+        "description": "for a given meta data record, execute a data load copy (sql server) to (fabric wh).",
+        "activities": [
+            {
+                "name": "act_gen_script_log_start",
+                "description": "log start of job",
+                "type": "Script",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', pipeline().parameters.meta_data.job_id, ', ', pipeline().parameters.meta_data.step_id, ', ''', pipeline().PipelineName, ''', ''', pipeline().parameters.meta_data.step_description, ''', ''start pipeline''', ', ''none'', ', 'getdate()', ' );')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            },
+            {
+                "name": "act_gen_script_log_cpy_end",
+                "description": "log end of copy",
+                "type": "Script",
+                "dependsOn": [
+                    {
+                        "activity": "act_mt_cpy_sqlsvr_to_fabric",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', pipeline().parameters.meta_data.job_id, ', ', pipeline().parameters.meta_data.step_id, ', ''', pipeline().PipelineName, ''', ''', pipeline().parameters.meta_data.step_description, ''', ''success of copy activity'', ''', activity('act_mt_cpy_sqlsvr_to_fabric').output.RowsCopied, ' records copied'', ', 'getdate()', ' );')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            },
+            {
+                "name": "act_gen_script_log_cpy_failure",
+                "description": "log failure of copy activity",
+                "type": "Script",
+                "dependsOn": [
+                    {
+                        "activity": "act_mt_cpy_sqlsvr_to_fabric",
+                        "dependencyConditions": [
+                            "Failed"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', pipeline().parameters.meta_data.job_id, ', ', pipeline().parameters.meta_data.step_id, ', ''', pipeline().PipelineName, ''', ''', pipeline().parameters.meta_data.step_description, ''', ''fail copy activity'', ''', replace(activity('act_mt_cpy_sqlsvr_to_fabric').error.Message, '''', ''), ''', ', 'getdate()', ' );')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            },
+            {
+                "name": "act_mt_cpy_sqlsvr_to_fabric",
+                "description": "Copy table data from Azure SQL database to Fabric warehouse.",
+                "type": "Copy",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_script_log_start",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "AzureSqlSource",
+                        "sqlReaderQuery": {
+                            "value": "@pipeline().parameters.meta_data.src_query",
+                            "type": "Expression"
+                        },
+                        "queryTimeout": "02:00:00",
+                        "partitionOption": "None",
+                        "datasetSettings": {
+                            "annotations": [],
+                            "type": "AzureSqlTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "schema": {
+                                    "value": "@pipeline().parameters.meta_data.src_schema",
+                                    "type": "Expression"
+                                },
+                                "table": {
+                                    "value": "@pipeline().parameters.meta_data.src_table",
+                                    "type": "Expression"
+                                },
+                                "database": "AdventureWorksLT2012"
+                            },
+                            "externalReferences": {
+                                "connection": "b6c0242e-9b23-4468-a2d6-1005ab4731a4"
+                            }
+                        }
+                    },
+                    "sink": {
+                        "type": "DataWarehouseSink",
+                        "preCopyScript": {
+                            "value": "@concat('truncate table ', pipeline().parameters.meta_data.dst_schema, '.', pipeline().parameters.meta_data.dst_table)",
+                            "type": "Expression"
+                        },
+                        "allowCopyCommand": true,
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "dw_advwrks_analytics",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "DataWarehouse",
+                                    "typeProperties": {
+                                        "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                                        "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                                        "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                                    }
+                                }
+                            },
+                            "type": "DataWarehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "schema": {
+                                    "value": "@pipeline().parameters.meta_data.dst_schema",
+                                    "type": "Expression"
+                                },
+                                "table": {
+                                    "value": "@pipeline().parameters.meta_data.dst_table",
+                                    "type": "Expression"
+                                }
+                            }
+                        }
+                    },
+                    "enableStaging": true,
+                    "stagingSettings": {
+                        "path": "stage",
+                        "enableCompression": false,
+                        "externalReferences": {
+                            "connection": "703b6027-ce76-4ae5-8a1e-87b5e1717ba3"
+                        }
+                    },
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "typeConversion": true,
+                        "typeConversionSettings": {
+                            "allowDataTruncation": true,
+                            "treatBooleanAsNumber": false
+                        }
+                    }
+                }
+            },
+            {
+                "name": "act_gen_script_log_end",
+                "description": "log end of job",
+                "type": "Script",
+                "dependsOn": [
+                    {
+                        "activity": "act_itrc_if_incr_load",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', pipeline().parameters.meta_data.job_id, ', ', pipeline().parameters.meta_data.step_id, ', ''', pipeline().PipelineName, ''', ''', pipeline().parameters.meta_data.step_description, ''', ''end pipeline'', ''', ''', getdate()', ' );')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            },
+            {
+                "name": "act_gen_script_log_failure",
+                "description": "log failure of job",
+                "type": "Script",
+                "dependsOn": [
+                    {
+                        "activity": "act_itrc_if_incr_load",
+                        "dependencyConditions": [
+                            "Failed"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', pipeline().parameters.meta_data.job_id, ', ', pipeline().parameters.meta_data.step_id, ', ''', pipeline().PipelineName, ''', ''', pipeline().parameters.meta_data.step_description, ''', ''fail pipeline'', ''', replace(activity('act_gen_sprc_merge_data').error.Message, '''', ''), ''', ', 'getdate()', ' );')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            },
+            {
+                "name": "act_itrc_if_incr_load",
+                "description": "Is this an incremental load?",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_script_log_cpy_end",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@equals(toLower(pipeline().parameters.meta_data.load_type),'incr')",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [],
+                    "ifTrueActivities": [
+                        {
+                            "name": "act_gen_sprc_merge_data",
+                            "description": "call a stored procedure that does an UPSERT action.",
+                            "type": "SqlServerStoredProcedure",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "0.12:00:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "storedProcedureName": {
+                                    "value": "@pipeline().parameters.meta_data.post_cpy_sproc",
+                                    "type": "Expression"
+                                }
+                            },
+                            "linkedService": {
+                                "name": "dw_advwrks_analytics",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "DataWarehouse",
+                                    "typeProperties": {
+                                        "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                                        "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                                        "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "parameters": {
+            "meta_data": {
+                "type": "object",
+                "defaultValue": {
+                    "row_id": 3,
+                    "job_id": 2,
+                    "step_id": 1,
+                    "step_description": "Daily full load for table SalesLT.Address",
+                    "load_type": "full",
+                    "src_type": "IaaS - SQL Server 2022",
+                    "src_database": "AdventureWorksLT2012",
+                    "src_schema": "SalesLT",
+                    "src_table": "Address",
+                    "src_query": "select * from SalesLT.Address",
+                    "dst_type": "PaaS - Fabric Data Warehouse",
+                    "dst_database": "dw_advwrks_analytic",
+                    "dst_schema": "raw",
+                    "dst_table": "Address",
+                    "is_enabled": true
+                }
+            }
+        },
+        "lastModifiedByObjectId": "7559da66-430f-46eb-9c36-f968676fabbf",
+        "lastPublishTime": "2025-04-22T21:32:40Z"
+    }
+}

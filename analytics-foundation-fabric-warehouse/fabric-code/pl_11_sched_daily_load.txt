@@ -1,0 +1,425 @@
+{
+    "name": "pl_11_sched_daily_load",
+    "objectId": "94d13e7a-09c3-41b1-825e-a50250f9ecc6",
+    "properties": {
+        "activities": [
+            {
+                "name": "act_gen_epipe_job_no1",
+                "description": "run the first job - full load tables",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_scr_log_start",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "5805b054-9b09-4911-9046-12c2e4bd85cb",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "job_id": "1",
+                        "alpha_step_id": "0",
+                        "omega_step_id": "0"
+                    }
+                }
+            },
+            {
+                "name": "act_gen_epipe_job_no2",
+                "description": "run the second job - full load tables",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_epipe_job_no1",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "5805b054-9b09-4911-9046-12c2e4bd85cb",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "job_id": "2",
+                        "alpha_step_id": "1",
+                        "omega_step_id": "8"
+                    }
+                }
+            },
+            {
+                "name": "act_gen_epipe_job_no3",
+                "description": "run the third job - incremental load tables",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_epipe_job_no2",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "5805b054-9b09-4911-9046-12c2e4bd85cb",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "job_id": "2",
+                        "alpha_step_id": "11",
+                        "omega_step_id": "12"
+                    }
+                }
+            },
+            {
+                "name": "act_gen_sprc_make_staging",
+                "description": "create the staging table w/ point in time data.",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [
+                    {
+                        "activity": "act_itrc_if_next_stage",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[dbo].[uspMakeStagingTables]",
+                    "storedProcedureParameters": {
+                        "VAR_ALPHA": {
+                            "value": "1",
+                            "type": "Int32"
+                        },
+                        "VAR_OMEGA": {
+                            "value": "12",
+                            "type": "Int32"
+                        },
+                        "VAR_STAGE": {
+                            "value": {
+                                "value": "@variables('VAR_STAGE')",
+                                "type": "Expression"
+                            },
+                            "type": "Int32"
+                        }
+                    }
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "act_gen_sprc_make_refined",
+                "description": "update the views to point to the correct staging tables.",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_sprc_make_staging",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[dbo].[uspRefreshRefinedViews]",
+                    "storedProcedureParameters": {
+                        "VAR_ALPHA": {
+                            "value": "1",
+                            "type": "Int32"
+                        },
+                        "VAR_OMEGA": {
+                            "value": "12",
+                            "type": "Int32"
+                        },
+                        "VAR_STAGE": {
+                            "value": {
+                                "value": "@variables('VAR_STAGE')",
+                                "type": "Expression"
+                            },
+                            "type": "Int32"
+                        }
+                    }
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "act_gen_lkp_current_stage",
+                "description": "act_gen_lkp_current_stage",
+                "type": "Lookup",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_epipe_job_no3",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "DataWarehouseSource",
+                        "sqlReaderQuery": "SELECT cast([control_value] as int) as next_value\nFROM [meta].[uvwControlTable]\nWHERE control_key = 'stage';",
+                        "queryTimeout": "02:00:00",
+                        "partitionOption": "None"
+                    },
+                    "datasetSettings": {
+                        "annotations": [],
+                        "linkedService": {
+                            "name": "dw_advwrks_analytics",
+                            "properties": {
+                                "annotations": [],
+                                "type": "DataWarehouse",
+                                "typeProperties": {
+                                    "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                                    "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                                    "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                                }
+                            }
+                        },
+                        "type": "DataWarehouseTable",
+                        "schema": []
+                    }
+                }
+            },
+            {
+                "name": "act_itrc_if_next_stage",
+                "description": "act_itrc_if_next_stage",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_lkp_current_stage",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@equals(variables('VAR_STAGE'), 1)",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [
+                        {
+                            "name": "act_gen_setvar_stage1",
+                            "description": "current stage = 2, set next stage = 1",
+                            "type": "SetVariable",
+                            "dependsOn": [],
+                            "policy": {
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "variableName": "VAR_STAGE",
+                                "value": 1
+                            }
+                        }
+                    ],
+                    "ifTrueActivities": [
+                        {
+                            "name": "act_gen_setvar_stage2",
+                            "description": "current stage = 1, set next stage = 2",
+                            "type": "SetVariable",
+                            "dependsOn": [],
+                            "policy": {
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "typeProperties": {
+                                "variableName": "VAR_STAGE",
+                                "value": 2
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "act_gen_scr_insert_next_stage",
+                "description": "Insert new record into control table with the next stage value.",
+                "type": "Script",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_sprc_make_refined",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('INSERT INTO [meta].[Controls] ([control_key],[control_value],[last_modified]) VALUES (''stage'', ''', string(variables('VAR_STAGE')), ''', GETDATE());')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            },
+            {
+                "name": "act_gen_scr_log_start",
+                "description": "log start of job",
+                "type": "Script",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', '-2', ', 0, ''', pipeline().PipelineName, ''', ', '''master pipeline for jobs'', ', '''start pipeline'', ', '''none'', ', 'getdate()', ' );')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            },
+            {
+                "name": "act_gen_scr_log_end",
+                "description": "log end of job",
+                "type": "Script",
+                "dependsOn": [
+                    {
+                        "activity": "act_gen_scr_insert_next_stage",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.0:10:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "linkedService": {
+                    "name": "dw_advwrks_analytics",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "abgrhetr4hsurajv2abiablt4q-xhy3b4ru6tmund3uxsmf3ljbim.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "f6c5e56f-7697-4347-93b3-af9d31acd85f",
+                            "workspaceId": "f2b0f1b9-f434-46d9-8f74-bc985dad2143"
+                        }
+                    }
+                },
+                "typeProperties": {
+                    "scripts": [
+                        {
+                            "type": "Query",
+                            "text": {
+                                "value": "@concat('insert into meta.Logs ( [job_id], [step_id], [program_name], [step_description], [action_type], [additional_info], [action_timestamp] ) values( ', '-2', ', 0, ''', pipeline().PipelineName, ''', ', '''master pipeline for jobs'', ', '''end pipeline'', ', '''none'', ', 'getdate()', ' );')",
+                                "type": "Expression"
+                            }
+                        }
+                    ],
+                    "scriptBlockExecutionTimeout": "02:00:00"
+                }
+            }
+        ],
+        "variables": {
+            "VAR_STAGE": {
+                "type": "Integer",
+                "defaultValue": 1
+            }
+        },
+        "lastModifiedByObjectId": "7559da66-430f-46eb-9c36-f968676fabbf",
+        "lastPublishTime": "2025-04-22T22:19:14Z"
+    }
+}
