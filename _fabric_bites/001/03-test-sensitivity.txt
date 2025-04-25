@@ -1,0 +1,20 @@
+/******************************************************
+ *
+ * Name:     03-test-sensitivity.txt
+ *   
+ * Design Phase:
+ *   Author:  John Miner
+ *   Date:    03-15-2024
+ *   Purpose: Test database sensitivity.
+ * 
+ ******************************************************/
+
+-- lower case
+SELECT * FROM dbo.authors;
+
+-- mix case
+SELECT * FROM dbo.AuThOrs;
+GO
+
+-- show collation
+SELECT name, collation_name FROM sys.databases;

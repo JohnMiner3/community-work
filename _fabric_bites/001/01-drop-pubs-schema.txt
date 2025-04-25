@@ -1,0 +1,74 @@
+/******************************************************
+ *
+ * Name:     01-drop-pubs-schema
+ *   
+ * Design Phase:
+ *   Author:  John Miner
+ *   Date:    03-15-2024
+ *   Purpose: Delete pubs database objects.
+ * 
+ ******************************************************/
+
+
+DROP VIEW IF EXISTS titleview;
+GO
+
+
+DROP PROCEDURE IF EXISTS byroyalty;
+GO
+
+
+DROP PROCEDURE IF EXISTS reptq1;
+GO
+
+
+DROP PROCEDURE IF EXISTS reptq2;
+GO
+
+
+DROP PROCEDURE IF EXISTS reptq3;
+GO
+
+
+DROP TABLE IF EXISTS pub_info;
+GO
+
+
+DROP TABLE IF EXISTS roysched;
+GO
+
+
+DROP TABLE IF EXISTS titleauthor;
+GO
+
+
+DROP TABLE IF EXISTS discounts;
+GO
+
+
+DROP TABLE IF EXISTS employee;
+GO
+
+
+DROP TABLE IF EXISTS sales;
+GO
+
+
+DROP TABLE IF EXISTS authors;
+GO
+
+
+DROP TABLE IF EXISTS jobs;
+GO
+
+
+DROP TABLE IF EXISTS titles;
+GO
+
+
+DROP TABLE IF EXISTS publishers;
+GO
+
+
+DROP TABLE IF EXISTS stores;
+GO
