@@ -1,0 +1,73 @@
+version: 2
+
+models:
+
+#
+#  Invoice Table from Loads Schema
+#
+
+- name: Invoice02
+  description: "Invoice table from loads schema"
+  columns:
+    - name: InvoiceId
+      description: "Invoice identifier"
+      data_type: int
+    - name: CustomerId
+      description: "Customer identifier"
+      data_type: int
+    - name: InvoiceDate
+      description: "Date of invoice"
+      data_type: datetime2
+    - name: BillingAddress
+      description: "Billing address"
+      data_type: varchar(41)
+    - name: BillingCity
+      description: "Billing city"
+      data_type: varchar(21)
+    - name: BillingState
+      description: "Billing state"
+      data_type: varchar(16)
+    - name: BillingCountry
+      description: "Billing country"
+      data_type: varchar(16)
+    - name: BillingPostalCode
+      description: "Billing postal code"
+      data_type: varchar(16)
+    - name: Total
+      description: "Invoice total amount"
+      data_type: float
+
+#
+#  Invoice Line Table from Loads Schema
+#
+
+- name: InvoiceLine02
+  description: "InvoiceLine table from append schema"
+  columns:
+    - name: InvoiceId
+      description: "Invoice identifier"
+      data_type: int
+    - name: CustomerId
+      description: "Customer identifier"
+      data_type: int
+    - name: InvoiceDate
+      description: "Date of invoice"
+      data_type: datetime2
+    - name: BillingAddress
+      description: "Billing address"
+      data_type: varchar(41)
+    - name: BillingCity
+      description: "Billing city"
+      data_type: varchar(21)
+    - name: BillingState
+      description: "Billing state"
+      data_type: varchar(16)
+    - name: BillingCountry
+      description: "Billing country"
+      data_type: varchar(16)
+    - name: BillingPostalCode
+      description: "Billing postal code"
+      data_type: varchar(16)
+    - name: Total
+      description: "Invoice total amount"
+      data_type: float

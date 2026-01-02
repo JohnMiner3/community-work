@@ -1,0 +1,309 @@
+seeds:
+
+  #
+  # Seed data for Albums 
+  #
+
+- name: Album
+  description: "Raw album data"
+  config:
+    schema: raw
+  columns:
+    - name: AlbumId
+      description: "Album identifier"
+      data_type: int
+      data_tests:
+        - not_null
+        - unique      
+      
+    - name: Title
+      description: "Album title"
+      data_type: varchar(93)
+      
+    - name: ArtistId
+      description: "Artist identifier"
+      data_type: int
+
+
+  #
+  # Seed data for Artist 
+  #
+
+- name: Artist
+  description: "Raw artist data"
+  config:
+    schema: raw
+  columns:
+    - name: ArtistId
+      description: "Artist identifier"
+      data_tests:
+        - not_null
+        - unique        
+      data_type: int
+      
+    - name: Name
+      description: "Artist name"
+      data_type: varchar(85)
+
+
+#
+# Seed data for Customer 
+#
+
+- name: Customer
+  description: "Raw customer data"
+  config:
+    schema: raw
+  columns:
+    - name: CustomerId
+      description: "Customer identifier"
+      data_tests:
+        - not_null
+        - unique         
+      data_type: int
+      
+    - name: FirstName
+      description: "Customer first name"
+      data_type: varchar(16)
+      
+    - name: LastName
+      description: "Customer last name"
+      data_type: varchar(16)
+      
+    - name: Company
+      description: "Customer company"
+      data_type: varchar(49)
+      
+    - name: Address
+      description: "Customer address"
+      data_type: varchar(41)
+      
+    - name: City
+      description: "Customer city"
+      data_type: varchar(21)
+      
+    - name: State
+      description: "Customer state"
+      data_type: varchar(16)
+      
+    - name: Country
+      description: "Customer country"
+      data_type: varchar(16)
+      
+    - name: PostalCode
+      description: "Customer postal code"
+      data_type: varchar(16)
+      
+    - name: Phone
+      description: "Customer phone number"
+      data_type: varchar(19)
+      
+    - name: Fax
+      description: "Customer fax number"
+      data_type: varchar(18)
+      
+    - name: Email
+      description: "Customer email address"
+      data_type: varchar(29)
+      
+    - name: SupportRepId
+      description: "Support representative identifier"
+      data_type: int
+
+  #
+  # Seed data for Employee 
+  #
+
+- name: Employee
+  description: "Raw employee data"
+  config:
+    schema: raw
+  columns:
+    - name: EmployeeId
+      description: "Employee identifier"
+      data_tests:
+        - not_null
+        - unique
+      data_type: int
+      
+    - name: LastName
+      description: "Employee last name"
+      data_type: varchar(16)
+      
+    - name: FirstName
+      description: "Employee first name"
+      data_type: varchar(16)
+      
+    - name: Title
+      description: "Employee title"
+      data_type: varchar(19)
+      
+    - name: ReportsTo
+      description: "Manager employee identifier"
+      data_type: int
+      
+    - name: BirthDate
+      description: "Employee birth date"
+      data_type: varchar(16)
+      
+    - name: HireDate
+      description: "Employee hire date"
+      data_type: varchar(16)
+      
+    - name: Address
+      description: "Employee address"
+      data_type: varchar(27)
+      
+    - name: City
+      description: "Employee city"
+      data_type: varchar(16)
+      
+    - name: State
+      description: "Employee state"
+      data_type: varchar(16)
+      
+    - name: Country
+      description: "Employee country"
+      data_type: varchar(16)
+      
+    - name: PostalCode
+      description: "Employee postal code"
+      data_type: varchar(16)
+      
+    - name: Phone
+      description: "Employee phone number"
+      data_type: varchar(17)
+      
+    - name: Fax
+      description: "Employee fax number"
+      data_type: varchar(17)
+      
+    - name: Email
+      description: "Employee email address"
+      data_type: varchar(24)
+
+  #
+  # Seed data for Genre 
+  #
+
+- name: Genre
+  description: "Raw genre data"
+  config:
+    schema: raw
+  columns:
+    - name: GenreId
+      description: "Genre identifier"
+      data_tests:
+        - not_null
+        - unique
+      data_type: int
+      
+    - name: Name
+      description: "Genre name"
+      data_type: varchar(18)
+
+
+  #
+  # Seed data for MediaType 
+  #
+
+- name: MediaType
+  description: "Raw media type data"
+  config:
+    schema: raw
+  columns:
+    - name: MediaTypeId
+      description: "Media type identifier"
+      data_tests:
+        - not_null
+        - unique
+      data_type: int
+      
+    - name: Name
+      description: "Media type name"
+      data_type: varchar(27)
+
+  #
+  # Seed data for Playlist 
+  #
+
+- name: Playlist
+  description: "Raw playlist data"
+  config:
+    schema: raw
+  columns:
+    - name: PlaylistId
+      description: "Playlist identifier"
+      data_tests:
+        - not_null
+        - unique
+      data_type: int
+      
+    - name: Name
+      description: "Playlist name"
+      data_type: varchar(26)
+
+  #
+  # Seed data for PlaylistTrack 
+  #
+
+- name: PlaylistTrack
+  description: "Raw playlist track data"
+  config:
+    schema: raw
+  columns:
+    - name: PlaylistId
+      description: "Playlist identifier"
+      data_type: int
+      
+    - name: TrackId
+      description: "Track identifier"
+      data_type: int
+
+  #
+  # Seed data for Track 
+  #
+
+- name: Track
+  description: "Raw track data"
+  config:
+    schema: raw
+  columns:
+    - name: TrackId
+      description: "Track identifier"
+      data_tests:
+        - not_null
+        - unique
+      data_type: int
+      
+    - name: Name
+      description: "Track name"
+      data_type: varchar(122)
+      
+    - name: AlbumId
+      description: "Album identifier"
+      data_type: int
+      
+    - name: MediaTypeId
+      description: "Media type identifier"
+      data_type: int
+      
+    - name: GenreId
+      description: "Genre identifier"
+      data_type: int
+      
+    - name: Composer
+      description: "Track composer"
+      data_type: varchar(186)
+      
+    - name: Milliseconds
+      description: "Track length in milliseconds"
+      data_type: int
+      
+    - name: Bytes
+      description: "Track size in bytes"
+      data_type: int
+      
+    - name: UnitPrice
+      description: "Track unit price"
+      data_type: float

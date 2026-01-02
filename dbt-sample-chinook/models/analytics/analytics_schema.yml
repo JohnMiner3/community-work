@@ -1,0 +1,31 @@
+version: 2
+
+models:
+
+  #
+  # Aggregated monthly sales report by country
+  #
+
+  - name: SalesByCountry
+    description: Monthly sales metrics aggregated by country
+    columns:
+      - name: YearMonth
+        description: Year and month in YYYYMM format
+        tests:
+          - not_null
+      - name: BillingCountry
+        description: Country where the invoice was billed
+        tests:
+          - not_null
+      - name: Customers
+        description: Distinct count of customers
+      - name: Invoices
+        description: Distinct count of invoices
+      - name: Tracks
+        description: Count of tracks sold
+      - name: TotalQty
+        description: Total quantity of items sold
+      - name: TotalSales
+        description: Total sales revenue (UnitPrice * Quantity)
+        tests:
+          - not_null

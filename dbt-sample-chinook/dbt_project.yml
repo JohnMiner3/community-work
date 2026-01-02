@@ -1,0 +1,82 @@
+#
+# Project + profile names
+#
+
+name: 'chinook'
+version: '1.0.0'
+profile: 'chinook'
+
+#
+#  Configure resource paths
+#
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+
+#
+#  Which directories to clean
+#
+
+clean-targets:         
+  - "target"
+
+
+#
+#  Configure seeds
+#
+
+seeds:
+  chinook:
+    schema: raw
+
+
+#
+#  Configure models
+#
+
+models:
+  chinook:
+    
+    # Default schema and materialization for all models
+    +schema: analytics  
+    +materialized: view
+
+    # Subdirectories override defaults
+    stage: 
+      +schema: stage
+      +materialized: view
+
+    loads: 
+      +schema: loads
+      +materialized: table
+      +as_columnstore: false
+
+    marts: 
+      +schema: marts
+      +materialized: table    
+      as_columnstore: false  
+
+
+#
+#  Configure snapshots
+#
+
+snapshots:
+  chinook:
+    +as_columnstore: false
+    
+
+#
+#  Configure dispatch for macro resolution
+#
+
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['tsql_utils', 'dbt_utils']
+  - macro_namespace: dbt_date
+    search_order: ['tsql_utils', 'dbt_date']

@@ -1,0 +1,340 @@
+version: 2
+
+models:
+
+  #
+  # View of raw data for Albums 
+  #
+
+  - name: Album01
+    description: Staged album data from raw layer
+    columns:
+      - name: AlbumId
+        description: Unique identifier for the album
+        data_type: int
+        
+      - name: Title
+        description: Album title
+        data_type: varchar(93)
+        
+      - name: ArtistId
+        description: Foreign key to artist table
+        data_type: int
+
+  #
+  # View of raw data for Artists 
+  #
+
+  - name: Artist01
+    description: Staged artist data from raw layer
+    columns:
+      - name: ArtistId
+        description: Unique identifier for the artist
+        data_type: int
+        
+      - name: Name
+        description: Artist name
+        data_type: varchar(85)
+
+  #
+  # View of raw data for Customers
+  #
+
+  - name: Customer01
+    description: Staged customer data from raw layer
+    columns:
+      - name: CustomerId
+        description: Unique identifier for the customer
+        data_type: int
+        
+      - name: FirstName
+        description: Customer first name
+        data_type: varchar(16)
+        
+      - name: LastName
+        description: Customer last name
+        data_type: varchar(16)
+        
+      - name: Company
+        description: Customer company name
+        data_type: varchar(49)
+        
+      - name: Address
+        description: Customer address
+        data_type: varchar(41)
+        
+      - name: City
+        description: Customer city
+        data_type: varchar(21)
+        
+      - name: State
+        description: Customer state
+        data_type: varchar(16)
+        
+      - name: Country
+        description: Customer country
+        data_type: varchar(16)
+        
+      - name: PostalCode
+        description: Customer postal code
+        data_type: varchar(16)
+        
+      - name: Phone
+        description: Customer phone number
+        data_type: varchar(19)
+        
+      - name: Fax
+        description: Customer fax number
+        data_type: varchar(18)
+        
+      - name: Email
+        description: Customer email address
+        data_type: varchar(29)
+        
+      - name: SupportRepId
+        description: Foreign key to support representative
+        data_type: int
+
+  
+  #
+  # View of raw data for Employees
+  #
+
+  - name: Employee01
+    description: Staged employee data from raw layer
+    columns:
+      - name: EmployeeId
+        description: Unique identifier for the employee
+        data_type: int
+        
+      - name: LastName
+        description: Employee last name
+        data_type: varchar(16)
+        
+      - name: FirstName
+        description: Employee first name
+        data_type: varchar(16)
+        
+      - name: Title
+        description: Employee job title
+        data_type: varchar(19)
+        
+      - name: ReportsTo
+        description: Foreign key to manager employee
+        data_type: int
+        
+      - name: BirthDate
+        description: Employee birth date
+        data_type: varchar(16)
+        
+      - name: HireDate
+        description: Employee hire date
+        data_type: varchar(16)
+        
+      - name: Address
+        description: Employee address
+        data_type: varchar(27)
+        
+      - name: City
+        description: Employee city
+        data_type: varchar(16)
+        
+      - name: State
+        description: Employee state
+        data_type: varchar(16)
+        
+      - name: Country
+        description: Employee country
+        data_type: varchar(16)
+        
+      - name: PostalCode
+        description: Employee postal code
+        data_type: varchar(16)
+        
+      - name: Phone
+        description: Employee phone number
+        data_type: varchar(17)
+        
+      - name: Fax
+        description: Employee fax number
+        data_type: varchar(17)
+        
+      - name: Email
+        description: Employee email address
+        data_type: varchar(24)
+
+  #
+  # View of raw data for Genre
+  #
+
+  - name: Genre01
+    description: Staged genre data from raw layer
+    columns:
+      - name: GenreId
+        description: Unique identifier for the genre
+        data_type: int
+        
+      - name: Name
+        description: Genre name
+        data_type: varchar(18)
+
+
+  #
+  # View of raw data for Invoice 
+  #
+
+  - name: Invoice01
+    description: Staged invoice data from raw layer
+    columns:
+      - name: InvoiceId
+        description: Unique identifier for the invoice
+        data_type: int
+      
+      - name: CustomerId
+        description: Foreign key to customer table
+        data_type: int
+      
+      - name: InvoiceDate
+        description: Invoice date
+        data_type: varchar(16)
+      
+      - name: BillingAddress
+        description: Invoice billing address
+        data_type: varchar(41)
+        
+      - name: BillingCity
+        description: Invoice billing city
+        data_type: varchar(21)
+        
+      - name: BillingState
+        description: Invoice billing state
+        data_type: varchar(16)
+      
+      - name: BillingCountry
+        description: Invoice billing country
+        data_type: varchar(16)
+      
+      - name: BillingPostalCode
+        description: Invoice billing postal code
+        data_type: varchar(16)
+      
+      - name: Total
+        description: Invoice total amount
+        data_type: float
+
+  #
+  # View of raw data for Invoice Line
+  #
+
+  - name: InvoiceLine01
+    description: Staged invoice line data from raw layer
+    columns:
+      - name: InvoiceLineId
+        description: Unique identifier for the invoice line
+        data_type: int
+        
+      - name: InvoiceId
+        description: Foreign key to invoice table
+        data_type: int
+        
+      - name: TrackId
+        description: Foreign key to track table
+        data_type: int
+        
+      - name: UnitPrice
+        description: Unit price of the track
+        data_type: float
+        
+      - name: Quantity
+        description: Quantity of tracks purchased
+        data_type: int
+
+
+  #
+  # View of raw data for Media Type
+  #
+
+  - name: MediaType01
+    description: Staged media type data from raw layer
+    columns:
+      - name: MediaTypeId
+        description: Unique identifier for the media type
+        data_type: int
+        
+      - name: Name
+        description: Media type name
+        data_type: varchar(27)
+
+
+  #
+  # View of raw data for Play Lists
+  #
+
+  - name: Playlist01
+    description: Staged playlist data from raw layer
+    columns:
+      - name: PlaylistId
+        description: Unique identifier for the playlist
+        data_type: int
+      
+      - name: Name
+        description: Playlist name
+        data_type: varchar(26)
+
+  #
+  # View of raw data for Play List Tracks
+  #
+
+  - name: PlaylistTrack01
+    description: Staged playlist track data from raw layer
+    columns:
+      - name: PlaylistId
+        description: Foreign key to playlist table
+        data_type: int
+      
+      - name: TrackId
+        description: Foreign key to track table
+        data_type: int
+
+  #
+  # View of raw data for Album Tracks
+  #
+
+  - name: Track01
+    description: Staged track data from raw layer
+    columns:
+      - name: TrackId
+        description: Unique identifier for the track
+        data_type: int
+      
+      - name: Name
+        description: Track name
+        data_type: varchar(122)
+        
+      - name: AlbumId
+        description: Foreign key to album table
+        data_type: int
+        
+      - name: MediaTypeId
+        description: Foreign key to media type table
+        data_type: int
+        
+      - name: GenreId
+        description: Foreign key to genre table
+        data_type: int
+        
+      - name: Composer
+        description: Track composer
+        data_type: varchar(186)
+        
+      - name: Milliseconds
+        description: Track duration in milliseconds
+        data_type: int
+        
+      - name: Bytes
+        description: Track file size in bytes
+        data_type: int
+      
+      - name: UnitPrice
+        description: Track unit price
+        data_type: float

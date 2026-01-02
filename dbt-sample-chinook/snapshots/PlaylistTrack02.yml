@@ -1,0 +1,9 @@
+snapshots:
+  - name: PlaylistTrack02
+    relation: source('Chinook', 'PlaylistTrack')
+    config:
+      schema: snap
+      unique_key: ['PlaylistId', 'TrackId']
+      strategy: check
+      check_cols:
+        - TrackId

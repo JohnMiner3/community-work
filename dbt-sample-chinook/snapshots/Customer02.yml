@@ -1,0 +1,20 @@
+snapshots:
+  - name: Customer02
+    relation: source('Chinook', 'Customer')
+    config:
+      schema: snap
+      unique_key: CustomerId
+      strategy: check
+      check_cols:
+        - FirstName
+        - LastName
+        - Company
+        - Address
+        - City
+        - State
+        - Country
+        - PostalCode
+        - Phone
+        - Fax
+        - Email
+        - SupportRepId

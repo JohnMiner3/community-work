@@ -1,0 +1,10 @@
+snapshots:
+  - name: Album02
+    relation: source('Chinook', 'Album')
+    config:
+      schema: snap
+      unique_key: AlbumId
+      strategy: check
+      check_cols:
+        - Title
+        - ArtistId

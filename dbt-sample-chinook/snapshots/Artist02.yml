@@ -1,0 +1,9 @@
+snapshots:
+  - name: Artist02
+    relation: source('Chinook', 'Artist')
+    config:
+      schema: snap
+      unique_key: ArtistId
+      strategy: check
+      check_cols:
+        - Name

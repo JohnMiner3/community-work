@@ -1,0 +1,9 @@
+snapshots:
+  - name: MediaType02
+    relation: source('Chinook', 'MediaType')
+    config:
+      schema: snap
+      unique_key: MediaTypeId
+      strategy: check
+      check_cols:
+        - Name

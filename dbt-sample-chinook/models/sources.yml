@@ -1,0 +1,16 @@
+sources:
+  - name: Chinook 
+    database: ChinookDbms
+    schema: data_raw
+    tables:
+      - name: Album
+      - name: Artist
+      - name: Customer
+      - name: Employee
+      - name: Genre
+      - name: Invoice
+      - name: InvoiceLine
+      - name: MediaType
+      - name: Playlist
+      - name: PlaylistTrack
+      - name: Track

@@ -1,0 +1,9 @@
+snapshots:
+  - name: Genre02
+    relation: source('Chinook', 'Genre')
+    config:
+      schema: snap
+      unique_key: GenreId
+      strategy: check
+      check_cols:
+        - Name
