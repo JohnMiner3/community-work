@@ -338,3 +338,33 @@ models:
       - name: UnitPrice
         description: Track unit price
         data_type: float
+
+  #
+  # View of raw data for Dates
+  #
+
+  - name: Dates02
+    description: Staged dates data from raw layer
+    columns:
+      - name: DateId
+        description: Unique identifier for the date
+        data_tests:
+          - not_null
+          - unique        
+        data_type: int
+      
+      - name: DateVal
+        description: Date value
+        data_type: datetime2(7)
+      
+      - name: CalendarYear
+        description: Calendar year
+        data_type: int
+      
+      - name: CalendarMonth
+        description: Calendar month
+        data_type: int
+      
+      - name: CalendarDay
+        description: Calendar day
+        data_type: int
