@@ -1,12 +1,14 @@
-Welcome to the Chinook Sample dbt project.
+# Open Source Project
 
-Special thanks to Luis Rocha for creating the SQL scripts for various databases.
+Welcome to the **Chinook Sample dbt Project** created by John Miner.
+
+Special thanks to <span style="color:red">Luis Rocha</span> for creating the SQL scripts for various databases.
 Please see copy right information for this original work here.
 
 https://github.com/lerocha/chinook-database?tab=License-1-ov-file
 
 
-### Configuring dbt for SQL Server
+# Configuring dbt for SQL Server
 
 1 - Download the project to your local machine.
 
@@ -28,7 +30,7 @@ https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-
 7 - Modify the profiles.yml file to include the correct server, database, user and password.
 
 
-### Deploy the database
+# Deploy the sample database
 
 1 - Check connectivity with the following command.
 
@@ -60,9 +62,10 @@ dbt run -s marts
 dbt run -s analytics
 
 
-### Database Objects
+# Database Objects
 
-# 1 - data_raw.[*] ~ the landing zone of the extract and load process.
+1 - data_raw.[*] ~ the landing zone of the extract and load process
+
     - Album
     - Artist
     - Customer
@@ -75,7 +78,8 @@ dbt run -s analytics
     - PlaylistTrack
     - Track
 
-# 2 - data_stage.[*] ~ formatting of the raw data
+2 - data_stage.[*] ~ formatting of the raw data
+
     - Album01
     - Artist01
     - Customer01
@@ -88,7 +92,8 @@ dbt run -s analytics
     - PlaylistTrack01
     - Track01 - fix null composers
 
-# 3 - data_snap.[*] ~ slowly changing dimensions type 2
+3 - data_snap.[*] ~ slowly changing dimensions type 2
+
     - Album02
     - Artist02
     - Customer02
@@ -99,11 +104,13 @@ dbt run -s analytics
     - PlaylistTrack02
     - Track02
 
-# 4 - data_loads.[*] ~ incemental load of transactional data
+4 - data_loads.[*] ~ incemental load of transactional data
+
     - Invoice02
     - InvoiceLine02
 
-# 5 - data_marts.[*] ~ the dimensional model
+5 - data_marts.[*] ~ the dimensional model
+
     - DimCustomer
     - DimDate
     - DimEmployees
@@ -112,60 +119,78 @@ dbt run -s analytics
     - FactSales
 
 
-# 6 - data_analytics.[*] ~ published views for reporting
+6 - data_analytics.[*] ~ published views for reporting
+
     - SalesByCountry
 
 
-### Documentation + Tests
+# Documentation + Tests
 
-# seed_proprties.yml
+1 - adding properties to the schema
+
+* **seed_proprties.yml**
     - data tests for primary keys on all tables
     - documentation of data_raw tables
 
-# stage_schema.yml
+* **stage_schema.yml**
     - documentation of data_stage views + tables
     - data tests for primary keys on Dates02 table.
 
-# loads_schema.yml
+* **loads_schema.yml**
     - documentation of data_mart tables
 
-# marts_schema.yml
+* **marts_schema.yml**
     - documentation of data_mart tables
 
-# analytics_schema.yml
+* **analytics_schema.yml**
     - documentation of data_analytics views
 
-# ./tests - custom tests
-    - SmallSales
+2 - custom [./tests] subfolder
+
+Referential Integrity Tests
+
     - Album2Artist
-    - 
+    - Customer2Employee
+    - Invoice2Customer
+    - Line2Invoice
+    - Line2Track
+    - PlaylistTrack2Playlist
+    - PlaylistTrack2Track
+    - Track2Album
+    - Track2Genre
+    - Track2Media
 
-# display all tests using this cmd
-    - dbt ls --resource-type test
+Custom Business Logic
+
+    - SmallSales
 
 
-### Backlog
+3 - display all tests using this cmd
 
-# 1.a - add effective dating to DimLists + DimProducts
-# 1.b - add a couple more reporting views
-# 1.c - might want to move Dates02 to pre-stage
-# 1.d - use date key in invoices, invoice lines + employee
-# 1.e - convert place holder for DateDim to real date table
+    dbt ls --resource-type test
 
 
-### Revision History
+# Backlog
 
-# 1.00 - 2 Jan 2026 
+ + 1.a - add effective dating to DimLists + DimProducts
+ + 1.b - add a couple more reporting views
+ + 1.c - might want to move Dates02 to pre-stage
+ + 1.d - use date key in invoices, invoice lines + employee
+ + 1.e - convert place holder for DateDim to real date table
+
+
+# Revision History
+
+ 1.00 - 2 Jan 2026 
     - initial release
 
-# 1.01 - 4 Jan 2026
+ 1.01 - 4 Jan 2026
     - complete readme file
     - add mention for Chinook licensing
     - add custom tests for integrity
     - create backlog section
 
-
-### Resources:
+# Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news
