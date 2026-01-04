@@ -182,9 +182,11 @@ Custom Business Logic
 # Revision History
 
  1.00 - 2 Jan 2026 
+ 
     - initial release
 
  1.01 - 4 Jan 2026
+ 
     - complete readme file
     - add mention for Chinook licensing
     - add custom tests for integrity
