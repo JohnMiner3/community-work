@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+    
+    <!-- BOOKS Entity -->
+    <rect x="50" y="80" width="200" height="200" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <rect x="50" y="80" width="200" height="40" fill="#1976d2"/>
+    <text x="150" y="105" font-size="16" font-weight="bold" text-anchor="middle" fill="white">BOOKS</text>
+    
+    <text x="60" y="140" font-size="12" fill="#333">BookID (PK)</text>
+    <text x="60" y="160" font-size="12" fill="#333">Title</text>
+    <text x="60" y="180" font-size="12" fill="#333">Author</text>
+    <text x="60" y="200" font-size="12" fill="#333">ISBN</text>
+    <text x="60" y="220" font-size="12" fill="#333">Genre</text>
+    <text x="60" y="240" font-size="12" fill="#333">Quantity</text>
+    
+    <!-- MEMBERS Entity -->
+    <rect x="550" y="80" width="200" height="200" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+    <rect x="550" y="80" width="200" height="40" fill="#f57c00"/>
+    <text x="650" y="105" font-size="16" font-weight="bold" text-anchor="middle" fill="white">MEMBERS</text>
+    
+    <text x="560" y="140" font-size="12" fill="#333">MemberID (PK)</text>
+    <text x="560" y="160" font-size="12" fill="#333">Name</text>
+    <text x="560" y="180" font-size="12" fill="#333">Email</text>
+    <text x="560" y="200" font-size="12" fill="#333">JoinDate</text>
+    <text x="560" y="220" font-size="12" fill="#333">Status</text>
+    
+    <!-- LOANS Entity -->
+    <rect x="300" y="350" width="200" height="200" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+    <rect x="300" y="350" width="200" height="40" fill="#7b1fa2"/>
+    <text x="400" y="375" font-size="16" font-weight="bold" text-anchor="middle" fill="white">LOANS</text>
+    
+    <text x="310" y="410" font-size="12" fill="#333">LoanID (PK)</text>
+    <text x="310" y="430" font-size="12" fill="#333">BookID (FK)</text>
+    <text x="310" y="450" font-size="12" fill="#333">MemberID (FK)</text>
+    <text x="310" y="470" font-size="12" fill="#333">BorrowDate</text>
+    <text x="310" y="490" font-size="12" fill="#333">DueDate</text>
+    <text x="310" y="510" font-size="12" fill="#333">ReturnDate</text>
+    
+    <!-- Relationship: BOOKS to LOANS (One-to-Many) -->
+    <line x1="150" y1="280" x2="350" y2="350" stroke="#333" stroke-width="2"/>
+    <circle cx="150" cy="280" r="4" fill="#333"/>
+    <line x1="345" y1="345" x2="355" y2="355" stroke="#333" stroke-width="2"/>
+    <line x1="345" y1="355" x2="355" y2="345" stroke="#333" stroke-width="2"/>
+    <text x="220" y="305" font-size="12" fill="#333" font-style="italic">has</text>
+    
+    <!-- Relationship: MEMBERS to LOANS (One-to-Many) -->
+    <line x1="650" y1="280" x2="450" y2="350" stroke="#333" stroke-width="2"/>
+    <circle cx="650" cy="280" r="4" fill="#333"/>
+    <line x1="455" y1="345" x2="445" y2="355" stroke="#333" stroke-width="2"/>
+    <line x1="455" y1="355" x2="445" y2="345" stroke="#333" stroke-width="2"/>
+    <text x="530" y="305" font-size="12" fill="#333" font-style="italic">initiates</text>
+</svg>

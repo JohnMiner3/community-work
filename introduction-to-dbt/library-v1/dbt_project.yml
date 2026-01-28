@@ -1,0 +1,67 @@
+
+#
+#  Project configuration file
+#
+
+name: 'library'
+version: '1.0.0'
+
+# This setting indicates which profile dbt should use
+profile: 'library'
+
+
+#
+#  Define paths
+#
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+
+#
+#  Directories to clean  
+#
+
+clean-targets:    
+  - "target"
+  - "dbt_packages"
+
+
+#
+#  Configure seeds
+#
+
+seeds:
+  library:
+    schema: raw 
+
+
+#
+#  Configure snapshots
+#
+
+snapshots:
+  library:
+    schema: snapshot 
+    +as_columnstore: false
+
+
+#
+#  Configure models
+#
+
+models:
+  library:
+
+    stage: 
+      +schema: stage
+      +materialized: view
+
+    mart: 
+      +schema: mart
+      +materialized: table    
+      as_columnstore: true

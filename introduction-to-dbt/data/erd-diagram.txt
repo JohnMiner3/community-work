@@ -1,0 +1,29 @@
+erDiagram
+    BOOKS {
+        int BookID PK
+        varchar Title
+        varchar Author
+        varchar ISBN
+        varchar Genre
+        int Quantity
+    }
+
+    MEMBERS {
+        int MemberID PK
+        varchar Name
+        varchar Email
+        date JoinDate
+        varchar Status
+    }
+
+    LOANS {
+        int LoanID PK
+        int BookID FK
+        int MemberID FK
+        date BorrowDate
+        date DueDate
+        date ReturnDate
+    }
+
+    BOOKS ||--o{ LOANS : has
+    MEMBERS ||--o{ LOANS : initiates

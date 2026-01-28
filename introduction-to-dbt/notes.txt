@@ -1,0 +1,16 @@
+~ 1 ~ - is dbt core installed + dbt SQL server?
+
+pip show dbt-core
+
+~ 2 ~ - what version of python is installed
+
+python --version
+
+~ 3 ~ - create a new project
+
+cd .. 
+dbt init library
+
+
+
+

@@ -1,0 +1,162 @@
+seeds:
+
+  #
+  # Seed data for books 
+  #
+
+- name: books01
+  description: "Raw books data"
+  columns:
+    - name: BookID
+      description: "Book identifier"
+      data_type: int
+      data_tests:
+      - not_null
+      - unique 
+
+    - name: Title
+      description: "Book title"
+      data_type: varchar(45)
+      
+    - name: Author
+      description: "Book author"
+      data_type: varchar(23)
+      
+    - name: ISBN
+      description: "International Standard Book Number"
+      data_type: varchar(17)
+      
+    - name: Genre
+      description: "Book genre"
+      data_type: varchar(16)
+      data_tests:
+        - accepted_values:
+            values: ['Biography','Fiction','History','Sci-Fi','Tech']
+
+    - name: Quantity
+      description: "Quantity in stock"
+      data_type: int
+
+  #
+  # Seed data for dates01 
+  #
+
+    - name: dates01
+      description: "Raw dates data"
+      columns:
+        - name: id
+          description: "Date identifier"
+          data_type: int
+          data_tests:
+          - not_null
+          - unique 
+          
+        - name: date
+          description: "Calendar date"
+          data_type: date
+          
+        - name: year
+          description: "Year"
+          data_type: int
+          
+        - name: quarter
+          description: "Quarter of the year"
+          data_type: int
+          
+        - name: month
+          description: "Month number"
+          data_type: int
+          
+        - name: month_name
+          description: "Month name"
+          data_type: varchar(16)
+          
+        - name: day
+          description: "Day of the month"
+          data_type: int
+          
+        - name: day_of_week
+          description: "Day of the week number"
+          data_type: int
+          
+        - name: day_name
+          description: "Day of the week name"
+          data_type: varchar(16)
+          
+        - name: week_of_year
+          description: "Week number of the year"
+          data_type: int
+          
+        - name: is_weekend
+          description: "Flag indicating if date is a weekend"
+          data_type: int
+
+
+    #
+    # Seed data for loans01
+    #
+
+    - name: loans01
+      description: "Raw loans data"
+      columns:
+        - name: LoanID
+          description: "Loan identifier"
+          data_type: int
+          data_tests:
+          - not_null
+          - unique 
+          
+        - name: BookID
+          description: "Book identifier"
+          data_type: int
+          data_tests:
+            - relationships:
+                arguments:
+                  to: ref('books01')
+                  field: BookID
+
+        - name: MemberID
+          description: "Member identifier"
+          data_type: int
+          
+        - name: BorrowDate
+          description: "Date book was borrowed"
+          data_type: date
+          
+        - name: DueDate
+          description: "Date book is due for return"
+          data_type: date
+          
+        - name: ReturnDate
+          description: "Date book was returned"
+          data_type: date
+
+#
+# Seed data for members01
+#
+
+    - name: members01
+      description: "Raw members data"
+      columns:
+        - name: MemberID
+          description: "Member identifier"
+          data_type: int
+          data_tests:
+          - not_null
+          - unique 
+          
+        - name: Name
+          description: "Member name"
+          data_type: varchar(17)
+          
+        - name: Email
+          description: "Member email address"
+          data_type: varchar(27)
+          
+        - name: JoinDate
+          description: "Date member joined"
+          data_type: date
+          
+        - name: Status
+          description: "Member status"
+          data_type: varchar(16)
