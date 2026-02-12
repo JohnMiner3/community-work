@@ -1,0 +1,40 @@
+#
+# Master Profile
+#
+
+master:
+  target: dev
+  outputs:
+    dev:
+      type: sqlserver
+      driver: 'ODBC Driver 18 for SQL Server' 
+      server: svr4tips2030.database.windows.net
+      port: 1433
+      database: master 
+      schema: data
+      user: {{ your admin usr }}
+      password: {{ your admin pwd }}
+      encrypt: true 
+      trust_cert: true 
+      connection_timeout: 30
+      query_timeout: 60 
+
+
+#
+# Library Profile
+#
+
+library:
+  target: dev
+  outputs:
+    dev:
+      type: sqlserver
+      driver: 'ODBC Driver 18 for SQL Server' 
+      server: svr4tips2030.database.windows.net
+      port: 1433
+      database: library 
+      schema: data
+      user: {{ your admin usr }}
+      password: {{ your admin pwd }}
+      encrypt: true 
+      trust_cert: true 

@@ -186,11 +186,6 @@ Custom Business Logic
     - initial release
 
  1.01 - 4 Jan 2026
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> 38b8abc04fdd607554e798ecfe395c6615b2f082
     - complete readme file
     - add mention for Chinook licensing
     - add custom tests for integrity
