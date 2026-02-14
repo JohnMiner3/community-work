@@ -13,6 +13,8 @@ Databricks Spark Cluster.
 
 2 - Make sure you have visual studio code installed as well as a latest version of python.
 
+see SQL Server Central article
+
 3 - Make sure dbt core and the adapter for databricks are installed.
 
 python -m pip install dbt-core dbt-databricks
@@ -20,7 +22,7 @@ python -m pip install dbt-core dbt-databricks
 
 4 - Modify the profiles.yml file to include the correct host, http path, and access token.
 
-Use the warehouse for all SQL Models and the Cluster for all Python Models.
+Use the warehouse for all SQL Models and the cluster for all Python Models.
 
 
 
@@ -68,12 +70,19 @@ dbt run -s mart
     - Members02
 	- Dates02
 	
-3 - data_stage.[*] ~ incremental load of transactional data
+3 - data_stage.[*] ~ test merge, view, materialized view
 
     - Loans02
 	- Loans03 ~ test views
 	- rowcnt02 ~ test materialized views
 
+4 - data_mart.[*] ~ the dimensional model
+
+    - dim_books
+    - dim_books
+	- dim_dates
+	- fact_loans
+	
 
 # Deploy the address schema (Python model)
 
