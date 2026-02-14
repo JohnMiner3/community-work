@@ -1,0 +1,60 @@
+
+#
+#  Project configuration file
+#
+
+name: 'library'
+version: '1.0.0'
+
+# This setting indicates which profile dbt should use
+profile: 'library'
+
+# configure adapter
+flags:
+  use_materialization_v2: true
+  use_managed_iceberg: false
+
+#
+#  Define paths
+#
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+
+#
+#  Directories to clean  
+#
+
+clean-targets:    
+  - "target"
+  - "dbt_packages"
+
+
+#
+#  Configure seeds
+#
+
+seeds:
+  library:
+    schema: bronze 
+
+
+#
+#  Configure models
+#
+
+models:
+  library:
+
+    stage: 
+      +schema: silver
+      materialized: table
+
+    mart: 
+      +schema: gold
+      materialized: table    

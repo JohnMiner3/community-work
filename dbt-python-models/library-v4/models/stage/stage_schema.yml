@@ -1,0 +1,34 @@
+version: 2
+
+models:
+
+#
+# Incremental merge for loans01 table
+#
+
+- name: loans02
+  description: Staged loans data from raw layer
+  columns:
+    - name: LoanID
+      description: Unique identifier for the loan
+      data_type: int
+      
+    - name: BookID
+      description: Foreign key to book table
+      data_type: int
+      
+    - name: MemberID
+      description: Foreign key to member table
+      data_type: int
+      
+    - name: BorrowDate
+      description: Date the book was borrowed
+      data_type: date
+      
+    - name: DueDate
+      description: Date the book is due to be returned
+      data_type: date
+      
+    - name: ReturnDate
+      description: Date the book was actually returned
+      data_type: date

@@ -63,7 +63,7 @@ dbt run --profile library -s make_tables
 dbt run --profile library -s add_comments
 
 
-7 - Add security to the data_raw schema.
+7 - Add security to the data_mart schema.
 
 dbt run --profile library -s add_security
 

@@ -1,0 +1,5 @@
+models:
+  - name: address02
+    config:
+      meta:
+        maps_api_key: <your-maps-api-key>

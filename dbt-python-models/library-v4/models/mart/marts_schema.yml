@@ -1,0 +1,152 @@
+version: 2
+
+models:
+
+
+#
+# Books Dimension Table
+#
+
+- name: dim_books
+  description: Books dimension table containing book information.
+  
+  columns:
+    - name: BookID
+      description: The unique identifier for a book.
+      data_type: int
+
+    - name: Title
+      description: The title of the book.
+      data_type: varchar(45)
+
+    - name: Author
+      description: The author of the book.
+      data_type: varchar(23)
+
+    - name: ISBN
+      description: The International Standard Book Number.
+      data_type: varchar(17)
+
+    - name: Genre
+      description: The genre of the book.
+      data_type: varchar(16)
+
+    - name: Quantity
+      description: The quantity of books available.
+      data_type: int
+
+
+
+#
+# Dates Dimension Table
+#
+
+- name: dim_dates
+  description: Date dimension table containing date attributes.
+  
+  columns:
+    - name: id
+      description: The unique identifier for the date.
+      data_type: int
+
+    - name: date
+      description: The date value.
+      data_type: date
+
+    - name: year
+      description: The year component of the date.
+      data_type: int
+
+    - name: quarter
+      description: The quarter of the year (1-4).
+      data_type: int
+
+    - name: month
+      description: The month component of the date (1-12).
+      data_type: int
+
+    - name: month_name
+      description: The name of the month.
+      data_type: varchar(16)
+
+    - name: day
+      description: The day component of the date.
+      data_type: int
+
+    - name: day_of_week
+      description: The day of the week (1-7).
+      data_type: int
+
+    - name: day_name
+      description: The name of the day.
+      data_type: varchar(16)
+
+    - name: week_of_year
+      description: The week number of the year.
+      data_type: int
+
+    - name: is_weekend
+      description: Flag indicating if the date is a weekend (0 or 1).
+      data_type: int
+
+
+#
+# Members Dimension Table
+#
+
+- name: dim_members
+  description: Members dimension table containing member information.
+  
+  columns:
+    - name: MemberID
+      description: The unique identifier for a member.
+      data_type: int
+
+    - name: Name
+      description: The name of the member.
+      data_type: varchar(17)
+
+    - name: Email
+      description: The email address of the member.
+      data_type: varchar(27)
+
+    - name: JoinDateKey
+      description: Foreign key to the date dimension for join date.
+      data_type: int
+
+    - name: Status
+      description: The status of the member.
+      data_type: varchar(16)
+
+
+#
+# Loans Fact Table
+#
+
+- name: fact_loans
+  description: Loans fact table containing loan transaction information.
+  
+  columns:
+    - name: LoanID
+      description: The unique identifier for a loan.
+      data_type: int
+
+    - name: BookID
+      description: Foreign key to the books dimension.
+      data_type: int
+
+    - name: MemberID
+      description: Foreign key to the members dimension.
+      data_type: int
+
+    - name: BorrowDateKey
+      description: Foreign key to the date dimension for borrow date.
+      data_type: int
+
+    - name: DueDateKey
+      description: Foreign key to the date dimension for due date.
+      data_type: int
+
+    - name: ReturnDateKey
+      description: Foreign key to the date dimension for return date.
+      data_type: int

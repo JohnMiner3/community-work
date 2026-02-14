@@ -1,0 +1,10 @@
+library:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: uc_sql_server_central
+      schema: data
+      host: <your-databricks-host>
+      http_path: <your-databricks-http-path>
+      token: <your-databricks-token>
