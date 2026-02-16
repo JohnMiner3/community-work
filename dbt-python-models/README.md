@@ -2,7 +2,7 @@
 
 Welcome to the **Python Models Project** created by John Miner.
 
-The purpose of this project is to show how dSpark SQL can be executed against
+The purpose of this project is to show how Spark SQL can be executed against
 an Azure Databricks SQL Warehouse and Python can be executed against an Azure 
 Databricks Spark Cluster.
 
