@@ -13,7 +13,6 @@ Databricks Spark Cluster.
 
 2 - Make sure you have visual studio code installed as well as a latest version of python.
 
-see SQL Server Central article
 
 3 - Make sure dbt core and the adapter for databricks are installed.
 
@@ -26,7 +25,7 @@ Use the warehouse for all SQL Models and the cluster for all Python Models.
 
 
 
-# Deploy the library schema (SQL model)
+# Deploy the library schema (SQL model) - project "library-v4"
 
 1 - Check connectivity to the warehouse with the following command.
 
@@ -84,7 +83,7 @@ dbt run -s mart
 	- fact_loans
 	
 
-# Deploy the address schema (Python model)
+# Deploy the address schema (Python model) - project "py-models"
 
 1 - Check connectivity to the cluster with the following command.
 
