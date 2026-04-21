@@ -1,0 +1,71 @@
+~~ AI Prompts ~~
+
+1 - I have the following tables in a SQL Analytic Endpoint.
+
+
+CREATE TABLE [data_mart].[FactSales]
+(
+	[InvoiceId] [int] NULL,
+	[CustomerId] [int] NULL,
+	[InvoiceDate] [varchar](max) NULL,
+	[BillingAddress] [varchar](max) NULL,
+	[BillingCity] [varchar](max) NULL,
+	[BillingState] [varchar](max) NULL,
+	[BillingCountry] [varchar](max) NULL,
+	[BillingPostalCode] [varchar](max) NULL,
+	[Total] [float] NULL,
+	[InvoiceLineId] [int] NULL,
+	[TrackId] [int] NULL,
+	[UnitPrice] [float] NULL,
+	[Quantity] [int] NULL,
+	[MSSQL_System_Uniquifier_1202103323] [bigint] NOT NULL
+) 
+GO
+
+
+2 - I have three database groups.
+
+[SalesRole01]
+[SalesRole02]
+[GeneralStaffRole]
+
+
+3 - Create T-SQL row level security for both tables.
+
+Please mask the [Total] and [UnitPrice] columns with x's.
+Apply masking to [GeneralStaffRole] role.
+
+
+
+~~ AI Solution ~~
+
+ALTER TABLE [data_mart].[FactSales]
+ALTER COLUMN [Total] ADD MASKED WITH (FUNCTION = 'default()');
+
+ALTER TABLE [data_mart].[FactSales]
+ALTER COLUMN [UnitPrice] ADD MASKED WITH (FUNCTION = 'default()');
+
+GRANT UNMASK TO [SalesRole01];
+GRANT UNMASK TO [SalesRole02];
+
+
+
+--
+--  John's extra coding
+--
+
+-- Columns with mask
+SELECT 
+    t.name AS [Table_Name],
+    mc.name AS [Column_Name],
+    mc.masking_function AS [Mask_Function],
+    mc.is_masked
+FROM sys.masked_columns AS mc
+JOIN sys.tables AS t ON mc.object_id = t.object_id
+WHERE t.name = 'FactSales';
+
+
+-- Remove masking
+ALTER TABLE [data_mart].[FactSales] ALTER COLUMN [Total] DROP MASKED;
+ALTER TABLE [data_mart].[FactSales] ALTER COLUMN [UnitPrice] DROP MASKED;
+

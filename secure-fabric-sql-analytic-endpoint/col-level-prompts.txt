@@ -1,0 +1,154 @@
+~~ AI Prompts ~~
+
+1 - I have the following table.
+
+CREATE TABLE [data_mart].[FactSales]
+(
+	[InvoiceId] [int] NULL,
+	[CustomerId] [int] NULL,
+	[InvoiceDate] [varchar](max) NULL,
+	[BillingAddress] [varchar](max) NULL,
+	[BillingCity] [varchar](max) NULL,
+	[BillingState] [varchar](max) NULL,
+	[BillingCountry] [varchar](max) NULL,
+	[BillingPostalCode] [varchar](max) NULL,
+	[Total] [float] NULL,
+	[InvoiceLineId] [int] NULL,
+	[TrackId] [int] NULL,
+	[UnitPrice] [float] NULL,
+	[Quantity] [int] NULL,
+	[MSSQL_System_Uniquifier_1202103323] [bigint] NOT NULL
+) 
+GO
+
+
+2 - Define sales people
+
+john@craftydba.com is a sales person for North America.
+frank@craftydba.com is a sales person for Other Countries.
+anyone else is not in sales
+
+3 - Add column level security so that the [Total] and [UnitPrice]
+are hidden from non sales people.
+
+
+
+~~ AI Solution 1 ~~
+
+
+1 - Create roles
+
+-- Create a role for Sales People (NA)
+CREATE ROLE [SalesRole01];
+ALTER ROLE [SalesRole01] ADD MEMBER [john@craftydba.com];
+
+-- Create a role for Sales People (OTHER)
+CREATE ROLE [SalesRole02];
+ALTER ROLE [SalesRole] ADD MEMBER [francis@craftydba.com];
+
+-- Create a role for everyone else
+CREATE ROLE [GeneralStaffRole];
+
+-- Add the specific users to the role
+ALTER ROLE [GeneralStaffRole] ADD MEMBER [robin@craftydba.com];
+
+
+
+-- 1. Grant SELECT on the entire table to Sales (can see everything)
+GRANT SELECT ON [data_mart].[FactSales] TO [SalesRole01];
+GRANT SELECT ON [data_mart].[FactSales] TO [SalesRole02];
+
+-- 2. Handle Non-Sales People (General Staff)
+REVOKE SELECT ON [data_mart].[FactSales] TO [GeneralStaffRole];
+go
+
+GRANT SELECT ON [data_mart].[FactSales] 
+(
+[InvoiceId],
+[CustomerId],
+[InvoiceDate],
+[BillingAddress],
+[BillingCity],
+[BillingState],
+[BillingCountry],
+[BillingPostalCode],
+[InvoiceLineId],
+[TrackId],
+[Quantity]
+)
+TO [GeneralStaffRole];
+go
+
+
+-- Don't allow select
+DENY SELECT ON [data_mart].[FactSales] ([Total], [UnitPrice]) TO GeneralStaffRole;
+
+
+
+
+~~ AI Solution 2 ~~
+
+CREATE VIEW [data_mart].[vw_FactSales_Masked]
+AS
+SELECT 
+    [InvoiceId],
+    [CustomerId],
+    [InvoiceDate],
+    [BillingAddress],
+    [BillingCity],
+    [BillingState],
+    [BillingCountry],
+    [BillingPostalCode],
+    -- Masking logic: returns value if in a sales role, otherwise NULL
+    CASE 
+        WHEN IS_ROLEMEMBER('SalesRole01') = 1 or IS_ROLEMEMBER('SalesRole02') = 1
+        THEN [Total] 
+        ELSE NULL 
+    END AS [Total],
+    [InvoiceLineId],
+    [TrackId],
+    CASE 
+        WHEN IS_ROLEMEMBER('SalesRole01') = 1 or IS_ROLEMEMBER('SalesRole02') = 1
+        THEN [UnitPrice] 
+        ELSE NULL 
+    END AS [UnitPrice],
+    [Quantity]
+FROM [data_mart].[FactSales];
+GO
+
+
+
+
+--
+--  Scratch Pad
+--
+
+
+-- Show rights
+SELECT 
+    USER_NAME(grantee_principal_id) AS [Principal_Name],
+    permission_name AS [Permission],
+    state_desc AS [Action_Type], -- GRANT, DENY, etc.
+    COL_NAME(major_id, minor_id) AS [Column_Name], -- Null if table-level
+    class_desc AS [Object_Class]
+FROM sys.database_permissions
+WHERE major_id = OBJECT_ID('[data_mart].[FactSales]')
+ORDER BY [Principal_Name], [Action_Type];
+
+-- Show memberships
+SELECT 
+    DP1.name AS [DatabaseRoleName], 
+    DP2.name AS [DatabaseMemberName],
+    DP2.type_desc AS [MemberType]
+FROM sys.database_role_members AS DRM
+INNER JOIN sys.database_principals AS DP1 
+    ON DRM.role_principal_id = DP1.principal_id
+INNER JOIN sys.database_principals AS DP2 
+    ON DRM.member_principal_id = DP2.principal_id
+ORDER BY [DatabaseRoleName], [DatabaseMemberName];
+
+
+-- Revoke rights
+REVOKE ALL PRIVILEGES ON [data_mart].[FactSales] FROM [SalesRole01];
+REVOKE ALL PRIVILEGES ON [data_mart].[FactSales] FROM [SalesRole02];
+REVOKE ALL PRIVILEGES ON [data_mart].[FactSales] FROM [GeneralStaffRole];

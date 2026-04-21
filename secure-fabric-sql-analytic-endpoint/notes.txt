@@ -1,0 +1,28 @@
+SQL Analytic Endpoint
+
+https://learn.microsoft.com/en-us/fabric/database/sql/sql-analytics-endpoint
+
+
+Tabular Data Stream
+
+https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-tds/b46a581a-39de-4745-b076-ec4dbb7d13ec
+
+
+Fabric Product Features
+
+https://www.microsoft.com/en-us/microsoft-fabric/features
+
+
+Row Level Security
+
+https://learn.microsoft.com/en-us/fabric/data-warehouse/row-level-security
+
+
+Column Level Security
+
+https://learn.microsoft.com/en-us/fabric/data-warehouse/column-level-security
+
+
+Data Masking
+
+https://learn.microsoft.com/en-us/fabric/data-warehouse/dynamic-data-masking

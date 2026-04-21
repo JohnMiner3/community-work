@@ -1,0 +1,122 @@
+~~ AI Prompts ~~
+
+1 - I have the following tables.
+
+CREATE TABLE [data_mart].[DimCustomers]
+(
+	[CustomerId] [int] NULL,
+	[FirstName] [varchar](max) NULL,
+	[LastName] [varchar](max) NULL,
+	[Company] [varchar](max) NULL,
+	[Address] [varchar](max) NULL,
+	[City] [varchar](max) NULL,
+	[State] [varchar](max) NULL,
+	[Country] [varchar](max) NULL,
+	[PostalCode] [varchar](max) NULL,
+	[Phone] [varchar](max) NULL,
+	[Fax] [varchar](max) NULL,
+	[Email] [varchar](max) NULL,
+	[SupportRepId] [int] NULL,
+	[MSSQL_System_Uniquifier_1138103095] [bigint] NOT NULL
+) 
+GO
+
+CREATE TABLE [data_mart].[FactSales]
+(
+	[InvoiceId] [int] NULL,
+	[CustomerId] [int] NULL,
+	[InvoiceDate] [varchar](max) NULL,
+	[BillingAddress] [varchar](max) NULL,
+	[BillingCity] [varchar](max) NULL,
+	[BillingState] [varchar](max) NULL,
+	[BillingCountry] [varchar](max) NULL,
+	[BillingPostalCode] [varchar](max) NULL,
+	[Total] [float] NULL,
+	[InvoiceLineId] [int] NULL,
+	[TrackId] [int] NULL,
+	[UnitPrice] [float] NULL,
+	[Quantity] [int] NULL,
+	[MSSQL_System_Uniquifier_1202103323] [bigint] NOT NULL
+) 
+GO
+
+
+2 - Country names that are "Canada" and "USA" are considered "North America".  
+    Countries not in this list are considered "Other Countries".
+
+3 - Create T-SQL row level security for both tables.
+
+john@craftydba.com is a sales person for North America.
+francis@craftydba.com is a sales person for Other Countries.
+anyone else has rights to see both sets of records.
+
+
+
+~~ AI Output - Create ~~
+
+1 - Create roles
+
+-- Create a role for Sales People (NA)
+CREATE ROLE [SalesRole01];
+ALTER ROLE [SalesRole01] ADD MEMBER [john@craftydba.com];
+
+-- Create a role for Sales People (OTHER)
+CREATE ROLE [SalesRole02];
+ALTER ROLE [SalesRole02] ADD MEMBER [francis@craftydba.com];
+
+-- Create a role for everyone else
+CREATE ROLE [GeneralStaffRole];
+
+-- Add the specific users to the role
+ALTER ROLE [GeneralStaffRole] ADD MEMBER [robin@craftydba.com];
+
+
+
+/* 1. Drop the Filter Function */
+CREATE FUNCTION [data_mart].[fn_CountrySecurityPredicate](@Country AS NVARCHAR(MAX))
+    RETURNS TABLE
+WITH SCHEMABINDING
+AS
+RETURN SELECT 1 AS fn_security_predicate_result
+WHERE 
+    -- North America Access
+    (IS_ROLEMEMBER('SalesRole01') = 1 AND @Country IN ('Canada', 'USA'))
+    OR 
+    -- Other Countries Access
+    (IS_ROLEMEMBER('SalesRole02') = 1 AND @Country NOT IN ('Canada', 'USA'))
+    OR
+    -- Admin/Other User Access (Unrestricted)
+    (IS_ROLEMEMBER('SalesRole01') = 0 AND IS_ROLEMEMBER('SalesRole02') = 0);
+GO
+
+
+/* 2. Create the Security Policy */
+CREATE SECURITY POLICY [data_mart].[CustomerSalesPolicy]
+-- Apply to DimCustomers
+ADD FILTER PREDICATE [data_mart].[fn_CountrySecurityPredicate]([Country]) 
+    ON [data_mart].[DimCustomers],
+-- Apply to FactSales
+ADD FILTER PREDICATE [data_mart].[fn_CountrySecurityPredicate]([BillingCountry]) 
+    ON [data_mart].[FactSales]
+WITH (STATE = ON);
+GO
+
+
+
+~~ AI Output - Drop ~~
+
+
+/* 1. Drop the Security Policy */
+IF EXISTS (SELECT * FROM sys.security_policies WHERE name = 'CustomerSalesPolicy' AND schema_id = SCHEMA_ID('data_mart'))
+BEGIN
+    DROP SECURITY POLICY [data_mart].[CustomerSalesPolicy];
+END
+GO
+
+/* 2. Drop the Filter Function */
+IF EXISTS (SELECT * FROM sys.objects WHERE name = 'fn_CountrySecurityPredicate' AND schema_id = SCHEMA_ID('data_mart'))
+BEGIN
+    DROP FUNCTION [data_mart].[fn_CountrySecurityPredicate];
+END
+GO
+
