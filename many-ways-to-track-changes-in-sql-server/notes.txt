@@ -1,0 +1,4 @@
+
+https://www.mssqltips.com/sqlservertip/7490/azure-sql-managed-instance-auditing/
+
+https://www.mssqltips.com/sqlservertip/5291/audit-and-prevent-unwanted-sql-server-table-changes/	
