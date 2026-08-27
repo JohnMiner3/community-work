@@ -1,0 +1,195 @@
+name: Integration testing (no-secret adapters)
+
+# Runs on every PR and push. Only covers adapters that need no GitHub
+# secrets (the docker-compose-backed ones plus duckdb), so fork PRs work
+# the same as same-repo PRs. Secret-bearing adapters live in
+# ci-secret-adapters.yml and are triggered by a maintainer commenting
+# `/ok-to-test <sha>` on the PR.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  # Daily run against main so we catch upstream drift (action versions,
+  # dbt-adapter releases, dependency resolution flips) before the next PR does.
+  # 05:17 UTC is off-peak for shared GitHub runners.
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+env:
+  CLICKHOUSE_HOST: localhost
+  CLICKHOUSE_PORT: "8123"
+  CLICKHOUSE_SCHEMA: dbt_date
+  CLICKHOUSE_USER: default
+  DBT_ENV_SECRET_POSTGRES_PASS: dbt
+  POSTGRES_DATABASE: metastore
+  POSTGRES_HOST: localhost
+  POSTGRES_PORT: 5432
+  POSTGRES_SCHEMA: dbt_date
+  POSTGRES_USER: dbt
+  SPARK_HOST: localhost
+  SPARK_METHOD: thrift
+  SPARK_PORT: 10000
+  SPARK_SCHEMA: dbt_date
+  SPARK_USER: dbt
+  DBT_ENV_SECRET_TRINO_PASS: dbt
+  TRINO_CATALOG: dbt
+  TRINO_HOST: localhost
+  TRINO_METHOD: none
+  TRINO_PORT: "8080"
+  TRINO_SCHEMA: dbt
+  TRINO_TIMEZONE: UTC
+  TRINO_USER: dbt
+
+jobs:
+  # The package version lives in two files (pyproject.toml drives the release
+  # pipeline, dbt_project.yml is what dbt reads). Cheap guard so they can't
+  # drift — no adapters, no docker, no secrets.
+  version_check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Check pyproject.toml and dbt_project.yml versions agree
+        run: uv run --no-project scripts/check_versions.py
+
+  integration_tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        adapter:
+          - clickhouse
+          - duckdb
+          - postgres
+          - spark
+          - trino
+        dbt-version:
+          - "1.10"
+          - "1.11"
+        # clickhouse and trino have no dbt-core 1.11 compatible release yet,
+        # so exclude those combinations. No 1.12 release exists for any of
+        # these adapters. Revisit when upstream publishes them.
+        exclude:
+          - adapter: clickhouse
+            dbt-version: "1.11"
+          - adapter: trino
+            dbt-version: "1.11"
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: .python-version
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Set up Mise
+        uses: jdx/mise-action@v4.2.1
+        with:
+          version: 2026.7.12
+
+      - name: Install dbt-${{ matrix.adapter }}~=${{ matrix.dbt-version }} (including Spark extra)
+        if: ${{ matrix.adapter == 'spark' }}
+        run: uv pip install --system --prerelease allow "dbt-${{ matrix.adapter }}[PyHive]~=${{ matrix.dbt-version }}.0a0" "dbt-core~=${{ matrix.dbt-version }}.0a0"
+
+      - name: Install dbt-${{ matrix.adapter }}~=${{ matrix.dbt-version }}
+        if: ${{ matrix.adapter != 'spark' }}
+        run: uv pip install --system --prerelease allow "dbt-${{ matrix.adapter }}~=${{ matrix.dbt-version }}.0a0" "dbt-core~=${{ matrix.dbt-version }}.0a0"
+
+      - name: Install testing dependencies (non-python)
+        if: ${{ matrix.adapter == 'clickhouse' || matrix.adapter == 'postgres' || matrix.adapter == 'spark' || matrix.adapter == 'trino' }}
+        env:
+          ADAPTER: ${{ matrix.adapter }}
+          COMPOSE_FILE: ./integration_tests/docker-compose.yml
+        run: |
+          docker compose -f "$COMPOSE_FILE" up -d "dbt-$ADAPTER"
+          # Each adapter answers a real readiness probe rather than waiting a
+          # fixed amount of time — fails fast when a service is broken,
+          # returns sooner when it's healthy, and tells us which service
+          # didn't come up.
+          case "$ADAPTER" in
+            clickhouse)
+              probe() { curl -sf http://localhost:8123/ping >/dev/null; }
+              ;;
+            postgres)
+              probe() { docker compose -f "$COMPOSE_FILE" exec -T dbt-postgres pg_isready -U dbt -d metastore; }
+              ;;
+            trino)
+              # /v1/info returns 200 while the coordinator is still in
+              # "starting":true — only proceed once starting flips to false,
+              # otherwise dbt connects and gets SERVER_STARTING_UP.
+              probe() { curl -sf http://localhost:8080/v1/info | grep -q '"starting":false'; }
+              ;;
+            spark)
+              # The thrift port binds before HiveServer2 can actually accept
+              # queries, so a TCP probe returns ready too early. Wait for the
+              # readiness log line instead.
+              probe() { docker compose -f "$COMPOSE_FILE" logs dbt-spark 2>&1 | grep -q "HiveThriftServer2 started"; }
+              ;;
+          esac
+          deadline=$(( $(date +%s) + 90 ))
+          until probe; do
+            if [ "$(date +%s)" -ge "$deadline" ]; then
+              echo "::error::dbt-$ADAPTER did not become ready within 90s"
+              docker compose -f "$COMPOSE_FILE" logs "dbt-$ADAPTER"
+              exit 1
+            fi
+            sleep 2
+          done
+          echo "dbt-$ADAPTER is ready"
+
+      - name: Run integration tests (${{ matrix.adapter }})
+        run: |
+          export DBT_SUFFIX=_$(date +%6N)
+          mise run test:${{ matrix.adapter }}
+
+  integration_tests_fusion:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: .python-version
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Set up Mise
+        uses: jdx/mise-action@v4.2.1
+        with:
+          version: 2026.7.12
+
+      - name: Install dbt-duckdb
+        run: uv pip install --system --prerelease allow "dbt-duckdb" "dbt-core~=2.0.0a0"
+
+      - name: Run integration tests
+        run: |
+          export DBT_SUFFIX=_$(date +%6N)
+          mise run test:duckdb

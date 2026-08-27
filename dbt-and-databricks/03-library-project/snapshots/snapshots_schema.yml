@@ -1,0 +1,162 @@
+version: 2
+
+snapshots:
+
+#
+# Books - Slowly Changing Dimension (SCD) 
+#
+
+- name: books02
+  description: Snapshot of books data
+  columns:
+    - name: BookID
+      description: Unique identifier for the book
+      data_type: int
+      
+    - name: Title
+      description: Title of the book
+      data_type: varchar(45)
+      
+    - name: Author
+      description: Author of the book
+      data_type: varchar(23)
+      
+    - name: ISBN
+      description: International Standard Book Number
+      data_type: varchar(17)
+      
+    - name: Genre
+      description: Genre of the book
+      data_type: varchar(16)
+      
+    - name: Quantity
+      description: Number of copies available
+      data_type: int
+      
+    - name: dbt_scd_id
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+
+#
+# Dates - Slowly Changing Dimension (SCD) 
+#
+
+- name: dates02
+  description: Snapshot of dates data
+  columns:
+    - name: id
+      description: Unique identifier for the date
+      data_type: int
+      
+    - name: date
+      description: Calendar date
+      data_type: date
+      
+    - name: year
+      description: Year component
+      data_type: int
+      
+    - name: quarter
+      description: Quarter of the year (1-4)
+      data_type: int
+      
+    - name: month
+      description: Month number (1-12)
+      data_type: int
+      
+    - name: month_name
+      description: Name of the month
+      data_type: varchar(16)
+      
+    - name: day
+      description: Day of the month
+      data_type: int
+      
+    - name: day_of_week
+      description: Day of week number
+      data_type: int
+      
+    - name: day_name
+      description: Name of the day
+      data_type: varchar(16)
+      
+    - name: week_of_year
+      description: Week number of the year
+      data_type: int
+      
+    - name: is_weekend
+      description: Flag indicating if date is weekend
+      data_type: int
+      
+    - name: dbt_scd_id
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+
+#
+# Members - Slowly Changing Dimension (SCD) 
+#
+
+- name: members02
+  description: Snapshot of members data
+  columns:
+    - name: MemberID
+      description: Unique identifier for the member
+      data_type: int
+      
+    - name: Name
+      description: Name of the member
+      data_type: varchar(17)
+      
+    - name: Email
+      description: Email address of the member
+      data_type: varchar(27)
+      
+    - name: JoinDate
+      description: Date when the member joined
+      data_type: date
+      
+    - name: Status
+      description: Current status of the member
+      data_type: varchar(16)
+      
+    - name: dbt_scd_id
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      description: End of validity period for this record
+      data_type: datetime2(6)

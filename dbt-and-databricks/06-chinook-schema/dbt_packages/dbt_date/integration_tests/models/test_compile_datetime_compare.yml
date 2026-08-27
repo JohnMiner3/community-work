@@ -1,0 +1,93 @@
+version: 2
+models:
+  - name: test_compile_datetime_compare
+    tests:
+      - expression_is_true:
+          arguments:
+            expression: "before_future_date = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_past_date = 0"
+      - expression_is_true:
+          arguments:
+            expression: "before_just_before_boundary = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_at_boundary = 0"
+      - expression_is_true:
+          arguments:
+            expression: "before_or_equal_at_boundary = 1"
+      - expression_is_true:
+          arguments:
+            expression: "after_past_date = 1"
+      - expression_is_true:
+          arguments:
+            expression: "after_future_date = 0"
+      - expression_is_true:
+          arguments:
+            expression: "after_at_boundary = 0"
+      - expression_is_true:
+          arguments:
+            expression: "after_or_equal_at_boundary = 1"
+      - expression_is_true:
+          arguments:
+            expression: "between_inside = 1"
+      - expression_is_true:
+          arguments:
+            expression: "between_at_start = 1"
+      - expression_is_true:
+          arguments:
+            expression: "between_at_end = 0"
+      - expression_is_true:
+          arguments:
+            expression: "between_at_end_inclusive_both = 1"
+      - expression_is_true:
+          arguments:
+            expression: "between_at_start_inclusive_neither = 0"
+      - expression_is_true:
+          arguments:
+            expression: "between_at_end_inclusive_right = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_tokyo_just_before_midnight = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_tokyo_at_midnight = 0"
+      - expression_is_true:
+          arguments:
+            expression: "before_la_just_before_midnight = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_la_at_midnight = 0"
+      - expression_is_true:
+          arguments:
+            expression: "before_aware_timestamp_ignores_tz = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_naive_space_separator = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_date_object = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_datetime_object = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_far_future_run_started_at = 1"
+      - expression_is_true:
+          arguments:
+            expression: "after_epoch_run_started_at = 1"
+      - expression_is_true:
+          arguments:
+            expression: "before_epoch_run_started_at = 0"
+      - expression_is_true:
+          arguments:
+            expression: "after_far_future_run_started_at = 0"
+      - expression_is_true:
+          arguments:
+            expression: "if_block_before_future = 1"
+  - name: test_compile_time_enabled
+    tests:
+      - expression_is_true:
+          arguments:
+            expression: "one = 1"

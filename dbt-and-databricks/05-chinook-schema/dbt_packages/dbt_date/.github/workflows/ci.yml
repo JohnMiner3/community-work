@@ -1,0 +1,53 @@
+name: Package Integration Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  # Daily run against main so we catch upstream drift in the reusable
+  # workflow (e.g. tag retags, runner image bumps, transitive dep flips).
+  # Offset 17 minutes after the no-secret workflow's scheduled run.
+  schedule:
+    - cron: "34 5 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    # This workflow needs warehouse secrets, which GitHub withholds from
+    # fork PRs — so it can only pass on same-repo refs. Skip it on fork PRs
+    # (they get no-secret coverage from ci-multiple-dbt-versions.yml and
+    # secret-adapter coverage via `/ok-to-test` in ci-secret-adapters.yml).
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
+    uses: dbt-labs/dbt-package-testing/.github/workflows/run_tox.yml@v2
+    permissions:
+      contents: read
+    secrets:
+      BIGQUERY_KEYFILE_JSON: ${{ secrets.BIGQUERY_KEYFILE_JSON }}
+      DBT_ENV_SECRET_DATABRICKS_TOKEN: "${{ secrets.DBT_ENV_SECRET_DATABRICKS_TOKEN }}"
+      DBT_ENV_SECRET_TRINO_PASS: dbt
+    with:
+      # Run the per-adapter mise tasks (mise run test:<adapter>) instead of tox.
+      test_runner: mise
+      BIGQUERY_PROJECT: dbt-date
+      BIGQUERY_SCHEMA: "integration_tests_bigquery_${{ github.run_number }}"
+      DATABRICKS_HOST: "${{ vars.DATABRICKS_HOST }}"
+      DATABRICKS_HTTP_PATH: "${{ vars.DATABRICKS_HTTP_PATH }}"
+      DATABRICKS_SCHEMA: "integration_tests_databricks_${{ github.run_number }}"
+      DBT_ENV_SECRET_POSTGRES_PASS: dbt
+      POSTGRES_DATABASE: metastore
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+      POSTGRES_SCHEMA: dbt_date
+      POSTGRES_USER: dbt
+      TRINO_CATALOG: dbt
+      TRINO_HOST: localhost
+      TRINO_METHOD: none
+      TRINO_PORT: 8080
+      TRINO_SCHEMA: "integration_tests_trino_${{ github.run_number }}"
+      TRINO_TIMEZONE: UTC
+      TRINO_USER: dbt

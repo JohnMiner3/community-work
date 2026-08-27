@@ -1,0 +1,109 @@
+[tools]
+python = "3.11.11"
+
+[tasks.setup]
+description = "Install dependencies and start docker compose integration test containers"
+run = [
+    "uv sync",
+    "docker compose -f ./integration_tests/docker-compose.yml up -d",
+]
+
+[tasks.teardown]
+description = "Stop docker compose integration test containers"
+run = "docker compose -f ./integration_tests/docker-compose.yml down"
+
+[tasks."test:bigquery"]
+description = "Run integration tests for BigQuery"
+dir = "integration_tests"
+run = [
+    "dbt debug --target bigquery",
+    "dbt deps",
+    "dbt build --target bigquery --full-refresh",
+]
+
+[tasks."test:clickhouse"]
+description = "Run integration tests for ClickHouse"
+dir = "integration_tests"
+run = [
+    "dbt debug --target clickhouse",
+    "dbt deps",
+    "dbt run --target clickhouse",
+    "dbt test --target clickhouse",
+]
+
+[tasks."test:databricks"]
+description = "Run integration tests for Databricks"
+dir = "integration_tests"
+run = [
+    "dbt debug --target databricks",
+    "dbt deps",
+    "dbt build --target databricks --full-refresh",
+]
+
+[tasks."test:duckdb"]
+description = "Run integration tests for DuckDB"
+dir = "integration_tests"
+run = [
+    "dbt debug --target duckdb",
+    "dbt deps",
+    "dbt run --target duckdb",
+    "dbt test --target duckdb",
+]
+
+[tasks."test:postgres"]
+description = "Run integration tests for Postgres"
+dir = "integration_tests"
+run = [
+    "dbt debug --target postgres",
+    "dbt deps",
+    "dbt run --target postgres",
+    "dbt test --target postgres",
+]
+
+[tasks."test:spark"]
+description = "Run integration tests for Spark"
+dir = "integration_tests"
+run = [
+    "dbt debug --target spark",
+    "dbt deps",
+    "dbt run --target spark",
+    "dbt test --target spark",
+]
+
+[tasks."test:trino"]
+description = "Run integration tests for Trino"
+dir = "integration_tests"
+run = [
+    "dbt debug --target trino",
+    "dbt deps",
+    "dbt run --target trino",
+    "dbt test --target trino",
+]
+
+[tasks."test:fusion-bigquery"]
+description = "Run fusion integration tests for BigQuery"
+dir = "integration_tests"
+run = [
+    "dbt debug --target bigquery-fusion",
+    "dbt deps",
+    "dbt build --target bigquery-fusion --full-refresh",
+]
+
+[tasks."test:fusion-databricks"]
+description = "Run fusion integration tests for Databricks"
+dir = "integration_tests"
+run = [
+    "dbt debug --target databricks",
+    "dbt deps",
+    "dbt build --target databricks --full-refresh",
+]
+
+[tasks."test:all"]
+description = "Run all no-secret integration tests in parallel"
+depends = [
+    "test:clickhouse",
+    "test:duckdb",
+    "test:postgres",
+    "test:spark",
+    "test:trino",
+]

@@ -1,0 +1,17 @@
+.venv/
+dbt_date.egg-info/
+dbt_internal_packages/
+dbt_packages/
+integration_tests/.hive-metastore/
+integration_tests/.spark-warehouse/
+integration_tests/docker/
+integration_tests/dbt_packages/
+integration_tests/logs/
+integration_tests/target/
+integration_tests/.user.yml
+integration_tests/service-key-file.json
+logs/
+target/
+.env
+db.duckdb
+dbt_internal_packages/

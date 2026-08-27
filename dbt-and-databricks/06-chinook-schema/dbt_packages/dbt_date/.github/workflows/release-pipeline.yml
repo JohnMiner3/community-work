@@ -1,0 +1,133 @@
+---
+name: Release pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_bump_type:
+        description: The version bump type to perform.
+        required: true
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
+          - premajor
+          - preminor
+          - prepatch
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # Authenticate as PAT_GITHUB (a repo admin) instead of the default
+          # GITHUB_TOKEN. main requires a PR review, but enforce_admins is off,
+          # so an admin bypasses it — letting "Commit version bump to main"
+          # push directly. github-actions[bot] has no bypass and would be
+          # rejected. This persisted credential is reused by the later pushes.
+          token: ${{ secrets.PAT_GITHUB }}
+
+      - name: Fetch tags
+        run: git fetch --prune --unshallow --tags
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Bump version
+        id: version
+        env:
+          BUMP_TYPE: ${{ inputs.version_bump_type }}
+        run: |
+          # Map the npm-style choice to uv `--bump` flags. The pre* choices add
+          # an `alpha` component because uv rejects a bare pre-release bump from
+          # a stable version (it must also raise a release component).
+          case "$BUMP_TYPE" in
+            major)    bump=(--bump major) ;;
+            minor)    bump=(--bump minor) ;;
+            patch)    bump=(--bump patch) ;;
+            premajor) bump=(--bump major --bump alpha) ;;
+            preminor) bump=(--bump minor --bump alpha) ;;
+            prepatch) bump=(--bump patch --bump alpha) ;;
+            *) echo "::error::Unknown version_bump_type: $BUMP_TYPE"; exit 1 ;;
+          esac
+
+          # Seed from the highest release tag, then bump. Restrict to numeric
+          # tags so the legacy `v`-prefixed tag can't sort to the top.
+          latest_tag="$(git tag --sort=version:refname | grep -E '^[0-9]' | tail -n 1)"
+
+          # `--frozen` keeps uv from touching the lockfile or building the env.
+          # The git tag stays the source of truth for the bump base; the edited
+          # pyproject.toml is committed back to main by the next step so the
+          # in-repo version doesn't lag the release. Capture the bumped value
+          # from the command's own output: uv version read forms mis-report
+          # without a synced venv.
+          uv version --frozen "$latest_tag" >/dev/null
+          version="$(uv version --frozen "${bump[@]}" | awk '{print $NF}')"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "version: $version"
+
+      - name: Determine if prerelease flag is necessary
+        id: prerelease
+        env:
+          BUMP_TYPE: ${{ inputs.version_bump_type }}
+        run: |
+          case "$BUMP_TYPE" in
+            pre*) echo "flag=--prerelease" >> "$GITHUB_OUTPUT" ;;
+            *)    echo "flag=--latest" >> "$GITHUB_OUTPUT" ;;
+          esac
+
+      - name: Propagate version to dbt_project.yml
+        # --no-project skips a workspace sync (the script is stdlib-only) while
+        # still resolving the interpreter from .python-version, so tomllib is
+        # guaranteed without a separate setup-python step.
+        run: uv run --no-project scripts/check_versions.py --fix
+
+      - name: Commit version bump to main
+        run: |
+          git config --global user.email "bot@github.com"
+          git config --global user.name "github-actions[bot]"
+
+          # Nothing to commit when both files already carry the new version
+          # (e.g. re-running a dispatch for a version that was already pushed).
+          if git diff --quiet -- pyproject.toml dbt_project.yml; then
+            echo "version files already up to date; skipping commit"
+            exit 0
+          fi
+
+          git add pyproject.toml dbt_project.yml
+          git commit -m "chore: bump version to ${{ steps.version.outputs.version }}"
+          # Pushes with the PAT_GITHUB credentials persisted by checkout. That
+          # token belongs to a repo admin, which bypasses main's PR requirement
+          # while enforce_admins stays off. If that bypass is ever removed this
+          # step fails before tagging rather than leaving a half-applied bump.
+          git push origin HEAD:main
+
+      - name: Tag commit and push
+        run: |
+          # Tag the bump commit so the tag, pyproject.toml and dbt_project.yml
+          # all agree on the released version.
+          git tag -f \
+            -a ${{ steps.version.outputs.version }} \
+            -m "${{ steps.version.outputs.version }}"
+          git push -f origin "${{ steps.version.outputs.version }}"
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GITHUB }}
+        run: |
+          export LAST_RELEASE=$(gh release list --repo ${{ github.repository }} --order desc --json name --limit 1 | jq -r '.[0].name')
+          echo $LAST_RELEASE
+          gh release create ${{ steps.version.outputs.version }} \
+              --generate-notes \
+              --repo ${{ github.repository }} \
+              --notes-start-tag $LAST_RELEASE \
+              --target main \
+              --title '${{ steps.version.outputs.version }}' \
+              ${{ steps.prerelease.outputs.flag }} \
+              --verify-tag

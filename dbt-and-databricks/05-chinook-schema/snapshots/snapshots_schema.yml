@@ -1,0 +1,404 @@
+version: 2
+
+snapshots:
+
+#
+# Album - Slowly Changing Dimension (SCD) 
+#
+
+- name: Album02
+  description: Snapshot of album data
+  columns:
+    - name: AlbumId
+      quoted: true
+      description: Unique identifier for the album
+      data_type: int
+      
+    - name: Title
+      quoted: true
+      description: Title of the album
+      data_type: varchar(93)
+      
+    - name: ArtistId
+      quoted: true
+      description: Artist identifier
+      data_type: int
+      
+    - name: dbt_scd_id
+      
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      quoted: true
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      quoted: true
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      quoted: true
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+#
+# Artist - Slowly Changing Dimension (SCD) 
+#
+
+- name: Artist02
+  description: Snapshot of artist data
+  columns:
+    - name: ArtistId
+      quoted: true
+      description: Unique identifier for the artist
+      data_type: int
+      
+    - name: Name
+      quoted: true
+      description: Artist name
+      data_type: varchar(85)
+      
+    - name: dbt_scd_id
+      quoted: true
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      quoted: true
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      quoted: true
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      quoted: true
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+#
+# Employee - Slowly Changing Dimension (SCD) 
+#
+
+- name: Employee02
+  description: Snapshot of employee data
+  columns:
+    - name: EmployeeId
+      quoted: true
+      description: Unique identifier for the employee
+      data_type: int
+      
+    - name: LastName
+      quoted: true
+      description: Employee last name
+      data_type: varchar(16)
+      
+    - name: FirstName
+      quoted: true
+      description: Employee first name
+      data_type: varchar(16)
+      
+    - name: Title
+      quoted: true
+      description: Employee title
+      data_type: varchar(19)
+      
+    - name: ReportsTo
+      quoted: true
+      description: Manager employee identifier
+      data_type: int
+      
+    - name: BirthDate
+      quoted: true
+      description: Employee birth date
+      data_type: varchar(16)
+      
+    - name: HireDate
+      quoted: true
+      description: Employee hire date
+      data_type: varchar(16)
+      
+    - name: Address
+      quoted: true
+      description: Employee address
+      data_type: varchar(27)
+      
+    - name: City
+      quoted: true
+      description: Employee city
+      data_type: varchar(16)
+      
+    - name: State
+      quoted: true
+      description: Employee state
+      data_type: varchar(16)
+      
+    - name: Country
+      quoted: true
+      description: Employee country
+      data_type: varchar(16)
+      
+    - name: PostalCode
+      quoted: true
+      description: Employee postal code
+      data_type: varchar(16)
+      
+    - name: Phone
+      quoted: true
+      description: Employee phone number
+      data_type: varchar(17)
+      
+    - name: Fax
+      quoted: true
+      description: Employee fax number
+      data_type: varchar(17)
+      
+    - name: Email
+      quoted: true
+      description: Employee email address
+      data_type: varchar(24)
+      
+    - name: dbt_scd_id
+      quoted: true
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      quoted: true
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      quoted: true
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      quoted: true
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+#
+# Genre - Slowly Changing Dimension (SCD) 
+#
+
+- name: Genre02
+  description: Snapshot of genre data
+  columns:
+    - name: GenreId
+      quoted: true
+      description: Unique identifier for the genre
+      data_type: int
+      
+    - name: Name
+      quoted: true
+      description: Genre name
+      data_type: varchar(18)
+      
+    - name: dbt_scd_id
+      quoted: true
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      quoted: true
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      quoted: true
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      quoted: true
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+#
+# MediaType - Slowly Changing Dimension (SCD) 
+#
+
+- name: MediaType02
+  description: Snapshot of media type data
+  columns:
+    - name: MediaTypeId
+      quoted: true
+      description: Unique identifier for the media type
+      data_type: int
+      
+    - name: Name
+      quoted: true
+      description: Media type name
+      data_type: varchar(27)
+      
+    - name: dbt_scd_id
+      quoted: true
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      quoted: true
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      quoted: true
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      quoted: true
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+#
+# Playlist - Slowly Changing Dimension (SCD) 
+#
+
+- name: Playlist02
+  description: Snapshot of playlist data
+  columns:
+    - name: PlaylistId
+      quoted: true
+      description: Unique identifier for the playlist
+      data_type: int
+      
+    - name: Name
+      quoted: true
+      description: Playlist name
+      data_type: varchar(26)
+      
+    - name: dbt_scd_id
+      quoted: true
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      quoted: true
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      quoted: true
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      quoted: true
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+#
+# PlaylistTrack - Slowly Changing Dimension (SCD) 
+#
+
+- name: PlaylistTrack02
+  description: Snapshot of playlist track association data
+  columns:
+    - name: PlaylistId
+      quoted: true
+      description: Playlist identifier
+      data_type: int
+      
+    - name: TrackId
+      quoted: true
+      description: Track identifier
+      data_type: int
+      
+    - name: dbt_scd_id
+      quoted: true
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      quoted: true
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      quoted: true
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      quoted: true
+      description: End of validity period for this record
+      data_type: datetime2(6)
+
+#
+# Track - Slowly Changing Dimension (SCD) 
+#
+
+- name: Track02
+  description: Snapshot of track data
+  columns:
+    - name: TrackId
+      quoted: true
+      description: Unique identifier for the track
+      data_type: int
+      
+    - name: Name
+      quoted: true
+      description: Track name
+      data_type: varchar(122)
+      
+    - name: AlbumId
+      quoted: true
+      description: Album identifier
+      data_type: int
+      
+    - name: MediaTypeId
+      quoted: true
+      description: Media type identifier
+      data_type: int
+      
+    - name: GenreId
+      quoted: true
+      description: Genre identifier
+      data_type: int
+      
+    - name: Composer
+      quoted: true
+      description: Track composer
+      data_type: varchar(186)
+      
+    - name: Milliseconds
+      quoted: true
+      description: Track duration in milliseconds
+      data_type: int
+      
+    - name: Bytes
+      quoted: true
+      description: Track file size in bytes
+      data_type: int
+      
+    - name: UnitPrice
+      quoted: true
+      description: Track unit price
+      data_type: float
+      
+    - name: dbt_scd_id
+      quoted: true
+      description: dbt SCD unique identifier
+      data_type: varchar(32)
+      
+    - name: dbt_updated_at
+      quoted: true
+      description: Timestamp when the record was updated
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_from
+      quoted: true
+      description: Start of validity period for this record
+      data_type: datetime2(6)
+      
+    - name: dbt_valid_to
+      quoted: true
+      description: End of validity period for this record
+      data_type: datetime2(6)

@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table "chinook01"."data_raw"."Playlist01" ("PlaylistId" integer,"Name" text)
+  ;
+    -- dbt seed --
+    
+          insert into "chinook01"."data_raw"."Playlist01" ("PlaylistId", "Name") values
+          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s)
+      
+
+;
+  

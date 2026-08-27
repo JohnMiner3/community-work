@@ -1,0 +1,28 @@
+[project]
+name = "dbt-date"
+version = "0.21.0"
+description = "Date and calendar-related macros for dbt"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "dbt-bigquery>=1.10.0,<1.12.0",
+    "dbt-clickhouse>=1.10.0,<1.11.0",
+    "dbt-core>=1.10.5,<1.12.0",
+    "dbt-databricks>=1.10.0,<1.12.0",
+    "dbt-duckdb>=1.9.0,<1.11.0",
+    "dbt-postgres>=1.9.0,<1.11.0",
+    "dbt-spark[PyHive]>=1.9.0,<1.11.0",
+    "dbt-trino>=1.9.0,<1.11.0",
+    "minimal-snowplow-tracker",
+    "shandy-sqlfmt[jinjafmt]",
+    "tox>=4,<5",
+]
+
+# This is a dbt (Jinja/SQL) package, not an installable Python package, so
+# uv manages the environment without building a wheel for the root project.
+[tool.uv]
+package = false

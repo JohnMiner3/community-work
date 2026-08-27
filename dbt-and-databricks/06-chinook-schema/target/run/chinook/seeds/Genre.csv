@@ -1,0 +1,22 @@
+
+    
+    
+    
+    create  table `uc_sql_server_central`.`data_raw`.`genre01` (`GenreId` bigint ,`Name` string )
+    
+    using delta
+  
+    
+    
+    
+    
+    
+  ;
+    -- dbt seed --
+    
+          insert overwrite `uc_sql_server_central`.`data_raw`.`genre01` values
+          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s)
+      
+
+;
+  

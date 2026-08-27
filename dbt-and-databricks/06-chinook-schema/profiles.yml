@@ -1,0 +1,11 @@
+chinook:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: uc_sql_server_central
+      schema: data
+      host: adb-623884071162434.14.azuredatabricks.net
+      http_path: /sql/1.0/warehouses/63b928162beeab21
+      token: <your token>
+      threads: 1 

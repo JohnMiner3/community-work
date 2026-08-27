@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table "chinook01"."data_raw"."Employee01" ("EmployeeId" integer,"LastName" text,"FirstName" text,"Title" text,"ReportsTo" integer,"BirthDate" text,"HireDate" text,"Address" text,"City" text,"State" text,"Country" text,"PostalCode" text,"Phone" text,"Fax" text,"Email" text)
+  ;
+    -- dbt seed --
+    
+          insert into "chinook01"."data_raw"."Employee01" ("EmployeeId", "LastName", "FirstName", "Title", "ReportsTo", "BirthDate", "HireDate", "Address", "City", "State", "Country", "PostalCode", "Phone", "Fax", "Email") values
+          (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+      
+
+;
+  

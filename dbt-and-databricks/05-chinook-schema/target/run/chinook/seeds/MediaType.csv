@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table "chinook01"."data_raw"."MediaType01" ("MediaTypeId" integer,"Name" text)
+  ;
+    -- dbt seed --
+    
+          insert into "chinook01"."data_raw"."MediaType01" ("MediaTypeId", "Name") values
+          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s)
+      
+
+;
+  

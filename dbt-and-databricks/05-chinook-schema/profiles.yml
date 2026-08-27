@@ -1,0 +1,14 @@
+chinook:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      driver: 'PostgreSQL ANSI(x64)' 
+      host: ep-sparkling-pine-e1f9qo8i.database.eastus2.azuredatabricks.net
+      port: 5432
+      dbname: chinook01
+      schema: data
+      user: dbt_svc_acct
+      password: <your password>
+      sslmode: require
+      threads: 4

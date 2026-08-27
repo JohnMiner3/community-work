@@ -1,0 +1,4 @@
+packages:
+  - local: ..
+    name: dbt_date
+sha1_hash: f0236c7f2e9f17b56369d819042ae243dfe27246

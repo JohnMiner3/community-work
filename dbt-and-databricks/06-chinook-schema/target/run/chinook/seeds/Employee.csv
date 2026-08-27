@@ -1,0 +1,22 @@
+
+    
+    
+    
+    create  table `uc_sql_server_central`.`data_raw`.`employee01` (`EmployeeId` bigint ,`LastName` string ,`FirstName` string ,`Title` string ,`ReportsTo` bigint ,`BirthDate` string ,`HireDate` string ,`Address` string ,`City` string ,`State` string ,`Country` string ,`PostalCode` string ,`Phone` string ,`Fax` string ,`Email` string )
+    
+    using delta
+  
+    
+    
+    
+    
+    
+  ;
+    -- dbt seed --
+    
+          insert overwrite `uc_sql_server_central`.`data_raw`.`employee01` values
+          (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+      
+
+;
+  

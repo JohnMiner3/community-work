@@ -1,0 +1,173 @@
+version: 2
+
+models:
+
+  #
+  # Customer Dimension Table with SCD Type 2
+  #
+
+  - name: DimCustomers
+    description: Customer table with SCD Type 2 tracking.
+    
+    columns:
+      - name: CustomerId
+        description: The unique identifier for a customer.
+      - name: FirstName
+        description: The first name of the customer.
+      - name: LastName
+        description: The last name of the customer.
+      - name: Company
+        description: The company name of the customer.
+      - name: Address
+        description: The street address of the customer.
+      - name: City
+        description: The city of the customer.
+      - name: State
+        description: The state or province of the customer.
+      - name: Country
+        description: The country of the customer.
+      - name: PostalCode
+        description: The postal or zip code of the customer.
+      - name: Phone
+        description: The phone number of the customer.
+      - name: Fax
+        description: The fax number of the customer.
+      - name: Email
+        description: The email address of the customer.
+      - name: SupportRepId
+        description: The identifier for the support representative assigned to the customer.
+      - name: dbt_scd_id
+        description: Unique identifier for each SCD record.
+      - name: dbt_updated_at
+        description: Timestamp when the record was last updated.
+      - name: dbt_valid_from
+        description: Timestamp when the record became valid.
+      - name: dbt_valid_to
+        description: Timestamp when the record became invalid (null for current records).
+
+  #
+  # Employee Dimension Table with SCD Type 2
+  #
+
+  - name: DimEmployees
+    description: Employee table with SCD Type 2 tracking.
+    
+    columns:
+      - name: EmployeeId
+        description: The unique identifier for an employee.
+      - name: LastName
+        description: The last name of the employee.
+      - name: FirstName
+        description: The first name of the employee.
+      - name: Title
+        description: The job title of the employee.
+      - name: ReportsTo
+        description: The identifier of the employee's manager.
+      - name: BirthDate
+        description: The birth date of the employee.
+      - name: HireDate
+        description: The hire date of the employee.
+      - name: Address
+        description: The street address of the employee.
+      - name: City
+        description: The city of the employee.
+      - name: State
+        description: The state or province of the employee.
+      - name: Country
+        description: The country of the employee.
+      - name: PostalCode
+        description: The postal or zip code of the employee.
+      - name: Phone
+        description: The phone number of the employee.
+      - name: Fax
+        description: The fax number of the employee.
+      - name: Email
+        description: The email address of the employee.
+      - name: dbt_scd_id
+        description: Unique identifier for each SCD record.
+      - name: dbt_updated_at
+        description: Timestamp when the record was last updated.
+      - name: dbt_valid_from
+        description: Timestamp when the record became valid.
+      - name: dbt_valid_to
+        description: Timestamp when the record became invalid (null for current records).
+
+  #
+  # Product Dimension Table
+  #
+
+  - name: DimProducts
+    description: Product dimension table containing track and album information.
+    
+    columns:
+      - name: ProductId
+        description: The unique identifier for a product.
+      - name: TrackId
+        description: The identifier for the track.
+      - name: ArtistName
+        description: The name of the artist.
+      - name: AlbumTitle
+        description: The title of the album.
+      - name: MediaType
+        description: The type of media (e.g., MPEG audio file, AAC audio file).
+      - name: Genre
+        description: The genre of the track.
+      - name: Composer
+        description: The composer of the track.
+      - name: Milliseconds
+        description: The length of the track in milliseconds.
+      - name: Bytes
+        description: The size of the track file in bytes.
+      - name: UnitPrice
+        description: The unit price of the track.
+
+
+  #
+  # List Dimension Table
+  #
+
+  - name: DimLists
+    description: List dimension table containing track lists to play.
+    
+    columns:
+      - name: ListName
+        description: The name of the list.
+      - name: ListId
+        description: The identifier for the list.
+      - name: TrackId
+        description: The identifier for the track in the list.
+
+  #
+  # Sales Fact Table
+  #
+
+  - name: FactSales
+    description: Sales fact table containing invoice and invoice line item details.
+    
+    columns:
+      - name: InvoiceId
+        description: The unique identifier for an invoice.
+      - name: CustomerId
+        description: The identifier for the customer associated with the invoice.
+      - name: InvoiceDate
+        description: The date and time when the invoice was created.
+      - name: BillingAddress
+        description: The billing street address for the invoice.
+      - name: BillingCity
+        description: The billing city for the invoice.
+      - name: BillingState
+        description: The billing state or province for the invoice.
+      - name: BillingCountry
+        description: The billing country for the invoice.
+      - name: BillingPostalCode
+        description: The billing postal or zip code for the invoice.
+      - name: Total
+        description: The total amount of the invoice.
+      - name: InvoiceLineId
+        description: The unique identifier for an invoice line item.
+      - name: TrackId
+        description: The identifier for the track purchased.
+      - name: UnitPrice
+        description: The unit price of the track at the time of purchase.
+      - name: Quantity
+        description: The quantity of the track purchased.

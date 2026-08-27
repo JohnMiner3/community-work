@@ -1,0 +1,133 @@
+version: 2
+
+models:
+
+
+#
+# Incremental merge for Customer table
+#
+
+- name: Customer02
+  description: Staged customer data from raw layer
+  columns:
+    - name: CustomerId
+      description: Unique identifier for the customer
+      data_type: int
+      
+    - name: FirstName
+      description: Customer first name
+      data_type: varchar(16)
+      
+    - name: LastName
+      description: Customer last name
+      data_type: varchar(16)
+      
+    - name: Company
+      description: Customer company
+      data_type: varchar(49)
+      
+    - name: Address
+      description: Customer address
+      data_type: varchar(41)
+      
+    - name: City
+      description: Customer city
+      data_type: varchar(21)
+      
+    - name: State
+      description: Customer state
+      data_type: varchar(16)
+      
+    - name: Country
+      description: Customer country
+      data_type: varchar(16)
+      
+    - name: PostalCode
+      description: Customer postal code
+      data_type: varchar(16)
+      
+    - name: Phone
+      description: Customer phone number
+      data_type: varchar(19)
+      
+    - name: Fax
+      description: Customer fax number
+      data_type: varchar(18)
+      
+    - name: Email
+      description: Customer email address
+      data_type: varchar(29)
+      
+    - name: SupportRepId
+      description: Support representative identifier
+      data_type: int
+
+#
+# Incremental merge for Invoice table
+#
+
+- name: Invoice02
+  description: Staged invoice data from raw layer
+  columns:
+    - name: InvoiceId
+      description: Unique identifier for the invoice
+      data_type: int
+      
+    - name: CustomerId
+      description: Foreign key to customer table
+      data_type: int
+      
+    - name: InvoiceDate
+      description: Invoice date
+      data_type: varchar(16)
+      
+    - name: BillingAddress
+      description: Billing address
+      data_type: varchar(41)
+      
+    - name: BillingCity
+      description: Billing city
+      data_type: varchar(21)
+      
+    - name: BillingState
+      description: Billing state
+      data_type: varchar(16)
+      
+    - name: BillingCountry
+      description: Billing country
+      data_type: varchar(16)
+      
+    - name: BillingPostalCode
+      description: Billing postal code
+      data_type: varchar(16)
+      
+    - name: Total
+      description: Invoice total amount
+      data_type: float
+
+#
+# Incremental merge for InvoiceLine table
+#
+
+- name: InvoiceLine02
+  description: Staged invoice line item data from raw layer
+  columns:
+    - name: InvoiceLineId
+      description: Unique identifier for the invoice line
+      data_type: int
+      
+    - name: InvoiceId
+      description: Foreign key to invoice table
+      data_type: int
+      
+    - name: TrackId
+      description: Foreign key to track table
+      data_type: int
+      
+    - name: UnitPrice
+      description: Unit price
+      data_type: float
+      
+    - name: Quantity
+      description: Quantity purchased
+      data_type: int

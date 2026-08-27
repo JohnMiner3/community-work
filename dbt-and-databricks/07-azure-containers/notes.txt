@@ -1,0 +1,5 @@
+This is just a simple demo.
+
+The details of creating and deploy containers for DBT will be explored in my you tube channel.
+
+Please see https://www.youtube.com/@ninedatamuses in Q4 of 2026.

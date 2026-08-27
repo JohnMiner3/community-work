@@ -1,0 +1,499 @@
+seeds:
+
+  #
+  # Seed data for Album
+  #
+
+  - name: Album
+    config:
+      alias: Album01
+    description: "Raw album data"
+    columns:
+      - name: AlbumId
+        quote: true
+        description: "Album identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: Title
+        quote: true
+        description: "Album title"
+        data_type: varchar(93)
+
+      - name: ArtistId
+        quote: true
+        description: "Artist identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Artist')
+                field: '"ArtistId"'
+
+  #
+  # Seed data for Artist
+  #
+
+  - name: Artist
+    config:
+      alias: Artist01
+    description: "Raw artist data"
+    columns:
+      - name: ArtistId
+        quote: true
+        description: "Artist identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: Name
+        quote: true
+        description: "Artist name"
+        data_type: varchar(85)
+
+  #
+  # Seed data for Customer
+  #
+
+  - name: Customer
+    config:
+      alias: Customer01
+    description: "Raw customer data"
+    columns:
+      - name: CustomerId
+        quote: true
+        description: "Customer identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: FirstName
+        quote: true
+        description: "Customer first name"
+        data_type: varchar(16)
+
+      - name: LastName
+        quote: true
+        description: "Customer last name"
+        data_type: varchar(16)
+
+      - name: Company
+        quote: true
+        description: "Customer company"
+        data_type: varchar(49)
+
+      - name: Address
+        quote: true
+        description: "Customer address"
+        data_type: varchar(41)
+
+      - name: City
+        quote: true
+        description: "Customer city"
+        data_type: varchar(21)
+
+      - name: State
+        quote: true
+        description: "Customer state"
+        data_type: varchar(16)
+
+      - name: Country
+        quote: true
+        description: "Customer country"
+        data_type: varchar(16)
+
+      - name: PostalCode
+        quote: true
+        description: "Customer postal code"
+        data_type: varchar(16)
+
+      - name: Phone
+        quote: true
+        description: "Customer phone number"
+        data_type: varchar(19)
+
+      - name: Fax
+        quote: true
+        description: "Customer fax number"
+        data_type: varchar(18)
+
+      - name: Email
+        quote: true
+        description: "Customer email address"
+        data_type: varchar(29)
+
+      - name: SupportRepId
+        quote: true
+        description: "Support representative identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Employee')
+                field: '"EmployeeId"'
+
+  #
+  # Seed data for Employee
+  #
+
+  - name: Employee
+    config:
+      alias: Employee01
+    description: "Raw employee data"
+    columns:
+      - name: EmployeeId
+        quote: true
+        description: "Employee identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: LastName
+        quote: true
+        description: "Employee last name"
+        data_type: varchar(16)
+
+      - name: FirstName
+        quote: true
+        description: "Employee first name"
+        data_type: varchar(16)
+
+      - name: Title
+        quote: true
+        description: "Employee title"
+        data_type: varchar(19)
+
+      - name: ReportsTo
+        quote: true
+        description: "Manager employee identifier"
+        data_type: int
+
+      - name: BirthDate
+        quote: true
+        description: "Employee birth date"
+        data_type: varchar(16)
+
+      - name: HireDate
+        quote: true
+        description: "Employee hire date"
+        data_type: varchar(16)
+
+      - name: Address
+        quote: true
+        description: "Employee address"
+        data_type: varchar(27)
+
+      - name: City
+        quote: true
+        description: "Employee city"
+        data_type: varchar(16)
+
+      - name: State
+        quote: true
+        description: "Employee state"
+        data_type: varchar(16)
+
+      - name: Country
+        quote: true
+        description: "Employee country"
+        data_type: varchar(16)
+
+      - name: PostalCode
+        quote: true
+        description: "Employee postal code"
+        data_type: varchar(16)
+
+      - name: Phone
+        quote: true
+        description: "Employee phone number"
+        data_type: varchar(17)
+
+      - name: Fax
+        quote: true
+        description: "Employee fax number"
+        data_type: varchar(17)
+
+      - name: Email
+        description: "Employee email address"
+        data_type: varchar(24)
+
+  #
+  # Seed data for Genre
+  #
+
+  - name: Genre
+    config:
+      alias: Genre01
+    description: "Raw genre data"
+    columns:
+      - name: GenreId
+        quote: true
+        description: "Genre identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: Name
+        quote: true
+        description: "Genre name"
+        data_type: varchar(18)
+
+  #
+  # Seed data for Invoice
+  #
+
+  - name: Invoice
+    config:
+      alias: Invoice01
+    description: "Raw invoice data"
+    columns:
+      - name: InvoiceId
+        quote: true
+        description: "Invoice identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: CustomerId
+        quote: true
+        description: "Customer identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Customer')
+                field: '"CustomerId"'
+
+      - name: InvoiceDate
+        quote: true
+        description: "Invoice date"
+        data_type: varchar(16)
+
+      - name: BillingAddress
+        quote: true
+        description: "Billing address"
+        data_type: varchar(41)
+
+      - name: BillingCity
+        quote: true
+        description: "Billing city"
+        data_type: varchar(21)
+
+      - name: BillingState
+        quote: true
+        description: "Billing state"
+        data_type: varchar(16)
+
+      - name: BillingCountry
+        quote: true
+        description: "Billing country"
+        data_type: varchar(16)
+
+      - name: BillingPostalCode
+        quote: true
+        description: "Billing postal code"
+        data_type: varchar(16)
+
+      - name: Total
+        quote: true
+        description: "Invoice total amount"
+        data_type: float
+
+  #
+  # Seed data for InvoiceLine
+  #
+
+  - name: InvoiceLine
+    config:
+      alias: InvoiceLine01
+    description: "Raw invoice line item data"
+    columns:
+      - name: InvoiceLineId
+        quote: true
+        description: "Invoice line identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: InvoiceId
+        quote: true
+        description: "Invoice identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Invoice')
+                field: '"InvoiceId"'
+
+      - name: TrackId
+        quote: true
+        description: "Track identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Track')
+                field: '"TrackId"'
+
+      - name: UnitPrice
+        quote: true
+        description: "Unit price"
+        data_type: float
+
+      - name: Quantity
+        quote: true
+        description: "Quantity purchased"
+        data_type: int
+
+  #
+  # Seed data for MediaType
+  #
+
+  - name: MediaType
+    config:
+      alias: MediaType01
+    description: "Raw media type data"
+    columns:
+      - name: MediaTypeId
+        quote: true
+        description: "Media type identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: Name
+        quote: true
+        description: "Media type name"
+        data_type: varchar(27)
+
+  #
+  # Seed data for Playlist
+  #
+
+  - name: Playlist
+    config:
+      alias: Playlist01
+    description: "Raw playlist data"
+    columns:
+      - name: PlaylistId
+        quote: true
+        description: "Playlist identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: Name
+        quote: true
+        description: "Playlist name"
+        data_type: varchar(26)
+
+  #
+  # Seed data for PlaylistTrack
+  #
+
+  - name: PlaylistTrack
+    config:
+      alias: PlaylistTrack01
+    description: "Raw playlist track association data"
+    columns:
+      - name: PlaylistId
+        quote: true
+        description: "Playlist identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Playlist')
+                field: '"PlaylistId"'
+
+      - name: TrackId
+        quote: true
+        description: "Track identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Track')
+                field: '"TrackId"'
+
+  #
+  # Seed data for Track
+  #
+
+  - name: Track
+    config:
+      alias: Track01
+    description: "Raw track data"
+    columns:
+      - name: TrackId
+        quote: true
+        description: "Track identifier"
+        data_type: int
+        data_tests:
+          - not_null
+          - unique
+
+      - name: Name
+        quote: true
+        description: "Track name"
+        data_type: varchar(122)
+
+      - name: AlbumId
+        quote: true
+        description: "Album identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Album')
+                field: '"AlbumId"'
+
+      - name: MediaTypeId
+        quote: true
+        description: "Media type identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('MediaType')
+                field: '"MediaTypeId"'
+
+      - name: GenreId
+        quote: true
+        description: "Genre identifier"
+        data_type: int
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('Genre')
+                field: '"GenreId"'
+
+      - name: Composer
+        quote: true
+        description: "Track composer"
+        data_type: varchar(186)
+
+      - name: Milliseconds
+        quote: true
+        description: "Track duration in milliseconds"
+        data_type: int
+
+      - name: Bytes
+        quote: true
+        description: "Track file size in bytes"
+        data_type: int
+
+      - name: UnitPrice
+        quote: true
+        description: "Track unit price"
+        data_type: float
